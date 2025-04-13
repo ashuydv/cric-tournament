@@ -29,10 +29,11 @@ export default function Header() {
     // Navigation links with paths for active state detection
     const navLinks = [
         { href: "/", label: "Home" },
+        { href: "/tournaments", label: "Tournaments" },
         { href: "/teams", label: "Teams" },
-        { href: "/schedule", label: "Schedule" },
-        { href: "/results", label: "Results" },
-        { href: "/stats", label: "Statistics" }
+        { href: "/about-us", label: "About Us" },
+        { href: "/register", label: "Register" },
+        { href: "/merchandise", label: "Merchandise" },
     ];
 
     // Function to check if link is active
@@ -79,7 +80,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-1 items-center justify-end space-x-4">
                     <nav className="flex items-center space-x-1">
-                        <Button
+                        {/* <Button
                             variant={isScrolled ? "outline" : "ghost"}
                             size="sm"
                             className={`hidden md:flex transition-all duration-300 ${isScrolled
@@ -87,8 +88,8 @@ export default function Header() {
                                 : "border-white/30 text-white hover:bg-white/10"
                                 }`}
                         >
-                            Sign In
-                        </Button>
+                            Join Now
+                        </Button> */}
                         <Button
                             size="sm"
                             className={`hidden md:flex transition-all duration-300 ${isScrolled
@@ -96,7 +97,7 @@ export default function Header() {
                                 : "bg-orange-400 hover:bg-orange-500 text-white"
                                 }`}
                         >
-                            Buy Tickets
+                            Join Now
                         </Button>
 
                         {/* Mobile menu */}
