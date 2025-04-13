@@ -8,7 +8,7 @@ export default function DynamicHeroSection() {
         <section className="relative w-full h-screen overflow-hidden bg-black/90">
             {/* Background overlay text */}
             <div className="absolute inset-0 text-[40rem] font-black text-white/5 select-none flex items-center justify-center overflow-hidden">
-                <Image width={1000} height={720} alt="" src="/cric_bg.png" />
+                <Image width={1000} height={720} alt="" src="/hero_bg.jpg" />
             </div>
 
             {/* Main hero content */}
@@ -45,7 +45,7 @@ export default function DynamicHeroSection() {
                         {/* Image content */}
                         <div className="hidden lg:block relative h-[500px] ml-auto">
                             <Image
-                                src="/cric_bg.png"
+                                src="/hero_bg.jpg"
                                 alt="Cricket player hitting a ball"
                                 width={800}
                                 height={1000}

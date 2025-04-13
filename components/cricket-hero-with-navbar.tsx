@@ -75,7 +75,7 @@ export default function Home() {
                 {/* Background image with overlay */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/cric_bg.png"
+                        src="/hero_bg.jpg"
                         alt="Cricket background"
                         width={1920}
                         height={1080}
