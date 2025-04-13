@@ -180,7 +180,7 @@ export default function StatsPage() {
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Statistics</h1>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Player performance statistics for the Run Bhumi 2025
+                Player performance statistics for the RunBhumi 2025
               </p>
             </div>
           </div>
@@ -324,7 +324,7 @@ export default function StatsPage() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Tournament Records</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Notable achievements and records from the Run Bhumi 2025
+                Notable achievements and records from the RunBhumi 2025
               </p>
             </div>
           </div>

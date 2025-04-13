@@ -15,7 +15,7 @@ export default function TournamentOverview() {
                     <div className="space-y-2">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">Tournament Overview</h2>
                         <p className="max-w-[900px] text-sm sm:text-base md:text-lg text-orange-800 dark:text-orange-200">
-                            Follow all the <span className="font-bold">LIVE ACTION</span> from the Run Bhumi 2025
+                            Follow all the <span className="font-bold">LIVE ACTION</span> from the RunBhumi 2025
                         </p>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ export default function CodeOfConductPage() {
                                     Code of Conduct in Team Dugouts
                                 </h1>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Guidelines for players, coaches, and team staff during Run Bhumi matches
+                                    Guidelines for players, coaches, and team staff during RunBhumi matches
                                 </p>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ export default function CodeOfConductPage() {
                             <h2>Introduction</h2>
                             <p>
                                 This Code of Conduct outlines the expected behavior and responsibilities of all individuals present in
-                                team dugouts during Run Bhumi cricket matches. Adherence to these guidelines ensures a professional
+                                team dugouts during RunBhumi cricket matches. Adherence to these guidelines ensures a professional
                                 environment that upholds the spirit of cricket and promotes fair play.
                             </p>
 
@@ -97,7 +97,7 @@ export default function CodeOfConductPage() {
 
                             <h2>Communication</h2>
                             <ol>
-                                <li>Communication with on-field players must comply with ICC and Run Bhumi regulations.</li>
+                                <li>Communication with on-field players must comply with ICC and RunBhumi regulations.</li>
                                 <li>
                                     Use of electronic devices for communication is strictly prohibited unless specifically authorized.
                                 </li>
@@ -120,7 +120,7 @@ export default function CodeOfConductPage() {
                             <ol>
                                 <li>Verbal warning</li>
                                 <li>Written reprimand</li>
-                                <li>Fine (as determined by the Run Bhumi Disciplinary Committee)</li>
+                                <li>Fine (as determined by the RunBhumi Disciplinary Committee)</li>
                                 <li>Suspension from one or more matches</li>
                                 <li>Removal of dugout privileges</li>
                                 <li>Season-long ban in severe cases</li>
@@ -128,7 +128,7 @@ export default function CodeOfConductPage() {
 
                             <h2>Reporting Violations</h2>
                             <p>
-                                Any violations of this Code of Conduct should be reported to the Match Referee or Run Bhumi officials.
+                                Any violations of this Code of Conduct should be reported to the Match Referee or RunBhumi officials.
                                 Reports should include:
                             </p>
                             <ol>
@@ -140,13 +140,13 @@ export default function CodeOfConductPage() {
 
                             <h2>Conclusion</h2>
                             <p>
-                                This Code of Conduct is designed to ensure that Run Bhumi matches are conducted in a professional,
+                                This Code of Conduct is designed to ensure that RunBhumi matches are conducted in a professional,
                                 respectful, and sportsmanlike manner. All team personnel are expected to familiarize themselves with
                                 these guidelines and adhere to them throughout the tournament.
                             </p>
 
                             <p>
-                                For any clarifications or questions regarding this Code of Conduct, please contact the Run Bhumi
+                                For any clarifications or questions regarding this Code of Conduct, please contact the RunBhumi
                                 Tournament Committee.
                             </p>
                         </div>

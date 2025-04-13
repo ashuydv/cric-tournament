@@ -122,7 +122,7 @@ export default function SchedulePage() {
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Schedule</h1>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Complete match schedule for the Run Bhumi 2025
+                Complete match schedule for the RunBhumi 2025
               </p>
             </div>
           </div>

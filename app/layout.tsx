@@ -5,9 +5,9 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Run Bhumi',
+  title: 'RunBhumi',
   description: '',
-  generator: 'Run Bhumi',
+  generator: 'RunBhumi',
 }
 
 const montserrat = Montserrat({

@@ -57,7 +57,7 @@ export default function HighlightsSection() {
                         </div>
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">More Than Just Cricket!</h2>
                         <p className="text-sm sm:text-base md:text-lg text-orange-700 dark:text-orange-300 border-l-4 border-orange-500 pl-4 italic">
-                            The Run Bhumi offers an <span className="font-bold not-italic">UNFORGETTABLE</span> entertainment experience for fans of all ages! Enjoy interactive fan
+                            The RunBhumi offers an <span className="font-bold not-italic">UNFORGETTABLE</span> entertainment experience for fans of all ages! Enjoy interactive fan
                             zones, exclusive meet-and-greets with cricket legends, exciting games, and delicious food from around the
                             world.
                         </p>

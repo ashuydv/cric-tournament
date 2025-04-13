@@ -14,7 +14,7 @@ export default function AboutUsPage() {
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
-                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">About Run Bhumi</h1>
+                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">About RunBhumi</h1>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
                                     Celebrating the spirit of cricket across India with premier tournaments and community engagement.
                                 </p>
@@ -30,7 +30,7 @@ export default function AboutUsPage() {
                             <div className="space-y-4">
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Story</h2>
                                 <p className="text-muted-foreground md:text-lg">
-                                    Run Bhumi was founded in 2018 with a vision to revolutionize cricket tournaments across India. What
+                                    RunBhumi was founded in 2018 with a vision to revolutionize cricket tournaments across India. What
                                     started as a small community initiative has grown into the country's premier cricket tournament
                                     organization.
                                 </p>
@@ -48,7 +48,7 @@ export default function AboutUsPage() {
                                     src="/placeholder.svg?height=500&width=500&text=Run+Bhumi+Story"
                                     width={500}
                                     height={500}
-                                    alt="Run Bhumi cricket tournament"
+                                    alt="RunBhumi cricket tournament"
                                     className="object-cover w-full h-full"
                                 />
                             </div>
@@ -62,7 +62,7 @@ export default function AboutUsPage() {
                         <div className="flex flex-col items-center space-y-4 text-center mb-10">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Key Facts</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                Run Bhumi has grown to become India's most prestigious cricket tournament organization
+                                RunBhumi has grown to become India's most prestigious cricket tournament organization
                             </p>
                         </div>
 
@@ -148,7 +148,7 @@ export default function AboutUsPage() {
                         <div className="flex flex-col items-center space-y-4 text-center mb-10">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Leadership Team</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                Meet the passionate individuals behind Run Bhumi's success
+                                Meet the passionate individuals behind RunBhumi's success
                             </p>
                         </div>
 
@@ -178,61 +178,62 @@ export default function AboutUsPage() {
                 {/* Vision & Mission Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
                     <div className="container px-4 md:px-6 mx-auto">
-                        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-                            <div className="space-y-4">
-                                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Vision</h2>
-                                <p className="md:text-lg text-white/80">
-                                    To become the premier cricket tournament organization in India, creating opportunities for players at
-                                    all levels while fostering community engagement and passion for the sport.
-                                </p>
-                                <ul className="space-y-2 text-white/80">
-                                    <li className="flex items-start gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                        <span>Expand to 20 city teams by 2027</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                        <span>Launch youth development programs in all participating cities</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                        <span>Create pathways for players to national recognition</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="space-y-4">
-                                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Mission</h2>
-                                <p className="md:text-lg text-white/80">
-                                    To provide a professional platform that celebrates cricket talent across India while building
-                                    communities and creating memorable sporting experiences.
-                                </p>
-                                <ul className="space-y-2 text-white/80">
-                                    <li className="flex items-start gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                        <span>Organize high-quality cricket tournaments with professional standards</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                        <span>Support grassroots cricket development across India</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                        <span>Create engaging fan experiences both in-stadium and digitally</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="space-y-4">
+                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Vision</h2>
+                            <p className="md:text-lg text-white/80">
+                                To become the premier cricket tournament organization in India, creating opportunities for players at
+                                all levels while fostering community engagement and passion for the sport.
+                            </p>
+                            <ul className="space-y-2 text-white/80">
+                                <li className="flex items-start gap-2">
+                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
+                                    <span>Expand to 20 city teams by 2027</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
+                                    <span>Launch youth development programs in all participating cities</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
+                                    <span>Create pathways for players to national recognition</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>
 
+                <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-100 text-black">
+                    <div className="container px-4 md:px-6 mx-auto">
+                        <div className="space-y-4">
+                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Mission</h2>
+                            <p className="md:text-lg text-black">
+                                To provide a professional platform that celebrates cricket talent across India while building
+                                communities and creating memorable sporting experiences.
+                            </p>
+                            <ul className="space-y-2 text-black">
+                                <li className="flex items-start gap-2">
+                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
+                                    <span>Organize high-quality cricket tournaments with professional standards</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
+                                    <span>Support grassroots cricket development across India</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
+                                    <span>Create engaging fan experiences both in-stadium and digitally</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
                 {/* Contact CTA Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Get In Touch</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                Have questions about Run Bhumi? We'd love to hear from you!
+                                Have questions about RunBhumi? We'd love to hear from you!
                             </p>
                             <div className="flex flex-col gap-2 min-[400px]:flex-row">
                                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600">

@@ -5,9 +5,9 @@ export default function Footer() {
     return (
         <footer className="w-full bg-black text-white py-12">
             <div className="container px-4 md:px-6 mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Teams Column */}
-                    <div className="space-y-4">
+                    {/* <div className="space-y-4">
                         <h3 className="text-lg font-bold">Teams</h3>
                         <ul className="space-y-2">
                             <li>
@@ -71,11 +71,11 @@ export default function Footer() {
                                 </Link>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
 
-                    {/* Run Bhumi Column */}
+                    {/* RunBhumi Column */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-bold">Run Bhumi</h3>
+                        <h3 className="text-lg font-bold">RunBhumi</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/about-us" className="text-gray-400 hover:text-white transition-colors">
@@ -100,9 +100,9 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Run Bhumi Guidelines Column */}
+                    {/* RunBhumi Guidelines Column */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-bold">Run Bhumi Guidelines</h3>
+                        <h3 className="text-lg font-bold">RunBhumi Guidelines</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/guidelines/code-of-conduct" className="text-gray-400 hover:text-white transition-colors">
@@ -111,7 +111,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link href="/guidelines/commercial" className="text-gray-400 hover:text-white transition-colors">
-                                    Runbhumi Commercial Guidelines
+                                    RunBhumi Commercial Guidelines
                                 </Link>
                             </li>
                             <li>
@@ -151,11 +151,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="flex items-center gap-2">
-                        <Trophy className="h-6 w-6 text-orange-500" />
-                        <span className="font-bold">Run Bhumi</span>
-                    </div>
-                    <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Run Bhumi. All rights reserved.</p>
+                    <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} RunBhumi. All rights reserved.</p>
                     <div className="flex gap-4">
                         <Link href="#" className="text-gray-400 hover:text-white">
                             <svg

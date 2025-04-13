@@ -23,7 +23,7 @@ export default function MerchandisePage() {
         })),
         accessories: Array.from({ length: 6 }, (_, i) => ({
             id: `accessory-${i + 1}`,
-            name: `Run Bhumi ${["Cap", "Wristband", "Backpack", "Water Bottle", "Keychain", "Scarf"][i % 6]}`,
+            name: `RunBhumi ${["Cap", "Wristband", "Backpack", "Water Bottle", "Keychain", "Scarf"][i % 6]}`,
             price: 499 + i * 50,
             image: `/placeholder.svg?height=300&width=300&text=Accessory+${i + 1}`,
             rating: 4.2,
@@ -76,7 +76,7 @@ export default function MerchandisePage() {
                                     Official Merchandise
                                 </h1>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Show your support with authentic Run Bhumi cricket merchandise
+                                    Show your support with authentic RunBhumi cricket merchandise
                                 </p>
                             </div>
                         </div>
@@ -192,7 +192,7 @@ export default function MerchandisePage() {
                         <div className="flex flex-col items-center space-y-4 text-center mb-10">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Featured Collection</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                Limited edition Run Bhumi Championship merchandise
+                                Limited edition RunBhumi Championship merchandise
                             </p>
                         </div>
 

@@ -36,7 +36,7 @@ const TransparentHeader = () => {
                     <Link href="/" className="flex items-center space-x-2">
                         <Trophy className={`h-6 w-6 ${isScrolled ? 'text-orange-500' : 'text-white'}`} />
                         <span className={`inline-block font-bold ${isScrolled ? 'text-black' : 'text-white'}`}>
-                            Run Bhumi
+                            RunBhumi
                         </span>
                     </Link>
                     <nav className="hidden md:flex gap-6">

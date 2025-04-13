@@ -11,8 +11,8 @@ export default function NewsEventsPage() {
     // Sample news data
     const newsItems = Array.from({ length: 6 }, (_, i) => ({
         id: `news-${i + 1}`,
-        title: `Run Bhumi announces expansion to ${i + 1} new cities for next season`,
-        excerpt: `In a major development for cricket fans across India, Run Bhumi has confirmed plans to expand the tournament to include ${i + 1} new city teams starting next season.`,
+        title: `RunBhumi announces expansion to ${i + 1} new cities for next season`,
+        excerpt: `In a major development for cricket fans across India, RunBhumi has confirmed plans to expand the tournament to include ${i + 1} new city teams starting next season.`,
         date: `April ${i + 1}, 2025`,
         image: `/placeholder.svg?height=200&width=400&text=News+${i + 1}`,
         category: i % 2 === 0 ? "Tournament News" : "Press Release",
@@ -22,7 +22,7 @@ export default function NewsEventsPage() {
     const events = Array.from({ length: 4 }, (_, i) => ({
         id: `event-${i + 1}`,
         title: `Season ${new Date().getFullYear()} Opening Ceremony`,
-        description: `Join us for the grand opening ceremony of Run Bhumi Season ${new Date().getFullYear()} featuring performances by top artists and the introduction of all team players.`,
+        description: `Join us for the grand opening ceremony of RunBhumi Season ${new Date().getFullYear()} featuring performances by top artists and the introduction of all team players.`,
         date: `May ${10 + i}, 2025`,
         time: "6:00 PM IST",
         location: "Mumbai Cricket Stadium",
@@ -39,7 +39,7 @@ export default function NewsEventsPage() {
                             <div className="space-y-2">
                                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">News & Events</h1>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Stay updated with the latest news and upcoming events from Run Bhumi
+                                    Stay updated with the latest news and upcoming events from RunBhumi
                                 </p>
                             </div>
                         </div>

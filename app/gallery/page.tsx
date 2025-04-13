@@ -16,7 +16,7 @@ export default function GalleryPage() {
             id: `event-${i + 1}`,
             src: `/placeholder.svg?height=300&width=400&text=Event+${i + 1}`,
             alt: `Cricket event photo ${i + 1}`,
-            caption: `Run Bhumi Season Opening Ceremony ${i + 1}`,
+            caption: `RunBhumi Season Opening Ceremony ${i + 1}`,
         })),
         fans: Array.from({ length: 10 }, (_, i) => ({
             id: `fan-${i + 1}`,
@@ -36,7 +36,7 @@ export default function GalleryPage() {
                             <div className="space-y-2">
                                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Gallery</h1>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Explore the best moments from Run Bhumi cricket tournaments
+                                    Explore the best moments from RunBhumi cricket tournaments
                                 </p>
                             </div>
                         </div>

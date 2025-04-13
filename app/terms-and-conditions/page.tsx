@@ -22,8 +22,8 @@ export default function TermsConditionsPage() {
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="max-w-3xl mx-auto prose prose-orange lg:prose-lg">
                             <p>
-                                Please read these Terms and Conditions ("Terms") carefully before using the Run Bhumi website or
-                                participating in any Run Bhumi events.
+                                Please read these Terms and Conditions ("Terms") carefully before using the RunBhumi website or
+                                participating in any RunBhumi events.
                             </p>
 
                             <h2>1. Acceptance of Terms</h2>
@@ -35,11 +35,11 @@ export default function TermsConditionsPage() {
 
                             <h2>2. Definitions</h2>
                             <p>
-                                "Run Bhumi" refers to the cricket tournament organization and its website.
+                                "RunBhumi" refers to the cricket tournament organization and its website.
                                 <br />
-                                "User," "you," or "your" refers to the person accessing or using Run Bhumi services.
+                                "User," "you," or "your" refers to the person accessing or using RunBhumi services.
                                 <br />
-                                "Services" refers to the website, events, tournaments, and other offerings provided by Run Bhumi.
+                                "Services" refers to the website, events, tournaments, and other offerings provided by RunBhumi.
                             </p>
 
                             <h2>3. Account Registration</h2>
@@ -55,28 +55,28 @@ export default function TermsConditionsPage() {
 
                             <h2>4. Ticket Purchases and Refunds</h2>
                             <p>
-                                All ticket sales are final and non-refundable unless an event is canceled by Run Bhumi. In the event of
+                                All ticket sales are final and non-refundable unless an event is canceled by RunBhumi. In the event of
                                 cancellation, refunds will be processed within 30 days.
                             </p>
                             <p>
-                                Tickets may not be resold or transferred without prior written consent from Run Bhumi. Any tickets found
+                                Tickets may not be resold or transferred without prior written consent from RunBhumi. Any tickets found
                                 to be sold or transferred without authorization may be canceled without refund.
                             </p>
 
                             <h2>5. Event Participation</h2>
                             <p>
-                                By participating in Run Bhumi events, you agree to comply with all venue rules and regulations, as well
+                                By participating in RunBhumi events, you agree to comply with all venue rules and regulations, as well
                                 as any instructions from event staff.
                             </p>
                             <p>
-                                Run Bhumi reserves the right to refuse entry or remove any person from an event for any reason,
+                                RunBhumi reserves the right to refuse entry or remove any person from an event for any reason,
                                 including but not limited to disruptive behavior, violation of rules, or safety concerns.
                             </p>
 
                             <h2>6. Intellectual Property</h2>
                             <p>
-                                All content on the Run Bhumi website, including text, graphics, logos, images, and software, is the
-                                property of Run Bhumi or its content suppliers and is protected by copyright and other intellectual
+                                All content on the RunBhumi website, including text, graphics, logos, images, and software, is the
+                                property of RunBhumi or its content suppliers and is protected by copyright and other intellectual
                                 property laws.
                             </p>
                             <p>
@@ -87,14 +87,14 @@ export default function TermsConditionsPage() {
 
                             <h2>7. Limitation of Liability</h2>
                             <p>
-                                Run Bhumi shall not be liable for any indirect, incidental, special, consequential, or punitive damages,
+                                RunBhumi shall not be liable for any indirect, incidental, special, consequential, or punitive damages,
                                 including but not limited to, loss of profits, data, use, goodwill, or other intangible losses,
                                 resulting from your access to or use of or inability to access or use the Services.
                             </p>
 
                             <h2>8. Indemnification</h2>
                             <p>
-                                You agree to defend, indemnify, and hold harmless Run Bhumi, its affiliates, licensors, and service
+                                You agree to defend, indemnify, and hold harmless RunBhumi, its affiliates, licensors, and service
                                 providers, and its and their respective officers, directors, employees, contractors, agents, licensors,
                                 suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards,
                                 losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to
@@ -109,14 +109,14 @@ export default function TermsConditionsPage() {
 
                             <h2>10. Changes to Terms</h2>
                             <p>
-                                Run Bhumi reserves the right to modify or replace these Terms at any time. If a revision is material, we
+                                RunBhumi reserves the right to modify or replace these Terms at any time. If a revision is material, we
                                 will provide at least 30 days' notice prior to any new terms taking effect.
                             </p>
 
                             <h2>11. Contact Information</h2>
                             <p>If you have any questions about these Terms, please contact us at:</p>
                             <p>
-                                Email: legal@runbhumi.com
+                                Email: legal@RunBhumi.com
                                 <br />
                                 Phone: +91 22 1234 5678
                                 <br />

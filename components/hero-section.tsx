@@ -20,7 +20,7 @@ export default function HeroSection() {
                                 June 5 - July 15, 2025
                             </Badge>
                             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
-                                Run Bhumi 2025
+                                RunBhumi 2025
                             </h1>
                             <p className="max-w-[600px] text-sm sm:text-base md:text-lg lg:text-xl text-orange-800 dark:text-orange-200">
                                 Experience the <span className="font-bold text-orange-600">ULTIMATE THRILL</span> of international cricket as 10 teams battle for glory in the prestigious Champions Cup!

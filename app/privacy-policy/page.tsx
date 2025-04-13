@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="max-w-3xl mx-auto prose prose-orange lg:prose-lg">
                             <p>
-                                This Privacy Policy describes how Run Bhumi ("we," "us," or "our") collects, uses, and discloses your
+                                This Privacy Policy describes how RunBhumi ("we," "us," or "our") collects, uses, and discloses your
                                 personal information when you visit our website, use our services, or interact with us.
                             </p>
 
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
                             <h2>Contact Us</h2>
                             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
                             <p>
-                                Email: privacy@runbhumi.com
+                                Email: privacy@RunBhumi.com
                                 <br />
                                 Phone: +91 22 1234 5678
                                 <br />

@@ -20,7 +20,7 @@ export default function Home() {
                     <div className="flex gap-6 md:gap-10">
                         <Link href="/" className="flex items-center space-x-2">
                             <Trophy className="h-6 w-6 text-orange-500" />
-                            <span className="inline-block font-bold">Run Bhumi</span>
+                            <span className="inline-block font-bold">RunBhumi</span>
                         </Link>
                         <nav className="hidden md:flex gap-6">
                             <Link href="/" className="flex items-center text-sm font-medium text-orange-500">
@@ -87,7 +87,7 @@ export default function Home() {
 
                 {/* Background overlay text */}
                 {/* <div className="absolute inset-0 text-[40rem] font-black text-white/5 select-none flex items-center justify-center overflow-hidden">
-                    RUNBHUMI
+                    RunBhumi
                 </div> */}
 
                 {/* Main hero content */}
@@ -104,7 +104,7 @@ export default function Home() {
                                     June 5 - July 15, 2025
                                 </Badge>
                                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
-                                    Run Bhumi <br />
+                                    RunBhumi <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">2025</span>
                                 </h1>
 
@@ -196,7 +196,7 @@ export default function Home() {
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Overview</h2>
                             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                Follow all the action from the Run Bhumi 2025
+                                Follow all the action from the RunBhumi 2025
                             </p>
                         </div>
                     </div>
@@ -324,7 +324,7 @@ export default function Home() {
                             </div>
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">More Than Just Cricket</h2>
                             <p className="text-muted-foreground md:text-lg/relaxed">
-                                The Run Bhumi offers a complete entertainment package for fans of all ages. Enjoy fan
+                                The RunBhumi offers a complete entertainment package for fans of all ages. Enjoy fan
                                 zones, meet-and-greets with cricket legends, interactive games, and delicious food from around the
                                 world.
                             </p>

@@ -11,16 +11,18 @@ import UpcomingMatches from "@/components/upcoming-matches"
 import TeamStandings from "@/components/team-standings"
 import RecentResults from "@/components/recent-results"
 import Footer from "@/components/footer"
+import RegistrationModal from "@/components/registration-modal"
 
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
+      <RegistrationModal />
       {/* Hero Section with Navbar */}
       <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero_bg.jpg"
+            src="/cric_bg.png"
             alt="Cricket background"
             width={1920}
             height={1080}
@@ -71,7 +73,7 @@ export default function Home() {
           </div>
 
           {/* Social media links - positioned absolute to the bottom right */}
-          <div className="absolute bottom-8 right-8 flex gap-4">
+          <div className="absolute bottom-8 right-8 flex flex-col gap-4">
             <Button variant="ghost" size="icon" className="text-white hover:text-orange-500 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </Button>
@@ -163,15 +165,14 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">Trials Overview</h2>
               <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
-                Follow all the action from the Run Bhumi 2025
+                Follow all the action from the RunBhumi 2025
               </p>
             </div>
           </div>
           <div className="mx-auto mt-8 md:mt-12">
             <Tabs defaultValue="city-wise" className="w-full">
-              <TabsList className="grid w-full grid-cols-5">
-                <TabsTrigger value="gurukul" className="text-sm md:text-base">The Gurukul Experience
-                </TabsTrigger>
+              <TabsList className="grid w-full grid-cols-4">
+
                 <TabsTrigger value="city-wise" className="text-sm md:text-base">City-wise Trial Info</TabsTrigger>
                 <TabsTrigger value="eligibility" className="text-sm md:text-base">Age & Eligibility</TabsTrigger>
                 <TabsTrigger value="assessment" className="text-sm md:text-base">Skill Assessments</TabsTrigger>
@@ -435,7 +436,7 @@ export default function Home() {
                           Evaluation Methodology
                         </h3>
                         <p className="mb-6 text-gray-700 text-lg">
-                          Run Bhumi uses a transparent 100-point scoring system designed to identify complete cricketers with the perfect balance of technical skills, tactical intelligence, physical prowess, and mental strength.
+                          RunBhumi uses a transparent 100-point scoring system designed to identify complete cricketers with the perfect balance of technical skills, tactical intelligence, physical prowess, and mental strength.
                         </p>
 
                         <div className="bg-white rounded-lg p-6 shadow-inner border border-orange-100">
@@ -580,243 +581,256 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </TabsContent>
-
-              <TabsContent value="gurukul" className="pt-6">
-                <div className="bg-gradient-to-r from-orange-50 to-white rounded-xl overflow-hidden shadow-sm">
-                  <div className="relative h-64 bg-orange-100">
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-orange-800/80 flex items-center justify-center">
-                      <div className="text-center px-4">
-                        <h3 className="text-3xl font-bold text-white mb-2">The Gurukul Experience</h3>
-                        <p className="text-white text-lg max-w-2xl mx-auto">
-                          An immersive 45-day cricket bootcamp blending ancient wisdom with modern techniques
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-6 md:p-8">
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h4 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
-                          <CalendarDaysIcon className="mr-2 h-5 w-5 text-orange-600" />
-                          Bootcamp Overview
-                        </h4>
-                        <div className="bg-white p-5 rounded-lg shadow-sm border border-orange-100">
-                          <ul className="space-y-4">
-                            <li className="flex items-start">
-                              <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                <SunIcon className="h-4 w-4 text-orange-600" />
-                              </div>
-                              <div>
-                                <span className="font-medium block">45-Day Residential Program</span>
-                                <span className="text-gray-600 text-sm">Full immersion in a cricket-focused environment</span>
-                              </div>
-                            </li>
-                            <li className="flex items-start">
-                              <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                <MapIcon className="h-4 w-4 text-orange-600" />
-                              </div>
-                              <div>
-                                <span className="font-medium block">State-of-the-Art Facility</span>
-                                <span className="text-gray-600 text-sm">Located in a serene setting in Dehradun</span>
-                              </div>
-                            </li>
-                            <li className="flex items-start">
-                              <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                <UsersIcon className="h-4 w-4 text-orange-600" />
-                              </div>
-                              <div>
-                                <span className="font-medium block">Limited to 100 Players</span>
-                                <span className="text-gray-600 text-sm">Ensuring personalized attention and guidance</span>
-                              </div>
-                            </li>
-                            <li className="flex items-start">
-                              <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                <TvIcon className="h-4 w-4 text-orange-600" />
-                              </div>
-                              <div>
-                                <span className="font-medium block">Nationally Televised</span>
-                                <span className="text-gray-600 text-sm">Weekly episodes showcasing player journeys</span>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-
-                        <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
-                          <BrainIcon className="mr-2 h-5 w-5 text-orange-600" />
-                          Comprehensive Curriculum
-                        </h4>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <Camera className="h-6 w-6 text-orange-600 mb-2" />
-                            <h5 className="font-semibold mb-1">Cricket Skills</h5>
-                            <ul className="text-sm text-gray-600 space-y-1">
-                              <li>• Advanced batting techniques</li>
-                              <li>• Professional bowling skills</li>
-                              <li>• Strategic fielding positions</li>
-                              <li>• Match situation awareness</li>
-                            </ul>
-                          </div>
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <ActivityIcon className="h-6 w-6 text-orange-600 mb-2" />
-                            <h5 className="font-semibold mb-1">Physical Fitness</h5>
-                            <ul className="text-sm text-gray-600 space-y-1">
-                              <li>• Sport-specific conditioning</li>
-                              <li>• Strength & power training</li>
-                              <li>• Speed & agility drills</li>
-                              <li>• Injury prevention protocols</li>
-                            </ul>
-                          </div>
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <SwordsIcon className="h-6 w-6 text-orange-600 mb-2" />
-                            <h5 className="font-semibold mb-1">Discipline</h5>
-                            <ul className="text-sm text-gray-600 space-y-1">
-                              <li>• Structured daily routines</li>
-                              <li>• Team-oriented challenges</li>
-                              <li>• Punctuality & dedication</li>
-                              <li>• Traditional values & ethics</li>
-                            </ul>
-                          </div>
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <BrainCircuitIcon className="h-6 w-6 text-orange-600 mb-2" />
-                            <h5 className="font-semibold mb-1">Mental Strength</h5>
-                            <ul className="text-sm text-gray-600 space-y-1">
-                              <li>• Pressure handling</li>
-                              <li>• Visualization techniques</li>
-                              <li>• Focus & concentration</li>
-                              <li>• Performance psychology</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
-                          <UsersIcon className="mr-2 h-5 w-5 text-orange-600" />
-                          Legendary Mentors
-                        </h4>
-
-                        <div className="space-y-4">
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                              <UserIcon className="h-8 w-8 text-orange-600" />
-                            </div>
-                            <div>
-                              <h5 className="font-bold text-lg">Rahul Dravid</h5>
-                              <p className="text-gray-600">Technical Batting Coach</p>
-                              <div className="mt-1 flex">
-                                <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Former India Captain</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                              <UserIcon className="h-8 w-8 text-orange-600" />
-                            </div>
-                            <div>
-                              <h5 className="font-bold text-lg">Zaheer Khan</h5>
-                              <p className="text-gray-600">Fast Bowling Expert</p>
-                              <div className="mt-1 flex">
-                                <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Pace Bowling Legend</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                              <UserIcon className="h-8 w-8 text-orange-600" />
-                            </div>
-                            <div>
-                              <h5 className="font-bold text-lg">Anil Kumble</h5>
-                              <p className="text-gray-600">Spin Bowling Specialist</p>
-                              <div className="mt-1 flex">
-                                <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Former India Coach</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
-                          <TvIcon className="mr-2 h-5 w-5 text-orange-600" />
-                          Televised Journey
-                        </h4>
-
-                        <div className="bg-white p-5 rounded-lg shadow-sm border border-orange-100">
-                          <div className="space-y-4">
-                            <div className="flex items-center justify-between border-b border-orange-100 pb-3">
-                              <div className="flex items-center">
-                                <PlayCircleIcon className="h-6 w-6 text-orange-600 mr-2" />
-                                <span className="font-medium">Weekly Episodes</span>
-                              </div>
-                              <span className="text-sm text-orange-600">Sunday 8 PM</span>
-                            </div>
-
-                            <div className="space-y-3">
-                              <div className="flex items-start">
-                                <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                  <CameraIcon className="h-4 w-4 text-orange-600" />
-                                </div>
-                                <div>
-                                  <span className="font-medium block">Training Highlights</span>
-                                  <span className="text-gray-600 text-sm">Behind-the-scenes look at daily practice sessions</span>
-                                </div>
-                              </div>
-
-                              <div className="flex items-start">
-                                <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                  <SwordsIcon className="h-4 w-4 text-orange-600" />
-                                </div>
-                                <div>
-                                  <span className="font-medium block">Weekly Challenges</span>
-                                  <span className="text-gray-600 text-sm">Competitive tasks testing various cricketing skills</span>
-                                </div>
-                              </div>
-
-                              <div className="flex items-start">
-                                <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                  <HeartIcon className="h-4 w-4 text-orange-600" />
-                                </div>
-                                <div>
-                                  <span className="font-medium block">Player Journeys</span>
-                                  <span className="text-gray-600 text-sm">Personal stories and transformation of participants</span>
-                                </div>
-                              </div>
-
-                              <div className="flex items-start">
-                                <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
-                                  <StarIcon className="h-4 w-4 text-orange-600" />
-                                </div>
-                                <div>
-                                  <span className="font-medium block">Mentor Insights</span>
-                                  <span className="text-gray-600 text-sm">Expert commentary and guidance from cricket legends</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 text-center">
-                      <p className="text-gray-600 mb-4">Experience a cricket training program unlike any other in the world</p>
-                      <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        Apply for the Gurukul Program
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
             </Tabs>
           </div>
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-24 bg-orange-50 dark:bg-orange-950/20">
+      {/* Separate Gurukul Experience Section */}
+      <section className="w-full py-12 bg-gradient-to-r from-orange-50 to-white">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+            <div className="space-y-2">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter text-orange-700">The Gurukul Experience</h2>
+              <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
+                An immersive 45-day cricket bootcamp blending ancient wisdom with modern techniques
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-orange-50 to-white rounded-xl overflow-hidden shadow-md">
+            <div className="relative h-64 bg-orange-100">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-orange-800/80 flex items-center justify-center">
+                <div className="text-center px-4">
+                  <h3 className="text-3xl font-bold text-white mb-2">Transform Your Cricket Journey</h3>
+                  <p className="text-white text-lg max-w-2xl mx-auto">
+                    Join our elite residential program with legendary cricket mentors
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 md:p-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
+                    <CalendarDaysIcon className="mr-2 h-5 w-5 text-orange-600" />
+                    Bootcamp Overview
+                  </h4>
+                  <div className="bg-white p-5 rounded-lg shadow-sm border border-orange-100">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                          <SunIcon className="h-4 w-4 text-orange-600" />
+                        </div>
+                        <div>
+                          <span className="font-medium block">45-Day Residential Program</span>
+                          <span className="text-gray-600 text-sm">Full immersion in a cricket-focused environment</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                          <MapIcon className="h-4 w-4 text-orange-600" />
+                        </div>
+                        <div>
+                          <span className="font-medium block">State-of-the-Art Facility</span>
+                          <span className="text-gray-600 text-sm">Located in a serene setting in Dehradun</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                          <UsersIcon className="h-4 w-4 text-orange-600" />
+                        </div>
+                        <div>
+                          <span className="font-medium block">Limited to 100 Players</span>
+                          <span className="text-gray-600 text-sm">Ensuring personalized attention and guidance</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                          <TvIcon className="h-4 w-4 text-orange-600" />
+                        </div>
+                        <div>
+                          <span className="font-medium block">Nationally Televised</span>
+                          <span className="text-gray-600 text-sm">Weekly episodes showcasing player journeys</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
+                    <BrainIcon className="mr-2 h-5 w-5 text-orange-600" />
+                    Comprehensive Curriculum
+                  </h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <Camera className="h-6 w-6 text-orange-600 mb-2" />
+                      <h5 className="font-semibold mb-1">Cricket Skills</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Advanced batting techniques</li>
+                        <li>• Professional bowling skills</li>
+                        <li>• Strategic fielding positions</li>
+                        <li>• Match situation awareness</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <ActivityIcon className="h-6 w-6 text-orange-600 mb-2" />
+                      <h5 className="font-semibold mb-1">Physical Fitness</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Sport-specific conditioning</li>
+                        <li>• Strength & power training</li>
+                        <li>• Speed & agility drills</li>
+                        <li>• Injury prevention protocols</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <SwordsIcon className="h-6 w-6 text-orange-600 mb-2" />
+                      <h5 className="font-semibold mb-1">Discipline</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Structured daily routines</li>
+                        <li>• Team-oriented challenges</li>
+                        <li>• Punctuality & dedication</li>
+                        <li>• Traditional values & ethics</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <BrainCircuitIcon className="h-6 w-6 text-orange-600 mb-2" />
+                      <h5 className="font-semibold mb-1">Mental Strength</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Pressure handling</li>
+                        <li>• Visualization techniques</li>
+                        <li>• Focus & concentration</li>
+                        <li>• Performance psychology</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
+                    <UsersIcon className="mr-2 h-5 w-5 text-orange-600" />
+                    Legendary Mentors
+                  </h4>
+
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Rahul Dravid</h5>
+                        <p className="text-gray-600">Technical Batting Coach</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Former India Captain</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Zaheer Khan</h5>
+                        <p className="text-gray-600">Fast Bowling Expert</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Pace Bowling Legend</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Anil Kumble</h5>
+                        <p className="text-gray-600">Spin Bowling Specialist</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Former India Coach</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
+                    <TvIcon className="mr-2 h-5 w-5 text-orange-600" />
+                    Televised Journey
+                  </h4>
+
+                  <div className="bg-white p-5 rounded-lg shadow-sm border border-orange-100">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between border-b border-orange-100 pb-3">
+                        <div className="flex items-center">
+                          <PlayCircleIcon className="h-6 w-6 text-orange-600 mr-2" />
+                          <span className="font-medium">Weekly Episodes</span>
+                        </div>
+                        <span className="text-sm text-orange-600">Sunday 8 PM</span>
+                      </div>
+
+                      <div className="space-y-3">
+                        <div className="flex items-start">
+                          <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                            <CameraIcon className="h-4 w-4 text-orange-600" />
+                          </div>
+                          <div>
+                            <span className="font-medium block">Training Highlights</span>
+                            <span className="text-gray-600 text-sm">Behind-the-scenes look at daily practice sessions</span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start">
+                          <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                            <SwordsIcon className="h-4 w-4 text-orange-600" />
+                          </div>
+                          <div>
+                            <span className="font-medium block">Weekly Challenges</span>
+                            <span className="text-gray-600 text-sm">Competitive tasks testing various cricketing skills</span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start">
+                          <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                            <HeartIcon className="h-4 w-4 text-orange-600" />
+                          </div>
+                          <div>
+                            <span className="font-medium block">Player Journeys</span>
+                            <span className="text-gray-600 text-sm">Personal stories and transformation of participants</span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start">
+                          <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
+                            <StarIcon className="h-4 w-4 text-orange-600" />
+                          </div>
+                          <div>
+                            <span className="font-medium block">Mentor Insights</span>
+                            <span className="text-gray-600 text-sm">Expert commentary and guidance from cricket legends</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-gray-600 mb-4">Experience a cricket training program unlike any other in the world</p>
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  Apply for the Gurukul Program
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* <section className="w-full py-12 md:py-24 bg-orange-50 dark:bg-orange-950/20">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">Our Teams</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">Our Team</h2>
               <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
                 10 international teams competing for cricket glory
               </p>
@@ -860,14 +874,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="w-full py-12 md:py-24">
+      {/* <section className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 px-4 md:px-10">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-700 dark:bg-orange-800/30 dark:text-orange-400">
-                Tournament Highlights
+                Highlights
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter">
                 Key Moments to Look Forward To
@@ -895,18 +909,6 @@ export default function Home() {
                     </p>
                   </div>
                 </li>
-                <li className="flex items-start gap-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-900 dark:bg-orange-800/30 dark:text-orange-400">
-                    3
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-base md:text-lg font-medium">Finals Weekend</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      The culmination of the tournament with semi-finals and the grand finale at the iconic Melbourne
-                      Cricket Ground.
-                    </p>
-                  </div>
-                </li>
               </ul>
             </div>
             <div className="flex flex-col items-start space-y-4">
@@ -915,7 +917,7 @@ export default function Home() {
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter">More Than Just Cricket</h2>
               <p className="text-muted-foreground text-sm md:text-lg">
-                The Run Bhumi offers a complete entertainment package for fans of all ages. Enjoy fan
+                The RunBhumi offers a complete entertainment package for fans of all ages. Enjoy fan
                 zones, meet-and-greets with cricket legends, interactive games, and delicious food from around the
                 world.
               </p>
@@ -947,35 +949,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="w-full py-12 md:py-24 bg-orange-50 dark:bg-orange-950/20">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">Stay Updated</h2>
-              <p className="max-w-[900px] text-muted-foreground text-sm md:text-lg">
-                Subscribe to receive the latest news, match updates, and exclusive content
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-              <form className="flex space-x-2">
-                <input
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder="Enter your email"
-                  type="email"
-                />
-                <Button type="submit" className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
-                  Subscribe
-                </Button>
-              </form>
-              <p className="text-xs text-muted-foreground">
-                By subscribing, you agree to our Terms of Service and Privacy Policy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div >
   )
 }

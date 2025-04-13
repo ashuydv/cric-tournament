@@ -67,7 +67,7 @@ export default function ResultsPage() {
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Match Results</h1>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Latest results from the Run Bhumi 2025
+                Latest results from the RunBhumi 2025
               </p>
             </div>
           </div>

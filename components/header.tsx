@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Mail, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
@@ -58,8 +58,8 @@ export default function Header() {
     // Navigation links with paths for active state detection
     const navLinks = [
         { href: "/", label: "Home" },
-        { href: "/tournaments", label: "Tournaments" },
-        { href: "/teams", label: "Teams" },
+        // { href: "/tournaments", label: "Tournaments" },
+        // { href: "/teams", label: "Our Team" },
         { href: "/about-us", label: "About Us" },
         { href: "/register", label: "Register" },
         { href: "/merchandise", label: "Merchandise" },
@@ -73,18 +73,32 @@ export default function Header() {
 
     return (
         <>
+
             <header className={`fixed top-0 z-40 w-full transition-all duration-300 ${isScrolled
-                ? "bg-gradient-to-b from-slate-900 to-slate-900 shadow-lg"
-                : "bg-gradient-to-b from-slate-900 to-slate-900 shadow-lg"
+                ? "bg-white"
+                : "bg-transparent"
                 }`}>
+                <div className="w-full bg-gradient-to-r from-orange-500 to-orange-400 text-white py-2 px-4">
+                    <div className="container mx-auto flex justify-end items-center space-x-6 text-sm">
+                        <div className="flex items-center space-x-1">
+                            <Phone size={16} />
+                            <span>02269587007</span>
+                        </div>
+                        <div className="h-4 border-l border-orange-300" />
+                        <div className="flex items-center space-x-1">
+                            <Mail size={16} />
+                            <span>isplt10@ccssports.in</span>
+                        </div>
+                    </div>
+                </div>
                 <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between h-20">
+                    <div className="flex items-center justify-between">
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
-                            <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0">
+                            <div className="relative h-24 w-24 md:h-32 md:w-32 flex-shrink-0">
                                 <Image
                                     src="/rb_logo.png"
-                                    alt="Run Bhumi Logo"
+                                    alt="RunBhumi Logo"
                                     fill
                                     className="object-contain"
                                     priority
@@ -98,10 +112,8 @@ export default function Header() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`text-sm font-medium transition-all duration-200 hover:text-orange-400 relative py-2 ${isActive(link.href)
-                                        ? "text-orange-400"
-                                        : "text-white"
-                                        }`}
+                                    className={`text-sm font-medium transition-all duration-200 hover:text-orange-400 relative py-2 ${isActive(link.href) ? "text-orange-400" : "text-black"
+                                        } ${isScrolled ? "text-black" : "text-white"}`}
                                 >
                                     {link.label}
                                     <span
@@ -150,7 +162,7 @@ export default function Header() {
                         <div className="relative h-14 w-14 flex-shrink-0">
                             <Image
                                 src="/rb_logo.png"
-                                alt="Run Bhumi Logo"
+                                alt="RunBhumi Logo"
                                 fill
                                 className="object-contain"
                                 priority

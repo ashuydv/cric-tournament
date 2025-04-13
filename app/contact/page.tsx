@@ -17,7 +17,7 @@ export default function ContactPage() {
                             <div className="space-y-2">
                                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Contact Us</h1>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Get in touch with the Run Bhumi team for inquiries, partnerships, or support.
+                                    Get in touch with the RunBhumi team for inquiries, partnerships, or support.
                                 </p>
                             </div>
                         </div>
@@ -131,11 +131,11 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-bold">Email</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    General Inquiries: info@runbhumi.com
+                                                    General Inquiries: info@RunBhumi.com
                                                     <br />
-                                                    Support: support@runbhumi.com
+                                                    Support: support@RunBhumi.com
                                                     <br />
-                                                    Partnerships: partnerships@runbhumi.com
+                                                    Partnerships: partnerships@RunBhumi.com
                                                 </p>
                                             </div>
                                         </CardContent>
@@ -168,7 +168,7 @@ export default function ContactPage() {
                         <div className="flex flex-col items-center space-y-4 text-center mb-10">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Find Us</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                Visit our headquarters in Mumbai or find a Run Bhumi event near you
+                                Visit our headquarters in Mumbai or find a RunBhumi event near you
                             </p>
                         </div>
 
@@ -181,7 +181,7 @@ export default function ContactPage() {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Run Bhumi Headquarters Location"
+                                title="RunBhumi Headquarters Location"
                             ></iframe>
                         </div>
                     </div>
