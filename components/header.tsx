@@ -79,7 +79,7 @@ export default function Header() {
                 : "bg-transparent"
                 }`}>
                 <div className="w-full bg-gradient-to-r from-orange-500 to-orange-400 text-white py-2 px-4">
-                    <div className="container mx-auto flex justify-end items-center space-x-6 text-sm">
+                    <div className="container mx-auto flex justify-center items-center space-x-6 text-sm">
                         <div className="flex items-center space-x-1">
                             <Phone size={16} />
                             <span>9964391643</span>
@@ -136,7 +136,10 @@ export default function Header() {
 
                         {/* Mobile Menu Button */}
                         <button
-                            className="md:hidden text-white p-2"
+                            className={`md:hidden ${isScrolled
+                                ? "text-black"
+                                : "text-white"
+                                } p-2`}
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             aria-label="Toggle menu"
                             data-menu-toggle

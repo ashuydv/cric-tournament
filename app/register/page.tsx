@@ -83,11 +83,11 @@ export default function RegistrationPage() {
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
-                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Register for RunBhumi</h1>
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Register for RunBhumi</h2>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
                                     Join us for an incredible running experience across India's most beautiful landscapes.
                                 </p>
@@ -357,6 +357,27 @@ export default function RegistrationPage() {
                                                 </Select>
                                             </div>
 
+                                            <div className="space-y-2">
+                                                <label htmlFor="tshirtSizes" className="block text-sm font-medium">
+                                                    Tshirt Sizes <span className="text-red-400">*</span>
+                                                </label>
+                                                <Select
+                                                    onValueChange={(value) => handleSelectChange("tshirtSizes", value)}
+                                                    required
+                                                >
+                                                    <SelectTrigger className="bg-white text-black">
+                                                        <SelectValue placeholder="Select Tshirt Size" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        <SelectItem value="S">S</SelectItem>
+                                                        <SelectItem value="M">M</SelectItem>
+                                                        <SelectItem value="L">L</SelectItem>
+                                                        <SelectItem value="XL">XL</SelectItem>
+                                                        <SelectItem value="XXL">XXL</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                            </div>
+
                                             <div className="md:col-span-2 flex justify-center mt-6">
                                                 <Button
                                                     type="submit"
@@ -368,7 +389,6 @@ export default function RegistrationPage() {
                                                 </Button>
                                             </div>
                                         </form>
-
                                     </>
                                 )}
                             </div>

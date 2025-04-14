@@ -68,14 +68,14 @@ export default function MerchandisePage() {
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
-                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                                     Official Merchandise
-                                </h1>
-                                <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
+                                </h2>
+                                <p className="max-w-[700px] text-gray-200 md:text-xl mx-auto">
                                     Show your support with authentic RunBhumi cricket merchandise
                                 </p>
                             </div>

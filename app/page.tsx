@@ -29,35 +29,27 @@ export default function Home() {
             className="object-cover object-top bg-no-repeat h-full w-full opacity-60"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10" />
         </div>
 
-        {/* Main hero content - centered using flex and my-auto */}
-        <div className="relative z-10 w-full flex flex-col items-center justify-center py-8 md:py-0">
-          <div className="container mx-auto px-4 md:px-6">
-            {/* Grid for the content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              {/* Left side content */}
-              <div className="space-y-6 max-w-3xl mx-auto lg:mx-0">
-                {/* <Badge
-                  variant="outline"
-                  className="inline-flex items-center border-orange-500/20 bg-orange-50 text-orange-500"
-                >
-                  <CalendarDays className="mr-1 h-3 w-3" />
-                  June 5 - July 15, 2025
-                </Badge> */}
+        {/* Main hero content */}
+        <div className="relative z-10 w-full flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 lg:pt-[10rem]">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              {/* Left Content */}
+              <div className="space-y-6 max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Welcome to <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">RunBhumi</span>
                 </h1>
 
-                <p className="max-w-[600px] text-gray-50 text-base md:text-lg">
+                <p className="max-w-[600px] text-gray-50 text-base sm:text-lg mx-auto lg:mx-0">
                   India’s Biggest Individual Cricket Talent Hunt <br />
                   RunBhumi isn’t just an event. It’s a movement. <br />
                   A nationwide hunt to discover raw, unstoppable cricket talent from the streets, small towns, and forgotten corners of India — and bring them into the limelight of national television.
                 </p>
 
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
                   <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
                     Join Now
                   </Button>
@@ -67,26 +59,60 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right side is empty as per your request to remove it */}
-              <div className="hidden lg:block"></div>
+              {/* Right side empty (hidden on all screen sizes for now) */}
+              <div className="hidden lg:block" />
             </div>
           </div>
 
-          {/* Social media links - positioned absolute to the bottom right */}
-          <div className="absolute bottom-8 right-8 flex flex-col gap-4">
-            <Button variant="ghost" size="icon" className="text-white hover:text-orange-500 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </Button>
-            <Button variant="ghost" size="icon" className="text-white hover:text-orange-500 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-            </Button>
-            <Button variant="ghost" size="icon" className="text-white hover:text-orange-500 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg>
-            </Button>
-            <Button variant="ghost" size="icon" className="text-white hover:text-orange-500 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </Button>
+          {/* Social media links */}
+          <div className="flex flex-row gap-4 mt-8 sm:absolute sm:bottom-8 sm:right-8 sm:mt-0 sm:flex-col">
+            {[
+              {
+                name: "Facebook",
+                href: "https://facebook.com",
+                path: `<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />`,
+              },
+              {
+                name: "X",
+                href: "https://x.com",
+                path: `<path d="M4.25 3h3.477l4.777 6.507L17.776 3H21L14.46 11.7 21.75 21h-3.52l-5.237-7.146L6.062 21H3l7.08-8.8L4.25 3z"/>`,
+              },
+              {
+                name: "Dribbble",
+                href: "#", // Add link if needed
+                path: `<circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>`,
+              },
+              {
+                name: "Instagram",
+                href: "#", // Add link if needed
+                path: `<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>`,
+              }
+            ].map(({ href, path }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-orange-500 transition-colors"
+              >
+                <Button variant="ghost" size="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    dangerouslySetInnerHTML={{ __html: path }}
+                  />
+                </Button>
+              </a>
+            ))}
           </div>
+
         </div>
       </section>
 
@@ -152,9 +178,11 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-lg font-medium">
-              Register for Trials
-            </Button>
+            <Link href='/register'>
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-lg font-medium">
+                Register for Trials
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -273,11 +301,11 @@ export default function Home() {
                         <div className="grid md:grid-cols-2 gap-4">
                           <div className="bg-orange-50 p-4 rounded-lg">
                             <h4 className="font-semibold text-lg mb-1">Junior Division</h4>
-                            <p>Ages 16-19 years (as of December 30, 2025)</p>
+                            <p>Ages 16-19 years (as of December 31, 2025)</p>
                           </div>
                           <div className="bg-orange-50 p-4 rounded-lg">
                             <h4 className="font-semibold text-lg mb-1">Senior Division</h4>
-                            <p>Ages 20-28 years (as of December 30, 2025)</p>
+                            <p>Ages 20-28 years (as of December 31, 2025)</p>
                           </div>
                         </div>
                       </div>
