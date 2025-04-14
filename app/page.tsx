@@ -273,11 +273,11 @@ export default function Home() {
                         <div className="grid md:grid-cols-2 gap-4">
                           <div className="bg-orange-50 p-4 rounded-lg">
                             <h4 className="font-semibold text-lg mb-1">Junior Division</h4>
-                            <p>Ages 16-19 years (as of December 31, 2025)</p>
+                            <p>Ages 16-19 years (as of December 30, 2025)</p>
                           </div>
                           <div className="bg-orange-50 p-4 rounded-lg">
                             <h4 className="font-semibold text-lg mb-1">Senior Division</h4>
-                            <p>Ages 20-28 years (as of December 31, 2025)</p>
+                            <p>Ages 20-28 years (as of December 30, 2025)</p>
                           </div>
                         </div>
                       </div>
@@ -816,9 +816,7 @@ export default function Home() {
 
               <div className="mt-8 text-center">
                 <p className="text-gray-600 mb-4">Experience a cricket training program unlike any other in the world</p>
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  Apply for the Gurukul Program
-                </Button>
+
               </div>
             </div>
           </div>

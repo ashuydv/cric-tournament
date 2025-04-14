@@ -82,12 +82,13 @@ export default function Header() {
                     <div className="container mx-auto flex justify-end items-center space-x-6 text-sm">
                         <div className="flex items-center space-x-1">
                             <Phone size={16} />
-                            <span>02269587007</span>
+                            <span>9964391643</span>
+
                         </div>
                         <div className="h-4 border-l border-orange-300" />
                         <div className="flex items-center space-x-1">
                             <Mail size={16} />
-                            <span>isplt10@ccssports.in</span>
+                            <span>hello@therunbhumi.com</span>
                         </div>
                     </div>
                 </div>
