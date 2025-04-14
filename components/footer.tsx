@@ -189,6 +189,7 @@ export default function Footer() {
                             </svg>
                             <span className="sr-only">Instagram</span>
                         </Link>
+                        {/* Twitter (X) Icon */}
                         <Link href="#" className="text-gray-400 hover:text-white">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -202,10 +203,12 @@ export default function Footer() {
                                 strokeLinejoin="round"
                                 className="h-5 w-5"
                             >
-                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                                <path d="M4.25 3h3.477l4.777 6.507L17.776 3H21L14.46 11.7 21.75 21h-3.52l-5.237-7.146L6.062 21H3l7.08-8.8L4.25 3z" />
                             </svg>
                             <span className="sr-only">Twitter</span>
                         </Link>
+
+                        {/* YouTube Icon */}
                         <Link href="#" className="text-gray-400 hover:text-white">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -219,12 +222,12 @@ export default function Footer() {
                                 strokeLinejoin="round"
                                 className="h-5 w-5"
                             >
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
                             </svg>
-                            <span className="sr-only">LinkedIn</span>
+                            <span className="sr-only">YouTube</span>
                         </Link>
+
                     </div>
                 </div>
             </div>

@@ -78,14 +78,14 @@ export default function Home() {
                 path: `<path d="M4.25 3h3.477l4.777 6.507L17.776 3H21L14.46 11.7 21.75 21h-3.52l-5.237-7.146L6.062 21H3l7.08-8.8L4.25 3z"/>`,
               },
               {
-                name: "Dribbble",
-                href: "#", // Add link if needed
-                path: `<circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>`,
+                name: "Instagram",
+                href: "#",
+                path: `<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>`,
               },
               {
-                name: "Instagram",
-                href: "#", // Add link if needed
-                path: `<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>`,
+                name: "YouTube",
+                href: "https://youtube.com",
+                path: `<path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>`,
               }
             ].map(({ href, path }, i) => (
               <a
@@ -305,7 +305,7 @@ export default function Home() {
                           </div>
                           <div className="bg-orange-50 p-4 rounded-lg">
                             <h4 className="font-semibold text-lg mb-1">Senior Division</h4>
-                            <p>Ages 20-28 years (as of December 31, 2025)</p>
+                            <p>Ages 20-30 years (as of December 31, 2025)</p>
                           </div>
                         </div>
                       </div>
