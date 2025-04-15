@@ -27,6 +27,8 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  // ✅ Enable static export
+  output: 'export',
 }
 
 if (userConfig) {

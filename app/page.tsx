@@ -746,39 +746,66 @@ export default function Home() {
                         <UserIcon className="h-8 w-8 text-orange-600" />
                       </div>
                       <div>
-                        <h5 className="font-bold text-lg">Rahul Dravid</h5>
-                        <p className="text-gray-600">Technical Batting Coach</p>
+                        <h5 className="font-bold text-lg">Suresh Raina</h5>
+                        <p className="text-gray-600">Middle Order Guide</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Mr. IPL</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Herschelle Gibbs</h5>
+                        <p className="text-gray-600">Batting Maestro</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">South African Legend</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Sanath Jayasuriya</h5>
+                        <p className="text-gray-600">Explosive All-Rounder</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Sri Lankan Icon</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Manpreet Singh Gony</h5>
+                        <p className="text-gray-600">Pace Attack Mentor</p>
+                        <div className="mt-1 flex">
+                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">IPL & India Fast Bowler</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-lg">Anjum Chopra</h5>
+                        <p className="text-gray-600">Women’s Cricket Ambassador</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Former India Captain</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-lg">Zaheer Khan</h5>
-                        <p className="text-gray-600">Fast Bowling Expert</p>
-                        <div className="mt-1 flex">
-                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Pace Bowling Legend</span>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-lg">Anil Kumble</h5>
-                        <p className="text-gray-600">Spin Bowling Specialist</p>
-                        <div className="mt-1 flex">
-                          <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Former India Coach</span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
 
                   <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
