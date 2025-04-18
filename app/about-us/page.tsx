@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Header from "@/components/header"
-import { Trophy, Users, Calendar, MapPin, Award, Star } from "lucide-react"
+import { Trophy, Users, Calendar, MapPin, Award, Star, Tv, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Footer from "@/components/footer"
@@ -12,11 +12,14 @@ export default function AboutUsPage() {
                 {/* Hero Section */}
                 <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
                     <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center">
-                            <div className="space-y-2">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">About RunBhumi</h2>
-                                <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Celebrating the spirit of cricket across India with premier tournaments and community engagement.
+                        <div className="flex flex-col items-center space-y-6 text-center">
+                            <div className="space-y-3">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">RunBhumi</h1>
+                                <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-orange-500">
+                                    India's Greatest Cricket Talent Hunt
+                                </p>
+                                <p className="max-w-[700px] text-gray-400 md:text-lg mx-auto mt-4">
+                                    Scouting extraordinary players from every corner of the nation
                                 </p>
                             </div>
                         </div>
@@ -30,17 +33,17 @@ export default function AboutUsPage() {
                             <div className="space-y-4">
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Story</h2>
                                 <p className="text-muted-foreground md:text-lg">
-                                    RunBhumi was founded in 2018 with a vision to revolutionize cricket tournaments across India. What
-                                    started as a small community initiative has grown into the country's premier cricket tournament
-                                    organization.
+                                    RunBhumi is not just a platform—it's a battlefield where raw cricketing dreams come alive. We are India's
+                                    <strong> first-ever televised individual cricket talent hunt</strong>, built to scout, train, and launch
+                                    extraordinary players from every corner of the nation—from bustling cities to the most remote villages.
                                 </p>
                                 <p className="text-muted-foreground md:text-lg">
-                                    Our mission is to provide a professional platform for cricket enthusiasts, from grassroots to elite
-                                    levels, while fostering community spirit and promoting the love of the game throughout India.
+                                    This is a national movement for the youth who never had access, exposure, or opportunity but possess unmatched
+                                    passion and potential. RunBhumi gives them the stage, the training, the spotlight—and a shot at the big league.
                                 </p>
                                 <p className="text-muted-foreground md:text-lg">
-                                    Over the years, we've expanded to 12 cities, built partnerships with major sponsors, and created a
-                                    platform where cricket talent can shine on a national stage.
+                                    With trials held across India, a rigorous 45-day cricket Gurukul led by legendary cricketers, and a grand league
+                                    broadcast nationwide, <strong>RunBhumi transforms untold stories into national sensations</strong>.
                                 </p>
                             </div>
                             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-xl">
@@ -62,7 +65,7 @@ export default function AboutUsPage() {
                         <div className="flex flex-col items-center space-y-4 text-center mb-10">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Key Facts</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                RunBhumi has grown to become India's most prestigious cricket tournament organization
+                                RunBhumi has grown to become India's most prestigious cricket talent hunt
                             </p>
                         </div>
 
@@ -71,10 +74,10 @@ export default function AboutUsPage() {
                                 <CardContent className="pt-6">
                                     <div className="flex flex-col items-center space-y-2">
                                         <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Trophy className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                                            <MapPin className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">12</h3>
-                                        <p className="text-sm text-muted-foreground">City Teams</p>
+                                        <h3 className="text-2xl font-bold">36</h3>
+                                        <p className="text-sm text-muted-foreground">Cities for On-ground Trials</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -85,8 +88,8 @@ export default function AboutUsPage() {
                                         <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
                                             <Users className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">5000+</h3>
-                                        <p className="text-sm text-muted-foreground">Players</p>
+                                        <h3 className="text-2xl font-bold">128</h3>
+                                        <p className="text-sm text-muted-foreground">Players Selected (80 M + 48 F)</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -97,8 +100,8 @@ export default function AboutUsPage() {
                                         <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
                                             <Calendar className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">7</h3>
-                                        <p className="text-sm text-muted-foreground">Annual Tournaments</p>
+                                        <h3 className="text-2xl font-bold">45</h3>
+                                        <p className="text-sm text-muted-foreground">Day Residential Camp</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -107,10 +110,22 @@ export default function AboutUsPage() {
                                 <CardContent className="pt-6">
                                     <div className="flex flex-col items-center space-y-2">
                                         <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <MapPin className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                                            <Tv className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">25+</h3>
-                                        <p className="text-sm text-muted-foreground">Venues</p>
+                                        <h3 className="text-2xl font-bold">36</h3>
+                                        <p className="text-sm text-muted-foreground">TV Episodes</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="text-center">
+                                <CardContent className="pt-6">
+                                    <div className="flex flex-col items-center space-y-2">
+                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
+                                            <Trophy className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold">10</h3>
+                                        <p className="text-sm text-muted-foreground">Teams (6 Male + 4 Female)</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -121,8 +136,8 @@ export default function AboutUsPage() {
                                         <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
                                             <Award className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">₹1.5 Cr</h3>
-                                        <p className="text-sm text-muted-foreground">Prize Money</p>
+                                        <h3 className="text-2xl font-bold">32</h3>
+                                        <p className="text-sm text-muted-foreground">Matches (22 Men + 10 Women)</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -133,8 +148,20 @@ export default function AboutUsPage() {
                                         <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
                                             <Star className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">15+</h3>
-                                        <p className="text-sm text-muted-foreground">Sponsors</p>
+                                        <h3 className="text-2xl font-bold">8</h3>
+                                        <p className="text-sm text-muted-foreground">Ex-International Players per Team</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="text-center">
+                                <CardContent className="pt-6">
+                                    <div className="flex flex-col items-center space-y-2">
+                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
+                                            <Heart className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold">500+</h3>
+                                        <p className="text-sm text-muted-foreground">Talents in Next 10 Years</p>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -152,25 +179,44 @@ export default function AboutUsPage() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="flex flex-col items-center space-y-2">
-                                    <div className="h-32 w-32 rounded-full overflow-hidden mb-2">
-                                        <Image
-                                            src={`/placeholder.svg?height=128&width=128&text=Leader${i}`}
-                                            width={128}
-                                            height={128}
-                                            alt={`Team Leader ${i}`}
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h3 className="font-bold text-lg">Rajesh Kumar</h3>
-                                    <p className="text-sm text-orange-600 dark:text-orange-400">CEO & Founder</p>
-                                    <p className="text-xs text-muted-foreground text-center">
-                                        Former cricket player with 15+ years of sports management experience
-                                    </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div className="flex flex-col items-center space-y-3">
+                                <div className="h-40 w-40 rounded-full overflow-hidden mb-3">
+                                    <Image
+                                        src="/placeholder.svg?height=160&width=160&text=Narendra"
+                                        width={160}
+                                        height={160}
+                                        alt="Narendra Khanna"
+                                        className="object-cover"
+                                    />
                                 </div>
-                            ))}
+                                <h3 className="font-bold text-xl">Narendra Khanna</h3>
+                                <p className="text-sm text-orange-600 dark:text-orange-400">Founder & Visionary</p>
+                                <p className="text-sm text-muted-foreground text-center max-w-md">
+                                    An engineer turned sports entrepreneur, Narendra has spent 25+ years working across continents.
+                                    His own journey of being a passionate cricketer who never got the opportunity fuels RunBhumi's
+                                    mission—to ensure no talent goes unnoticed again.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col items-center space-y-3">
+                                <div className="h-40 w-40 rounded-full overflow-hidden mb-3">
+                                    <Image
+                                        src="/placeholder.svg?height=160&width=160&text=Tarak"
+                                        width={160}
+                                        height={160}
+                                        alt="Tarak Bajpai"
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <h3 className="font-bold text-xl">Tarak Bajpai</h3>
+                                <p className="text-sm text-orange-600 dark:text-orange-400">Co-Founder & Strategist</p>
+                                <p className="text-sm text-muted-foreground text-center max-w-md">
+                                    A retired Air Force officer and business leader, Tarak blends discipline, structure, and cultural insight
+                                    into RunBhumi. A lifelong cricket lover, he is the strategic force behind the on-ground execution of
+                                    India's biggest cricket talent hunt.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -181,23 +227,9 @@ export default function AboutUsPage() {
                         <div className="space-y-4">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Vision</h2>
                             <p className="md:text-lg text-white/80">
-                                To become the premier cricket tournament organization in India, creating opportunities for players at
-                                all levels while fostering community engagement and passion for the sport.
+                                To <strong>redefine the future of Indian cricket</strong> by creating a national platform where every deserving
+                                player—regardless of their background—gets scouted, trained, and celebrated on national television.
                             </p>
-                            <ul className="space-y-2 text-white/80">
-                                <li className="flex items-start gap-2">
-                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                    <span>Expand to 20 city teams by 2027</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                    <span>Launch youth development programs in all participating cities</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                    <span>Create pathways for players to national recognition</span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </section>
@@ -206,27 +238,55 @@ export default function AboutUsPage() {
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="space-y-4">
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Mission</h2>
-                            <p className="md:text-lg text-black">
-                                To provide a professional platform that celebrates cricket talent across India while building
-                                communities and creating memorable sporting experiences.
-                            </p>
-                            <ul className="space-y-2 text-black">
-                                <li className="flex items-start gap-2">
-                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                    <span>Organize high-quality cricket tournaments with professional standards</span>
+                            <ul className="space-y-4 text-black">
+                                <li className="flex items-start gap-3">
+                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
+                                    <span>To <strong>hunt, nurture, and launch</strong> the best untapped cricket talent from Bharat</span>
                                 </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                    <span>Support grassroots cricket development across India</span>
+                                <li className="flex items-start gap-3">
+                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
+                                    <span>To eliminate barriers like caste, class, geography, or politics in player selection</span>
                                 </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mt-0.5">✓</div>
-                                    <span>Create engaging fan experiences both in-stadium and digitally</span>
+                                <li className="flex items-start gap-3">
+                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
+                                    <span>To offer high-intensity training under <strong>international legends and spiritual mentors</strong></span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
+                                    <span>To deliver a <strong>national broadcast experience</strong>, taking players' stories to millions</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
+                                    <span>To create an <strong>annual revolution in Indian cricket</strong>, producing over <strong>500 champions in 10 years</strong></span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </section>
+
+                {/* Broadcast Section */}
+                <section className="w-full py-12 md:py-20 bg-gray-100">
+                    <div className="container px-4 md:px-6 mx-auto">
+                        <div className="flex flex-col items-center space-y-4 text-center mb-8">
+                            <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Broadcast Partners</h2>
+                        </div>
+                        <div className="flex flex-wrap justify-center gap-8 items-center">
+                            <div className="bg-white p-4 rounded-lg shadow-sm">
+                                <p className="font-medium">Sony Ten 3</p>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg shadow-sm">
+                                <p className="font-medium">SonyLiv</p>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg shadow-sm">
+                                <p className="font-medium">Sony Pal</p>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg shadow-sm">
+                                <p className="font-medium">FanCode</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Contact CTA Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">
                     <div className="container px-4 md:px-6 mx-auto">
@@ -247,6 +307,7 @@ export default function AboutUsPage() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </div>
     )
 }

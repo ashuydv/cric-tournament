@@ -405,11 +405,9 @@ export default function RegistrationPage() {
                                         <CardContent className="p-6 flex items-start space-x-4">
                                             <Calendar className="h-6 w-6 text-orange-500 mt-1" />
                                             <div>
-                                                <h3 className="font-bold">Event Date</h3>
+                                                <h3 className="font-bold">Event Starts</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    Sunday, May 25, 2025
-                                                    <br />
-                                                    Starting at 6:00 AM
+                                                    Thursday, April 18, 2025
                                                 </p>
                                             </div>
                                         </CardContent>
@@ -419,13 +417,13 @@ export default function RegistrationPage() {
                                         <CardContent className="p-6 flex items-start space-x-4">
                                             <MapPin className="h-6 w-6 text-orange-500 mt-1" />
                                             <div>
-                                                <h3 className="font-bold">Location</h3>
+                                                <h3 className="font-bold">Office Address</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    Marine Drive
+                                                    MNT Dreams Pvt. Ltd.
                                                     <br />
-                                                    Mumbai, Maharashtra 400020
-                                                    <br />
-                                                    India
+                                                    770 , Tower B - 1 <br />
+                                                    Spaze IT park ,Sector 49 <br />
+                                                    Sohna Road, Gurugram, Haryana-122002
                                                 </p>
                                             </div>
                                         </CardContent>
@@ -453,15 +451,20 @@ export default function RegistrationPage() {
                                             <div>
                                                 <h3 className="font-bold">Contact</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    For event queries: events@RunBhumi.com
-                                                    <br />
-                                                    Registration support: register@RunBhumi.com
+                                                    Email: hello@therunbhumi.com
                                                     <br />
                                                     Phone: +91 22 9876 5432
+                                                    <br />
+                                                    Office: +91 99643 91643
+                                                    <br />
+                                                    WhatsApp Enquiries: +91 99643 92643
+                                                    <br />
+                                                    IVR: +91 99643 96643
                                                 </p>
                                             </div>
                                         </CardContent>
                                     </Card>
+
                                 </div>
                             </div>
                         </div>
