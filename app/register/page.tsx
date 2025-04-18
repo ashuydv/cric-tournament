@@ -57,9 +57,8 @@ export default function RegistrationPage() {
     const handleSubmit = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
         setIsSubmitting(true);
-
         try {
-            // Google Apps Script deployed URL - you'll replace this with your actual deployed URL
+            // The correct format for Google Apps Script web app URL
             const scriptURL = 'https://script.google.com/macros/s/AKfycbyzW9l1ZWIKON_IdxLU9SWLnJ9YKM-x1xyX-CQiTsUeXTcsAW_QQPel-uLkFYJpTz8vdg/exec';
 
             // Prepare form data for submission
@@ -90,7 +89,6 @@ export default function RegistrationPage() {
                 description: "Your cricket trial registration has been submitted to RunBhumi.",
                 variant: "default",
             });
-
         } catch (error) {
             console.error("Error submitting form:", error);
 
