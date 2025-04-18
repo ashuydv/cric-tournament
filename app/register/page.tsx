@@ -33,9 +33,11 @@ export default function RegistrationPage() {
         battingHandedness: "",
         preferredBowlingStyle: "",
         preferredBattingOrder: "",
+        tshirtSizes: "",
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
     const handleChange = (e: { target: { id: any; value: any } }) => {
         const { id, value } = e.target;
@@ -57,18 +59,41 @@ export default function RegistrationPage() {
         setIsSubmitting(true);
 
         try {
-            // Here you would typically send data to your backend
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Google Apps Script deployed URL - you'll replace this with your actual deployed URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyzW9l1ZWIKON_IdxLU9SWLnJ9YKM-x1xyX-CQiTsUeXTcsAW_QQPel-uLkFYJpTz8vdg/exec';
 
-            console.log("Registration data:", formData);
+            // Prepare form data for submission
+            const formDataForSubmit = new FormData();
+
+            // Add all form fields to FormData
+            Object.entries(formData).forEach(([key, value]) => {
+                formDataForSubmit.append(key, value as string);
+            });
+
+            // Add timestamp
+            formDataForSubmit.append('timestamp', new Date().toISOString());
+
+            // Send data to Google Sheets through Apps Script
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                body: formDataForSubmit,
+                mode: 'no-cors' // Required for Google Apps Script
+            });
+
+            console.log("Registration data sent:", formData);
+
+            // Set success state
+            setSubmissionSuccess(true);
 
             toast({
                 title: "Registration successful!",
-                description: "Your cricket trial registration has been submitted.",
+                description: "Your cricket trial registration has been submitted to RunBhumi.",
                 variant: "default",
             });
 
         } catch (error) {
+            console.error("Error submitting form:", error);
+
             toast({
                 title: "Registration failed",
                 description: "There was an error processing your registration. Please try again.",
@@ -77,6 +102,26 @@ export default function RegistrationPage() {
         } finally {
             setIsSubmitting(false);
         }
+    };
+
+    const resetForm = () => {
+        setFormData({
+            firstName: "",
+            middleName: "",
+            surname: "",
+            mobileNumber: "",
+            dateOfBirth: "",
+            email: "",
+            state: "",
+            trialCity: "",
+            trialZone: "",
+            playingRoles: "",
+            battingHandedness: "",
+            preferredBowlingStyle: "",
+            preferredBattingOrder: "",
+            tshirtSizes: "",
+        });
+        setSubmissionSuccess(false);
     };
 
     return (
@@ -89,7 +134,7 @@ export default function RegistrationPage() {
                             <div className="space-y-2">
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Register for RunBhumi</h2>
                                 <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Join us for an incredible running experience across India's most beautiful landscapes.
+                                    Join India's Greatest Cricket Talent Hunt and showcase your skills on the national stage.
                                 </p>
                             </div>
                         </div>
@@ -102,7 +147,7 @@ export default function RegistrationPage() {
                         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
                             {/* Registration Form */}
                             <div className="space-y-6">
-                                {isSubmitting ? (
+                                {submissionSuccess ? (
                                     <Card className="p-6 bg-green-50 border-green-200">
                                         <CardContent className="pt-6 flex flex-col items-center text-center">
                                             <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
@@ -110,10 +155,10 @@ export default function RegistrationPage() {
                                             </div>
                                             <h2 className="text-2xl font-bold mb-2">Registration Complete!</h2>
                                             <p className="text-gray-600 mb-4">
-                                                Thank you for registering for RunBhumi. A confirmation email has been sent to {formData.email}.
+                                                Thank you for registering for RunBhumi Cricket Talent Hunt. A confirmation email has been sent to {formData.email}.
                                             </p>
                                             <Button
-                                                onClick={() => setIsSubmitting(false)}
+                                                onClick={resetForm}
                                                 className="bg-green-600 hover:bg-green-700"
                                             >
                                                 Register Another Person
@@ -125,7 +170,7 @@ export default function RegistrationPage() {
                                         <div className="space-y-2">
                                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Registration Form</h2>
                                             <p className="text-muted-foreground">
-                                                Complete the form below to secure your spot in the upcoming RunBhumi event.
+                                                Complete the form below to secure your spot in the upcoming RunBhumi Cricket Talent Hunt.
                                             </p>
                                         </div>
 
@@ -397,7 +442,7 @@ export default function RegistrationPage() {
                             <div className="space-y-8">
                                 <div className="space-y-2">
                                     <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Event Information</h2>
-                                    <p className="text-muted-foreground">Important details about the upcoming RunBhumi event.</p>
+                                    <p className="text-muted-foreground">Important details about the RunBhumi Cricket Talent Hunt.</p>
                                 </div>
 
                                 <div className="grid gap-6">
@@ -405,7 +450,7 @@ export default function RegistrationPage() {
                                         <CardContent className="p-6 flex items-start space-x-4">
                                             <Calendar className="h-6 w-6 text-orange-500 mt-1" />
                                             <div>
-                                                <h3 className="font-bold">Event Starts</h3>
+                                                <h3 className="font-bold">Trials Start</h3>
                                                 <p className="text-muted-foreground mt-1">
                                                     Thursday, April 18, 2025
                                                 </p>
@@ -435,11 +480,11 @@ export default function RegistrationPage() {
                                             <div>
                                                 <h3 className="font-bold">Registration Includes</h3>
                                                 <ul className="text-muted-foreground mt-1 space-y-1">
-                                                    <li>• Official RunBhumi T-shirt</li>
-                                                    <li>• Race bib with timing chip</li>
-                                                    <li>• Finisher's medal</li>
-                                                    <li>• Refreshments during and after the race</li>
-                                                    <li>• Access to post-race celebration</li>
+                                                    <li>• Official RunBhumi Cricket T-shirt</li>
+                                                    <li>• Performance evaluation</li>
+                                                    <li>• Chance to be selected for 45-day Gurukul</li>
+                                                    <li>• Opportunity to be mentored by cricket legends</li>
+                                                    <li>• Possibility of appearing on national television</li>
                                                 </ul>
                                             </div>
                                         </CardContent>
@@ -464,7 +509,6 @@ export default function RegistrationPage() {
                                             </div>
                                         </CardContent>
                                     </Card>
-
                                 </div>
                             </div>
                         </div>
@@ -475,9 +519,9 @@ export default function RegistrationPage() {
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-50 dark:bg-orange-950/20">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center mb-10">
-                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Event Location</h2>
+                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Trial Location</h2>
                             <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                The starting point and finish line will be at Marine Drive, Mumbai
+                                Trial sessions will be held at cricket grounds across 36 cities in India
                             </p>
                         </div>
 
@@ -490,7 +534,7 @@ export default function RegistrationPage() {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="RunBhumi Event Location"
+                                title="RunBhumi Trial Location"
                             ></iframe>
                         </div>
                     </div>
