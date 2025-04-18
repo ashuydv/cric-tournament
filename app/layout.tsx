@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Inter, Poppins, Montserrat } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import LoadingProvider from '@/components/loading-provider'
 
 export const metadata: Metadata = {
   title: 'RunBhumi',
@@ -22,12 +23,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
-      <body className="font-montserrat">
-        <Header />
-        {children}
-        <Footer />
+    <html lang="en" className={`${montserrat.variable}`}>
+      <body className={montserrat.className}>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
+            <LoadingProvider>
+              {children}
+            </LoadingProvider>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
-  )
+  );
 }

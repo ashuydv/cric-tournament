@@ -73,7 +73,6 @@ export default function Header() {
 
     return (
         <>
-
             <header className={`fixed top-0 z-40 w-full transition-all duration-300 ${isScrolled
                 ? "bg-white"
                 : "bg-transparent"
