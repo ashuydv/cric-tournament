@@ -374,7 +374,7 @@ export default function MerchandisePage() {
             <Header />
             <main className="flex-1">
                 {/* Coming Soon Hero Section */}
-                <section className="w-full py-20 md:py-32 bg-gradient-to-b from-orange-500 to-orange-600 text-white">
+                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
