@@ -63,56 +63,6 @@ export default function Home() {
               <div className="hidden lg:block" />
             </div>
           </div>
-
-          {/* Social media links */}
-          <div className="flex flex-row gap-4 mt-8 sm:absolute sm:bottom-8 sm:right-8 sm:mt-0 sm:flex-col">
-            {[
-              {
-                name: "Facebook",
-                href: "https://facebook.com",
-                path: `<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />`,
-              },
-              {
-                name: "X",
-                href: "https://x.com",
-                path: `<path d="M4.25 3h3.477l4.777 6.507L17.776 3H21L14.46 11.7 21.75 21h-3.52l-5.237-7.146L6.062 21H3l7.08-8.8L4.25 3z"/>`,
-              },
-              {
-                name: "Instagram",
-                href: "#",
-                path: `<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>`,
-              },
-              {
-                name: "YouTube",
-                href: "https://youtube.com",
-                path: `<path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>`,
-              }
-            ].map(({ href, path }, i) => (
-              <a
-                key={i}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-orange-500 transition-colors"
-              >
-                <Button variant="ghost" size="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    dangerouslySetInnerHTML={{ __html: path }}
-                  />
-                </Button>
-              </a>
-            ))}
-          </div>
-
         </div>
       </section>
 
@@ -133,14 +83,14 @@ export default function Home() {
                 <Tv className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">National Exposure</h3>
-              <p className="text-gray-700">All trials and training sessions are broadcast across India, giving every player visibility on a national stage regardless of their background.</p>
+              <p className="text-gray-700">All trials and training sessions are across India, giving every player visibility on a national stage regardless of their background.</p>
             </Card>
 
             <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <UserCircle className="w-8 h-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Legendary Mentorship</h3>
+              <h3 className="text-xl font-bold mb-3">India & renowned International cricket legends</h3>
               <p className="text-gray-700">Receive direct coaching and guidance from India's cricketing legends, gaining invaluable insights from those who've excelled at the highest level.</p>
             </Card>
 
@@ -149,7 +99,7 @@ export default function Home() {
                 <BarChart className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Merit-Based Selection</h3>
-              <p className="text-gray-700">Our transparent selection process is based purely on performance and potential – there's no place for politics or favoritism in the RunBhumi system.</p>
+              <p className="text-gray-700">Our patented software enables transparent selection process which is purely performance, potential and skill based real time evaluation.So there’s no place for politics or favoritism in the RunBhumi System</p>
             </Card>
 
             <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
@@ -157,7 +107,7 @@ export default function Home() {
                 <Trophy className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Franchise Opportunities</h3>
-              <p className="text-gray-700">Top performers will be drafted into franchise-style teams, offering recognition and opportunities similar to premier leagues.</p>
+              <p className="text-gray-700">Top shortlisted players get a chance to get auctioned by franchise, and later get recognition and opportunities similar to global premier league.</p>
             </Card>
 
             <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">

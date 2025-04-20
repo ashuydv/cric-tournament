@@ -1,9 +1,11 @@
 import Image from "next/image"
 import Header from "@/components/header"
-import { Trophy, Users, Calendar, MapPin, Award, Star, Tv, Heart } from "lucide-react"
+import { Trophy, Users, Calendar, MapPin, Award, Star, Tv, Heart, Shield, Building } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Footer from "@/components/footer"
+import VisionMissionTabs from "@/components/vision-mission-tabs"
+import KeyFactsSection from "@/components/key-facts-section"
 
 export default function AboutUsPage() {
     return (
@@ -60,114 +62,7 @@ export default function AboutUsPage() {
                 </section>
 
                 {/* Key Facts Section */}
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-50 dark:bg-orange-950/20">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center mb-10">
-                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Key Facts</h2>
-                            <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                                RunBhumi has grown to become India's most prestigious cricket talent hunt
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <MapPin className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">36</h3>
-                                        <p className="text-sm text-muted-foreground">Cities for On-ground Trials</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Users className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">128</h3>
-                                        <p className="text-sm text-muted-foreground">Players Selected (80 M + 48 F)</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Calendar className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">45</h3>
-                                        <p className="text-sm text-muted-foreground">Day Residential Camp</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Tv className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">36</h3>
-                                        <p className="text-sm text-muted-foreground">TV Episodes</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Trophy className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">10</h3>
-                                        <p className="text-sm text-muted-foreground">Teams (6 Male + 4 Female)</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Award className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">32</h3>
-                                        <p className="text-sm text-muted-foreground">Matches (22 Men + 10 Women)</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Star className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">8</h3>
-                                        <p className="text-sm text-muted-foreground">Ex-International Players per Team</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                                            <Heart className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold">500+</h3>
-                                        <p className="text-sm text-muted-foreground">Talents in Next 10 Years</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
+                <KeyFactsSection />
 
                 {/* Broadcast Section */}
                 <section className="w-full py-12 md:py-20 bg-gray-100">
@@ -246,50 +141,10 @@ export default function AboutUsPage() {
                 </section>
 
                 {/* Vision & Mission Section */}
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="space-y-4">
-                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Vision</h2>
-                            <p className="md:text-lg text-white/80">
-                                To <strong>redefine the future of Indian cricket</strong> by creating a national platform where every deserving
-                                player—regardless of their background—gets scouted, trained, and celebrated on national television.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-100 text-black">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="space-y-4">
-                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Mission</h2>
-                            <ul className="space-y-4 text-black">
-                                <li className="flex items-start gap-3">
-                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
-                                    <span>To <strong>hunt, nurture, and launch</strong> the best untapped cricket talent from Bharat</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
-                                    <span>To eliminate barriers like caste, class, geography, or politics in player selection</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
-                                    <span>To offer high-intensity training under <strong>international legends and spiritual mentors</strong></span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
-                                    <span>To deliver a <strong>national broadcast experience</strong>, taking players' stories to millions</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white">✓</div>
-                                    <span>To create an <strong>annual revolution in Indian cricket</strong>, producing over <strong>500 champions in 10 years</strong></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                <VisionMissionTabs />
 
                 {/* Broadcast Section */}
-                <section className="w-full py-12 md:py-20 bg-gray-100">
+                {/* <sections className="w-full py-12 md:py-20 bg-gray-100">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center mb-8">
                             <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Broadcast Partners</h2>
@@ -309,7 +164,7 @@ export default function AboutUsPage() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Contact CTA Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">

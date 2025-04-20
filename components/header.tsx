@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Mail, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import RegisterButton from "./register-button";
 
 export default function Header() {
     const pathname = usePathname();
@@ -61,7 +62,6 @@ export default function Header() {
         // { href: "/tournaments", label: "Tournaments" },
         // { href: "/teams", label: "Our Team" },
         { href: "/about-us", label: "About Us" },
-        { href: "/register", label: "Register" },
         { href: "/merchandise", label: "Merchandise" },
     ];
 
@@ -125,13 +125,23 @@ export default function Header() {
                         </nav>
 
                         {/* CTA Button - Desktop Only */}
-                        <div className="hidden md:block">
-                            <Button
-                                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2 rounded-md transition-colors duration-300"
-                            >
-                                Join Now
-                            </Button>
-                        </div>
+                        {/* <div className="hidden md:block">
+                            <div className="relative">
+                                <span className="absolute -top-6 px-2 bg-black rounded-t-4 italic text-white">
+                                    season 1
+                                </span>
+                                <Link
+                                    href='/register'
+                                >
+                                    <Button
+                                        className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2 rounded-md transition-colors duration-300"
+                                    >
+                                        Register Now
+                                    </Button>
+                                </Link>
+                            </div>
+                        </div> */}
+                        <RegisterButton />
 
                         {/* Mobile Menu Button */}
                         <button
@@ -201,10 +211,14 @@ export default function Header() {
 
             {/* Fixed Join Now Button for Mobile - Always Visible */}
             <div className="md:hidden fixed bottom-0 w-full right-0 z-50">
+                <Link
+                    href='/register'
+                >
+                </Link>
                 <Button
                     className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-none rounded-t-xl font-medium px-6 py-6 shadow-lg transition-colors duration-300"
                 >
-                    Join Now
+                    Register Now
                 </Button>
             </div>
         </>

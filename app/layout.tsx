@@ -4,6 +4,7 @@ import { Montserrat } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import LoadingProvider from '@/components/loading-provider'
+import SocialMediaLinks from '@/components/social-media-links'
 
 export const metadata: Metadata = {
   title: 'RunBhumi | India\'s Greatest Cricket Talent Hunt',
@@ -141,7 +142,7 @@ export default function RootLayout({
         />
       </head>
       <body className={montserrat.className}>
-        <div className="flex flex-col min-h-screen">
+        <div className="relative flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
             <LoadingProvider>
@@ -149,6 +150,7 @@ export default function RootLayout({
             </LoadingProvider>
           </main>
           <Footer />
+          <SocialMediaLinks />
         </div>
       </body>
     </html>

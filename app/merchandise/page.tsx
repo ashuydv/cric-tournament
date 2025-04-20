@@ -522,7 +522,6 @@ export default function MerchandisePage() {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     )
 }

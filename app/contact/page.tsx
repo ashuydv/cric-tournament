@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Calendar, User } from "lucide-react"
 
 export default function ContactPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
@@ -90,22 +90,18 @@ export default function ContactPage() {
                             {/* Contact Information */}
                             <div className="space-y-8">
                                 <div className="space-y-2">
-                                    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Contact Information</h2>
-                                    <p className="text-muted-foreground">Reach out to us directly using the information below.</p>
+                                    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Event Information</h2>
+                                    <p className="text-muted-foreground">Important details about the RunBhumi Cricket Talent Hunt.</p>
                                 </div>
 
                                 <div className="grid gap-6">
                                     <Card>
                                         <CardContent className="p-6 flex items-start space-x-4">
-                                            <MapPin className="h-6 w-6 text-orange-500 mt-1" />
+                                            <Calendar className="h-6 w-6 text-orange-500 mt-1" />
                                             <div>
-                                                <h3 className="font-bold">Head Office</h3>
+                                                <h3 className="font-bold">Trials Start</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    123 Cricket Avenue, Bandra West
-                                                    <br />
-                                                    Mumbai, Maharashtra 400050
-                                                    <br />
-                                                    India
+                                                    Thursday, April 18, 2025
                                                 </p>
                                             </div>
                                         </CardContent>
@@ -113,14 +109,32 @@ export default function ContactPage() {
 
                                     <Card>
                                         <CardContent className="p-6 flex items-start space-x-4">
-                                            <Phone className="h-6 w-6 text-orange-500 mt-1" />
+                                            <MapPin className="h-6 w-6 text-orange-500 mt-1" />
                                             <div>
-                                                <h3 className="font-bold">Phone</h3>
+                                                <h3 className="font-bold">Office Address</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    General Inquiries: +91 22 1234 5678
+                                                    MNT Dreams Pvt. Ltd.
                                                     <br />
-                                                    Customer Support: +91 22 8765 4321
+                                                    770 , Tower B - 1 <br />
+                                                    Spaze IT park ,Sector 49 <br />
+                                                    Sohna Road, Gurugram, Haryana-122002
                                                 </p>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+
+                                    <Card>
+                                        <CardContent className="p-6 flex items-start space-x-4">
+                                            <User className="h-6 w-6 text-orange-500 mt-1" />
+                                            <div>
+                                                <h3 className="font-bold">Registration Includes</h3>
+                                                <ul className="text-muted-foreground mt-1 space-y-1">
+                                                    <li>• Official RunBhumi Cricket T-shirt</li>
+                                                    <li>• Performance evaluation</li>
+                                                    <li>• Chance to be selected for 45-day Gurukul</li>
+                                                    <li>• Opportunity to be mentored by cricket legends</li>
+                                                    <li>• Possibility of appearing on national television</li>
+                                                </ul>
                                             </div>
                                         </CardContent>
                                     </Card>
@@ -129,29 +143,17 @@ export default function ContactPage() {
                                         <CardContent className="p-6 flex items-start space-x-4">
                                             <Mail className="h-6 w-6 text-orange-500 mt-1" />
                                             <div>
-                                                <h3 className="font-bold">Email</h3>
+                                                <h3 className="font-bold">Contact</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    General Inquiries: info@RunBhumi.com
+                                                    Email: hello@therunbhumi.com
                                                     <br />
-                                                    Support: support@RunBhumi.com
+                                                    Phone: +91 22 9876 5432
                                                     <br />
-                                                    Partnerships: partnerships@RunBhumi.com
-                                                </p>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-
-                                    <Card>
-                                        <CardContent className="p-6 flex items-start space-x-4">
-                                            <Clock className="h-6 w-6 text-orange-500 mt-1" />
-                                            <div>
-                                                <h3 className="font-bold">Office Hours</h3>
-                                                <p className="text-muted-foreground mt-1">
-                                                    Monday - Friday: 9:00 AM - 6:00 PM
+                                                    Office: +91 99643 91643
                                                     <br />
-                                                    Saturday: 10:00 AM - 2:00 PM
+                                                    WhatsApp Enquiries: +91 99643 92643
                                                     <br />
-                                                    Sunday: Closed
+                                                    IVR: +91 99643 96643
                                                 </p>
                                             </div>
                                         </CardContent>
