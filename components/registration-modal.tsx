@@ -10,16 +10,27 @@ import Image from 'next/image';
 
 export default function RegistrationModal() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         // Check if user has seen the modal before
         const hasSeenModal = localStorage.getItem('runbhumi_modal_seen');
 
         if (!hasSeenModal) {
-            // If they haven't seen it, show the modal
-            setIsOpen(true);
-            // Mark as seen for future visits
-            localStorage.setItem('runbhumi_modal_seen', 'true');
+            // First, mark the page as loaded
+            setIsLoaded(true);
+
+            // Then set a timeout to show the modal after page loads completely
+            const timer = setTimeout(() => {
+                setIsOpen(true);
+                // Mark as seen for future visits
+                localStorage.setItem('runbhumi_modal_seen', 'true');
+            }, 2000); // 2 second delay
+
+            return () => clearTimeout(timer);
+        } else {
+            // If they've seen it before, just mark as loaded but don't show
+            setIsLoaded(true);
         }
     }, []);
 
@@ -27,6 +38,9 @@ export default function RegistrationModal() {
     const handleClose = () => {
         setIsOpen(false);
     };
+
+    // Don't render anything until the page is fully loaded
+    if (!isLoaded) return null;
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>

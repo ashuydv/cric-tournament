@@ -141,7 +141,9 @@ export default function Header() {
                                 </Link>
                             </div>
                         </div> */}
-                        <RegisterButton />
+                        <div className="hidden md:block">
+                            <RegisterButton />
+                        </div>
 
                         {/* Mobile Menu Button */}
                         <button
@@ -213,13 +215,17 @@ export default function Header() {
             <div className="md:hidden fixed bottom-0 w-full right-0 z-50">
                 <Link
                     href='/register'
+                    className="relative"
                 >
+                    <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-orange-600 text-center text-white text-xs font-bold py-1 px-3 rounded-t-xl">
+                        SEASON 1
+                    </div>
+                    <Button
+                        className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-none rounded-t-xl font-medium px-6 py-6 shadow-lg transition-colors duration-300"
+                    >
+                        Register Now
+                    </Button>
                 </Link>
-                <Button
-                    className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-none rounded-t-xl font-medium px-6 py-6 shadow-lg transition-colors duration-300"
-                >
-                    Register Now
-                </Button>
             </div>
         </>
     );

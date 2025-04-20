@@ -2,6 +2,114 @@ import Link from "next/link"
 import { Trophy } from "lucide-react"
 
 export default function Footer() {
+    const socialLinks = [
+        {
+            name: "Facebook",
+            href: "https://www.facebook.com/share/1AEtMsy5yM/?mibextid=wwXIfr",
+            icon: (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                >
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            )
+        },
+        {
+            name: "Instagram",
+            href: "https://www.instagram.com/runbhumi_t20?igsh=eWhyczFqaWpocDhj",
+            icon: (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            )
+        },
+        {
+            name: "X",
+            href: "https://x.com/torunbhumi?s=21",
+            icon: (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                >
+                    <path d="M4.25 3h3.477l4.777 6.507L17.776 3H21L14.46 11.7 21.75 21h-3.52l-5.237-7.146L6.062 21H3l7.08-8.8L4.25 3z" />
+                </svg>
+            )
+        },
+        {
+            name: "YouTube",
+            href: "https://www.youtube.com/@RunBhumi-t20",
+            icon: (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                >
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z" />
+                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                </svg>
+            )
+        },
+        {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/company/runbhumi", // Replace with actual LinkedIn URL
+            icon: (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                >
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                </svg>
+            )
+        }
+    ];
+
     return (
         <footer className="w-full bg-black text-white py-12">
             <div className="container px-4 md:px-6 mx-auto">
@@ -153,81 +261,18 @@ export default function Footer() {
                 <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} RunBhumi. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <Link href="#" className="text-gray-400 hover:text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="h-5 w-5"
+                        {socialLinks.map((link, index) => (
+                            <Link
+                                key={index}
+                                href={link.href}
+                                className="text-gray-400 hover:text-white transition-colors duration-200"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
-                            <span className="sr-only">Facebook</span>
-                        </Link>
-                        <Link href="#" className="text-gray-400 hover:text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="h-5 w-5"
-                            >
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                            <span className="sr-only">Instagram</span>
-                        </Link>
-                        {/* Twitter (X) Icon */}
-                        <Link href="#" className="text-gray-400 hover:text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="h-5 w-5"
-                            >
-                                <path d="M4.25 3h3.477l4.777 6.507L17.776 3H21L14.46 11.7 21.75 21h-3.52l-5.237-7.146L6.062 21H3l7.08-8.8L4.25 3z" />
-                            </svg>
-                            <span className="sr-only">Twitter</span>
-                        </Link>
-
-                        {/* YouTube Icon */}
-                        <Link href="#" className="text-gray-400 hover:text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="h-5 w-5"
-                            >
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z" />
-                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
-                            </svg>
-                            <span className="sr-only">YouTube</span>
-                        </Link>
-
+                                {link.icon}
+                                <span className="sr-only">{link.name}</span>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>

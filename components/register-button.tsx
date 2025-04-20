@@ -20,7 +20,7 @@ export const RegisterButton = () => {
         <div className="relative inline-block group">
             {/* Season tag */}
             <div className="absolute -top-6 left-0 bg-orange-600 text-white text-xs font-bold py-1 px-3 rounded-t-md">
-                season 1
+                SEASON 1
             </div>
 
             <Link href="/register">

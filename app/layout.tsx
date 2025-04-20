@@ -5,6 +5,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import LoadingProvider from '@/components/loading-provider'
 import SocialMediaLinks from '@/components/social-media-links'
+import RegistrationModal from '@/components/registration-modal'
 
 export const metadata: Metadata = {
   title: 'RunBhumi | India\'s Greatest Cricket Talent Hunt',
@@ -151,6 +152,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <SocialMediaLinks />
+          <RegistrationModal />
         </div>
       </body>
     </html>
