@@ -143,23 +143,35 @@ export default function NewsEventsPage() {
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Stay Updated</h2>
                                 <p className="max-w-[700px] text-muted-foreground md:text-lg mx-auto">
-                                    Subscribe to our newsletter to receive the latest news and event updates directly in your inbox
+                                    Register with your details to receive the latest news and event updates directly on your phone
                                 </p>
                             </div>
                             <div className="w-full max-w-md">
-                                <form className="flex space-x-2">
+                                <form className="flex flex-col space-y-3">
                                     <input
                                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="Enter your email"
-                                        type="email"
+                                        placeholder="Enter your full name"
+                                        type="text"
+                                        name="fullName"
+                                        required
                                     />
-                                    <Button type="submit" className="bg-orange-500 hover:bg-orange-600">
-                                        Subscribe
+                                    <div className="flex space-x-2">
+                                        <input
+                                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            placeholder="Enter your mobile number"
+                                            type="tel"
+                                            name="mobileNumber"
+                                            pattern="[0-9]{10}"
+                                            required
+                                        />
+                                    </div>
+                                    <Button type="submit" className="bg-orange-500 w-auto hover:bg-orange-600">
+                                        Register
                                     </Button>
+                                    <p className="text-xs text-muted-foreground mt-1">
+                                        By registering, you agree to our Terms of Service and Privacy Policy.
+                                    </p>
                                 </form>
-                                <p className="text-xs text-muted-foreground mt-2">
-                                    By subscribing, you agree to our Terms of Service and Privacy Policy.
-                                </p>
                             </div>
                         </div>
                     </div>

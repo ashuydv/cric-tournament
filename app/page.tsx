@@ -16,6 +16,7 @@ import RegistrationModal from "@/components/registration-modal"
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
+      <RegistrationModal />
       {/* Hero Section with Navbar */}
       <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center">
         {/* Background image with overlay */}
