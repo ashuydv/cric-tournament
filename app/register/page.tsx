@@ -438,7 +438,7 @@ export default function RegistrationPage() {
                                             <div>
                                                 <h3 className="font-bold">Trials Start</h3>
                                                 <p className="text-muted-foreground mt-1">
-                                                    Thursday, April 18, 2025
+                                                    Sunday, April 27, 2025
                                                 </p>
                                             </div>
                                         </CardContent>
@@ -466,11 +466,8 @@ export default function RegistrationPage() {
                                             <div>
                                                 <h3 className="font-bold">Registration Includes</h3>
                                                 <ul className="text-muted-foreground mt-1 space-y-1">
-                                                    <li>• Official RunBhumi Cricket T-shirt</li>
-                                                    <li>• Performance evaluation</li>
-                                                    <li>• Chance to be selected for 45-day Gurukul</li>
-                                                    <li>• Opportunity to be mentored by cricket legends</li>
-                                                    <li>• Possibility of appearing on national television</li>
+                                                    <li>• Kit Bag</li>
+                                                    <li>• Education app subscription for 1 year</li>
                                                 </ul>
                                             </div>
                                         </CardContent>

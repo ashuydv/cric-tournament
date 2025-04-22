@@ -33,7 +33,7 @@ export default function NewsEventsPage() {
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
@@ -121,7 +121,7 @@ export default function NewsEventsPage() {
                                                         </div>
                                                     </div>
                                                     <div className="mt-4">
-                                                        <Button className="bg-orange-500 hover:bg-orange-600">Register Now</Button>
+                                                        <Button className="bg-orange-500 hover:bg-orange-600">Register for Trails</Button>
                                                     </div>
                                                 </CardContent>
                                             </div>

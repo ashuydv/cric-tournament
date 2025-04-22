@@ -111,7 +111,7 @@ export default function RegistrationModal() {
                                 className="w-full py-4 sm:py-6 text-base sm:text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white border-0 rounded-full transform hover:-rotate-1 hover:scale-105 transition-all shadow-lg"
                                 onClick={() => setIsOpen(false)}
                             >
-                                REGISTER NOW!
+                                Register for Trails!
                             </Button>
                         </Link>
                     </div>

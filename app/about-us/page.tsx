@@ -68,7 +68,7 @@ export default function AboutUsPage() {
                 <section className="w-full py-12 md:py-20 bg-gray-100">
                     <div className="container px-4 md:px-6 mx-auto">
                         <div className="flex flex-col items-center space-y-4 text-center mb-8">
-                            <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Broadcast Partners</h2>
+                            <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Proposed Partners</h2>
                         </div>
                         <div className="flex flex-wrap justify-center gap-8 items-center">
                             <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -142,29 +142,6 @@ export default function AboutUsPage() {
 
                 {/* Vision & Mission Section */}
                 <VisionMissionTabs />
-
-                {/* Broadcast Section */}
-                {/* <sections className="w-full py-12 md:py-20 bg-gray-100">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center mb-8">
-                            <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">Broadcast Partners</h2>
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-8 items-center">
-                            <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <p className="font-medium">Sony Ten 3</p>
-                            </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <p className="font-medium">SonyLiv</p>
-                            </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <p className="font-medium">Sony Pal</p>
-                            </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <p className="font-medium">FanCode</p>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
 
                 {/* Contact CTA Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">

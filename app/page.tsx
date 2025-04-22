@@ -181,7 +181,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                     <CardFooter className="p-4 bg-gray-50">
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register Now</Button>
+                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register for Trails</Button>
                     </CardFooter>
                   </Card>
 
@@ -207,7 +207,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                     <CardFooter className="p-4 bg-gray-50">
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register Now</Button>
+                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register for Trails</Button>
                     </CardFooter>
                   </Card>
 
@@ -233,7 +233,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                     <CardFooter className="p-4 bg-gray-50">
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register Now</Button>
+                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register for Trails</Button>
                     </CardFooter>
                   </Card>
                 </div>
