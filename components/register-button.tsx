@@ -30,14 +30,14 @@ export const RegisterButton = () => {
                     text-white font-medium px-8 py-6 
                     transition-all duration-300
                     shadow-lg hover:shadow-xl
-                    flex items-center gap-2 rounded-xl
+                    flex items-center gap-2 rounded-t-xl rounded-b-none
                     `}
                 >
                     <span className="font-semibold">Register for Trails</span>
                     <ChevronRight size={18} />
 
                     {/* Limited spots indicator */}
-                    <span className="absolute -bottom-6 left-0 right-0 text-xs font-medium text-red-600 bg-white px-2 py-1 rounded-full shadow-sm">
+                    <span className="absolute -bottom-6 left-0 right-0 text-xs font-medium text-red-600 bg-white w-full px-5 py-1 rounded-b-xl shadow-sm">
                         Limited Spots Available!
                     </span>
                 </Button>
