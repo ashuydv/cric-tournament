@@ -49,13 +49,17 @@ export default function Home() {
                   A nationwide hunt to discover raw, unstoppable cricket talent from the streets, small towns, and forgotten corners of India — and bring them into the limelight of national television.
                 </p>
 
-                <div className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-                    Join Now
-                  </Button>
-                  <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
-                    Explore Trials
-                  </Button>
+                <div className="flex gap-4">
+                  <Link href="/register" className="inline-block">
+                    <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white w-full">
+                      Join Now
+                    </Button>
+                  </Link>
+                  <Link href="/trials" className="inline-block">
+                    <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50 w-full">
+                      Explore Trials
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
@@ -129,7 +133,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Link href='/register'>
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-lg font-medium">
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg text-lg font-medium">
                 Register for Trials
               </Button>
             </Link>
