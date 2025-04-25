@@ -33,7 +33,7 @@ export const RegisterButton = () => {
                     flex items-center gap-2 rounded-t-xl rounded-b-none
                     `}
                 >
-                    <span className="font-semibold">Register for Trails</span>
+                    <span className="font-semibold">Register for Trials</span>
                     <ChevronRight size={18} />
 
                     {/* Limited spots indicator */}

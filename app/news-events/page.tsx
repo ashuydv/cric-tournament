@@ -121,7 +121,7 @@ export default function NewsEventsPage() {
                                                         </div>
                                                     </div>
                                                     <div className="mt-4">
-                                                        <Button className="bg-orange-500 hover:bg-orange-600">Register for Trails</Button>
+                                                        <Button className="bg-orange-500 hover:bg-orange-600">Register for Trials</Button>
                                                     </div>
                                                 </CardContent>
                                             </div>

@@ -178,7 +178,7 @@ export default function Header() {
                             <Phone size={14} className="text-orange-400 group-hover:animate-pulse" />
                             <a
                                 href="tel:+919964391643"
-                                className="transition-all duration-300 group-hover:text-orange-300 group-hover:underline focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black rounded px-1"
+                                className="transition-all duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
                                 aria-label="Call us at 9964391643"
                                 style={{ color: `rgba(255, 255, 255, ${1 - (scrollProgress * 0.3)})` }}
                             >
@@ -190,7 +190,7 @@ export default function Header() {
                             <Mail size={14} className="text-orange-400 group-hover:animate-pulse" />
                             <a
                                 href="mailto:hello@therunbhumi.com"
-                                className="transition-all duration-300 group-hover:text-orange-300 group-hover:underline focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black rounded px-1"
+                                className="transition-all duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
                                 aria-label="Email us at hello@therunbhumi.com"
                                 style={{ color: `rgba(255, 255, 255, ${1 - (scrollProgress * 0.3)})` }}
                             >
@@ -213,7 +213,7 @@ export default function Header() {
                         {/* Logo with reduced dimensions and subtle gradient glow */}
                         <Link
                             href="/"
-                            className="flex items-center group focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black rounded-lg relative"
+                            className="flex items-center group rounded-lg relative"
                             aria-label="RunBhumi Home"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
@@ -243,7 +243,7 @@ export default function Header() {
                                             ? "text-orange-400 bg-gradient-to-r from-orange-950/30 via-orange-900/20 to-orange-950/30 backdrop-blur-sm"
                                             : "hover:bg-gradient-to-r hover:from-orange-950/10 hover:via-orange-900/5 hover:to-orange-950/10 hover:backdrop-blur-sm hover:text-orange-300"
                                         }
-                                        group overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black`}
+                                        group overflow-hidden`}
                                     style={{
                                         color: isActive(link.href)
                                             ? '#fb923c' // text-orange-400
@@ -268,7 +268,7 @@ export default function Header() {
 
                         {/* Mobile Menu Button with gradient hover effect */}
                         <button
-                            className="md:hidden p-2 rounded-full text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-950/20 hover:to-orange-900/30 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black"
+                            className="md:hidden p-2 rounded-full text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-950/20 hover:to-orange-900/30"
                             style={{
                                 backgroundColor: `rgba(255, 255, 255, ${0.05 + (scrollProgress * 0.05)})`,
                             }}
@@ -315,7 +315,7 @@ export default function Header() {
                             />
                         </div>
                         <button
-                            className="text-white p-2 bg-gradient-to-r from-orange-950/30 to-orange-900/20 backdrop-blur-sm rounded-full hover:from-orange-900/30 hover:to-orange-800/20 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black"
+                            className="text-white p-2 bg-gradient-to-r from-orange-950/30 to-orange-900/20 backdrop-blur-sm rounded-full hover:from-orange-900/30 hover:to-orange-800/20 transition-colors duration-300"
                             onClick={toggleMobileMenu}
                             aria-label="Close menu"
                         >
@@ -338,7 +338,7 @@ export default function Header() {
                                     ${isActive(link.href)
                                         ? "text-orange-400 bg-gradient-to-r from-orange-950/40 via-orange-900/30 to-orange-950/40 backdrop-blur-sm"
                                         : "text-white hover:text-orange-300 hover:bg-gradient-to-r hover:from-orange-950/20 hover:via-orange-900/10 hover:to-orange-950/20 hover:backdrop-blur-sm"
-                                    } focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black`}
+                                    }`}
                                 onClick={toggleMobileMenu}
                                 aria-current={isActive(link.href) ? "page" : undefined}
                                 tabIndex={mobileMenuOpen ? 0 : -1}
@@ -359,7 +359,7 @@ export default function Header() {
                         <div className="flex flex-col space-y-3">
                             <a
                                 href="tel:9964391643"
-                                className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black group"
+                                className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded group"
                                 aria-label="Call us at 9964391643"
                                 tabIndex={mobileMenuOpen ? 0 : -1}
                             >
@@ -371,7 +371,7 @@ export default function Header() {
                             </a>
                             <a
                                 href="mailto:hello@therunbhumi.com"
-                                className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black group"
+                                className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded group"
                                 aria-label="Email us at hello@therunbhumi.com"
                                 tabIndex={mobileMenuOpen ? 0 : -1}
                             >
@@ -391,7 +391,7 @@ export default function Header() {
                 <Link
                     href='/register'
                     className="relative focus:outline-none group"
-                    aria-label="Register for Trails"
+                    aria-label="Register for Trials"
                 >
                     <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-black/90 via-orange-950/30 to-black/90 backdrop-blur-sm text-center text-white text-xs font-bold py-1.5 px-4 rounded-t-xl border-t border-x border-orange-500/40 group-hover:border-orange-500/60 transition-all duration-300">
                         <span className="text-orange-400">SEASON 1</span>
@@ -400,7 +400,7 @@ export default function Header() {
                         className="bg-gradient-to-r from-black/90 via-orange-950/20 to-black/90 backdrop-blur-sm hover:from-black/90 hover:via-orange-900/30 hover:to-black/90 hover:shadow-lg text-white w-full rounded-none rounded-t-xl font-medium px-6 py-5 transition-all duration-300 border-t border-orange-500/30 hover:border-orange-500/60 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-inset"
                     >
                         <span className="flex items-center text-orange-400 relative z-10">
-                            Register for Trails
+                            Register for Trials
                             <svg
                                 className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1"
                                 xmlns="http://www.w3.org/2000/svg"
