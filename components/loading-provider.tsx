@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 export default function LoadingProvider({
     children
@@ -43,15 +42,18 @@ export default function LoadingProvider({
         <>
             <div className="fixed inset-0 flex flex-col items-center justify-center bg-orange-100 z-50">
                 <div className="flex flex-col items-center max-w-md px-6 text-center">
-                    {/* Logo */}
+                    {/* Video */}
                     <div className="mb-8 relative w-40 h-40">
-                        <Image
-                            src="/rb_logo.png"
-                            alt="RunBhumi Logo"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="object-contain w-full h-full"
+                        >
+                            <source src="/videos/run-out.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
 
                     {/* Progress bar */}

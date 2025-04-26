@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Montserrat } from 'next/font/google'
+import { Kanit } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import LoadingProvider from '@/components/loading-provider'
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   generator: 'RunBhumi',
 }
 
-const montserrat = Montserrat({
+const montserrat = Kanit({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-montserrat',

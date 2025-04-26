@@ -28,9 +28,10 @@ export const RegisterButton = () => {
                     className={`
                     bg-orange-500 hover:bg-orange-600 
                     text-white font-medium px-8 py-6 
-                    transition-all duration-300
-                    shadow-lg hover:shadow-xl
+                    transition-all duration-300 text-base
+                    shadow-lg
                     flex items-center gap-2 rounded-xl
+                    italic uppercase
                     `}
                 >
                     <span className="font-semibold">Register for Trials</span>

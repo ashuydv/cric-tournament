@@ -162,107 +162,95 @@ export default function Header() {
             {/* Fixed glassmorphism header with reduced height and smoother transitions */}
             <header
                 ref={headerRef}
-                className="fixed top-0 z-40 w-full transition-all duration-700"
-                role="banner"
+                className="fixed top-0 z-40 p-4 w-full transition-all duration-700"
             >
-                {/* Top contact bar with gradient glassmorphism */}
-                <div
-                    className="w-full p-2 md:p-3 border-b border-orange-500/10 transition-all duration-700"
-                    style={{
-                        background: `linear-gradient(to right, rgba(0, 0, 0, ${bgOpacity}), rgba(51, 28, 0, ${bgOpacity}), rgba(0, 0, 0, ${bgOpacity}))`,
-                        backdropFilter: `blur(${backdropBlur}px)`
-                    }}
-                >
-                    <div className="container mx-auto flex justify-end items-center space-x-6 text-sm">
-                        <div className="flex items-center space-x-1 group">
-                            <Phone size={14} className="text-orange-400 group-hover:animate-pulse" />
-                            <a
-                                href="tel:+919964391643"
-                                className="transition-all duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
-                                aria-label="Call us at 9964391643"
-                                style={{ color: `rgba(255, 255, 255, ${1 - (scrollProgress * 0.3)})` }}
-                            >
-                                9964391643
-                            </a>
-                        </div>
-                        <div className="h-3 border-l border-orange-500/20" aria-hidden="true" />
-                        <div className="flex items-center space-x-1 group">
-                            <Mail size={14} className="text-orange-400 group-hover:animate-pulse" />
-                            <a
-                                href="mailto:hello@therunbhumi.com"
-                                className="transition-all duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
-                                aria-label="Email us at hello@therunbhumi.com"
-                                style={{ color: `rgba(255, 255, 255, ${1 - (scrollProgress * 0.3)})` }}
-                            >
-                                hello@therunbhumi.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Main navigation area with gradient background */}
                 <div
-                    className="max-w-5xl rounded-b-xl mx-auto p-3 md:p-4 border-b border-orange-500/10 transition-all duration-700"
+                    className="container mx-auto rounded-xl py-2 px-6 transition-all duration-700"
                     style={{
                         background: `linear-gradient(to right, rgba(0, 0, 0, ${bgOpacity}), rgba(51, 28, 0, ${bgOpacity + 0.05}), rgba(0, 0, 0, ${bgOpacity}))`,
                         backdropFilter: `blur(${backdropBlur}px)`,
-                        boxShadow: scrolled ? '0 4px 15px -3px rgba(249, 115, 22, 0.15)' : 'none'
+                        // boxShadow: scrolled ? '0 4px 15px -3px rgba(249, 115, 22, 0.15)' : 'none'
                     }}
                 >
-                    <div className="flex items-center justify-between py-1 md:py-2">
-                        {/* Logo with reduced dimensions and subtle gradient glow */}
-                        <Link
-                            href="/"
-                            className="flex items-center group rounded-lg relative"
-                            aria-label="RunBhumi Home"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                            <div className="relative h-16 w-16 md:h-24 md:w-24 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
-                                <Image
-                                    src="/rb_logo.png"
-                                    alt="RunBhumi Logo"
-                                    fill
-                                    className="object-contain drop-shadow-md"
-                                    priority
-                                />
-                            </div>
-                        </Link>
-
-                        {/* Desktop Navigation with gradient hover effects */}
-                        <nav
-                            className="hidden md:flex items-center justify-center mx-auto px-4 transition-all duration-500 space-x-4"
-                            role="navigation"
-                            aria-label="Main Navigation"
-                        >
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={`text-sm font-medium text-center transition-all duration-300 relative py-2 px-3 rounded-md 
-                                        ${isActive(link.href)
-                                            ? "text-orange-400 bg-gradient-to-r from-orange-950/30 via-orange-900/20 to-orange-950/30 backdrop-blur-sm"
-                                            : "hover:bg-gradient-to-r hover:from-orange-950/10 hover:via-orange-900/5 hover:to-orange-950/10 hover:backdrop-blur-sm hover:text-orange-300"
-                                        }
-                                        group overflow-hidden`}
-                                    style={{
-                                        color: isActive(link.href)
-                                            ? '#fb923c' // text-orange-400
-                                            : `rgba(243, 244, 246, ${1 - (scrollProgress * 0.2)})`
-                                    }}
-                                    aria-current={isActive(link.href) ? "page" : undefined}
-                                >
-                                    {link.label}
-                                    <span
-                                        className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-600/80 via-orange-500 to-orange-600/80 transform origin-left transition-transform duration-500 ease-out 
-                                            ${isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-                                        aria-hidden="true"
+                    <div className=" mx-auto flex items-center justify-between">
+                        <div className="flex items-center space-x-4">
+                            {/* Logo with reduced dimensions and subtle gradient glow */}
+                            <Link
+                                href="/"
+                                className="flex items-center group rounded-lg relative"
+                                aria-label="RunBhumi Home"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+                                <div className="relative h-16 w-16 md:h-24 md:w-24 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
+                                    <Image
+                                        src="/rb_logo.png"
+                                        alt="RunBhumi Logo"
+                                        fill
+                                        className="object-contain drop-shadow-md"
+                                        priority
                                     />
-                                </Link>
-                            ))}
-                        </nav>
+                                </div>
+                            </Link>
+
+                            {/* Desktop Navigation with gradient hover effects */}
+                            <nav
+                                className="hidden md:flex items-center justify-center px-4 transition-all duration-500 space-x-4"
+                                role="navigation"
+                                aria-label="Main Navigation"
+                            >
+                                {navLinks.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`text-base font-medium uppercase italic text-center transition-all duration-300 relative py-2 px-3 rounded-md 
+                                        ${isActive(link.href)
+                                                ? "text-orange-400 bg-gradient-to-r from-orange-950/30 via-orange-900/20 to-orange-950/30 backdrop-blur-sm"
+                                                : "hover:bg-gradient-to-r hover:from-orange-950/10 hover:via-orange-900/5 hover:to-orange-950/10 hover:backdrop-blur-sm hover:text-orange-300"
+                                            }
+                                        group overflow-hidden`}
+                                        style={{
+                                            color: isActive(link.href)
+                                                ? '#fb923c' // text-orange-400
+                                                : `rgba(243, 244, 246, ${1 - (scrollProgress * 0.2)})`
+                                        }}
+                                        aria-current={isActive(link.href) ? "page" : undefined}
+                                    >
+                                        {link.label}
+                                        <span
+                                            className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-600/80 via-orange-500 to-orange-600/80 transform origin-left transition-transform duration-500 ease-out 
+                                            ${isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                ))}
+                            </nav>
+                        </div>
 
                         {/* Register Button - Desktop Only */}
-                        <div className="hidden md:block">
+                        <div className="hidden md:flex md:items-center gap-4">
+                            <div className="flex italic items-center space-x-1 group">
+                                <Phone size={14} className="text-orange-400 group-hover:animate-pulse" />
+                                <Link
+                                    href="tel:+919964391643"
+                                    className="transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
+                                    aria-label="Call us at 9964391643"
+                                    style={{ color: `rgba(255, 255, 255, ${1 - (scrollProgress * 0.3)})` }}
+                                >
+                                    9964391643
+                                </Link>
+                            </div>
+                            <div className="flex italic items-center space-x-1 group">
+                                <Mail size={14} className="text-orange-400 group-hover:animate-pulse" />
+                                <Link
+                                    href="mailto:hello@therunbhumi.com"
+                                    className="transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
+                                    aria-label="Email us at hello@therunbhumi.com"
+                                    style={{ color: `rgba(255, 255, 255, ${1 - (scrollProgress * 0.3)})` }}
+                                >
+                                    hello@therunbhumi.com
+                                </Link>
+                            </div>
                             <RegisterButton />
                         </div>
 
@@ -329,12 +317,12 @@ export default function Header() {
                     </div>
 
                     {/* Navigation links with gradient hover effects */}
-                    <nav className="flex flex-col space-y-3 mt-6" role="navigation" aria-label="Mobile Navigation">
+                    <nav className="flex flex-col uppercase space-y-3 mt-6" role="navigation" aria-label="Mobile Navigation">
                         {navLinks.map((link, index) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`text-base font-medium py-3 px-4 rounded-lg transition-all duration-300 relative group overflow-hidden
+                                className={`font-medium py-3 px-4 uppercase rounded-lg transition-all duration-300 relative group overflow-hidden
                                     ${isActive(link.href)
                                         ? "text-orange-400 bg-gradient-to-r from-orange-950/40 via-orange-900/30 to-orange-950/40 backdrop-blur-sm"
                                         : "text-white hover:text-orange-300 hover:bg-gradient-to-r hover:from-orange-950/20 hover:via-orange-900/10 hover:to-orange-950/20 hover:backdrop-blur-sm"
@@ -397,7 +385,7 @@ export default function Header() {
                         <span className="text-orange-400">SEASON 1</span>
                     </div>
                     <Button
-                        className="bg-gradient-to-r from-black/90 via-orange-950/20 to-black/90 backdrop-blur-sm hover:from-black/90 hover:via-orange-900/30 hover:to-black/90 hover:shadow-lg text-white w-full rounded-none rounded-t-xl font-medium px-6 py-5 transition-all duration-300 border-t border-orange-500/30 hover:border-orange-500/60 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-inset"
+                        className="bg-gradient-to-r from-black/90 via-orange-950/20 to-black/90 backdrop-blur-sm hover:from-black/90 hover:via-orange-900/30 hover:to-black/90 hover:shadow-lg text-white w-full rounded-none rounded-t-xl font-semibold px-6 py-5 transition-all duration-300 border-t border-orange-500/30 hover:border-orange-500/60 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-inset"
                     >
                         <span className="flex items-center text-orange-400 relative z-10">
                             Register for Trials
