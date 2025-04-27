@@ -2,6 +2,7 @@ import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import LeftHero from "@/components/common/left-hero"
 
 export default function GalleryPage() {
     // Sample gallery images data
@@ -29,19 +30,17 @@ export default function GalleryPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center">
-                            <div className="space-y-2">
-                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Gallery</h1>
-                                <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Explore the best moments from RunBhumi cricket tournaments
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
+                <LeftHero
+                    title="Gallery"
+                    description="Explore the best moments from RunBhumi cricket tournaments"
+                    backgroundType="image"
+                    backgroundSrc="images/3.png"
+                    height="small"
+                    animated={true}
+                    parallaxEnabled={true}
+                    parallaxSpeed={0.7}
+                />
 
                 {/* Gallery Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">

@@ -12,63 +12,36 @@ import TeamStandings from "@/components/team-standings"
 import RecentResults from "@/components/recent-results"
 import Footer from "@/components/footer"
 import RegistrationModal from "@/components/registration-modal"
+import ParallaxSplitHero from "@/components/hero/parallax-split-hero"
+import RegisterButton from "@/components/register-button"
+import DynamicButton from "@/components/dynamic-button"
 
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
-      <RegistrationModal />
-      {/* Hero Section with Navbar */}
-      <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/cric_bg.png"
-            alt="Cricket background"
-            width={1920}
-            height={1080}
-            className="object-cover object-top bg-no-repeat h-full w-full opacity-60"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10" />
-        </div>
-
-        {/* Main hero content */}
-        <div className="relative z-10 w-full flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 lg:pt-[10rem]">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              {/* Left Content */}
-              <div className="space-y-6 max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Welcome to <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">RunBhumi</span>
-                </h1>
-
-                <p className="max-w-[600px] text-gray-50 text-base sm:text-lg mx-auto lg:mx-0">
-                  India’s Biggest Individual Cricket Talent Hunt <br />
-                  RunBhumi isn’t just an event. It’s a movement. <br />
-                  A nationwide hunt to discover raw, unstoppable cricket talent from the streets, small towns, and forgotten corners of India — and bring them into the limelight of national television.
-                </p>
-
-                <div className="flex gap-4">
-                  <Link href="/register" className="inline-block">
-                    <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white w-full">
-                      Join Now
-                    </Button>
-                  </Link>
-                  <Link href="/trials" className="inline-block">
-                    <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50 w-full">
-                      Explore Trials
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right side empty (hidden on all screen sizes for now) */}
-              <div className="hidden lg:block" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ParallaxSplitHero
+        title={
+          <>
+            Welcome to <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">RunBhumi</span>
+          </>
+        }
+        description={
+          <>
+            India's Biggest Individual Cricket Talent Hunt <br />
+            RunBhumi isn't just an event. It's a movement. <br />
+            A nationwide hunt to discover raw, unstoppable cricket talent from the streets, small towns, and forgotten corners of India — and bring them into the limelight of national television.
+          </>
+        }
+        backgroundSrc="/cric_bg.png"
+        primaryButtonText="Join Now"
+        primaryButtonLink="/register"
+        secondaryButtonText="Explore Trials"
+        secondaryButtonLink="/trials"
+        showRightColumn={true}
+        parallaxEnabled={true}
+        parallaxSpeed={0.7}
+      />
 
       <section className="w-full py-16 md:py-24 bg-gradient-to-b from-white to-orange-50">
         <div className="container mx-auto px-4 md:px-6">
@@ -132,11 +105,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <Link href='/register'>
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg text-lg font-medium">
-                Register for Trials
-              </Button>
-            </Link>
+            <RegisterButton />
           </div>
         </div>
       </section>
@@ -185,7 +154,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                     <CardFooter className="p-4 bg-gray-50">
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register for Trials</Button>
+                      <RegisterButton />
                     </CardFooter>
                   </Card>
 
@@ -211,7 +180,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                     <CardFooter className="p-4 bg-gray-50">
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register for Trials</Button>
+                      <RegisterButton />
                     </CardFooter>
                   </Card>
 
@@ -237,7 +206,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                     <CardFooter className="p-4 bg-gray-50">
-                      <Button className="w-full bg-orange-600 hover:bg-orange-700">Register for Trials</Button>
+                      <RegisterButton />
                     </CardFooter>
                   </Card>
                 </div>
@@ -554,9 +523,9 @@ export default function Home() {
                         </div>
 
                         <div className="mt-8 text-center">
-                          <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                            Start Your Cricket Journey Today
-                          </Button>
+                          <DynamicButton href="/register" variant="primary">
+                            Contact Us
+                          </DynamicButton>
                         </div>
                       </div>
                     </div>
@@ -831,133 +800,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-      {/* <section className="w-full py-12 md:py-24 bg-orange-50 dark:bg-orange-950/20">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">Our Team</h2>
-              <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
-                10 international teams competing for cricket glory
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-6 py-8 md:py-12 lg:grid-cols-2 lg:gap-8">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:order-last">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <Card key={i} className="overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="flex flex-col items-center p-3 md:p-4">
-                      <div className="h-12 w-12 md:h-16 md:w-16 rounded-full overflow-hidden mb-2">
-                        <Image
-                          src={`/placeholder.svg?height=64&width=64&text=Team${i}`}
-                          width={64}
-                          height={64}
-                          alt={`Team ${i}`}
-                          className="object-cover"
-                        />
-                      </div>
-                      <h3 className="text-sm md:text-base font-medium">Team {i}</h3>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter">World-Class Cricket Nations</h3>
-                <p className="text-muted-foreground text-sm md:text-lg">
-                  The tournament features the top cricket nations from around the world, including defending champions
-                  Australia, cricket powerhouses India and England, and rising stars like Afghanistan.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button variant="outline" className="inline-flex items-center text-sm md:text-base">
-                  View All Teams
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 px-4 md:px-10">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-700 dark:bg-orange-800/30 dark:text-orange-400">
-                Highlights
-              </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter">
-                Key Moments to Look Forward To
-              </h2>
-              <ul className="grid gap-4">
-                <li className="flex items-start gap-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-900 dark:bg-orange-800/30 dark:text-orange-400">
-                    1
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-base md:text-lg font-medium">Opening Ceremony</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      A spectacular display featuring cultural performances and cricket legends.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-900 dark:bg-orange-800/30 dark:text-orange-400">
-                    2
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-base md:text-lg font-medium">Rivalry Matches</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      Intense showdowns between historic cricket rivals that will keep you on the edge of your seat.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col items-start space-y-4">
-              <div className="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-700 dark:bg-orange-800/30 dark:text-orange-400">
-                Fan Experience
-              </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter">More Than Just Cricket</h2>
-              <p className="text-muted-foreground text-sm md:text-lg">
-                The RunBhumi offers a complete entertainment package for fans of all ages. Enjoy fan
-                zones, meet-and-greets with cricket legends, interactive games, and delicious food from around the
-                world.
-              </p>
-              <div className="grid w-full grid-cols-2 gap-4">
-                <Card>
-                  <CardContent className="p-3 md:p-4">
-                    <div className="flex flex-col items-center text-center space-y-2">
-                      <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                        <Trophy className="h-5 w-5 md:h-6 md:w-6 text-orange-700 dark:text-orange-400" />
-                      </div>
-                      <h3 className="text-sm md:text-base font-medium">Fan Zones</h3>
-                      <p className="text-xs text-muted-foreground">Interactive areas with games and activities</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-3 md:p-4">
-                    <div className="flex flex-col items-center text-center space-y-2">
-                      <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-800/30">
-                        <Users className="h-5 w-5 md:h-6 md:w-6 text-orange-700 dark:text-orange-400" />
-                      </div>
-                      <h3 className="text-sm md:text-base font-medium">Meet Players</h3>
-                      <p className="text-xs text-muted-foreground">Opportunities to meet cricket stars</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm md:text-base">Learn More About Fan Experiences</Button>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
     </div >
   )
 }

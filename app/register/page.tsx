@@ -18,6 +18,19 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { toast } from "@/components/ui/use-toast"
 import DateOfBirthField from "@/components/date-of-birth"
+import { EventHero } from "@/components/hero/event-annoucement"
+import Hero from "@/components/common/hero"
+import LeftHero from "@/components/common/left-hero"
+
+// Define state-city mapping
+const stateCityMap = {
+    maharashtra: ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik", "Aurangabad"],
+    delhi: ["New Delhi", "North Delhi", "South Delhi", "East Delhi", "West Delhi"],
+    karnataka: ["Bangalore", "Mysore", "Hubli", "Mangalore", "Belgaum"],
+    tamilnadu: ["Chennai", "Coimbatore", "Madurai", "Salem", "Trichy", "Tirunelveli"],
+    westbengal: ["Kolkata", "Howrah", "Durgapur", "Asansol", "Siliguri"],
+    gujarat: ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Gandhinagar", "Jamnagar"]
+};
 
 export default function RegistrationPage() {
     const [formData, setFormData] = useState({
@@ -39,6 +52,7 @@ export default function RegistrationPage() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
+    const [availableCities, setAvailableCities] = useState<string[]>([]);
 
     const handleChange = (e: { target: { id: any; value: any } }) => {
         const { id, value } = e.target;
@@ -49,10 +63,23 @@ export default function RegistrationPage() {
     };
 
     const handleSelectChange = (id: string, value: string) => {
-        setFormData(prev => ({
-            ...prev,
-            [id]: value
-        }));
+        // If changing state, reset trial city and update available cities
+        if (id === "state") {
+            setFormData(prev => ({
+                ...prev,
+                [id]: value,
+                trialCity: "" // Reset city when state changes
+            }));
+
+            // Update available cities based on selected state
+            const cities = stateCityMap[value as keyof typeof stateCityMap] || [];
+            setAvailableCities(cities);
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [id]: value
+            }));
+        }
     };
 
     const handleSubmit = async (e: { preventDefault: () => void }) => {
@@ -120,25 +147,24 @@ export default function RegistrationPage() {
             preferredBattingOrder: "",
             tshirtSizes: "",
         });
+        setAvailableCities([]);
         setSubmissionSuccess(false);
     };
 
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center">
-                            <div className="space-y-2">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Register for RunBhumi</h2>
-                                <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Join India's Greatest Cricket Talent Hunt and showcase your skills on the national stage.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
+                <LeftHero
+                    title="Register for RunBhumi"
+                    description="Join India's Greatest Cricket Talent Hunt and showcase your skills on the national stage."
+                    backgroundType="image"
+                    backgroundSrc="https://images.unsplash.com/photo-1562077772-3bd90403f7f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNyaWNrZXR8ZW58MHx8MHx8fDA%3D"
+                    height="small"
+                    animated={true}
+                    parallaxEnabled={true}
+                    parallaxSpeed={0.7}
+                />
 
                 {/* Registration Form Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">
@@ -257,6 +283,7 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("state", value)}
+                                                    value={formData.state}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
@@ -279,18 +306,19 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("trialCity", value)}
+                                                    value={formData.trialCity}
+                                                    disabled={!formData.state}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
-                                                        <SelectValue placeholder="Select a city" />
+                                                        <SelectValue placeholder={formData.state ? "Select a city" : "Please select a state first"} />
                                                     </SelectTrigger>
                                                     <SelectContent>
-                                                        <SelectItem value="mumbai">Mumbai</SelectItem>
-                                                        <SelectItem value="delhi">Delhi</SelectItem>
-                                                        <SelectItem value="bangalore">Bangalore</SelectItem>
-                                                        <SelectItem value="chennai">Chennai</SelectItem>
-                                                        <SelectItem value="kolkata">Kolkata</SelectItem>
-                                                        <SelectItem value="ahmedabad">Ahmedabad</SelectItem>
+                                                        {availableCities.map((city) => (
+                                                            <SelectItem key={city} value={city.toLowerCase()}>
+                                                                {city}
+                                                            </SelectItem>
+                                                        ))}
                                                     </SelectContent>
                                                 </Select>
                                             </div>
@@ -314,6 +342,7 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("playingRoles", value)}
+                                                    value={formData.playingRoles}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
@@ -335,6 +364,7 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("battingHandedness", value)}
+                                                    value={formData.battingHandedness}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
@@ -353,6 +383,7 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("preferredBowlingStyle", value)}
+                                                    value={formData.preferredBowlingStyle}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
@@ -373,6 +404,7 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("preferredBattingOrder", value)}
+                                                    value={formData.preferredBattingOrder}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
@@ -394,6 +426,7 @@ export default function RegistrationPage() {
                                                 </label>
                                                 <Select
                                                     onValueChange={(value) => handleSelectChange("tshirtSizes", value)}
+                                                    value={formData.tshirtSizes}
                                                     required
                                                 >
                                                     <SelectTrigger className="bg-white text-black">
@@ -409,10 +442,17 @@ export default function RegistrationPage() {
                                                 </Select>
                                             </div>
 
-                                            <div className="md:col-span-2 flex justify-center mt-6">
+                                            <div className="md:col-span-2 flex mt-6">
                                                 <Button
                                                     type="submit"
-                                                    className="bg-amber-500 hover:bg-amber-600 text-black px-10 py-2.5 font-medium text-md"
+                                                    className={`
+                                                        bg-orange-500 hover:bg-orange-600 
+                                                        text-white font-medium px-8 py-6 
+                                                        transition-all duration-300 text-base
+                                                        shadow-lg
+                                                        flex items-center gap-2 rounded-xl
+                                                        italic uppercase
+                                                        `}
                                                     disabled={isSubmitting}
                                                 >
                                                     {isSubmitting ? "Processing..." : "Register"}

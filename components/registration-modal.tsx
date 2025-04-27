@@ -7,40 +7,29 @@ import { VisuallyHidden } from '@/components/visually-hidden';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DynamicButton from './dynamic-button';
 
 export default function RegistrationModal() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [hasInitialized, setHasInitialized] = useState(false);
 
     useEffect(() => {
-        // Check if user has seen the modal before
-        const hasSeenModal = localStorage.getItem('runbhumi_modal_seen');
-
-        if (!hasSeenModal) {
-            // First, mark the page as loaded
-            setIsLoaded(true);
-
-            // Then set a timeout to show the modal after page loads completely
+        // Only initialize once to prevent multiple opens
+        if (!hasInitialized) {
+            // Wait a moment to ensure we don't show it while the loader is still active
             const timer = setTimeout(() => {
                 setIsOpen(true);
-                // Mark as seen for future visits
-                localStorage.setItem('runbhumi_modal_seen', 'true');
-            }, 2000); // 2 second delay
+                setHasInitialized(true);
+            }, 100);
 
             return () => clearTimeout(timer);
-        } else {
-            // If they've seen it before, just mark as loaded but don't show
-            setIsLoaded(true);
         }
-    }, []);
+    }, [hasInitialized]);
 
     // Handle manual close
     const handleClose = () => {
         setIsOpen(false);
     };
-
-    // Don't render anything until the page is fully loaded
-    if (!isLoaded) return null;
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -107,12 +96,10 @@ export default function RegistrationModal() {
                     {/* Register Button */}
                     <div className="w-full pb-6 sm:pb-10 px-6 sm:px-8 relative z-10">
                         <Link href="/register">
-                            <Button
-                                className="w-full py-4 sm:py-6 text-base sm:text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white border-0 rounded-full transform hover:-rotate-1 hover:scale-105 transition-all shadow-lg"
-                                onClick={() => setIsOpen(false)}
+                            <DynamicButton onClick={() => setIsOpen(false)}
                             >
                                 Register for Trials!
-                            </Button>
+                            </DynamicButton>
                         </Link>
                     </div>
                 </div>

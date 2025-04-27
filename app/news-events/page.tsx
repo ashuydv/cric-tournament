@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CalendarDays, Clock, MapPin } from "lucide-react"
+import LeftHero from "@/components/common/left-hero"
+import RegisterButton from "@/components/register-button"
 
 export default function NewsEventsPage() {
     // Sample news data
@@ -32,19 +34,17 @@ export default function NewsEventsPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center">
-                            <div className="space-y-2">
-                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">News & Events</h1>
-                                <p className="max-w-[700px] text-gray-400 md:text-xl mx-auto">
-                                    Stay updated with the latest news and upcoming events from RunBhumi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <LeftHero
+                    title="News & Events"
+                    description="Stay updated with the latest news and upcoming events from RunBhumi"
+                    backgroundType="image"
+                    backgroundSrc="images/3.png"
+                    height="small"
+                    animated={true}
+                    parallaxEnabled={true}
+                    parallaxSpeed={0.7}
+                />
+
 
                 {/* News & Events Tabs */}
                 <section className="w-full py-12 md:py-24 lg:py-32">
@@ -149,7 +149,7 @@ export default function NewsEventsPage() {
                             <div className="w-full max-w-md">
                                 <form className="flex flex-col space-y-3">
                                     <input
-                                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        className="flex h-10 w-full font-medium px-4 py-6 border border-input bg-background rounded-xl text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="Enter your full name"
                                         type="text"
                                         name="fullName"
@@ -157,7 +157,7 @@ export default function NewsEventsPage() {
                                     />
                                     <div className="flex space-x-2">
                                         <input
-                                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full font-medium px-4 py-6 border border-input bg-background rounded-xl text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                             placeholder="Enter your mobile number"
                                             type="tel"
                                             name="mobileNumber"
@@ -165,9 +165,7 @@ export default function NewsEventsPage() {
                                             required
                                         />
                                     </div>
-                                    <Button type="submit" className="bg-orange-500 w-auto hover:bg-orange-600">
-                                        Register
-                                    </Button>
+                                    <RegisterButton />
                                     <p className="text-xs text-muted-foreground mt-1">
                                         By registering, you agree to our Terms of Service and Privacy Policy.
                                     </p>

@@ -1,32 +1,49 @@
 import Image from "next/image"
 import Header from "@/components/header"
-import { Trophy, Users, Calendar, MapPin, Award, Star, Tv, Heart, Shield, Building } from "lucide-react"
+import { Trophy, Users, Calendar, MapPin, Award, Star, Tv, Heart, Shield, Building, ArrowRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Footer from "@/components/footer"
 import VisionMissionTabs from "@/components/vision-mission-tabs"
 import KeyFactsSection from "@/components/key-facts-section"
+import Hero from "@/components/common/hero"
+import { EventHero } from "@/components/hero/event-annoucement"
+import { MatchScheduleHero } from "@/components/hero/match-schedule"
+import { SlideshowHero } from "@/components/hero/slideshow"
+import { StandardHero } from "@/components/hero/standard"
+import { StatsHero } from "@/components/hero/stats"
+import { TestimonialHero } from "@/components/hero/testimonial"
+import { VideoHero } from "@/components/hero/with-video"
+import ShuffleHero from "@/components/hero/shuffle-hero"
+import ShuffleGrid from "@/components/hero/shuffle-grid"
+import LeftHero from "@/components/common/left-hero"
+import DynamicButton from "@/components/dynamic-button"
 
 export default function AboutUsPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-6 text-center">
-                            <div className="space-y-3">
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">RunBhumi</h1>
-                                <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-orange-500">
-                                    India's Greatest Cricket Talent Hunt
-                                </p>
-                                <p className="max-w-[700px] text-gray-400 md:text-lg mx-auto mt-4">
-                                    Scouting extraordinary players from every corner of the nation
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <LeftHero
+                    title="RunBhumi"
+                    subtitle="India's Greatest Cricket Talent Hunt"
+                    description="Scouting extraordinary players from every corner of the nation"
+                    backgroundType="image"
+                    backgroundSrc="images/3.png"
+                    height="small"
+                    animated={true}
+                    parallaxEnabled={true}
+                    parallaxSpeed={0.7}
+                />
+
+
+                {/* <EventHero />
+                <ShuffleHero /> */}
+                {/* <MatchScheduleHero />
+                <SlideshowHero />
+                <StandardHero />
+                <StatsHero />
+                <TestimonialHero />
+                <VideoHero /> */}
 
                 {/* Our Story Section */}
                 <section className="w-full py-12 md:py-24 lg:py-32">
@@ -48,13 +65,14 @@ export default function AboutUsPage() {
                                     broadcast nationwide, <strong>RunBhumi transforms untold stories into national sensations</strong>.
                                 </p>
                             </div>
+                            {/* <ShuffleGrid /> */}
                             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-xl">
                                 <Image
-                                    src="/placeholder.svg?height=500&width=500&text=Run+Bhumi+Story"
-                                    width={500}
-                                    height={500}
-                                    alt="RunBhumi cricket tournament"
-                                    className="object-cover w-full h-full"
+                                    src="placeholder.svg?height=500&width=500&text=Run+Bhumi+Story"
+                                    width={800}
+                                    height={300}
+                                    alt="Narendra Khanna"
+                                    className="object-cover"
                                 />
                             </div>
                         </div>
@@ -152,12 +170,16 @@ export default function AboutUsPage() {
                                 Have questions about RunBhumi? We'd love to hear from you!
                             </p>
                             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                                <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
+                                <DynamicButton href="/register" variant="primary">
                                     Contact Us
-                                </Button>
-                                <Button size="lg" variant="outline">
-                                    Join Our Team
-                                </Button>
+                                </DynamicButton>
+
+                                <DynamicButton
+                                    href="/events"
+                                    variant="outline"
+                                >
+                                    Register for Trials
+                                </DynamicButton>
                             </div>
                         </div>
                     </div>

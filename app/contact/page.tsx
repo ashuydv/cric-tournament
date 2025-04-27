@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock, Calendar, User } from "lucide-react"
+import RegisterButton from "@/components/register-button"
 
 export default function ContactPage() {
     return (
@@ -81,7 +82,10 @@ export default function ContactPage() {
                                         <Textarea id="message" placeholder="Enter your message" className="min-h-[150px]" />
                                     </div>
 
-                                    <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600">
+                                    <Button type="submit" className=" bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-6                                                         transition-all duration-300 text-base
+                                                      shadow-lg
+                                                        flex items-center gap-2 rounded-xl
+                                                        italic uppercase">
                                         Send Message
                                     </Button>
                                 </form>

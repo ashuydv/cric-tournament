@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Star, Mail, CalendarClock, Bell, User, Phone } from "lucide-react"
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, useState, useEffect } from "react"
 import { Input } from "@/components/ui/input"
+import LeftHero from "@/components/common/left-hero"
 
 export default function MerchandisePage() {
     // Form state
@@ -175,21 +176,17 @@ export default function MerchandisePage() {
         <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">
-                {/* Coming Soon Hero Section */}
-                <section className="w-full py-44 pb-32 md:py-52 lg:py-64 bg-black text-white">
-                    <div className="container px-4 md:px-6 mx-auto">
-                        <div className="flex flex-col items-center space-y-4 text-center">
-                            <div className="space-y-2">
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                                    Official Merchandise
-                                </h1>
-                                <p className="max-w-[700px] text-gray-100 md:text-xl mx-auto">
-                                    Show your support with authentic RunBhumi cricket merchandise
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
+                <LeftHero
+                    title="Official Merchandise"
+                    description="Show your support with authentic RunBhumi cricket merchandise"
+                    backgroundType="image"
+                    backgroundSrc="https://images.pexels.com/photos/1827130/pexels-photo-1827130.jpeg"
+                    height="small"
+                    animated={true}
+                    parallaxEnabled={true}
+                    parallaxSpeed={0.7}
+                />
 
                 {/* Coming Soon Content */}
                 <section className="w-full py-16 md:py-24 bg-white">
@@ -253,19 +250,19 @@ export default function MerchandisePage() {
                                     </div>
                                     <form onSubmit={handleSubmit} className="space-y-4">
                                         <div className="relative">
-                                            <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                                             <Input
                                                 type="text"
                                                 value={name}
                                                 onChange={(e) => setName(e.target.value)}
                                                 placeholder="Your full name"
-                                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full h-14 pl-10 pr-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
                                                 required
                                                 disabled={isLoading}
                                             />
                                         </div>
                                         <div className="relative">
-                                            <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                                             <Input
                                                 type="tel"
                                                 value={phoneNumber}
@@ -276,7 +273,7 @@ export default function MerchandisePage() {
                                                     setPhoneNumber(value.slice(0, 10));
                                                 }}
                                                 placeholder="Your mobile number"
-                                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full h-14 pl-10 pr-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
                                                 pattern="[0-9]{10}"
                                                 required
                                                 disabled={isLoading}
@@ -291,7 +288,15 @@ export default function MerchandisePage() {
 
                                         <Button
                                             type="submit"
-                                            className="w-full bg-orange-500 hover:bg-orange-600"
+                                            className={`
+            w-full
+            bg-orange-500 hover:bg-orange-600 
+            text-white font-medium px-8 py-6 
+            transition-all duration-300 text-base
+            shadow-lg
+            flex items-center justify-center gap-2 rounded-xl
+            italic uppercase h-14
+            `}
                                             disabled={isLoading}
                                         >
                                             {isLoading ? "Submitting..." : "Notify Me"}
