@@ -375,19 +375,24 @@ export default function Header() {
             </div>
 
             {/* Fixed Join Now Button for Mobile with orange gradient */}
-            <div className="md:hidden fixed bottom-0 w-full right-0 z-40">
+            <div className="md:hidden fixed w-full px-5 bottom-0 left-1/2 -translate-x-1/2 z-40">
                 <Link
                     href='/register'
-                    className="relative focus:outline-none group"
+                    className="relative focus:outline-none group w-full"
                     aria-label="Register for Trials"
                 >
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-black/90 via-orange-950/30 to-black/90 backdrop-blur-sm text-center text-white text-xs font-bold py-1.5 px-4 rounded-t-xl border-t border-x border-orange-500/40 group-hover:border-orange-500/60 transition-all duration-300">
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-black/90 to-black/90 backdrop-blur-sm text-center text-white text-xs font-bold py-1.5 px-4 rounded-t-xl border-t border-x border-orange-500/40 group-hover:border-orange-500/60 transition-all duration-300">
                         <span className="text-orange-400">SEASON 1</span>
                     </div>
                     <Button
-                        className="bg-gradient-to-r from-black/90 via-orange-950/20 to-black/90 backdrop-blur-sm hover:from-black/90 hover:via-orange-900/30 hover:to-black/90 hover:shadow-lg text-white w-full rounded-none rounded-t-xl font-semibold px-6 py-5 transition-all duration-300 border-t border-orange-500/30 hover:border-orange-500/60 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-inset"
+                        className="   bg-orange-500 hover:bg-orange-600 
+                    text-white font-medium px-8 py-6
+                    transition-all duration-300 text-base
+                    shadow-lg
+                    flex items-center gap-2 rounded-none rounded-t-xl w-full
+                    italic uppercase"
                     >
-                        <span className="flex items-center text-orange-400 relative z-10">
+                        <span className="flex items-center relative z-10">
                             Register for Trials
                             <svg
                                 className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1"

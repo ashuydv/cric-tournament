@@ -30,7 +30,7 @@ const SocialMediaLinks = () => {
     ];
 
     return (
-        <div className="flex flex-row gap-3 mt-8 sm:fixed sm:top-1/2 sm:right-8 sm:-translate-y-1/2 sm:mt-0 sm:flex-col z-40">
+        <div className="hidden md:flex fixed top-1/2 right-8 -translate-y-1/2 flex-col gap-3 z-40">
             {socialLinks.map(({ name, href, path }, i) => (
                 <a
                     key={i}
