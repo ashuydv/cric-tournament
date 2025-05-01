@@ -365,7 +365,7 @@ export default function PrivacyPolicyPage() {
                                             Depending on your location, you may have certain rights regarding your personal information, including:
                                         </p>
 
-                                        <div className="bg-gradient-to-r from-orange-50 to-indigo-50 rounded-xl p-6 my-6 border border-orange-100">
+                                        <div className="bg-gradient-to-r from-orange-50 to-orange-50 rounded-xl p-6 my-6 border border-orange-100">
                                             <h3 className="text-xl font-semibold mb-4 text-orange-800">Your Data Rights</h3>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <div className="flex items-start gap-3">
@@ -559,7 +559,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Email</p>
-                                                        <a href="mailto:privacy@RunBhumi.com" className="text-orange-600 hover:underline">privacy@RunBhumi.com</a>
+                                                        <a href="mailto:hello@therunbhumi.com" className="text-orange-600 hover:underline">hello@therunbhumi.com</a>
                                                     </div>
                                                 </div>
 
@@ -569,7 +569,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Phone</p>
-                                                        <a href="tel:+912212345678" className="text-orange-600 hover:underline">+91 22 1234 5678</a>
+                                                        <a href="tel:+912212345678" className="text-orange-600 hover:underline">+91 22 9876 5432</a>
                                                     </div>
                                                 </div>
 
@@ -579,7 +579,11 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Address</p>
-                                                        <p className="text-gray-700">123 Cricket Avenue, Bandra West, Mumbai, Maharashtra 400050, India</p>
+                                                        <p className="text-gray-700"> MNT Dreams Pvt. Ltd.
+                                                            <br />
+                                                            770 , Tower B - 1 <br />
+                                                            Spaze IT park ,Sector 49 <br />
+                                                            Sohna Road, Gurugram, Haryana-122002</p>
                                                     </div>
                                                 </div>
                                             </div>
