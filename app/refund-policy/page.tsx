@@ -198,9 +198,9 @@ const RefundPolicy = () => {
                   <a href="tel:+919964391643">+91 9964391643</a>
                 </p>
                 <address className="not-italic">
-                  <span className="font-medium">Address:</span>
-                  MNT Dreams Pvt. Ltd. 770 , Tower B - 1 Spaze IT park ,Sector
-                  49 Sohna Road, Gurugram, Haryana-122002
+                  <span className="font-medium">Address: </span>
+                  MNT Dreams Pvt. Ltd. 770, Tower B - 1 Spaze IT park, Sector 49
+                  Sohna Road, Gurugram, Haryana-122002
                 </address>
               </div>
             </section>
