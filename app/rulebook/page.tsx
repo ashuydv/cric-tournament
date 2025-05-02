@@ -519,16 +519,13 @@ export default function RuleBookPage() {
               </ScrollArea>
             </CardContent>
 
-            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between">
+            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between py-2">
               <div className="flex items-center text-slate-600">
                 <Info className="h-4 w-4 mr-2" />
                 <span className="text-sm">
                   For complete rules, download the full PDF version
                 </span>
               </div>
-              <Button className="bg-orange-600 hover:bg-orange-700">
-                Download Full Rule Book
-              </Button>
             </CardFooter>
           </Card>
         </div>

@@ -86,10 +86,10 @@ export default function PmoaStandardsPage() {
                   </CardDescription>
                 </div>
                 <div>
-                  <Button variant="outline" className="flex items-center gap-2">
+                  {/* <Button variant="outline" className="flex items-center gap-2">
                     <Download className="h-4 w-4" />
                     Download
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </CardHeader>
@@ -569,9 +569,9 @@ export default function PmoaStandardsPage() {
               </Tabs>
             </CardContent>
 
-            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between">
+            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between py-2">
               <div className="text-sm text-slate-500">
-                Approved: 18 October 2023
+                Approved: 30 April, 2025
               </div>
               <Badge className="bg-orange-600">VERSION 2025.1</Badge>
             </CardFooter>

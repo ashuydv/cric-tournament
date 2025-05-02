@@ -53,10 +53,10 @@ export default function CommercialGuidelinesPage() {
                     ecosystem
                   </CardDescription>
                 </div>
-                <Button variant="outline" className="flex items-center gap-2">
+                {/* <Button variant="outline" className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   Download PDF
-                </Button>
+                </Button> */}
               </div>
             </CardHeader>
             <CardContent className="pt-6">
@@ -346,7 +346,7 @@ export default function CommercialGuidelinesPage() {
                 </ScrollArea>
               </Tabs>
             </CardContent>
-            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between">
+            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between py-2">
               <div className="flex items-center text-amber-600">
                 <AlertCircle className="h-4 w-4 mr-2" />
                 <span className="text-sm">
@@ -426,8 +426,12 @@ export default function CommercialGuidelinesPage() {
                   contact:
                 </p>
                 <p className="mt-2 font-medium">RunBhumi Commercial Team</p>
-                <p className="text-sm">commercial@runbhumi.in</p>
-                <p className="text-sm">+91-11-4000-XXXX</p>
+                <a href="mailto:hello@therunbhumi.com" className="text-sm">
+                  hello@therunbhumi.com
+                </a> <br />
+                <a href="tel:+919964391643" className="text-sm">
+                  +919964391643
+                </a>
               </div>
             </CardContent>
           </Card>

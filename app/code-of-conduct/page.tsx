@@ -79,10 +79,10 @@ export default function DugoutCodePage() {
                     <p className="text-slate-600">
                       In the interest of maintaining operational discipline and
                       ensuring fair play throughout the tournament, we request
-                      your strict adherence to the following <b>Dugout Protocols</b>,
-                      which form part of the official Players and Match
-                      Officials Area and are subject to regulated access
-                      controls:
+                      your strict adherence to the following{" "}
+                      <b>Dugout Protocols</b>, which form part of the official
+                      Players and Match Officials Area and are subject to
+                      regulated access controls:
                     </p>
                   </div>
 
@@ -166,7 +166,7 @@ export default function DugoutCodePage() {
                 </div>
               </ScrollArea>
             </CardContent>
-            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between">
+            <CardFooter className="bg-slate-50 border-t border-slate-200 flex justify-between py-2">
               <div className="flex items-center text-amber-600">
                 <AlertTriangle className="h-4 w-4 mr-2" />
                 <span className="text-sm">
