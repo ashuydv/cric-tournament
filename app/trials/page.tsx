@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -40,6 +40,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import LeftHero from "@/components/common/left-hero";
+import SelectionPathRoadmap from "@/components/selection-path-roadmap";
 
 // Define state-city mapping
 type StateCityMap = {
@@ -143,6 +144,11 @@ export default function RunBhumiTrialsPage() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
 
+  // New states for filtering
+  const [appliedState, setAppliedState] = useState<string>("");
+  const [appliedCity, setAppliedCity] = useState<string | null>(null);
+  const [filteredSchedule, setFilteredSchedule] = useState(trialSchedule);
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -157,20 +163,45 @@ export default function RunBhumiTrialsPage() {
     agreement: false,
   });
 
-  // Filter trial schedule based on search term
-  const filteredSchedule = trialSchedule.filter((schedule) => {
-    // If no search term, show all schedules
-    if (!searchTerm) return true;
+  // Filter trial schedule based on search term and applied filters
+  useEffect(() => {
+    let filtered = trialSchedule;
 
-    // Check if date contains search term
-    if (schedule.date.toLowerCase().includes(searchTerm.toLowerCase()))
-      return true;
+    // Apply search term filter
+    if (searchTerm) {
+      filtered = filtered.filter((schedule) => {
+        // Check if date contains search term
+        if (schedule.date.toLowerCase().includes(searchTerm.toLowerCase()))
+          return true;
 
-    // Check if any location contains search term
-    return schedule.locations.some((location) =>
-      location.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+        // Check if any location contains search term
+        return schedule.locations.some((location) =>
+          location.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
+    }
+
+    // Apply state/city filters
+    if (appliedCity) {
+      filtered = filtered.filter((schedule) =>
+        schedule.locations.some(
+          (location) => location.toLowerCase() === appliedCity.toLowerCase()
+        )
+      );
+    } else if (appliedState && appliedState !== "all") {
+      // Get all cities in the selected state
+      const stateCities = stateCityMap[appliedState] || [];
+      filtered = filtered.filter((schedule) =>
+        schedule.locations.some((location) =>
+          stateCities.some(
+            (city) => city.toLowerCase() === location.toLowerCase()
+          )
+        )
+      );
+    }
+
+    setFilteredSchedule(filtered);
+  }, [searchTerm, appliedState, appliedCity]);
 
   // Handle state selection change
   const handleStateChange = (state: string) => {
@@ -182,6 +213,7 @@ export default function RunBhumiTrialsPage() {
 
     if (state === "all") {
       setAvailableCities([]);
+      setSelectedCity(null);
     } else {
       setAvailableCities(stateCityMap[state] || []);
     }
@@ -234,6 +266,26 @@ export default function RunBhumiTrialsPage() {
     setFormData((prev) => ({
       ...prev,
       agreement: checked,
+    }));
+  };
+
+  // Apply filters function
+  const applyFilters = () => {
+    setAppliedState(selectedState);
+    setAppliedCity(selectedCity);
+  };
+
+  // Clear filters function
+  const clearFilters = () => {
+    setSelectedState("");
+    setSelectedCity(null);
+    setAppliedState("");
+    setAppliedCity(null);
+    setAvailableCities([]);
+    setFormData((prev) => ({
+      ...prev,
+      state: "",
+      trialCity: "",
     }));
   };
 
@@ -363,8 +415,13 @@ export default function RunBhumiTrialsPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold">Search Trials</h2>
               <div className="flex items-center gap-4">
-                <Button variant="outline">Clear Filters</Button>
-                <Button className="bg-orange-600 hover:bg-orange-700">
+                <Button variant="outline" onClick={clearFilters}>
+                  Clear Filters
+                </Button>
+                <Button
+                  className="bg-orange-600 hover:bg-orange-700"
+                  onClick={applyFilters}
+                >
                   Apply Filters
                 </Button>
               </div>
@@ -411,15 +468,25 @@ export default function RunBhumiTrialsPage() {
                     <SelectItem value="odisha">Odisha</SelectItem>
                   </SelectContent>
                 </Select>
+                {appliedState && appliedState !== selectedState && (
+                  <p className="text-xs text-blue-600 mt-1">
+                    Applied filter:{" "}
+                    {appliedState === "all"
+                      ? "All States"
+                      : appliedState.charAt(0).toUpperCase() +
+                        appliedState.slice(1)}
+                  </p>
+                )}
               </div>
               <div className="space-y-2">
                 <label htmlFor="city">City</label>
                 <Select
                   disabled={!selectedState || selectedState === "all"}
                   value={formData.trialCity}
-                  onValueChange={(value) =>
-                    handleSelectChange("trialCity", value)
-                  }
+                  onValueChange={(value) => {
+                    handleSelectChange("trialCity", value);
+                    setSelectedCity(value);
+                  }}
                 >
                   <SelectTrigger>
                     <SelectValue
@@ -441,6 +508,11 @@ export default function RunBhumiTrialsPage() {
                 {selectedCity && (
                   <p className="text-xs text-green-600 mt-1">
                     Selected trial city: {selectedCity}
+                  </p>
+                )}
+                {appliedCity && appliedCity !== selectedCity && (
+                  <p className="text-xs text-blue-600 mt-1">
+                    Applied filter: {appliedCity}
                   </p>
                 )}
               </div>
@@ -529,116 +601,77 @@ export default function RunBhumiTrialsPage() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {filteredSchedule.map((schedule, index) => (
-                    <TableRow
-                      key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                    >
-                      <TableCell className="font-medium">
-                        {schedule.date}
-                      </TableCell>
-                      {schedule.locations.map((location, locIndex) => (
-                        <TableCell key={locIndex} className="text-center">
-                          {location ? (
-                            <Button
-                              variant="ghost"
-                              className="text-orange-600 hover:text-orange-800 hover:bg-orange-100"
-                              onClick={() => handleCitySelect(location)}
-                            >
-                              {location}
-                            </Button>
-                          ) : (
-                            "—"
-                          )}
+                  {filteredSchedule.length > 0 ? (
+                    filteredSchedule.map((schedule, index) => (
+                      <TableRow
+                        key={index}
+                        className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                      >
+                        <TableCell className="font-medium">
+                          {schedule.date}
                         </TableCell>
-                      ))}
+                        {schedule.locations.map((location, locIndex) => (
+                          <TableCell key={locIndex} className="text-center">
+                            {location ? (
+                              <Button
+                                variant="ghost"
+                                className="text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                onClick={() => handleCitySelect(location)}
+                              >
+                                {location}
+                              </Button>
+                            ) : (
+                              "—"
+                            )}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))
+                  ) : (
+                    <TableRow>
+                      <TableCell
+                        colSpan={5}
+                        className="text-center py-8 text-gray-500"
+                      >
+                        No trial dates match your current filters. Please try
+                        different search criteria.
+                      </TableCell>
                     </TableRow>
-                  ))}
+                  )}
                 </TableBody>
               </Table>
             </div>
+            {(appliedState || appliedCity || searchTerm) && (
+              <div className="p-4 bg-gray-50 border-t border-gray-200">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm text-gray-500">
+                    {filteredSchedule.length === 0
+                      ? "No matches found"
+                      : `Showing ${filteredSchedule.length} of ${trialSchedule.length} trial dates`}
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={clearFilters}
+                    className="text-sm"
+                  >
+                    Reset Filters
+                  </Button>
+                </div>
+              </div>
+            )}
           </Card>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6 mb-12">
-          <h2 className="text-2xl font-bold flex items-center mb-6">
-            <span className="text-orange-600 mr-2">●</span>
-            Your Path to Selection
-          </h2>
-          <div className="relative pl-8">
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-200"></div>
-
-            <div className="mb-8 relative">
-              <div className="absolute -left-8 top-0 bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold z-10">
-                1
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Initial Screening</h3>
-              <p className="text-gray-600 mb-2">
-                The first assessment focuses on basic technical abilities and
-                general performance in skill assessments.
-              </p>
-              <div className="text-sm text-gray-500">
-                90 min. session - selection based on your performance in basic
-                skill assessments
-              </div>
-            </div>
-
-            <div className="mb-8 relative">
-              <div className="absolute -left-8 top-0 bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold z-10">
-                2
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Small Matches</h3>
-              <p className="text-gray-600 mb-2">
-                Players are evaluated on how they apply their skills in
-                small-sided games, focusing on decision-making and teamwork.
-              </p>
-              <div className="text-sm text-gray-500">
-                60 min. session - observed for technical application and
-                tactical awareness
-              </div>
-            </div>
-
-            <div className="mb-8 relative">
-              <div className="absolute -left-8 top-0 bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold z-10">
-                3
-              </div>
-              <h3 className="text-xl font-semibold mb-2">
-                Final Selection Camp
-              </h3>
-              <p className="text-gray-600 mb-2">
-                The final assessment evaluates players in full-sided games with
-                official rules.
-              </p>
-              <div className="text-sm text-gray-500">
-                Full 11v11 matches over 2 days - intensive focus on all
-                attributes as a complete player
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -left-8 top-0 bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold z-10">
-                4
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Team Draft</h3>
-              <p className="text-gray-600 mb-2">
-                Selected players are invited to join teams based on their
-                performance throughout the trial process.
-              </p>
-              <div className="text-sm bg-orange-100 text-orange-700 px-4 py-2 rounded-md inline-block">
-                Top performers receive academy placements and potential contract
-                offers
-              </div>
-            </div>
-          </div>
-        </div>
+        <SelectionPathRoadmap />
 
         <div className="bg-gray-100 rounded-lg p-6 mb-12">
           <h2 className="text-2xl font-bold mb-6">Evaluation Methodology</h2>
           <p className="mb-6 text-gray-600">
-            RunBhumiTrials uses a standardized 100-point grading system designed
-            to identify complete prospects compared with the perfect balance of
-            technical skills, tactical awareness, physical fitness, and mental
-            attributes.
+            RunBhumi Trials uses a standardized 100-point grading system
+            designed to identify complete prospects compared with the perfect
+            balance of technical skills, tactical awareness, physical fitness,
+            and mental attributes.
           </p>
 
           <div className="grid gap-6 md:grid-cols-4 lg:gap-10">

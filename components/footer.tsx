@@ -241,7 +241,7 @@ export default function Footer() {
                   Merchandise
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/gallery"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -256,7 +256,7 @@ export default function Footer() {
                 >
                   News & Events
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
