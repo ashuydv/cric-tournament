@@ -266,7 +266,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/guidelines/code-of-conduct"
+                  href="/code-of-conduct"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Code of Conduct in Team Dugouts
@@ -274,7 +274,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/guidelines/commercial"
+                  href="/commercial-guidelines"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   RunBhumi Commercial Guidelines
@@ -282,7 +282,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/guidelines/rulebook"
+                  href="/rulebook"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Cricket Rulebook
@@ -290,7 +290,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/guidelines/pmoa"
+                  href="/pmoa"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Cricket PMOA Guideline
