@@ -148,9 +148,9 @@ export default function AboutUsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="flex flex-col items-center space-y-3">
-                <div className="h-40 w-40 rounded-full overflow-hidden mb-3">
+                <div className="rounded-xl overflow-hidden mb-3">
                   <Image
-                    src="/placeholder.svg?height=160&width=160&text=Narendra"
+                    src="/images/narendra-khanna.jpg"
                     width={160}
                     height={160}
                     alt="Narendra Khanna"
@@ -170,9 +170,9 @@ export default function AboutUsPage() {
               </div>
 
               <div className="flex flex-col items-center space-y-3">
-                <div className="h-40 w-40 rounded-full overflow-hidden mb-3">
+                <div className="rounded-xl overflow-hidden mb-3">
                   <Image
-                    src="/placeholder.svg?height=160&width=160&text=Tarak"
+                    src="/images/taarak-bajpai.jpg"
                     width={160}
                     height={160}
                     alt="Tarak Bajpai"
