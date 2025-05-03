@@ -92,37 +92,71 @@ const stateCityMap: StateCityMap = {
 // Define trial schedule data
 const trialSchedule = [
   {
-    date: "27-Apr-25",
-    locations: ["Chandigarh", "Ludhiana", "Delhi", "Lucknow"],
+    date: "17-May-25",
+    locations: ["Indore", "Gwalior", "Vadodara", "Coming Soon"],
   },
-  { date: "03-May-25", locations: ["Mumbai", "Kalyan", "Kochi", ""] },
   {
-    date: "04-May-25",
-    locations: ["Mohali", "Noida", "Gurugram", "Faridabad"],
+    date: "18-May-25",
+    locations: ["Surat", "Ahmedabad", "Rajkot", "Coming Soon"],
   },
-  { date: "10-May-25", locations: ["Chennai", "Jalandhar", "Bangalore", ""] },
-  { date: "11-May-25", locations: ["Vashi", "Vasai", "Hyderabad", ""] },
-  { date: "17-May-25", locations: ["Indore", "Gwalior", "Vadodara", ""] },
-  { date: "18-May-25", locations: ["Surat", "Ahmedabad", "Rajkot", ""] },
-  { date: "24-May-25", locations: ["Varanasi", "Delhi", "", "Goa"] },
-  { date: "25-May-25", locations: ["Kolkata", "Patna", "Lucknow", ""] },
-  { date: "31-May-25", locations: ["Bhopal", "Jabalpur", "Gwalior", ""] },
-  { date: "01-Jun-25", locations: ["Thane", "Pune", "Panvel", ""] },
-  { date: "07-Jun-25", locations: ["Mumbai", "Nashik", "Bangalore", ""] },
-  { date: "08-Jun-25", locations: ["Hyderabad", "Vijayawada", "Mysore", ""] },
-  { date: "14-Jun-25", locations: ["Raipur", "Bhubaneshwar", "Dehradun", ""] },
+  { date: "24-May-25", locations: ["Varanasi", "Delhi", "Coming Soon", "Goa"] },
+  {
+    date: "25-May-25",
+    locations: ["Kolkata", "Patna", "Lucknow", "Coming Soon"],
+  },
+  {
+    date: "31-May-25",
+    locations: ["Bhopal", "Jabalpur", "Gwalior", "Coming Soon"],
+  },
+  { date: "01-Jun-25", locations: ["Thane", "Pune", "Panvel", "Coming Soon"] },
+  {
+    date: "07-Jun-25",
+    locations: ["Mumbai", "Nashik", "Bangalore", "Coming Soon"],
+  },
+  {
+    date: "08-Jun-25",
+    locations: ["Hyderabad", "Vijayawada", "Mysore", "Coming Soon"],
+  },
+  {
+    date: "14-Jun-25",
+    locations: ["Raipur", "Bhubaneshwar", "Dehradun", "Coming Soon"],
+  },
   {
     date: "15-Jun-25",
     locations: ["Aurangabad", "Nagpur", "Solapur", "Kolhapur"],
   },
-  { date: "21-Jun-25", locations: ["Noida", "Agra", "Amritsar", ""] },
-  { date: "22-Jun-25", locations: ["Rajkot", "Udaipur", "Chennai", ""] },
-  { date: "28-Jun-25", locations: ["Jhansi", "Jamshedpur", "", ""] },
-  { date: "29-Jun-25", locations: ["Guwahati", "Ranchi", "", ""] },
-  { date: "05-Jul-25", locations: ["Jammu", "Chandigarh", "", ""] },
-  { date: "06-Jul-25", locations: ["Jaipur", "Jodhpur", "", ""] },
-  { date: "12-Jul-25", locations: ["Meerut", "Hisar", "", ""] },
-  { date: "13-Jul-25", locations: ["Amritsar", "Rohtak", "", ""] },
+  {
+    date: "21-Jun-25",
+    locations: ["Noida", "Agra", "Amritsar", "Coming Soon"],
+  },
+  {
+    date: "22-Jun-25",
+    locations: ["Rajkot", "Udaipur", "Chennai", "Coming Soon"],
+  },
+  {
+    date: "28-Jun-25",
+    locations: ["Jhansi", "Jamshedpur", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "29-Jun-25",
+    locations: ["Guwahati", "Ranchi", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "05-Jul-25",
+    locations: ["Jammu", "Chandigarh", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "06-Jul-25",
+    locations: ["Jaipur", "Jodhpur", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "12-Jul-25",
+    locations: ["Meerut", "Hisar", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "13-Jul-25",
+    locations: ["Amritsar", "Rohtak", "Coming Soon", "Coming Soon"],
+  },
 ];
 
 // City images mapping
@@ -454,7 +488,7 @@ export default function RunBhumiTrialsPage() {
                   MUST NOT
                 </div>
                 <p className="text-gray-700">
-                  be below the age of 20 years at the time of registrations as
+                  be below the age of 16 years at the time of registrations as
                   per legal identification documents.
                 </p>
               </li>
@@ -572,15 +606,6 @@ export default function RunBhumiTrialsPage() {
                           }`}
                           onClick={() => handleCitySelect(city)}
                         >
-                          <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex-shrink-0">
-                            <Image
-                              src={getCityImage(city)}
-                              alt={city}
-                              width={24}
-                              height={24}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
                           {city}
                           {selectedCity === city && (
                             <Check className="ml-1 h-3 w-3" />
@@ -862,7 +887,7 @@ export default function RunBhumiTrialsPage() {
         </div>
 
         {/* Registration Form */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Register for Trials</h2>
 
           {submissionSuccess ? (
@@ -1098,7 +1123,7 @@ export default function RunBhumiTrialsPage() {
               </CardContent>
             </Card>
           )}
-        </div>
+        </div> */}
       </section>
     </main>
   );

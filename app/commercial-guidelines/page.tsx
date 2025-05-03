@@ -109,7 +109,6 @@ export default function CommercialGuidelinesPage() {
                           <li>Smoking Brands</li>
                           <li>Betting/Gambling Brands</li>
                           <li>Gutka/Pan Masala Brands</li>
-                          <li>Any Surrogate Branding linked to the above</li>
                         </ul>
                       </div>
 
@@ -428,7 +427,8 @@ export default function CommercialGuidelinesPage() {
                 <p className="mt-2 font-medium">RunBhumi Commercial Team</p>
                 <a href="mailto:hello@therunbhumi.com" className="text-sm">
                   hello@therunbhumi.com
-                </a> <br />
+                </a>{" "}
+                <br />
                 <a href="tel:+919964391643" className="text-sm">
                   +919964391643
                 </a>

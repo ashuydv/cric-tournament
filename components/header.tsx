@@ -3,7 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Mail, Menu, Phone, X } from "lucide-react";
+import {
+  Mail,
+  Menu,
+  Phone,
+  X,
+  Shield,
+  RotateCcw,
+  FileText,
+  AlertTriangle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback, useRef } from "react";
 import RegisterButton from "./register-button";
@@ -148,6 +157,18 @@ export default function Header() {
     // { href: "/teams", label: "Our Team" },
   ];
 
+  // Policy links
+  const policyLinks = [
+    {
+      href: "/cancellation-policy",
+      label: "Cancellation Policy",
+      icon: RotateCcw,
+    },
+    { href: "/refund-policy", label: "Refund Policy", icon: FileText },
+    { href: "/privacy-policy", label: "Privacy Policy", icon: Shield },
+    { href: "/disclaimer", label: "Disclaimer", icon: AlertTriangle },
+  ];
+
   // Function to check if link is active
   const isActive = (path: string) => {
     if (path === "/" && pathname !== "/") return false;
@@ -163,11 +184,33 @@ export default function Header() {
       {/* Fixed glassmorphism header with reduced height and smoother transitions */}
       <header
         ref={headerRef}
-        className="fixed top-0 z-40 p-4 w-full transition-all duration-700"
+        className="fixed top-0 z-40 w-full transition-all duration-700"
       >
+        {/* Policy links bar */}
+        <div className="bg-black/90 backdrop-blur-xl text-xs">
+          <div className="container mx-auto flex justify-end items-center h-8 px-6">
+            <div className="hidden md:flex space-x-4">
+              {policyLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-300 hover:text-orange-300 transition-colors duration-300 flex items-center space-x-1"
+                    aria-label={link.label}
+                  >
+                    <Icon size={12} className="text-orange-400" />
+                    <span>{link.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
         {/* Main navigation area with gradient background */}
         <div
-          className="container mx-auto rounded-xl py-2 px-6 transition-all duration-700"
+          className="container mx-auto rounded-b-xl py-2 px-6 transition-all duration-700"
           style={{
             background: `linear-gradient(to right, rgba(0, 0, 0, ${bgOpacity}), rgba(51, 28, 0, ${
               bgOpacity + 0.05
@@ -185,7 +228,7 @@ export default function Header() {
                 aria-label="RunBhumi Home"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                <div className="relative h-16 w-16 md:h-24 md:w-24 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
+                <div className="relative h-16 w-16 md:h-20 md:w-20 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
                   <Image
                     src="/rb_logo.png"
                     alt="RunBhumi Logo"
@@ -206,7 +249,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-base font-medium uppercase  text-center transition-all duration-300 relative py-2 px-3 rounded-md 
+                    className={`text-base font-medium uppercase text-center transition-all duration-300 relative py-2 px-3 rounded-md 
                                         ${
                                           isActive(link.href)
                                             ? "text-orange-400 bg-gradient-to-r from-orange-950/30 via-orange-900/20 to-orange-950/30 backdrop-blur-sm"
@@ -237,7 +280,7 @@ export default function Header() {
 
             {/* Register Button - Desktop Only */}
             <div className="hidden md:flex md:items-center gap-4">
-              <div className="flex  items-center space-x-1 group">
+              <div className="flex items-center space-x-1 group">
                 <Phone
                   size={14}
                   className="text-orange-400 group-hover:animate-pulse"
@@ -253,7 +296,7 @@ export default function Header() {
                   9964391643
                 </Link>
               </div>
-              <div className="flex  items-center space-x-1 group">
+              <div className="flex items-center space-x-1 group">
                 <Mail
                   size={14}
                   className="text-orange-400 group-hover:animate-pulse"
@@ -375,6 +418,34 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Policy links for mobile */}
+          <div className="mt-6 pt-4 border-t border-orange-500/20">
+            <h3 className="text-orange-400 text-sm font-semibold mb-3">
+              Policies
+            </h3>
+            <div className="flex flex-col space-y-2">
+              {policyLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded group"
+                    onClick={toggleMobileMenu}
+                    tabIndex={mobileMenuOpen ? 0 : -1}
+                  >
+                    <Icon
+                      size={15}
+                      className="text-orange-400"
+                      aria-hidden="true"
+                    />
+                    <span>{link.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Mobile contact info with gradient glassmorphism */}
           <div className="mt-8 bg-gradient-to-r from-orange-950/20 via-orange-900/10 to-orange-950/20 backdrop-blur-sm rounded-lg p-4 border border-orange-500/10 transition-all duration-300 hover:border-orange-400/30">
             <h3 className="text-orange-400 text-sm font-semibold mb-3">
@@ -429,7 +500,7 @@ export default function Header() {
             <span className="text-orange-400">SEASON 1</span>
           </div>
           <Button
-            className="   bg-orange-500 hover:bg-orange-600 
+            className="bg-orange-500 hover:bg-orange-600 
                     text-white font-medium px-8 py-6
                     transition-all duration-300 text-base
                     shadow-lg

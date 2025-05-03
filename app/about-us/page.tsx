@@ -98,7 +98,7 @@ export default function AboutUsPage() {
                   src="images/21.png"
                   width={800}
                   height={300}
-                  alt="Narendra Khanna"
+                  alt="About Us"
                   className="object-cover"
                 />
               </div>
@@ -159,7 +159,7 @@ export default function AboutUsPage() {
                 </div>
                 <h3 className="font-bold text-xl">Narendra Khanna</h3>
                 <p className="text-sm text-orange-600 dark:text-orange-400">
-                  Founder & Visionary
+                  Co-Founder & Visionary
                 </p>
                 <p className="text-sm text-muted-foreground text-center max-w-md">
                   An engineer turned sports entrepreneur, Narendra has spent 25+
