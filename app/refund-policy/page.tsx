@@ -22,10 +22,10 @@ const RefundPolicy = () => {
             <p className="text-gray-700 mb-6">
               This Refund Policy outlines the terms and conditions regarding
               refunds for tournament registrations and other services provided
-              by Run Bhumi.
+              by RunBhumi.
             </p>
 
-            <section className="mb-8">
+            {/* <section className="mb-8">
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Registration Cancellations
               </h2>
@@ -60,7 +60,7 @@ const RefundPolicy = () => {
                 </h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1">
                   <li>
-                    If Run Bhumi cancels a tournament, participants will receive
+                    If RunBhumi cancels a tournament, participants will receive
                     a full refund of their registration fees
                   </li>
                   <li>
@@ -70,7 +70,7 @@ const RefundPolicy = () => {
                   </li>
                 </ul>
               </div>
-            </section>
+            </section> */}
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
@@ -119,7 +119,7 @@ const RefundPolicy = () => {
               </p>
               <ul className="list-disc pl-5 text-gray-700 space-y-1">
                 <li>
-                  Run Bhumi may offer partial refunds, credit for future
+                  RunBhumi may offer partial refunds, credit for future
                   tournaments, or alternative arrangements
                 </li>
                 <li>

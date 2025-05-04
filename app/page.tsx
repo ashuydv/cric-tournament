@@ -214,16 +214,16 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto mt-8 md:mt-12">
-            <Tabs defaultValue="city-wise" className="w-full">
+            <Tabs defaultValue="eligibility" className="w-full">
               <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="city-wise" className="text-sm md:text-base">
-                  City-wise Trial Info
-                </TabsTrigger>
                 <TabsTrigger
                   value="eligibility"
                   className="text-sm md:text-base"
                 >
                   Age & Eligibility
+                </TabsTrigger>
+                <TabsTrigger value="city-wise" className="text-sm md:text-base">
+                  City-wise Trial Info
                 </TabsTrigger>
                 <TabsTrigger
                   value="assessment"
@@ -892,8 +892,14 @@ export default function Home() {
 
                   <div className="space-y-4">
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      <div className="h-20 w-20 bg-orange-100 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                        <Image
+                          width={200}
+                          height={200}
+                          alt=""
+                          src="/suresh-raina.webp"
+                          className=" object-cover object-top"
+                        />
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Suresh Raina</h5>
@@ -906,8 +912,13 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      <div className="h-20 w-20 bg-orange-100 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                        <Image
+                          width={200}
+                          height={200}
+                          alt=""
+                          src="/hershell-gibbs.jpg"
+                        />
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Herschelle Gibbs</h5>
@@ -921,8 +932,13 @@ export default function Home() {
                     </div>
 
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      <div className="h-20 w-20 bg-orange-100 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                        <Image
+                          width={200}
+                          height={200}
+                          alt=""
+                          src="/jayasurya.jpg"
+                        />
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Sanath Jayasuriya</h5>
@@ -936,8 +952,13 @@ export default function Home() {
                     </div>
 
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      <div className="h-20 w-20 bg-orange-100 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                        <Image
+                          width={200}
+                          height={200}
+                          alt=""
+                          src="/gony.png"
+                        />
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">
@@ -953,8 +974,14 @@ export default function Home() {
                     </div>
 
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                      <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                        <UserIcon className="h-8 w-8 text-orange-600" />
+                      <div className="h-20 w-20 bg-orange-100 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                        <Image
+                          width={200}
+                          height={200}
+                          alt=""
+                          src="/anjum-chopra.webp"
+                          className=" object-contain object-top"
+                        />
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Anjum Chopra</h5>

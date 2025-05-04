@@ -241,6 +241,30 @@ export default function Footer() {
                   Merchandise
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/partner-with-us"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Partner With Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/sponsorships"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Sponsorships
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
               {/* <li>
                 <Link
                   href="/gallery"
@@ -333,6 +357,14 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/disclaimer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Disclaimer
                 </Link>
               </li>
             </ul>
