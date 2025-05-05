@@ -1,4 +1,3 @@
-// components/header.tsx
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,11 +8,9 @@ import {
   Phone,
   X,
   Shield,
-  RotateCcw,
   FileText,
   AlertTriangle,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback, useRef } from "react";
 import RegisterButton from "./register-button";
 
@@ -30,8 +27,8 @@ export default function Header() {
       threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
     };
 
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
+    const handleIntersect = (entries: any) => {
+      entries.forEach((entry: any) => {
         // Determine if we've crossed the threshold for "scrolled" state
         const isScrolled = entry.intersectionRatio < 0.8;
         setScrolled(isScrolled);
@@ -73,14 +70,14 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   // Handle swipe to close for mobile menu
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = (e: any) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
+  const handleTouchMove = (e: any) => {
     touchEndX.current = e.touches[0].clientX;
   };
 
@@ -125,7 +122,7 @@ export default function Header() {
     { href: "/trials", label: "Trials" },
     { href: "/partner-with-us", label: "Partner With Us" },
     { href: "/sponsorships", label: "Sponsorships" },
-    { href: "/career", label: "Career" },
+    { href: "/careers", label: "Careers" },
   ];
 
   // Policy links
@@ -135,7 +132,7 @@ export default function Header() {
     { href: "/disclaimer", label: "Disclaimer", icon: AlertTriangle },
   ];
 
-  // Function to check if link is active
+  // Function to check if link is active - FIXED VERSION
   const isActive = (path: any) => {
     if (path === "/" && pathname !== "/") return false;
     return pathname === path || pathname.startsWith(`${path}/`);
@@ -152,7 +149,7 @@ export default function Header() {
       </a>
 
       {/* Header with semantic HTML structure */}
-      <header className={`fixed top-0 z-40 w-full transition-all duration-300`}>
+      <header className="fixed top-0 z-40 w-full transition-all duration-300">
         {/* Policy links bar with contact info */}
         <div className="bg-black/90 backdrop-blur-xl text-xs">
           <div className="container mx-auto flex justify-between items-center h-8 px-4">
@@ -296,163 +293,27 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Header Component */}
-      <header className="fixed top-0 z-40 w-full">
-        {/* Policy links bar with contact info */}
-        <div className="bg-black/90 backdrop-blur-xl text-xs">
-          <div className="container mx-auto flex justify-between items-center h-8 px-4">
-            {/* Contact info in top bar */}
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-1 group">
-                <Phone
-                  size={14}
-                  className="text-orange-400 group-hover:animate-pulse"
-                />
-                <Link
-                  href="tel:+919964391643"
-                  className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
-                >
-                  9964391643
-                </Link>
-              </div>
-              <div className="hidden sm:flex items-center space-x-1 group">
-                <Mail
-                  size={14}
-                  className="text-orange-400 group-hover:animate-pulse"
-                />
-                <Link
-                  href="mailto:hello@therunbhumi.com"
-                  className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
-                >
-                  hello@therunbhumi.com
-                </Link>
-              </div>
-            </div>
-
-            {/* Policy links */}
-            <div className="hidden md:flex space-x-4">
-              {policyLinks.map((link) => {
-                const Icon = link.icon;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-gray-300 hover:text-orange-300 transition-colors duration-300 flex items-center space-x-1"
-                  >
-                    <Icon size={12} className="text-orange-400" />
-                    <span>{link.label}</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* Main navigation area with gradient background */}
-        <div
-          className="container mx-auto rounded-b-xl py-2 px-4 lg:px-6 transition-all duration-500"
-          style={{
-            background: `linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(51, 28, 0, 0.95), rgba(0, 0, 0, 0.9))`,
-            backdropFilter: "blur(10px)",
-          }}
-        >
-          <div className="mx-auto flex items-center justify-between h-16 md:h-20">
-            {/* Logo with subtle hover effects */}
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/"
-                className="flex items-center group rounded-lg relative"
-                aria-label="RunBhumi Home"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                <div className="relative h-12 w-12 md:h-14 md:w-14 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
-                  <div className="h-full w-full rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm">
-                    <Image
-                      src="/rb_logo.png"
-                      alt="RunBhumi Logo"
-                      fill
-                      className="object-contain drop-shadow-md"
-                      priority
-                    />
-                  </div>
-                </div>
-              </Link>
-
-              {/* Desktop Navigation with gradient hover effects */}
-              <nav
-                className="hidden md:flex items-center justify-center px-4 transition-all duration-500 space-x-2 lg:space-x-4"
-                role="navigation"
-                aria-label="Main Navigation"
-              >
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`text-sm lg:text-base font-medium uppercase text-center transition-all duration-300 relative py-2 px-2 lg:px-3 rounded-md 
-                      ${
-                        link.href === "/trials"
-                          ? "text-orange-400 bg-gradient-to-r from-orange-950/30 via-orange-900/20 to-orange-950/30 backdrop-blur-sm"
-                          : "text-gray-200 hover:bg-gradient-to-r hover:from-orange-950/10 hover:via-orange-900/5 hover:to-orange-950/10 hover:backdrop-blur-sm hover:text-orange-300"
-                      }
-                      group overflow-hidden`}
-                  >
-                    {link.label}
-                    <span
-                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-600/80 via-orange-500 to-orange-600/80 transform origin-left transition-transform duration-500 ease-out 
-                        ${
-                          link.href === "/trials"
-                            ? "scale-x-100"
-                            : "scale-x-0 group-hover:scale-x-100"
-                        }`}
-                    />
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-            {/* Register Button - Desktop Only */}
-            <div className="hidden md:block">
-              <RegisterButton />
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 rounded-md text-white bg-orange-900/20 hover:bg-orange-800/30 transition-colors duration-200"
-              onClick={toggleMobileMenu}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5 text-orange-300" aria-hidden="true" />
-              ) : (
-                <Menu className="h-5 w-5 text-orange-300" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-        </div>
-      </header>
-
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
         className={`md:hidden fixed top-0 left-0 w-full h-full bg-gradient-to-b from-black/95 via-orange-950/30 to-gray-900/95 backdrop-blur-md shadow-lg transform transition-all duration-500 ease-in-out z-50 ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="container mx-auto px-4 py-4">
           {/* Close button inside mobile menu */}
           <div className="flex justify-between items-center mb-6 mt-4">
-            <div className="relative h-12 w-12 flex-shrink-0 bg-orange-700 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">
-                <Image
-                  src="/rb_logo.png"
-                  alt="RunBhumi Logo"
-                  fill
-                  className="object-contain drop-shadow-md"
-                  priority
-                />
-              </span>
+            <div className="relative h-12 w-12 flex-shrink-0">
+              <Image
+                src="/rb_logo.png"
+                alt="RunBhumi Logo"
+                fill
+                className="object-contain drop-shadow-md"
+                priority
+              />
             </div>
             <button
               className="text-white p-2 bg-gradient-to-r from-orange-950/30 to-orange-900/20 backdrop-blur-sm rounded-full hover:from-orange-900/30 hover:to-orange-800/20 transition-colors duration-300"
@@ -475,7 +336,7 @@ export default function Header() {
                 href={link.href}
                 className={`font-medium py-3 px-4 uppercase rounded-lg transition-all duration-300 relative group overflow-hidden
                   ${
-                    link.href === "/trials"
+                    isActive(link.href)
                       ? "text-orange-400 bg-gradient-to-r from-orange-950/40 via-orange-900/30 to-orange-950/40 backdrop-blur-sm"
                       : "text-white hover:text-orange-300 hover:bg-gradient-to-r hover:from-orange-950/20 hover:via-orange-900/10 hover:to-orange-950/20 hover:backdrop-blur-sm"
                   }`}
@@ -485,9 +346,7 @@ export default function Header() {
                 <span
                   className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600/80 via-orange-500 to-orange-600/80 transition-all duration-500 ease-out
                     ${
-                      link.href === "/trials"
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
+                      isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                 />
               </Link>
