@@ -161,10 +161,11 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-3">
                 Franchise Opportunities
               </h3>
-              <p className="text-gray-700">
-                Top shortlisted players get a chance to get auctioned by
-                franchise, and later get recognition and opportunities similar
-                to global premier league.
+              <p className="text-gray-700 leading-relaxed">
+                Own your own T20 franchise in a one‑of‑its‑kind league alongside
+                cricket’s most esteemed gurus. You’ll start seeing returns from
+                day one, and it’s the perfect way to put your brand on the
+                map—reaching fans both in India and around the world.
               </p>
             </Card>
 
@@ -887,7 +888,7 @@ export default function Home() {
                 <div>
                   <h4 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
                     <UsersIcon className="mr-2 h-5 w-5 text-orange-600" />
-                    Legendary Mentors
+                    Proposed Legendary Mentors
                   </h4>
 
                   <div className="space-y-4">
