@@ -44,6 +44,7 @@ import {
   SunIcon,
   CalendarDaysIcon,
   Camera,
+  ClipboardCheckIcon,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -56,13 +57,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import UpcomingMatches from "@/components/upcoming-matches";
-import TeamStandings from "@/components/team-standings";
-import RecentResults from "@/components/recent-results";
-import Footer from "@/components/footer";
-import RegistrationModal from "@/components/registration-modal";
 import ParallaxSplitHero from "@/components/hero/parallax-split-hero";
 import RegisterButton from "@/components/register-button";
 import DynamicButton from "@/components/dynamic-button";
@@ -238,24 +232,61 @@ export default function Home() {
           </div>
           <div className="mx-auto mt-8 md:mt-12">
             <Tabs defaultValue="eligibility" className="w-full">
-              <TabsList className="grid w-full grid-cols-4">
+              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 h-auto gap-1 bg-orange-50/50 p-1">
                 <TabsTrigger
                   value="eligibility"
-                  className="text-sm md:text-base"
+                  className="text-xs sm:text-sm md:text-base py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white"
                 >
-                  Age & Eligibility
+                  <div className="flex flex-col items-center gap-1">
+                    <UserIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-center leading-tight">
+                      <span className="block sm:hidden">Age & Eligibility</span>
+                      <span className="hidden sm:block">Age & Eligibility</span>
+                    </span>
+                  </div>
                 </TabsTrigger>
-                <TabsTrigger value="city-wise" className="text-sm md:text-base">
-                  City-wise Trial Info
+
+                <TabsTrigger
+                  value="city-wise"
+                  className="text-xs sm:text-sm md:text-base py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white"
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <MapPinIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-center leading-tight">
+                      <span className="block sm:hidden">Trial Locations</span>
+                      <span className="hidden sm:block">
+                        City-wise Trial Info
+                      </span>
+                    </span>
+                  </div>
                 </TabsTrigger>
+
                 <TabsTrigger
                   value="assessment"
-                  className="text-sm md:text-base"
+                  className="text-xs sm:text-sm md:text-base py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white"
                 >
-                  Skill Assessments
+                  <div className="flex flex-col items-center gap-1">
+                    <ClipboardCheckIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-center leading-tight">
+                      <span className="block sm:hidden">What to Expect</span>
+                      <span className="hidden sm:block">Skill Assessments</span>
+                    </span>
+                  </div>
                 </TabsTrigger>
-                <TabsTrigger value="criteria" className="text-sm md:text-base">
-                  Shortlisting Criteria
+
+                <TabsTrigger
+                  value="criteria"
+                  className="text-xs sm:text-sm md:text-base py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white"
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <TrophyIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-center leading-tight">
+                      <span className="block sm:hidden">Selection Process</span>
+                      <span className="hidden sm:block">
+                        Shortlisting Criteria
+                      </span>
+                    </span>
+                  </div>
                 </TabsTrigger>
               </TabsList>
 
@@ -542,103 +573,8 @@ export default function Home() {
                           perfect balance of technical skills, tactical
                           intelligence, physical prowess, and mental strength.
                         </p>
-                        {/* 
-                        <div className="bg-white rounded-lg p-6 shadow-inner border border-orange-100">
-                          <h4 className="font-semibold text-xl mb-4 text-center">
-                            Point Distribution
-                          </h4>
-                          <div className="grid md:grid-cols-2 gap-6">
-                            <div className="transform transition-all duration-300 hover:scale-105">
-                              <div className="flex justify-between items-center mb-2">
-                                <p className="font-medium text-lg">
-                                  Technical Skills
-                                </p>
-                                <span className="font-bold text-orange-600">
-                                  40 points
-                                </span>
-                              </div>
-                              <div className="w-full bg-gray-100 rounded-full h-3">
-                                <div
-                                  className="bg-orange-600 h-3 rounded-full animate-pulse"
-                                  style={{ width: "40%" }}
-                                ></div>
-                              </div>
-                              <p className="text-gray-600 text-sm mt-2">
-                                Batting, bowling & fielding technique
-                              </p>
-                            </div>
-
-                            <div className="transform transition-all duration-300 hover:scale-105">
-                              <div className="flex justify-between items-center mb-2">
-                                <p className="font-medium text-lg">
-                                  Tactical Awareness
-                                </p>
-                                <span className="font-bold text-orange-600">
-                                  20 points
-                                </span>
-                              </div>
-                              <div className="w-full bg-gray-100 rounded-full h-3">
-                                <div
-                                  className="bg-orange-600 h-3 rounded-full animate-pulse"
-                                  style={{ width: "20%" }}
-                                ></div>
-                              </div>
-                              <p className="text-gray-600 text-sm mt-2">
-                                Game sense & decision-making
-                              </p>
-                            </div>
-
-                            <div className="transform transition-all duration-300 hover:scale-105">
-                              <div className="flex justify-between items-center mb-2">
-                                <p className="font-medium text-lg">
-                                  Physical Fitness
-                                </p>
-                                <span className="font-bold text-orange-600">
-                                  25 points
-                                </span>
-                              </div>
-                              <div className="w-full bg-gray-100 rounded-full h-3">
-                                <div
-                                  className="bg-orange-600 h-3 rounded-full animate-pulse"
-                                  style={{ width: "25%" }}
-                                ></div>
-                              </div>
-                              <p className="text-gray-600 text-sm mt-2">
-                                Strength, speed & endurance
-                              </p>
-                            </div>
-
-                            <div className="transform transition-all duration-300 hover:scale-105">
-                              <div className="flex justify-between items-center mb-2">
-                                <p className="font-medium text-lg">
-                                  Mental Attributes
-                                </p>
-                                <span className="font-bold text-orange-600">
-                                  15 points
-                                </span>
-                              </div>
-                              <div className="w-full bg-gray-100 rounded-full h-3">
-                                <div
-                                  className="bg-orange-600 h-3 rounded-full animate-pulse"
-                                  style={{ width: "15%" }}
-                                ></div>
-                              </div>
-                              <p className="text-gray-600 text-sm mt-2">
-                                Temperament & resilience
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="mt-6 pt-4 border-t border-gray-100 text-center">
-                            <span className="bg-orange-50 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
-                              All evaluations conducted by professional coaches
-                              & former international players
-                            </span>
-                          </div>
-                        </div> */}
                       </div>
 
-                      {/* Shortlisting Process Section */}
                       <div className="bg-gradient-to-r from-orange-50 to-white p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
                         <h3 className="text-2xl font-bold mb-6 text-orange-700 flex items-center">
                           <RouteIcon className="mr-3 h-6 w-6 text-orange-600" />
@@ -775,7 +711,8 @@ export default function Home() {
                 The Gurukul Experience
               </h2>
               <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
-                An immersive 45-day cricket talent hunt, blending legacy wisdom with modern techniques
+                An immersive 45-day cricket talent hunt, blending legacy wisdom
+                with modern techniques
               </p>
             </div>
           </div>

@@ -118,11 +118,11 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About Us" },
-    { href: "/merchandise", label: "Merchandise" },
     { href: "/trials", label: "Trials" },
+    { href: "/careers", label: "Careers" },
     { href: "/partner-with-us", label: "Partner With Us" },
     { href: "/sponsorships", label: "Sponsorships" },
-    { href: "/careers", label: "Careers" },
+    { href: "/merchandise", label: "Merchandise" },
   ];
 
   // Policy links

@@ -104,7 +104,7 @@ export default function RegistrationModal() {
                 Please Note: Players who have their RunBhumi ID need to login
                 using their credentials and follow the registration process.
               </p>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-30"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-10"></div>
             </div>
           </div>
 
@@ -112,7 +112,7 @@ export default function RegistrationModal() {
           <div className="w-full pb-6 sm:pb-10 px-6 sm:px-8 relative z-10">
             <Link href="/register">
               <DynamicButton onClick={() => setIsOpen(false)}>
-                Register for Trials
+                Register for Trials (Ages: 16-30)
               </DynamicButton>
             </Link>
           </div>

@@ -147,10 +147,13 @@ const PartnershipTabs = () => {
                       Zone Franchise
                     </h3>
                     <p className="text-gray-600 mb-4">
-                      Control a specific zone within a state and build a network
-                      of city franchisees. Zone franchisees work directly with
-                      the state master franchise and manage multiple cities
-                      within their territory.
+                      A zone is group of states divided into north, south,
+                      central, east and west zones.
+                      {/* Control a specific zone
+                      within and build a network of city franchisees.
+                      Zone franchisees work directly with the state master
+                      franchise and manage multiple cities within their
+                      territory. */}
                     </p>
                     <div className="space-y-3 mb-6">
                       <div className="flex items-start gap-2">

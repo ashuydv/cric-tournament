@@ -266,7 +266,7 @@ const Sponsorships = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact-us"
+                href="tel:+919810724283"
                 className="bg-white text-orange-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300"
               >
                 Contact Us
