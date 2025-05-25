@@ -28,7 +28,7 @@ const Sponsorships = () => {
       />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Sponsorship Opportunities

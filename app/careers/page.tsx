@@ -106,7 +106,7 @@ const Career = () => {
       />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Join Our Team
@@ -272,7 +272,7 @@ const Career = () => {
             Employee Benefits
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
                 <svg
@@ -299,7 +299,7 @@ const Career = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            {/* <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -322,7 +322,7 @@ const Career = () => {
               <p className="text-gray-600">
                 Comprehensive medical coverage for you and your dependents.
               </p>
-            </div>
+            </div> */}
 
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
@@ -430,7 +430,7 @@ const Career = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=800&auto=format&fit=crop"
+                  src="/party.jpg"
                   alt="Office celebration"
                   layout="fill"
                   objectFit="cover"
