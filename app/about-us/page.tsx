@@ -120,44 +120,34 @@ export default function AboutUsPage() {
               </h2>
             </div>
             <div className="flex flex-wrap justify-center gap-8 items-center">
-              <div className="rounded-lg border-2 border-black">
-                {/* <p className="font-semibold italic uppercase">
-                  
-                </p> */}
-                <Image
-                  src="/images/partners/sony_sports3.png"
-                  alt="Sony Ten3"
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className="rounded-lg border-2 border-black">
-                {/* <p className="font-semibold italic uppercase">SonyLiv</p> */}
-                <Image
-                  src="/images/partners/sony-liv.png"
-                  alt="Sony Liv"
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className="rounded-lg border-2 border-black">
-                {/* <p className="font-semibold italic uppercase">Sony Pal</p> */}
-                <Image
-                  src="/images/partners/sony-pal.png"
-                  alt="Sony Pal"
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className="rounded-lg border-2 border-black">
-                {/* <p className="font-semibold italic uppercase">FanCode</p> */}
-                <Image
-                  src="/images/partners/fancode.png"
-                  alt="Fancode"
-                  width={150}
-                  height={150}
-                />
-              </div>
+              <Image
+                src="/images/partners/1.png"
+                alt="Sony Ten3"
+                width={150}
+                height={150}
+                className="rounded-lg overflow-hidden"
+              />
+              <Image
+                src="/images/partners/2.png"
+                alt="Sony Liv"
+                width={150}
+                height={150}
+                className="rounded-lg overflow-hidden"
+              />
+              <Image
+                src="/images/partners/3.png"
+                alt="Sony Pal"
+                width={150}
+                height={150}
+                className="rounded-lg overflow-hidden"
+              />
+              <Image
+                src="/images/partners/4.png"
+                alt="Fancode"
+                width={150}
+                height={150}
+                className="rounded-lg overflow-hidden"
+              />
             </div>
           </div>
         </section>
@@ -212,10 +202,11 @@ export default function AboutUsPage() {
                   Co-Founder & Strategist
                 </p>
                 <p className="text-sm text-muted-foreground text-center max-w-md">
-                  A retired Air Force officer and business leader, Tarak blends
-                  discipline, structure, and cultural insight into RunBhumi. A
-                  lifelong cricket lover, he is the strategic force behind the
-                  on-ground execution of India's biggest cricket talent hunt.
+                  A retired Air Force officer and business leader with over two
+                  decades of experience, Tarak blends discipline, structure, and
+                  cultural insight into RunBhumi. A lifelong cricket lover, he
+                  is the strategic force behind the on-ground execution of
+                  India's biggest cricket talent hunt.
                 </p>
               </div>
             </div>
@@ -233,7 +224,7 @@ export default function AboutUsPage() {
                 Get In Touch
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                Have questions about RunBhumi? We'd love to hear from you!
+                Have questions about RunBhumi ? We'd love to hear from you !
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <DynamicButton href="/register" variant="primary">

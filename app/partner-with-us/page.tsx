@@ -5,13 +5,13 @@ import { CheckCircle } from "lucide-react";
 import LeftHero from "@/components/common/left-hero";
 
 const PartnershipTabs = () => {
-  const [activeTab, setActiveTab] = useState("state");
+  const [activeTab, setActiveTab] = useState("zone");
 
   return (
     <div className="">
       <LeftHero
         title="Partner With Us"
-        description="India’s fastest growing cricket talent hunt, from the streets to national fame, a chance to become a national celebrity by competing in the reality show and sharing the dressing room with international cricket legends"
+        description="The world's fastest growing cricket talent hunt, from local streets to global stardom, a chance to become an international cricket sensation by competing in this groundbreaking reality show and sharing the dressing room with legendary cricketers from across the cricket-playing nations worldwide"
         backgroundType="color"
         backgroundSrc="#111"
         height="small"
@@ -35,16 +35,6 @@ const PartnershipTabs = () => {
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             <button
-              onClick={() => setActiveTab("state")}
-              className={`px-4 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
-                activeTab === "state"
-                  ? "bg-orange-600 text-white shadow-md"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              State Franchise
-            </button>
-            <button
               onClick={() => setActiveTab("zone")}
               className={`px-4 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
                 activeTab === "zone"
@@ -54,6 +44,17 @@ const PartnershipTabs = () => {
             >
               Zone Franchise
             </button>
+            <button
+              onClick={() => setActiveTab("state")}
+              className={`px-4 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
+                activeTab === "state"
+                  ? "bg-orange-600 text-white shadow-md"
+                  : "bg-white text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              State Franchise
+            </button>
+
             <button
               onClick={() => setActiveTab("city")}
               className={`px-4 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${

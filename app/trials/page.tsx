@@ -833,59 +833,6 @@ export default function RunBhumiTrialsPage() {
 
         <SelectionPathRoadmap />
 
-        <div className="bg-gray-100 rounded-lg p-6 mb-12">
-          <h2 className="text-2xl font-bold mb-6">Evaluation Methodology</h2>
-          <p className="mb-6 text-gray-600">
-            RunBhumi Trials uses a standardized 100-point grading system
-            designed to identify complete prospects compared with the perfect
-            balance of technical skills, tactical awareness, physical fitness,
-            and mental attributes.
-          </p>
-
-          <div className="grid gap-6 md:grid-cols-4 lg:gap-10">
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Technical Skills</h3>
-              <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
-                <div
-                  className="bg-orange-600 h-3 rounded-full"
-                  style={{ width: "40%" }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-500">40 points</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Tactical Awareness</h3>
-              <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
-                <div
-                  className="bg-orange-600 h-3 rounded-full"
-                  style={{ width: "30%" }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-500">30 points</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Physical Fitness</h3>
-              <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
-                <div
-                  className="bg-orange-600 h-3 rounded-full"
-                  style={{ width: "20%" }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-500">20 points</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Mental Attributes</h3>
-              <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
-                <div
-                  className="bg-orange-600 h-3 rounded-full"
-                  style={{ width: "10%" }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-500">10 points</p>
-            </div>
-          </div>
-        </div>
-
         {/* Registration Form */}
         {/* <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Register for Trials</h2>
