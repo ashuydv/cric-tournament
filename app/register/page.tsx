@@ -898,7 +898,7 @@ export default function RegistrationPage() {
                 Trial Schedule
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                Select your preferred trial location from our nationwide
+                Select your preferred trial location from our worldwide
                 schedule
               </p>
             </div>

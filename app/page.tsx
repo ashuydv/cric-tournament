@@ -80,16 +80,24 @@ export default function Home() {
           </>
         }
         description={
+          // <>
+          //   India's Biggest Individual Cricket Talent Hunt <br />
+          //   RunBhumi isn't just an event. It's a movement. <br />A worldwide
+          //   hunt to discover raw, unstoppable cricket talent from the streets,
+          //   small towns, and forgotten corners of India — and bring them into
+          //   the limelight of national television.
+          // </>
           <>
-            India's Biggest Individual Cricket Talent Hunt <br />
-            RunBhumi isn't just an event. It's a movement. <br />A nationwide
-            hunt to discover raw, unstoppable cricket talent from the streets,
-            small towns, and forgotten corners of India — and bring them into
-            the limelight of national television.
+            The World's Biggest Individual Cricket Talent Hunt <br />
+            RunBhumi isn't just an event. It's a revolution. <br />A global hunt
+            to uncover raw, unstoppable cricket talent from streets, small
+            towns, and overlooked corners — not just in India, but across the
+            world — and bring them into the spotlight on international
+            platforms.
           </>
         }
         backgroundSrc="/cric_bg.png"
-        primaryButtonText="Join Now"
+        primaryButtonText="Join Now (Ages: 16-30)"
         primaryButtonLink="/register"
         secondaryButtonText="Explore Trials"
         secondaryButtonLink="/trials"
@@ -122,7 +130,7 @@ export default function Home() {
                 International Exposure
               </h3>
               <p className="text-gray-700">
-                Our nationwide trials and training sessions ensure every
+                Our worldwide trials and training sessions ensure every
                 participant—regardless of background—gains visibility on the
                 international stage.
               </p>
@@ -136,9 +144,9 @@ export default function Home() {
                 India & renowned International cricket legends
               </h3>
               <p className="text-gray-700">
-                Receive direct coaching and guidance from India's cricketing
-                legends, gaining invaluable insights from those who've excelled
-                at the highest level.
+                Receive direct coaching and guidance from global cricketing
+                legends, gaining invaluable insights from those who’ve excelled
+                at the highest level of the game.
               </p>
             </Card>
 
@@ -178,6 +186,20 @@ export default function Home() {
                 Experience a holistic development approach that nurtures not
                 only cricketing skills but also character, discipline, and
                 mental strength.
+              </p>
+            </Card>
+
+            <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <Users className="w-8 h-8 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">
+                Global Network & Community
+              </h3>
+              <p className="text-gray-700">
+                Join a vibrant community of aspiring cricketers from around the
+                world. Build lasting connections, share experiences, and grow
+                together in your cricket journey.
               </p>
             </Card>
 
@@ -352,11 +374,7 @@ export default function Home() {
                           <li>
                             Previous playing experience documentation (if any)
                           </li>
-                          <li>
-                            Parental consent form for participants under 18
-                            years
-                          </li>
-                          <li>Registration fee of ₹1,500</li>
+                          <li>Registration fee of ₹1,500 + GST</li>
                         </ul>
                       </div>
 
@@ -370,7 +388,7 @@ export default function Home() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
-                            Are currently contracted with any state, zone,
+                            Are currently contracted with any zone, state,
                             national cricket association related to BCCI
                           </li>
                         </ul>
@@ -394,7 +412,8 @@ export default function Home() {
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
                               <span>
-                                Technical skill evaluation in nets (20 minutes)
+                                Technical skill evaluation in nets (5-10
+                                minutes)
                               </span>
                             </li>
                             <li className="flex items-start">
@@ -428,7 +447,7 @@ export default function Home() {
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
                               <span>
-                                Accuracy tests with target areas (10 overs)
+                                Accuracy tests with proper bowling actions
                               </span>
                             </li>
                             <li className="flex items-start">
@@ -437,11 +456,15 @@ export default function Home() {
                             </li>
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
-                              <span>Variation execution assessment</span>
+                              <span>
+                                Bowling variation execution assessment
+                              </span>
                             </li>
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
-                              <span>Death bowling pressure scenarios</span>
+                              <span>
+                                Death bowling under pressure scenarios
+                              </span>
                             </li>
                           </ul>
                         </div>
@@ -485,7 +508,7 @@ export default function Home() {
                             </li>
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
-                              <span>Sprint tests (20m, 40m)</span>
+                              <span>Sprint tests</span>
                             </li>
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
@@ -514,12 +537,12 @@ export default function Home() {
                           Evaluation Methodology
                         </h3>
                         <p className="mb-6 text-gray-700 text-lg">
-                          RunBhumi uses a transparent 100-point scoring system
+                          RunBhumi uses a transparent evaluation process
                           designed to identify complete cricketers with the
                           perfect balance of technical skills, tactical
                           intelligence, physical prowess, and mental strength.
                         </p>
-
+                        {/* 
                         <div className="bg-white rounded-lg p-6 shadow-inner border border-orange-100">
                           <h4 className="font-semibold text-xl mb-4 text-center">
                             Point Distribution
@@ -612,7 +635,7 @@ export default function Home() {
                               & former international players
                             </span>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
 
                       {/* Shortlisting Process Section */}
@@ -689,7 +712,7 @@ export default function Home() {
                                   </h4>
                                 </div>
                                 <p className="text-gray-700">
-                                  Top 100 players nationwide join our 7-day
+                                  Top 100 players worldwide join our 7-day
                                   intensive Gurukul-style camp with cricket
                                   legends as mentors.
                                 </p>
@@ -752,8 +775,7 @@ export default function Home() {
                 The Gurukul Experience
               </h2>
               <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
-                An immersive 45-day cricket bootcamp blending ancient wisdom
-                with modern techniques
+                An immersive 45-day cricket talent hunt, blending legacy wisdom with modern techniques
               </p>
             </div>
           </div>
@@ -1008,7 +1030,9 @@ export default function Home() {
                       <div className="flex items-center justify-between border-b border-orange-100 pb-3">
                         <div className="flex items-center">
                           <PlayCircleIcon className="h-6 w-6 text-orange-600 mr-2" />
-                          <span className="font-medium">Weekly Episodes</span>
+                          <span className="font-medium">
+                            Weekly Mega Episodes
+                          </span>
                         </div>
                         <span className="text-sm text-orange-600">
                           Sunday 8 PM

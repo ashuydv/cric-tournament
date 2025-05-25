@@ -66,8 +66,8 @@ export default function AboutUsPage() {
                   Our Story
                 </h2>
                 <p className="text-muted-foreground md:text-lg">
-                  RunBhumi is not just a platform—it's a battlefield where raw
-                  cricketing dreams come alive. We are India's
+                  RunBhumi is not just a platform—it's global battlefield where
+                  raw cricketing dreams come alive. We are the world's
                   <strong>
                     {" "}
                     first-ever televised individual cricket talent hunt
@@ -77,19 +77,21 @@ export default function AboutUsPage() {
                   remote villages.
                 </p>
                 <p className="text-muted-foreground md:text-lg">
-                  This is a national movement for the youth who never had
-                  access, exposure, or opportunity but possess unmatched passion
-                  and potential. RunBhumi gives them the stage, the training,
-                  the spotlight—and a shot at the big league.
+                  This is an international movement for youth worldwide who
+                  never had access, exposure, or opportunity but possess
+                  unmatched passion and potential. RunBhumi gives them the
+                  global stage, world-class training, international
+                  spotlight—and a shot at the biggest leagues across
+                  cricket-playing nations.
                 </p>
                 <p className="text-muted-foreground md:text-lg">
-                  With trials held across India, a rigorous 45-day cricket
-                  Gurukul led by legendary cricketers, and a grand league
-                  broadcast nationwide,{" "}
+                  With trials held across multiple countries, a rigorous 45-day
+                  cricket Gurukul led by legendary international cricketers, and
+                  a grand league broadcast to audiences worldwide,{" "}
                   <strong>
-                    RunBhumi transforms untold stories into national sensations
+                    RunBhumi transforms untold stories from around the world
+                    into global cricket sensations.
                   </strong>
-                  .
                 </p>
               </div>
               {/* <ShuffleGrid /> */}
@@ -118,17 +120,43 @@ export default function AboutUsPage() {
               </h2>
             </div>
             <div className="flex flex-wrap justify-center gap-8 items-center">
-              <div className="bg-white p-4 rounded-lg border-2 border-black shadow-sm">
-                <p className="font-semibold italic uppercase">Sony Ten 3</p>
+              <div className="rounded-lg border-2 border-black">
+                {/* <p className="font-semibold italic uppercase">
+                  
+                </p> */}
+                <Image
+                  src="/images/partners/sony_sports3.png"
+                  alt="Sony Ten3"
+                  width={200}
+                  height={200}
+                />
               </div>
-              <div className="bg-white p-4 rounded-lg border-2 border-black shadow-sm">
-                <p className="font-semibold italic uppercase">SonyLiv</p>
+              <div className="rounded-lg border-2 border-black">
+                {/* <p className="font-semibold italic uppercase">SonyLiv</p> */}
+                <Image
+                  src="/images/partners/sony-liv.png"
+                  alt="Sony Liv"
+                  width={200}
+                  height={200}
+                />
               </div>
-              <div className="bg-white p-4 rounded-lg border-2 border-black shadow-sm">
-                <p className="font-semibold italic uppercase">Sony Pal</p>
+              <div className="rounded-lg border-2 border-black">
+                {/* <p className="font-semibold italic uppercase">Sony Pal</p> */}
+                <Image
+                  src="/images/partners/sony-pal.png"
+                  alt="Sony Pal"
+                  width={200}
+                  height={200}
+                />
               </div>
-              <div className="bg-white p-4 rounded-lg border-2 border-black shadow-sm">
-                <p className="font-semibold italic uppercase">FanCode</p>
+              <div className="rounded-lg border-2 border-black">
+                {/* <p className="font-semibold italic uppercase">FanCode</p> */}
+                <Image
+                  src="/images/partners/fancode.png"
+                  alt="Fancode"
+                  width={150}
+                  height={150}
+                />
               </div>
             </div>
           </div>

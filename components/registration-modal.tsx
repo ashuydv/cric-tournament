@@ -81,30 +81,30 @@ export default function RegistrationModal() {
                 />
               </div>
             </div>
-            <div className="bg-gradient-to-r from-orange-400 to-amber-400 text-white text-xs sm:text-sm py-1 px-4 sm:px-6 rounded-full inline-block font-bold transform -rotate-2 shadow-md">
+            <div className="bg-gradient-to-r from-orange-400 to-amber-400 text-white text-xs sm:text-sm py-1 px-4 sm:px-6 rounded-full inline-block font-bold transform shadow-md">
               SEASON - 1
             </div>
           </div>
 
           {/* Main Content */}
           <div className="w-full px-4 sm:px-6 py-3 sm:py-4 relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2 tracking-tight transform -rotate-1">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2 tracking-tight transform ">
               SEASON - 1
             </h2>
-            <div className="bg-gradient-to-r from-orange-500 to-amber-400 py-2 sm:py-3 px-3 sm:px-4 mb-2 sm:mb-3 rounded-md transform rotate-1 shadow-lg">
+            <div className="bg-gradient-to-r from-orange-500 to-amber-400 py-2 sm:py-3 px-3 sm:px-4 mb-2 sm:mb-3 rounded-md transform shadow-lg">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">
                 REGISTRATIONS
               </h3>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4 tracking-tight transform -rotate-1">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4 tracking-tight transform ">
               OPENS NOW!
             </h2>
             <div className="relative">
-              <p className="text-xs sm:text-sm text-amber-100 mb-4 sm:mb-6 px-2 sm:px-4 relative z-10">
+              <p className="text-xs sm:text-sm text-amber-50 mb-4 sm:mb-6 px-2 sm:px-4 relative z-10">
                 Please Note: Players who have their RunBhumi ID need to login
                 using their credentials and follow the registration process.
               </p>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-30"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-30"></div>
             </div>
           </div>
 

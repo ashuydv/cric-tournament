@@ -34,7 +34,7 @@ export function VideoHero() {
                             Your Cricket Journey <br />Starts Here
                         </h1>
                         <p className="text-gray-300 md:text-lg mt-4">
-                            Join India's most comprehensive cricket talent hunt program and showcase your skills to top selectors and cricket academies nationwide.
+                            Join India's most comprehensive cricket talent hunt program and showcase your skills to top selectors and cricket academies worldwide.
                         </p>
                     </div>
 

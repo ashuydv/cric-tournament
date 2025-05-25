@@ -46,10 +46,10 @@ const Trials = (props: Props) => {
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Batter: INR 1500</li>
-              <li>Bowler: INR 1500</li>
-              <li>Wicket-keeper Batter: INR 1500</li>
-              <li>Allrounder: INR 1500</li>
+              <li>Batter: ₹1,500 + GST</li>
+              <li>Bowler: ₹1,500 + GST</li>
+              <li>Wicket-keeper Batter: ₹1,500 + GST</li>
+              <li>Allrounder: ₹1,500 + GST</li>
             </ul>
 
             <p className="mt-4">
@@ -67,8 +67,9 @@ const Trials = (props: Props) => {
                 Amateur cricketers can register through trials on the RunBhumi
                 website by paying a one-time registration fee
                 <br />
-                Trial Registration Fee: Batter - INR 1500, Bowler - INR 1500,
-                Wicketkeeper-Batter - INR 1500, Allrounder - INR 1500
+                Trial Registration Fee: Batter - ₹1,500 + GST, Bowler - ₹1,500 +
+                GST, Wicketkeeper-Batter - ₹1,500 + GST, Allrounder - ₹1,500 +
+                GST
                 <br />
                 All registered amateur cricketers will be invited to take part
                 in a trial venue according to their chosen zone and they will be

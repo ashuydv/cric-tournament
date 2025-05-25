@@ -70,20 +70,25 @@ const CounterAnimation: React.FC<CounterAnimationProps> = ({
 
 const KeyFactsSection = () => {
   const factsData = [
-    { icon: MapPin, value: 60, label: "Cities for On-ground Trials" },
+    { icon: MapPin, value: 36, label: "Cities for On-ground Trials" },
     {
       icon: Users,
       value: 150,
       label: "Players Selected",
       suffix: "+",
     },
-    { icon: Building, value: 8, label: "Franchise Teams" },
-    { icon: Calendar, value: 45, label: "Gurukul Style Training Camp" },
+    { icon: Building, value: 12, label: "(8 Male + 4 Female) Teams" },
+    { icon: Calendar, value: 45, label: "Day Gurukul-Style Training Camp" },
     { icon: Tv, value: 36, label: "Talent Reality Shows" },
-    { icon: Trophy, value: 10, label: "Teams" },
-    { icon: Award, value: 32, label: "Matches" },
+    { icon: Trophy, value: 12, label: "Team Ownership" },
+    { icon: Award, value: 32, label: "League Matches" },
     { icon: Star, value: 8, label: "Ex-International Players per Team" },
-    { icon: Heart, value: 500, label: "Talents in Next 10 Years", suffix: "+" },
+    {
+      icon: Heart,
+      value: 5000,
+      label: "Showcasing Talents in Next 10 Years",
+      suffix: "+",
+    },
   ];
 
   return (
