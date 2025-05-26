@@ -13,16 +13,151 @@ import {
   Search,
   Filter,
   Star,
+  X,
+  DollarSign,
+  CheckCircle,
+  Trophy,
+  Target,
+  Globe,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+// Define the Job type interface
+interface Job {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  featured: boolean;
+  salary: string;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+  benefits: string[];
+}
+
 const Career = () => {
   const [filter, setFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Sample job listings
+  // Enhanced job listings with detailed information
   const jobs = [
+    // Featured positions
+    {
+      id: 7,
+      title: "Sales Manager",
+      department: "Sales",
+      location: "Mumbai",
+      type: "Full-time",
+      experience: "4-6 years",
+      featured: true,
+      salary: "₹8-12 LPA",
+      description:
+        "Lead our sales team to drive revenue growth and expand our market presence in the cricket tournament and talent hunt programs.",
+      responsibilities: [
+        "Develop and implement strategic sales plans to achieve revenue targets",
+        "Manage and mentor a team of sales representatives",
+        "Build and maintain relationships with key clients and stakeholders",
+        "Identify new business opportunities in cricket tournaments and talent development",
+        "Collaborate with marketing team on promotional campaigns",
+        "Prepare sales reports and forecasts for senior management",
+      ],
+      requirements: [
+        "Bachelor's degree in Business, Marketing, or related field",
+        "4-6 years of sales management experience, preferably in sports/entertainment",
+        "Proven track record of achieving sales targets",
+        "Strong leadership and team management skills",
+        "Excellent communication and negotiation abilities",
+        "Knowledge of cricket industry is a plus",
+      ],
+      benefits: [
+        "Competitive salary with performance bonuses",
+        "Health insurance for you and family",
+        "Flexible working hours",
+        "Professional development opportunities",
+        "Access to cricket matches and events",
+      ],
+    },
+    {
+      id: 8,
+      title: "Marketing Manager",
+      department: "Marketing",
+      location: "Delhi",
+      type: "Full-time",
+      experience: "5-7 years",
+      featured: true,
+      salary: "₹10-15 LPA",
+      description:
+        "Drive brand awareness and marketing strategies for RunBhumi's cricket tournaments and talent hunt programs across India.",
+      responsibilities: [
+        "Develop comprehensive marketing strategies for cricket tournaments",
+        "Manage digital marketing campaigns across multiple platforms",
+        "Oversee brand partnerships and sponsorship opportunities",
+        "Lead creative campaigns for talent hunt program promotion",
+        "Analyze market trends and competitor activities",
+        "Coordinate with PR agencies and media partners",
+        "Manage marketing budget and ROI optimization",
+      ],
+      requirements: [
+        "Master's degree in Marketing, Communications, or related field",
+        "5-7 years of marketing experience in sports or entertainment industry",
+        "Strong digital marketing expertise (SEO, SEM, Social Media)",
+        "Experience with brand management and campaign development",
+        "Data-driven approach with analytics skills",
+        "Creative thinking and strategic planning abilities",
+        "Passion for cricket and sports marketing",
+      ],
+      benefits: [
+        "Competitive compensation package",
+        "Performance-based incentives",
+        "Health and wellness benefits",
+        "Creative freedom and autonomy",
+        "Networking opportunities in sports industry",
+      ],
+    },
+    {
+      id: 9,
+      title: "Territory Marketing Manager",
+      department: "Marketing",
+      location: "Pan India",
+      type: "Full-time",
+      experience: "3-5 years",
+      featured: true,
+      salary: "₹6-10 LPA",
+      description:
+        "Manage regional marketing initiatives and build local partnerships to expand RunBhumi's presence across different territories in India.",
+      responsibilities: [
+        "Execute regional marketing strategies across assigned territories",
+        "Build relationships with local cricket clubs and academies",
+        "Organize regional talent hunt events and promotions",
+        "Coordinate with local media and influencers",
+        "Monitor regional market performance and trends",
+        "Adapt national campaigns for local markets",
+        "Travel extensively to manage territory operations",
+      ],
+      requirements: [
+        "Bachelor's degree in Marketing, Business, or related field",
+        "3-5 years of territory/regional marketing experience",
+        "Strong regional market knowledge",
+        "Excellent communication skills in local languages",
+        "Willingness to travel extensively (70-80%)",
+        "Event management and coordination skills",
+        "Understanding of local cricket ecosystems",
+      ],
+      benefits: [
+        "Travel allowances and accommodation",
+        "Regional performance bonuses",
+        "Health insurance coverage",
+        "Flexible work arrangements",
+        "Career growth opportunities",
+      ],
+    },
+    // Regular positions
     {
       id: 1,
       title: "Event Manager",
@@ -30,7 +165,33 @@ const Career = () => {
       location: "Mumbai",
       type: "Full-time",
       experience: "3-5 years",
-      featured: true,
+      featured: false,
+      salary: "₹5-8 LPA",
+      description:
+        "Plan and execute cricket tournaments and talent hunt events ensuring seamless operations and exceptional participant experience.",
+      responsibilities: [
+        "Plan and coordinate cricket tournaments from conception to completion",
+        "Manage venue selection, logistics, and vendor relationships",
+        "Oversee talent hunt event organization across regions",
+        "Coordinate with teams, officials, and broadcast partners",
+        "Ensure compliance with cricket board regulations",
+        "Manage event budgets and timelines",
+      ],
+      requirements: [
+        "Bachelor's degree in Event Management, Sports Management, or related field",
+        "3-5 years of event management experience",
+        "Knowledge of cricket tournament operations",
+        "Strong project management and organizational skills",
+        "Ability to work under pressure and tight deadlines",
+        "Excellent vendor and stakeholder management",
+      ],
+      benefits: [
+        "Competitive salary package",
+        "Health insurance",
+        "Professional development",
+        "Event industry networking",
+        "Performance bonuses",
+      ],
     },
     {
       id: 2,
@@ -39,7 +200,33 @@ const Career = () => {
       location: "Delhi",
       type: "Full-time",
       experience: "2-4 years",
-      featured: true,
+      featured: false,
+      salary: "₹4-7 LPA",
+      description:
+        "Drive digital engagement and online presence for RunBhumi's cricket tournaments and talent development programs.",
+      responsibilities: [
+        "Manage social media channels and content strategy",
+        "Execute digital advertising campaigns",
+        "Optimize website for search engines (SEO)",
+        "Create engaging content for digital platforms",
+        "Analyze digital marketing metrics and performance",
+        "Collaborate with creative team on digital assets",
+      ],
+      requirements: [
+        "Bachelor's degree in Digital Marketing, Communications, or related field",
+        "2-4 years of digital marketing experience",
+        "Proficiency in Google Ads, Facebook Ads, and analytics tools",
+        "Strong content creation and copywriting skills",
+        "Knowledge of SEO/SEM best practices",
+        "Creative mindset with analytical thinking",
+      ],
+      benefits: [
+        "Competitive salary",
+        "Skill development opportunities",
+        "Flexible working hours",
+        "Health insurance",
+        "Performance incentives",
+      ],
     },
     {
       id: 3,
@@ -49,6 +236,32 @@ const Career = () => {
       type: "Full-time",
       experience: "2-5 years",
       featured: false,
+      salary: "₹6-10 LPA",
+      description:
+        "Analyze player performance data and provide insights for talent identification and development programs.",
+      responsibilities: [
+        "Analyze player statistics and performance metrics",
+        "Create detailed player assessment reports",
+        "Develop performance tracking systems",
+        "Support talent scout decisions with data insights",
+        "Maintain player databases and analytics tools",
+        "Present findings to coaching and management teams",
+      ],
+      requirements: [
+        "Bachelor's degree in Sports Science, Statistics, or Data Analytics",
+        "2-5 years of sports analytics experience",
+        "Proficiency in data analysis tools (Excel, R, Python)",
+        "Strong understanding of cricket statistics",
+        "Excellent analytical and presentation skills",
+        "Knowledge of performance tracking technologies",
+      ],
+      benefits: [
+        "Competitive compensation",
+        "Technology training programs",
+        "Health insurance",
+        "Flexible work environment",
+        "Sports industry exposure",
+      ],
     },
     {
       id: 4,
@@ -58,6 +271,32 @@ const Career = () => {
       type: "Contract",
       experience: "5+ years",
       featured: false,
+      salary: "₹4-6 LPA",
+      description:
+        "Identify and evaluate cricket talent across India for our talent hunt program and tournament participation.",
+      responsibilities: [
+        "Scout cricket talent at grassroots and academy levels",
+        "Evaluate player skills and potential",
+        "Maintain detailed scouting reports",
+        "Build relationships with local cricket communities",
+        "Attend matches and talent hunt events",
+        "Recommend players for development programs",
+      ],
+      requirements: [
+        "Extensive cricket playing or coaching experience (5+ years)",
+        "Deep understanding of cricket techniques and tactics",
+        "Strong observation and evaluation skills",
+        "Willingness to travel extensively",
+        "Good communication and networking abilities",
+        "Certification in cricket coaching preferred",
+      ],
+      benefits: [
+        "Contract-based compensation",
+        "Travel and accommodation expenses",
+        "Cricket industry networking",
+        "Flexible schedule",
+        "Performance-based bonuses",
+      ],
     },
     {
       id: 5,
@@ -67,6 +306,32 @@ const Career = () => {
       type: "Part-time",
       experience: "1-3 years",
       featured: false,
+      salary: "₹2-4 LPA",
+      description:
+        "Create engaging content for RunBhumi's digital platforms, focusing on cricket stories and talent development narratives.",
+      responsibilities: [
+        "Write compelling content for website and social media",
+        "Create player profiles and success stories",
+        "Develop tournament match reports and analyses",
+        "Craft email newsletters and marketing copy",
+        "Collaborate with marketing team on content strategy",
+        "Maintain brand voice and content guidelines",
+      ],
+      requirements: [
+        "Bachelor's degree in Journalism, English, or Communications",
+        "1-3 years of content writing experience",
+        "Strong writing and editing skills",
+        "Knowledge of cricket and sports terminology",
+        "SEO content writing experience",
+        "Ability to work independently in remote setting",
+      ],
+      benefits: [
+        "Flexible part-time schedule",
+        "Remote work opportunity",
+        "Competitive hourly rates",
+        "Portfolio building opportunities",
+        "Sports industry exposure",
+      ],
     },
     {
       id: 6,
@@ -76,6 +341,138 @@ const Career = () => {
       type: "Full-time",
       experience: "2-4 years",
       featured: false,
+      salary: "₹4-7 LPA",
+      description:
+        "Create compelling video content for cricket tournaments, talent hunt programs, and digital marketing campaigns.",
+      responsibilities: [
+        "Edit tournament highlights and match footage",
+        "Create promotional videos for talent hunt events",
+        "Develop social media video content",
+        "Collaborate with marketing team on video campaigns",
+        "Manage video archives and asset libraries",
+        "Ensure brand consistency across video content",
+      ],
+      requirements: [
+        "Bachelor's degree in Film, Media Production, or related field",
+        "2-4 years of video editing experience",
+        "Proficiency in Adobe Premiere Pro, After Effects, and Final Cut Pro",
+        "Strong storytelling and creative skills",
+        "Knowledge of sports video production",
+        "Ability to work under tight deadlines",
+      ],
+      benefits: [
+        "Competitive salary",
+        "Creative freedom",
+        "Health insurance",
+        "Equipment and software access",
+        "Entertainment industry networking",
+      ],
+    },
+    // Cricket talent hunt specific positions
+    {
+      id: 10,
+      title: "Talent Scout Coordinator",
+      department: "Talent Hunt",
+      location: "Pan India",
+      type: "Full-time",
+      experience: "3-5 years",
+      featured: false,
+      salary: "₹6-9 LPA",
+      description:
+        "Lead regional talent identification programs and coordinate with local cricket academies to discover emerging cricket stars.",
+      responsibilities: [
+        "Coordinate regional talent hunt programs",
+        "Manage relationships with cricket academies and clubs",
+        "Oversee scouting network operations",
+        "Organize talent identification events",
+        "Maintain player databases and tracking systems",
+        "Collaborate with coaches and development staff",
+      ],
+      requirements: [
+        "Bachelor's degree in Sports Management or related field",
+        "3-5 years of sports administration experience",
+        "Strong cricket knowledge and network",
+        "Excellent organizational and coordination skills",
+        "Willingness to travel extensively",
+        "Leadership and team management abilities",
+      ],
+      benefits: [
+        "Competitive salary package",
+        "Travel allowances",
+        "Health insurance",
+        "Professional development",
+        "Cricket industry networking",
+      ],
+    },
+    {
+      id: 11,
+      title: "Cricket Talent Analyst",
+      department: "Talent Hunt",
+      location: "Bangalore",
+      type: "Full-time",
+      experience: "2-4 years",
+      featured: false,
+      salary: "₹5-8 LPA",
+      description:
+        "Analyze player performance data and provide insights for talent development and selection processes.",
+      responsibilities: [
+        "Analyze player performance metrics and statistics",
+        "Create comprehensive talent assessment reports",
+        "Develop predictive models for player potential",
+        "Support selection committees with data insights",
+        "Track player development progress",
+        "Maintain analytics databases and tools",
+      ],
+      requirements: [
+        "Bachelor's degree in Statistics, Data Science, or Sports Analytics",
+        "2-4 years of data analysis experience",
+        "Proficiency in statistical software and programming",
+        "Strong cricket knowledge and understanding",
+        "Excellent analytical and presentation skills",
+        "Experience with sports performance metrics",
+      ],
+      benefits: [
+        "Competitive compensation",
+        "Technology training",
+        "Health insurance",
+        "Research opportunities",
+        "Sports analytics exposure",
+      ],
+    },
+    {
+      id: 12,
+      title: "Regional Talent Development Manager",
+      department: "Talent Hunt",
+      location: "Multiple Cities",
+      type: "Full-time",
+      experience: "4-7 years",
+      featured: false,
+      salary: "₹8-12 LPA",
+      description:
+        "Oversee talent development programs in assigned regions and manage training facilities and coaching staff.",
+      responsibilities: [
+        "Manage regional talent development centers",
+        "Oversee coaching staff and training programs",
+        "Coordinate with local cricket boards and associations",
+        "Monitor player development progress",
+        "Organize regional tournaments and showcases",
+        "Maintain facility operations and standards",
+      ],
+      requirements: [
+        "Master's degree in Sports Management or related field",
+        "4-7 years of sports program management experience",
+        "Strong cricket coaching or administration background",
+        "Excellent leadership and management skills",
+        "Regional sports network knowledge",
+        "Program development and implementation expertise",
+      ],
+      benefits: [
+        "Attractive salary package",
+        "Regional autonomy",
+        "Health and wellness benefits",
+        "Professional development",
+        "Leadership opportunities",
+      ],
     },
   ];
 
@@ -91,12 +488,24 @@ const Career = () => {
     return matchesFilter && matchesSearch;
   });
 
+  const openJobModal = (job: any) => {
+    setSelectedJob(job);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeJobModal = () => {
+    setIsModalOpen(false);
+    setSelectedJob(null);
+    document.body.style.overflow = "auto";
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Hero Section */}
       <LeftHero
         title="Careers at RunBhumi"
-        description="Join our team and be part of India's most exciting cricket tournament"
+        description="Join our team and be part of India's most exciting cricket tournament & talent hunt program"
         backgroundType="image"
         backgroundSrc="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop"
         height="small"
@@ -112,10 +521,52 @@ const Career = () => {
             Join Our Team
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            At RunBhumi, we're building the future of cricket in India. Join our
-            dynamic team of professionals who are passionate about sports and
-            creating unforgettable experiences for cricket fans.
+            At RunBhumi, we're building the future of cricket in India through
+            our premier tournament and comprehensive talent hunt program. Join
+            our dynamic team of professionals who are passionate about
+            discovering, nurturing, and promoting cricket talent across the
+            nation.
           </p>
+        </div>
+
+        {/* Cricket Talent Hunt Program Section */}
+        <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg overflow-hidden mb-16">
+          <div className="p-8 text-white">
+            <div className="flex items-center justify-center mb-6">
+              <Trophy className="h-12 w-12 text-white mr-4" />
+              <h3 className="text-2xl md:text-3xl font-bold">
+                Cricket Talent Hunt Program
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <Target className="h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg mb-2">Talent Discovery</h4>
+                <p className="text-sm opacity-90">
+                  Identifying promising cricket talent from grassroots to
+                  professional levels across India
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <Users className="h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg mb-2">
+                  Player Development
+                </h4>
+                <p className="text-sm opacity-90">
+                  Comprehensive training programs and mentorship for emerging
+                  cricket stars
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <Globe className="h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg mb-2">National Network</h4>
+                <p className="text-sm opacity-90">
+                  Pan-India presence with regional scouts and development
+                  centers
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Why Join Us Section */}
@@ -132,8 +583,10 @@ const Career = () => {
                   <h4 className="font-semibold">Impactful Work</h4>
                 </div>
                 <p className="text-gray-600">
-                  Be part of a team that's revolutionizing cricket in India and
-                  creating opportunities for emerging talent.
+                  Be part of a team that's revolutionizing cricket in India,
+                  discovering new talent, and creating opportunities for
+                  emerging players to shine on national and international
+                  stages.
                 </p>
               </div>
 
@@ -144,7 +597,8 @@ const Career = () => {
                 </div>
                 <p className="text-gray-600">
                   Work in a collaborative, inclusive environment with passionate
-                  professionals who love what they do.
+                  professionals who love cricket and are committed to nurturing
+                  the next generation of cricket stars.
                 </p>
               </div>
 
@@ -155,7 +609,8 @@ const Career = () => {
                 </div>
                 <p className="text-gray-600">
                   Develop your skills and advance your career in a fast-growing
-                  sports entertainment company.
+                  sports entertainment company with expanding talent development
+                  programs across India.
                 </p>
               </div>
             </div>
@@ -195,8 +650,10 @@ const Career = () => {
                 <option value="all">All Departments</option>
                 <option value="Operations">Operations</option>
                 <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
                 <option value="Technical">Technical</option>
                 <option value="Media">Media</option>
+                <option value="Talent Hunt">Talent Hunt</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <ChevronRight className="h-4 w-4 transform rotate-90" />
@@ -224,7 +681,7 @@ const Career = () => {
                       <h3 className="text-xl font-bold text-gray-800 mb-1">
                         {job.title}
                       </h3>
-                      <div className="flex flex-wrap items-center text-sm text-gray-600">
+                      <div className="flex flex-wrap items-center text-sm text-gray-600 mb-2">
                         <div className="flex items-center mr-4 mb-2 md:mb-0">
                           <Briefcase className="h-4 w-4 mr-1 text-orange-500" />
                           <span>{job.department}</span>
@@ -237,20 +694,25 @@ const Career = () => {
                           <Clock className="h-4 w-4 mr-1 text-orange-500" />
                           <span>{job.type}</span>
                         </div>
-                        <div className="flex items-center mb-2 md:mb-0">
+                        <div className="flex items-center mr-4 mb-2 md:mb-0">
                           <Star className="h-4 w-4 mr-1 text-orange-500" />
                           <span>{job.experience}</span>
                         </div>
+                        <div className="flex items-center mb-2 md:mb-0">
+                          <DollarSign className="h-4 w-4 mr-1 text-orange-500" />
+                          <span>{job.salary}</span>
+                        </div>
                       </div>
+                      <p className="text-gray-600 text-sm">{job.description}</p>
                     </div>
                     <div className="flex items-center">
-                      <Link
-                        href={`/career/${job.id}`}
+                      <button
+                        onClick={() => openJobModal(job)}
                         className="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium py-2 px-4 rounded-md transition duration-300"
                       >
                         View Details
                         <ChevronRight className="h-4 w-4 ml-1" />
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -286,83 +748,6 @@ const Career = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Competitive Salary
-              </h3>
-              <p className="text-gray-600">
-                We offer competitive compensation packages benchmarked against
-                industry standards.
-              </p>
-            </div>
-
-            {/* <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-orange-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Health Insurance
-              </h3>
-              <p className="text-gray-600">
-                Comprehensive medical coverage for you and your dependents.
-              </p>
-            </div> */}
-
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-orange-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Flexible Hours
-              </h3>
-              <p className="text-gray-600">
-                Work-life balance is important to us, with flexible scheduling
-                options available.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-orange-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                   />
                 </svg>
@@ -372,7 +757,7 @@ const Career = () => {
               </h3>
               <p className="text-gray-600">
                 Work in our state-of-the-art facilities with all the amenities
-                you need.
+                you need, including cricket viewing areas.
               </p>
             </div>
           </div>
@@ -401,7 +786,8 @@ const Career = () => {
                 </h3>
                 <p className="text-gray-600">
                   We foster a culture of teamwork and collaboration, where every
-                  voice is heard and valued.
+                  voice is heard and valued in our mission to develop cricket
+                  talent.
                 </p>
               </div>
             </div>
@@ -421,8 +807,8 @@ const Career = () => {
                   Continuous Learning
                 </h3>
                 <p className="text-gray-600">
-                  We invest in our employees' growth with training programs and
-                  learning opportunities.
+                  We invest in our employees' growth with training programs,
+                  cricket coaching certifications, and learning opportunities.
                 </p>
               </div>
             </div>
@@ -442,8 +828,8 @@ const Career = () => {
                   Fun & Celebrations
                 </h3>
                 <p className="text-gray-600">
-                  We work hard and celebrate our successes with team events and
-                  activities.
+                  We work hard and celebrate our successes with team events,
+                  cricket matches, and tournament celebrations.
                 </p>
               </div>
             </div>
@@ -538,8 +924,8 @@ const Career = () => {
               Don't See the Right Role?
             </h2>
             <p className="text-white text-opacity-90 mb-8 max-w-2xl mx-auto">
-              We're always looking for talented individuals to join our team.
-              Submit your resume for future opportunities.
+              We're always looking for talented individuals to join our team and
+              contribute to India's cricket talent development ecosystem.
             </p>
             <Link
               href="/career/apply"
@@ -559,22 +945,12 @@ const Career = () => {
           <div className="p-6 space-y-4">
             <div className="border-b border-gray-200 pb-3">
               <h4 className="font-semibold mb-2">
-                Do you offer remote work options?
-              </h4>
-              <p className="text-gray-600">
-                Yes, we offer remote work options for certain roles. Each job
-                posting specifies whether the position is office-based, remote,
-                or hybrid.
-              </p>
-            </div>
-
-            <div className="border-b border-gray-200 pb-3">
-              <h4 className="font-semibold mb-2">
                 What is the interview process like?
               </h4>
               <p className="text-gray-600">
                 Our interview process typically includes an initial screening,
-                skills assessment, and team interviews. The entire process
+                skills assessment, and team interviews. For talent hunt roles,
+                we may include cricket knowledge assessments. The entire process
                 usually takes 2-3 weeks from application to offer.
               </p>
             </div>
@@ -584,9 +960,35 @@ const Career = () => {
                 Do I need to have experience in cricket or sports?
               </h4>
               <p className="text-gray-600">
-                While a passion for cricket is appreciated, specific experience
-                in sports is not required for all roles. We value diverse
-                perspectives and skills from various industries.
+                While a passion for cricket is highly valued, specific
+                experience in sports is not required for all roles. For talent
+                hunt and scouting positions, cricket knowledge is essential. We
+                value diverse perspectives and skills from various industries.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="font-semibold mb-2">
+                What opportunities are there in the talent hunt program?
+              </h4>
+              <p className="text-gray-600">
+                Our talent hunt program offers exciting opportunities to
+                discover and nurture cricket talent across India. Roles include
+                regional scouting, player development, performance analysis, and
+                program management with extensive travel and networking
+                opportunities.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="font-semibold mb-2">
+                Do you provide training for cricket-related roles?
+              </h4>
+              <p className="text-gray-600">
+                Yes, we provide comprehensive training including cricket
+                coaching certifications, talent identification workshops, and
+                ongoing professional development. We also offer mentorship
+                programs with industry experts.
               </p>
             </div>
 
@@ -596,14 +998,143 @@ const Career = () => {
               </h4>
               <p className="text-gray-600">
                 RunBhumi has a dynamic, collaborative culture that values
-                innovation, teamwork, and a passion for cricket. We work hard
-                but also celebrate our successes and maintain a good work-life
-                balance.
+                innovation, teamwork, and a deep passion for cricket. We work
+                hard to develop India's cricket talent but also celebrate our
+                successes and maintain a good work-life balance.
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Job Details Modal */}
+      {isModalOpen && selectedJob && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-start">
+              <div className="flex-1">
+                <div className="flex items-center mb-2">
+                  <h2 className="text-2xl font-bold text-gray-800 mr-3">
+                    {selectedJob.title}
+                  </h2>
+                  {selectedJob.featured && (
+                    <span className="bg-orange-500 text-white text-xs font-bold py-1 px-2 rounded">
+                      Featured
+                    </span>
+                  )}
+                </div>
+                <div className="flex flex-wrap items-center text-sm text-gray-600 gap-4">
+                  <div className="flex items-center">
+                    <Briefcase className="h-4 w-4 mr-1 text-orange-500" />
+                    <span>{selectedJob.department}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <MapPin className="h-4 w-4 mr-1 text-orange-500" />
+                    <span>{selectedJob.location}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="h-4 w-4 mr-1 text-orange-500" />
+                    <span>{selectedJob.type}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Star className="h-4 w-4 mr-1 text-orange-500" />
+                    <span>{selectedJob.experience}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <DollarSign className="h-4 w-4 mr-1 text-orange-500" />
+                    <span>{selectedJob.salary}</span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={closeJobModal}
+                className="ml-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X className="h-6 w-6 text-gray-500" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              {/* Job Description */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Job Description
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {selectedJob.description}
+                </p>
+              </div>
+
+              {/* Key Responsibilities */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Key Responsibilities
+                </h3>
+                <ul className="space-y-2">
+                  {selectedJob.responsibilities.map((responsibility, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600">{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Requirements */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Requirements
+                </h3>
+                <ul className="space-y-2">
+                  {selectedJob.requirements.map((requirement, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600">{requirement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Benefits */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Benefits & Perks
+                </h3>
+                <ul className="space-y-2">
+                  {selectedJob.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Apply Button */}
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Ready to Join Our Team?
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Take the next step in your career and become part of India's
+                    most exciting cricket organization.
+                  </p>
+                  <Link
+                    href={`/career/apply?job=${selectedJob.id}`}
+                    className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center"
+                  >
+                    Apply Now
+                    <ChevronRight className="h-5 w-5 ml-2" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mobile Fixed Bottom CTA Button - Sticky */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white p-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-50">

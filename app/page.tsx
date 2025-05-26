@@ -763,7 +763,7 @@ export default function Home() {
                             State-of-the-Art Facility
                           </span>
                           <span className="text-gray-600 text-sm">
-                            Located in a serene setting in Dehradun
+                            Located in a serene setting with amazing facilities
                           </span>
                         </div>
                       </li>
