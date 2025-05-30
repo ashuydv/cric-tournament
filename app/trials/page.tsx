@@ -469,52 +469,53 @@ export default function RunBhumiTrialsPage() {
         parallaxSpeed={0.7}
       />
 
-      <section className="w-full py-12 bg-gray-50">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center space-y-4 text-center mb-10">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+      {/* Eligibility Criteria Section - Responsive */}
+      <section className="w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+          <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tighter">
               Eligibility Criteria
             </h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-lg">
+            <p className="max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-2">
               To be eligible for participation in the RunBhumi Trials 2025,
               participants must comply with the following conditions:
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-8 mb-10">
-            <ul className="space-y-6">
-              <li className="flex items-center">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
+          <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10">
+            <ul className="space-y-4 sm:space-y-6">
+              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
                   MUST NOT
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   be below the age of 16 years at the time of registrations as
                   per legal identification documents.
                 </p>
               </li>
-              <li className="flex items-center">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
+              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
                   MUST NOT
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   be currently registered with any state or district association
                   of BCCI.
                 </p>
               </li>
-              <li className="flex items-center">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
+              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
                   MUST NOT
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   currently have any existing contract with any state or
                   district association of the BCCI.
                 </p>
               </li>
-              <li className="flex items-center">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
+              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
                   MUST NOT
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   be participating or playing in any representative cricket for
                   any State or District Association of BCCI.
                 </p>
@@ -522,11 +523,11 @@ export default function RunBhumiTrialsPage() {
             </ul>
           </div>
 
-          <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-orange-700 mb-4">
+          <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-semibold text-orange-700 mb-3 sm:mb-4">
               Important Note
             </h3>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
               All participants will be required to provide documentation
               confirming they meet these eligibility criteria. Any false
               information provided may result in disqualification without refund
@@ -537,15 +538,17 @@ export default function RunBhumiTrialsPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-12">
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">
+      {/* Cities and Schedule Section - Responsive */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 max-w-7xl">
+        {/* Cities Section */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold">
               {showAllCities ? "All Cities" : "Popular Cities"}
             </h2>
             <Button
               variant="ghost"
-              className="text-orange-600 hover:text-orange-700 flex items-center font-medium"
+              className="text-orange-600 hover:text-orange-700 flex items-center font-medium text-sm sm:text-base self-start sm:self-auto"
               onClick={() => setShowAllCities(!showAllCities)}
             >
               {showAllCities ? "Show Popular Cities" : "View All Cities"}
@@ -554,7 +557,8 @@ export default function RunBhumiTrialsPage() {
           </div>
 
           {!showAllCities ? (
-            <div className="flex gap-20 items-center justify-center">
+            /* Popular Cities Grid - Responsive */
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-6 lg:gap-8">
               {popularCities.map((city) => (
                 <div
                   key={city}
@@ -562,7 +566,7 @@ export default function RunBhumiTrialsPage() {
                   onClick={() => handleCitySelect(city)}
                 >
                   <div
-                    className={`h-20 w-20 rounded-xl p-4 overflow-hidden 
+                    className={`h-16 w-16 sm:h-20 sm:w-20 rounded-xl p-3 sm:p-4 overflow-hidden 
                         bg-white shadow-md hover:shadow-lg flex items-center justify-center mb-2 group-hover:-translate-y-1 transition-transform mx-auto`}
                   >
                     <Image
@@ -574,7 +578,7 @@ export default function RunBhumiTrialsPage() {
                     />
                   </div>
                   <span
-                    className={`text-sm font-medium ${
+                    className={`text-xs sm:text-sm font-medium ${
                       selectedCity === city
                         ? "text-orange-600"
                         : "text-gray-700"
@@ -586,11 +590,12 @@ export default function RunBhumiTrialsPage() {
               ))}
             </div>
           ) : (
-            <div className="bg-white rounded-lg shadow p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            /* All Cities View - Responsive */
+            <div className="bg-white rounded-lg shadow p-4 sm:p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {Object.entries(stateCityMap).map(([state, cities]) => (
                   <div key={state} className="mb-4">
-                    <h3 className="text-lg font-semibold mb-2 text-orange-600 capitalize">
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-orange-600 capitalize">
                       {state.charAt(0).toUpperCase() + state.slice(1)}
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -599,7 +604,7 @@ export default function RunBhumiTrialsPage() {
                           key={city}
                           variant="ghost"
                           size="sm"
-                          className={`justify-start ${
+                          className={`justify-start text-xs sm:text-sm ${
                             selectedCity === city
                               ? "bg-orange-100 text-orange-700 font-medium"
                               : "hover:bg-orange-50"
@@ -620,24 +625,24 @@ export default function RunBhumiTrialsPage() {
           )}
         </div>
 
-        {/* Trial Schedule Section */}
-        <div className="mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">Trial Schedule</h2>
-            <div className="flex items-center space-x-2">
-              <div className="relative w-64">
+        {/* Trial Schedule Section - Responsive */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold">Trial Schedule</h2>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full lg:w-auto">
+              <div className="relative w-full sm:w-64">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
                   placeholder="Search city or date..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-white"
+                  className="pl-10 bg-white text-sm"
                 />
               </div>
               <Button
                 variant="outline"
                 size="sm"
-                className="flex items-center"
+                className="flex items-center justify-center"
                 onClick={() => setShowFilters(!showFilters)}
               >
                 <FilterIcon className="h-4 w-4 mr-2" />
@@ -646,11 +651,14 @@ export default function RunBhumiTrialsPage() {
             </div>
           </div>
 
+          {/* Filter Panel - Responsive */}
           {showFilters && (
             <Card className="mb-4 p-4 bg-gray-50">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div>
-                  <Label htmlFor="state-filter">State</Label>
+                  <Label htmlFor="state-filter" className="text-sm">
+                    State
+                  </Label>
                   <Select
                     value={selectedState}
                     onValueChange={(value) => handleStateChange(value)}
@@ -669,7 +677,9 @@ export default function RunBhumiTrialsPage() {
                   </Select>
                 </div>
                 <div>
-                  <Label htmlFor="city-filter">City</Label>
+                  <Label htmlFor="city-filter" className="text-sm">
+                    City
+                  </Label>
                   <Select
                     value={selectedCity || ""}
                     onValueChange={(value) => handleCityChange(value)}
@@ -688,16 +698,17 @@ export default function RunBhumiTrialsPage() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="flex items-end space-x-2">
+                <div className="sm:col-span-2 lg:col-span-2 flex flex-col sm:flex-row items-stretch sm:items-end space-y-2 sm:space-y-0 sm:space-x-2">
                   <Button
                     onClick={applyFilters}
-                    className="bg-orange-500 hover:bg-orange-600 text-white"
+                    className="bg-orange-500 hover:bg-orange-600 text-white flex-1 sm:flex-initial"
                   >
                     Apply Filters
                   </Button>
                   <Button
                     variant="outline"
                     onClick={() => setShowFilters(false)}
+                    className="flex-1 sm:flex-initial"
                   >
                     Cancel
                   </Button>
@@ -706,13 +717,13 @@ export default function RunBhumiTrialsPage() {
             </Card>
           )}
 
-          {/* Active filters display */}
+          {/* Active Filters - Responsive */}
           {activeFilters.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {activeFilters.map((filter, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
+                  className="flex items-center bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs sm:text-sm"
                 >
                   {filter}
                   <button
@@ -727,34 +738,86 @@ export default function RunBhumiTrialsPage() {
                 variant="ghost"
                 size="sm"
                 onClick={clearFilters}
-                className="text-gray-500 hover:text-gray-700 text-sm"
+                className="text-gray-500 hover:text-gray-700 text-xs sm:text-sm"
               >
                 Clear All
               </Button>
             </div>
           )}
 
-          <Card className="overflow-hidden border border-gray-200 mb-10">
-            <CardHeader className="bg-orange-600 text-white p-4">
-              <CardTitle className="text-center">
+          {/* Schedule Table - Responsive */}
+          <Card className="overflow-hidden border border-gray-200 mb-8 sm:mb-10">
+            <CardHeader className="bg-orange-600 text-white p-3 sm:p-4">
+              <CardTitle className="text-center text-sm sm:text-base lg:text-lg">
                 RunBhumi Trials 2025 - Dates & Locations
               </CardTitle>
             </CardHeader>
-            <div className="overflow-x-auto">
+
+            {/* Mobile Card View */}
+            <div className="block sm:hidden">
+              {filteredSchedule.length > 0 ? (
+                <div className="divide-y divide-gray-200">
+                  {filteredSchedule.map((schedule, index) => (
+                    <div key={index} className="p-4 bg-white">
+                      <div className="font-semibold text-orange-600 mb-3 text-sm">
+                        {schedule.date}
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        {schedule.locations.map((location, locIndex) => (
+                          <div key={locIndex} className="text-center">
+                            {location && location !== "Coming Soon" ? (
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className={`w-full text-xs ${
+                                  selectedCity === location
+                                    ? "bg-orange-100 text-orange-800"
+                                    : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                }`}
+                                onClick={() => handleCitySelect(location)}
+                              >
+                                {location}
+                                {selectedCity === location && (
+                                  <Check className="ml-1 h-3 w-3" />
+                                )}
+                              </Button>
+                            ) : (
+                              <div className="text-gray-400 text-xs py-2">
+                                {location || "—"}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="p-6 text-center text-gray-500 text-sm">
+                  No trial dates match your current filters. Please try
+                  different search criteria.
+                </div>
+              )}
+            </div>
+
+            {/* Tablet and Desktop Table View */}
+            <div className="hidden sm:block overflow-x-auto">
               <Table>
                 <TableHeader className="bg-orange-100">
                   <TableRow>
-                    <TableHead className="w-1/5 font-bold">Date</TableHead>
-                    <TableHead className="text-center font-bold">
+                    <TableHead className="w-1/5 font-bold text-xs sm:text-sm">
+                      Date
+                    </TableHead>
+                    <TableHead className="text-center font-bold text-xs sm:text-sm">
                       Location 1
                     </TableHead>
-                    <TableHead className="text-center font-bold">
+                    <TableHead className="text-center font-bold text-xs sm:text-sm">
                       Location 2
                     </TableHead>
-                    <TableHead className="text-center font-bold">
+                    <TableHead className="text-center font-bold text-xs sm:text-sm">
                       Location 3
                     </TableHead>
-                    <TableHead className="text-center font-bold">
+                    <TableHead className="text-center font-bold text-xs sm:text-sm">
                       Location 4
                     </TableHead>
                   </TableRow>
@@ -766,15 +829,16 @@ export default function RunBhumiTrialsPage() {
                         key={index}
                         className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
                       >
-                        <TableCell className="font-medium">
+                        <TableCell className="font-medium text-xs sm:text-sm">
                           {schedule.date}
                         </TableCell>
                         {schedule.locations.map((location, locIndex) => (
                           <TableCell key={locIndex} className="text-center">
-                            {location ? (
+                            {location && location !== "Coming Soon" ? (
                               <Button
                                 variant="ghost"
-                                className={`${
+                                size="sm"
+                                className={`text-xs sm:text-sm ${
                                   selectedCity === location
                                     ? "bg-orange-100 text-orange-800"
                                     : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
@@ -783,11 +847,13 @@ export default function RunBhumiTrialsPage() {
                               >
                                 {location}
                                 {selectedCity === location && (
-                                  <Check className="ml-1 h-4 w-4" />
+                                  <Check className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
                                 )}
                               </Button>
                             ) : (
-                              "—"
+                              <span className="text-gray-400 text-xs sm:text-sm">
+                                {location || "—"}
+                              </span>
                             )}
                           </TableCell>
                         ))}
@@ -797,7 +863,7 @@ export default function RunBhumiTrialsPage() {
                     <TableRow>
                       <TableCell
                         colSpan={5}
-                        className="text-center py-8 text-gray-500"
+                        className="text-center py-8 text-gray-500 text-sm"
                       >
                         No trial dates match your current filters. Please try
                         different search criteria.
@@ -807,10 +873,12 @@ export default function RunBhumiTrialsPage() {
                 </TableBody>
               </Table>
             </div>
+
+            {/* Table Footer - Responsive */}
             {filteredSchedule.length > 0 && (
-              <div className="p-4 bg-gray-50 border-t border-gray-200">
-                <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500">
+              <div className="p-3 sm:p-4 bg-gray-50 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="text-xs sm:text-sm text-gray-500">
                     {filteredSchedule.length === trialSchedule.length
                       ? `Showing all ${trialSchedule.length} trial dates`
                       : `Showing ${filteredSchedule.length} of ${trialSchedule.length} trial dates`}
@@ -820,7 +888,7 @@ export default function RunBhumiTrialsPage() {
                       variant="outline"
                       size="sm"
                       onClick={clearFilters}
-                      className="text-sm"
+                      className="text-xs sm:text-sm w-full sm:w-auto"
                     >
                       Reset Filters
                     </Button>
@@ -831,246 +899,10 @@ export default function RunBhumiTrialsPage() {
           </Card>
         </div>
 
-        <SelectionPathRoadmap />
-
-        {/* Registration Form */}
-        {/* <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Register for Trials</h2>
-
-          {submissionSuccess ? (
-            <Card className="bg-green-50 border-green-200">
-              <CardHeader>
-                <CardTitle className="text-green-700">
-                  Registration Complete!
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4">
-                  Thank you for registering for the RunBhumi Trials 2025. We
-                  have received your application for the trials in{" "}
-                  {formData.trialCity}.
-                </p>
-                <p className="mb-4">
-                  You will receive a confirmation email at {formData.email} with
-                  further details about your trial date and location.
-                </p>
-                <p className="text-sm text-gray-600">
-                  Please make sure to bring your ID proof and any relevant
-                  documentation on the trial day.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  onClick={resetForm}
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
-                >
-                  Register Another Player
-                </Button>
-              </CardFooter>
-            </Card>
-          ) : (
-            <Card>
-              <CardHeader className="bg-orange-50">
-                <CardTitle>Player Registration Form</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input
-                        id="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your first name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input
-                        id="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your last name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="mobileNumber">Mobile Number</Label>
-                      <Input
-                        id="mobileNumber"
-                        type="tel"
-                        value={formData.mobileNumber}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your mobile number"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="dateOfBirth">Date of Birth</Label>
-                      <Input
-                        id="dateOfBirth"
-                        type="date"
-                        value={formData.dateOfBirth}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your email address"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="state">State</Label>
-                      <Select
-                        value={formData.state}
-                        onValueChange={(value) =>
-                          handleSelectChange("state", value)
-                        }
-                      >
-                        <SelectTrigger id="state">
-                          <SelectValue placeholder="Select your state" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {Object.keys(stateCityMap).map((state) => (
-                            <SelectItem key={state} value={state}>
-                              {state.charAt(0).toUpperCase() + state.slice(1)}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="trialCity">Trial City</Label>
-                      <Select
-                        value={formData.trialCity}
-                        onValueChange={(value) =>
-                          handleSelectChange("trialCity", value)
-                        }
-                        disabled={
-                          !formData.state || availableCities.length === 0
-                        }
-                      >
-                        <SelectTrigger id="trialCity">
-                          <SelectValue placeholder="Select trial city" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {availableCities.map((city) => (
-                            <SelectItem key={city} value={city}>
-                              {city}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="playingPosition">Playing Position</Label>
-                      <Select
-                        value={formData.playingPosition}
-                        onValueChange={(value) =>
-                          handleSelectChange("playingPosition", value)
-                        }
-                      >
-                        <SelectTrigger id="playingPosition">
-                          <SelectValue placeholder="Select your position" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="batsman">Batsman</SelectItem>
-                          <SelectItem value="bowler">Bowler</SelectItem>
-                          <SelectItem value="all-rounder">
-                            All-Rounder
-                          </SelectItem>
-                          <SelectItem value="wicket-keeper">
-                            Wicket-Keeper
-                          </SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="preferredFoot">Dominant Hand</Label>
-                      <Select
-                        value={formData.preferredFoot}
-                        onValueChange={(value) =>
-                          handleSelectChange("preferredFoot", value)
-                        }
-                      >
-                        <SelectTrigger id="preferredFoot">
-                          <SelectValue placeholder="Select your dominant hand" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="right">Right Hand</SelectItem>
-                          <SelectItem value="left">Left Hand</SelectItem>
-                          <SelectItem value="ambidextrous">
-                            Ambidextrous
-                          </SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="tshirtSize">T-Shirt Size</Label>
-                      <Select
-                        value={formData.tshirtSize}
-                        onValueChange={(value) =>
-                          handleSelectChange("tshirtSize", value)
-                        }
-                      >
-                        <SelectTrigger id="tshirtSize">
-                          <SelectValue placeholder="Select t-shirt size" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="xs">XS</SelectItem>
-                          <SelectItem value="s">S</SelectItem>
-                          <SelectItem value="m">M</SelectItem>
-                          <SelectItem value="l">L</SelectItem>
-                          <SelectItem value="xl">XL</SelectItem>
-                          <SelectItem value="xxl">XXL</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-2 pt-4">
-                    <Checkbox
-                      id="agreement"
-                      checked={formData.agreement}
-                      onCheckedChange={handleCheckboxChange}
-                      required
-                    />
-                    <Label htmlFor="agreement" className="text-sm">
-                      I confirm that I meet all eligibility criteria and the
-                      information provided is accurate.
-                    </Label>
-                  </div>
-
-                  <div className="pt-4">
-                    <Button
-                      type="submit"
-                      className="w-full md:w-auto bg-orange-500 hover:bg-orange-600 text-white"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <>Processing...</>
-                      ) : (
-                        <>
-                          Register for Trial
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </>
-                      )}
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          )}
-        </div> */}
+        {/* Selection Path Roadmap - Responsive wrapper */}
+        <div className="w-full">
+          <SelectionPathRoadmap />
+        </div>
       </section>
     </main>
   );
