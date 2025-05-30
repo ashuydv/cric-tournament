@@ -92,11 +92,12 @@ const ParallaxSplitHero = ({
             alt="Background image"
             width={1920}
             height={1080}
-            className="object-cover object-top bg-no-repeat h-full w-full"
+            className="object-cover object-center sm:object-top bg-no-repeat h-full w-full"
             style={{ opacity: 1 - overlayOpacity }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10" />
+          {/* Responsive gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 sm:bg-gradient-to-t sm:from-black/80 sm:via-black/30 sm:to-black/10 lg:bg-gradient-to-t lg:from-black via-black/20 lg:to-black/10" />
         </motion.div>
       ) : (
         <div className="absolute inset-0 z-0">
@@ -105,47 +106,56 @@ const ParallaxSplitHero = ({
             alt="Background image"
             width={1920}
             height={1080}
-            className="object-cover object-top bg-no-repeat h-full w-full"
+            className="object-cover object-center sm:object-top bg-no-repeat h-full w-full"
             style={{ opacity: 1 - overlayOpacity }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10" />
+          {/* Responsive gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 sm:bg-gradient-to-t sm:from-black/80 sm:via-black/30 sm:to-black/10 lg:bg-gradient-to-t lg:from-black via-black/20 lg:to-black/10" />
         </div>
       )}
 
       {/* Main hero content with parallax effect */}
       <motion.div
-        className="relative z-10 w-full flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 lg:pt-[10rem]"
+        className="relative z-10 w-full flex flex-col items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 min-h-screen pt-20 sm:pt-24 md:pt-28 lg:pt-[10rem]"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
         style={parallaxEnabled ? { y: contentY } : {}}
       >
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* Left Content */}
+        <div className="container mx-auto max-w-7xl">
+          {/* Responsive grid layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
+            {/* Left Content - Responsive column spans */}
             <motion.div
-              className="space-y-6 max-w-3xl mx-auto lg:mx-0 text-center lg:text-left"
+              className={`space-y-4 sm:space-y-6 md:space-y-8 max-w-4xl mx-auto lg:mx-0 text-center lg:text-left ${
+                showRightColumn ? "xl:col-span-3" : "xl:col-span-5"
+              }`}
               variants={itemVariants}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-playfair">
+              {/* Responsive title with better scaling */}
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight font-playfair">
                 {title}
               </h1>
-              <motion.p
-                className="max-w-[600px] text-gray-50 text-base sm:text-lg mx-auto lg:mx-0"
+
+              {/* Responsive description with better readability */}
+              <motion.div
+                className="max-w-none sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] text-gray-50 text-sm xs:text-base sm:text-lg md:text-xl mx-auto lg:mx-0"
                 variants={itemVariants}
               >
                 {description}
-              </motion.p>
+              </motion.div>
+
+              {/* Responsive button layout */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 pt-2 sm:pt-4 justify-center lg:justify-start"
                 variants={itemVariants}
               >
                 {primaryButtonText && (
                   <Link href={primaryButtonLink} className="inline-block">
                     <Button
                       size="lg"
-                      className=" bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-6 transition-all duration-300 text-base shadow-lg flex items-center gap-2 rounded-xl italic uppercase w-full"
+                      className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 transition-all duration-300 text-sm sm:text-base shadow-lg flex items-center justify-center gap-2 rounded-xl italic uppercase w-full sm:w-auto min-w-[140px] md:min-w-[160px]"
                     >
                       {primaryButtonText}
                     </Button>
@@ -156,7 +166,7 @@ const ParallaxSplitHero = ({
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border-orange-500 text-orange-500 font-medium px-8 py-6 transition-all duration-300 text-base shadow-lg flex items-center gap-2 rounded-xl italic uppercase w-full"
+                      className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-medium px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 transition-all duration-300 text-sm sm:text-base shadow-lg flex items-center justify-center gap-2 rounded-xl italic uppercase w-full sm:w-auto min-w-[140px] md:min-w-[160px]"
                     >
                       {secondaryButtonText}
                     </Button>
@@ -165,15 +175,37 @@ const ParallaxSplitHero = ({
               </motion.div>
             </motion.div>
 
-            {/* Right Column */}
+            {/* Right Column - Responsive visibility and sizing */}
             {showRightColumn && (
-              <motion.div className="hidden lg:block" variants={itemVariants}>
-                {rightContent}
+              <motion.div
+                className="hidden md:block lg:block xl:col-span-2 w-full"
+                variants={itemVariants}
+              >
+                <div className="w-full max-w-lg mx-auto lg:max-w-none">
+                  {rightContent}
+                </div>
               </motion.div>
             )}
           </div>
+
+          {/* Mobile/Tablet Right Content - Shows below main content on smaller screens */}
+          {showRightColumn && rightContent && (
+            <motion.div
+              className="block md:hidden mt-8 sm:mt-12 w-full max-w-md mx-auto"
+              variants={itemVariants}
+            >
+              {rightContent}
+            </motion.div>
+          )}
         </div>
       </motion.div>
+
+      {/* Responsive scroll indicator */}
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="w-6 h-10 sm:w-8 sm:h-12 border-2 border-orange-500/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 sm:h-4 bg-orange-500 rounded-full mt-2 animate-bounce"></div>
+        </div>
+      </div>
     </section>
   );
 };
