@@ -101,10 +101,10 @@ export default function Header() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [mobileMenuOpen, toggleMobileMenu]);
 
-  // Close mobile menu when resizing to desktop
+  // Close mobile menu when resizing to desktop - Updated breakpoint
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768 && mobileMenuOpen) {
+      if (window.innerWidth >= 1024 && mobileMenuOpen) {
         setMobileMenuOpen(false);
         document.body.style.overflow = "";
       }
@@ -132,7 +132,7 @@ export default function Header() {
     { href: "/disclaimer", label: "Disclaimer", icon: AlertTriangle },
   ];
 
-  // Function to check if link is active - FIXED VERSION
+  // Function to check if link is active
   const isActive = (path: any) => {
     if (path === "/" && pathname !== "/") return false;
     return pathname === path || pathname.startsWith(`${path}/`);
@@ -150,11 +150,11 @@ export default function Header() {
 
       {/* Header with semantic HTML structure */}
       <header className="fixed top-0 z-40 w-full transition-all duration-300">
-        {/* Policy links bar with contact info */}
+        {/* Policy links bar with contact info - Responsive updates */}
         <div className="bg-black/90 backdrop-blur-xl text-xs">
           <div className="container mx-auto flex justify-between items-center h-8 px-4">
-            {/* Contact info in top bar */}
-            <div className="flex items-center space-x-4">
+            {/* Contact info in top bar - Better mobile handling */}
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="flex items-center space-x-1 group">
                 <Phone
                   size={14}
@@ -162,10 +162,10 @@ export default function Header() {
                 />
                 <Link
                   href="tel:+919964391643"
-                  className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
+                  className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1 text-xs sm:text-sm"
                   aria-label="Call us at 9964391643"
                 >
-                  9964391643
+                  <span>9964391643</span>
                 </Link>
               </div>
               <div className="flex items-center space-x-1 group">
@@ -175,16 +175,16 @@ export default function Header() {
                 />
                 <Link
                   href="mailto:hello@therunbhumi.com"
-                  className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
+                  className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1 text-xs sm:text-sm"
                   aria-label="Email us at hello@therunbhumi.com"
                 >
-                  hello@therunbhumi.com
+                  <span>hello@therunbhumi.com</span>
                 </Link>
               </div>
             </div>
 
-            {/* Policy links */}
-            <div className="hidden md:flex space-x-4">
+            {/* Policy links - Progressive disclosure for different screen sizes */}
+            <div className="hidden lg:flex space-x-4">
               {policyLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -200,12 +200,29 @@ export default function Header() {
                 );
               })}
             </div>
+            {/* Abbreviated policy links for medium screens */}
+            <div className="hidden md:flex lg:hidden space-x-3">
+              {policyLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-300 hover:text-orange-300 transition-colors duration-300"
+                    aria-label={link.label}
+                    title={link.label}
+                  >
+                    <Icon size={14} className="text-orange-400" />
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
 
         {/* Main navigation area with gradient background */}
         <div
-          className="container mx-auto rounded-b-xl py-2 px-6 transition-all duration-500"
+          className="container mx-auto rounded-b-xl py-2 px-4 sm:px-6 transition-all duration-500"
           style={{
             background: scrolled
               ? `linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(51, 28, 0, 0.95), rgba(0, 0, 0, 0.9))`
@@ -216,16 +233,16 @@ export default function Header() {
               : "none",
           }}
         >
-          <div className="mx-auto flex items-center justify-between h-16 md:h-20">
-            {/* Logo with subtle hover effects */}
-            <div className="flex items-center space-x-4">
+          <div className="mx-auto flex items-center justify-between h-14 sm:h-16 lg:h-20">
+            {/* Logo with responsive sizing */}
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <Link
                 href="/"
                 className="flex items-center group rounded-lg relative"
                 aria-label="RunBhumi Home"
               >
                 <div className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
+                <div className="relative h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
                   <Image
                     src="/rb_logo.png"
                     alt="RunBhumi Logo"
@@ -236,9 +253,9 @@ export default function Header() {
                 </div>
               </Link>
 
-              {/* Desktop Navigation with gradient hover effects */}
+              {/* Desktop Navigation with responsive breakpoints */}
               <nav
-                className="hidden md:flex items-center justify-center px-4 transition-all duration-500 space-x-2 lg:space-x-4"
+                className="hidden lg:flex items-center justify-center px-4 transition-all duration-500 space-x-2 xl:space-x-4"
                 role="navigation"
                 aria-label="Main Navigation"
               >
@@ -246,7 +263,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-sm lg:text-base font-medium uppercase text-center transition-all duration-300 relative py-2 px-2 lg:px-3 rounded-md 
+                    className={`text-sm xl:text-base font-medium uppercase text-center transition-all duration-300 relative py-2 px-2 xl:px-3 rounded-md 
                       ${
                         isActive(link.href)
                           ? "text-orange-400 bg-gradient-to-r from-orange-950/30 via-orange-900/20 to-orange-950/30 backdrop-blur-sm"
@@ -255,7 +272,10 @@ export default function Header() {
                       group overflow-hidden`}
                     aria-current={isActive(link.href) ? "page" : undefined}
                   >
-                    {link.label}
+                    <span className="xl:hidden">
+                      {link.label.split(" ")[0]}
+                    </span>
+                    <span className="hidden xl:inline">{link.label}</span>
                     <span
                       className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-600/80 via-orange-500 to-orange-600/80 transform origin-left transition-transform duration-500 ease-out 
                         ${
@@ -270,33 +290,49 @@ export default function Header() {
               </nav>
             </div>
 
-            {/* Register Button - Desktop Only */}
-            <div className="hidden md:block">
-              <RegisterButton />
-            </div>
+            {/* Action buttons area - Responsive layout */}
+            <div className="flex items-center space-x-2">
+              {/* Register Button - Progressive sizing */}
+              <div className="hidden md:block">
+                <RegisterButton />
+              </div>
 
-            {/* Mobile Menu Button - simplified */}
-            <button
-              className="md:hidden p-2 rounded-md text-white bg-orange-900/20 hover:bg-orange-800/30 transition-colors duration-200"
-              onClick={toggleMobileMenu}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5 text-orange-300" aria-hidden="true" />
-              ) : (
-                <Menu className="h-5 w-5 text-orange-300" aria-hidden="true" />
-              )}
-            </button>
+              {/* Tablet-specific compact register button */}
+              <div className="hidden sm:block md:hidden">
+                <Link
+                  href="/register"
+                  className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-300 text-sm uppercase"
+                >
+                  Register
+                </Link>
+              </div>
+
+              {/* Mobile Menu Button - Updated breakpoint */}
+              <button
+                className="lg:hidden p-2 rounded-md text-white bg-orange-900/20 hover:bg-orange-800/30 transition-colors duration-200"
+                onClick={toggleMobileMenu}
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-5 w-5 text-orange-300" aria-hidden="true" />
+                ) : (
+                  <Menu
+                    className="h-5 w-5 text-orange-300"
+                    aria-hidden="true"
+                  />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile/Tablet Menu - Updated breakpoint */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-gradient-to-b from-black/95 via-orange-950/30 to-gray-900/95 backdrop-blur-md shadow-lg transform transition-all duration-500 ease-in-out z-50 ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-gradient-to-b from-black/95 via-orange-950/30 to-gray-900/95 backdrop-blur-md shadow-lg transform transition-all duration-500 ease-in-out z-50 ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         onTouchStart={handleTouchStart}
@@ -306,7 +342,7 @@ export default function Header() {
         <div className="container mx-auto px-4 py-4">
           {/* Close button inside mobile menu */}
           <div className="flex justify-between items-center mb-6 mt-4">
-            <div className="relative h-12 w-12 flex-shrink-0">
+            <div className="relative h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0">
               <Image
                 src="/rb_logo.png"
                 alt="RunBhumi Logo"
@@ -324,9 +360,9 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Navigation links for mobile */}
+          {/* Navigation links for mobile/tablet - Responsive grid */}
           <nav
-            className="flex flex-col uppercase space-y-3 mt-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6"
             role="navigation"
             aria-label="Mobile Navigation"
           >
@@ -334,7 +370,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium py-3 px-4 uppercase rounded-lg transition-all duration-300 relative group overflow-hidden
+                className={`font-medium py-3 px-4 uppercase rounded-lg transition-all duration-300 relative group overflow-hidden text-center md:text-left
                   ${
                     isActive(link.href)
                       ? "text-orange-400 bg-gradient-to-r from-orange-950/40 via-orange-900/30 to-orange-950/40 backdrop-blur-sm"
@@ -353,8 +389,8 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Register button for mobile menu */}
-          <div className="mt-6">
+          {/* Register button and policy links for mobile menu */}
+          <div className="mt-6 space-y-4">
             <Link
               href="/register"
               className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 block text-center uppercase"
@@ -362,12 +398,30 @@ export default function Header() {
             >
               Register for Trials
             </Link>
+
+            {/* Policy links in mobile menu */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-4 border-t border-orange-900/30">
+              {policyLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-300 hover:text-orange-300 transition-colors duration-300 flex items-center justify-center sm:justify-start space-x-2 py-2 px-3 rounded-md hover:bg-orange-950/20"
+                    onClick={toggleMobileMenu}
+                  >
+                    <Icon size={16} className="text-orange-400" />
+                    <span className="text-sm">{link.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Spacer to prevent content from being hidden under the header */}
-      {/* <div className="h-24 md:h-28" aria-hidden="true"></div> */}
+      {/* <div className="h-20 sm:h-24 lg:h-28" aria-hidden="true"></div> */}
     </>
   );
 }
