@@ -39,7 +39,7 @@ export default function AboutUsPage() {
         <LeftHero
           title="RunBhumi"
           subtitle="India's Greatest Cricket Talent Hunt"
-          description="Scouting extraordinary players from every corner of the nation"
+          description="Scouting extraordinary players from every corner of the globe"
           backgroundType="image"
           backgroundSrc="images/3.png"
           height="small"
@@ -95,13 +95,13 @@ export default function AboutUsPage() {
                 </p>
               </div>
               {/* <ShuffleGrid /> */}
-              <div className="relative w-full h-full border-2 border-orange-900 overflow-hidden rounded-xl">
+              <div className="relative w-full h-full overflow-hidden rounded-xl">
                 <Image
-                  src="images/21.png"
+                  src="images/about-runbhumi.jpg"
                   width={800}
                   height={300}
                   alt="About Us"
-                  className="object-cover"
+                  className="object-cover rounded-xl"
                 />
               </div>
             </div>
@@ -125,61 +125,71 @@ export default function AboutUsPage() {
                 alt="Sony Ten3"
                 width={150}
                 height={150}
-                className="rounded-lg overflow-hidden"
+                className="rounded-lg overflow-hidden shadow-md"
               />
               <Image
                 src="/images/partners/2.png"
                 alt="Sony Liv"
                 width={150}
                 height={150}
-                className="rounded-lg overflow-hidden"
+                className="rounded-lg overflow-hidden shadow-md"
               />
               <Image
                 src="/images/partners/3.png"
                 alt="Sony Pal"
                 width={150}
                 height={150}
-                className="rounded-lg overflow-hidden"
+                className="rounded-lg overflow-hidden shadow-md"
               />
               <Image
                 src="/images/partners/4.png"
                 alt="Fancode"
                 width={150}
                 height={150}
-                className="rounded-lg overflow-hidden"
+                className="rounded-lg overflow-hidden shadow-md"
+              />
+              <Image
+                src="/images/partners/tv9.jpg"
+                alt="Fancode"
+                width={150}
+                height={150}
+                className="rounded-lg overflow-hidden shadow-md"
               />
             </div>
           </div>
         </section>
 
         {/* Leadership Team Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="flex flex-col items-center space-y-4 text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
+          <div className="container px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mx-auto max-w-7xl">
+            <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center mb-8 sm:mb-10 lg:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
                 Our Leadership Team
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-lg">
+              <p className="max-w-[600px] lg:max-w-[700px] text-sm sm:text-base md:text-lg text-muted-foreground px-4">
                 Meet the passionate individuals behind RunBhumi's success
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="rounded-xl overflow-hidden mb-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
+              {/* Narendra Khanna */}
+              <div className="flex flex-col items-center space-y-3 sm:space-y-4 max-w-lg mx-auto lg:max-w-none">
+                <div className="rounded-xl overflow-hidden mb-2 sm:mb-3 shadow-lg">
                   <Image
                     src="/images/narendra-khanna.jpg"
                     width={160}
                     height={160}
                     alt="Narendra Khanna"
-                    className="object-cover"
+                    className="object-cover w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
                   />
                 </div>
-                <h3 className="font-bold text-xl">Narendra Khanna</h3>
-                <p className="text-sm text-orange-600 dark:text-orange-400">
+                <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-center">
+                  Narendra Khanna
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base text-orange-600 dark:text-orange-400 font-medium">
                   Co-Founder & Visionary
                 </p>
-                <p className="text-sm text-muted-foreground text-center max-w-md">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground text-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg leading-relaxed px-2">
                   An engineer turned sports entrepreneur, Narendra has spent 25+
                   years working across continents. His own journey of being a
                   passionate cricketer who never got the opportunity fuels
@@ -187,21 +197,24 @@ export default function AboutUsPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center space-y-3">
-                <div className="rounded-xl overflow-hidden mb-3">
+              {/* Tarak Bajpai */}
+              <div className="flex flex-col items-center space-y-3 sm:space-y-4 max-w-lg mx-auto lg:max-w-none">
+                <div className="rounded-xl overflow-hidden mb-2 sm:mb-3 shadow-lg">
                   <Image
                     src="/images/taarak-bajpai.jpg"
                     width={160}
                     height={160}
                     alt="Tarak Bajpai"
-                    className="object-cover"
+                    className="object-cover w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
                   />
                 </div>
-                <h3 className="font-bold text-xl">Tarak Bajpai</h3>
-                <p className="text-sm text-orange-600 dark:text-orange-400">
+                <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-center">
+                  Tarak Bajpai
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base text-orange-600 dark:text-orange-400 font-medium">
                   Co-Founder & Strategist
                 </p>
-                <p className="text-sm text-muted-foreground text-center max-w-md">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground text-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg leading-relaxed px-2">
                   A retired Air Force officer and business leader with over two
                   decades of experience, Tarak blends discipline, structure, and
                   cultural insight into RunBhumi. A lifelong cricket lover, he

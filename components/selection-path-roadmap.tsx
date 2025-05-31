@@ -15,10 +15,6 @@ export const SelectionPathRoadmap = () => {
             The first assessment focuses on basic technical abilities and
             general performance in skill assessments.
           </p>
-          <div className="text-sm text-gray-500">
-            90 min. session - selection based on your performance in basic skill
-            assessments
-          </div>
         </div>
 
         <div className="mb-8 relative">
@@ -30,10 +26,6 @@ export const SelectionPathRoadmap = () => {
             Players are evaluated on how they apply their skills in small-sided
             games, focusing on decision-making and teamwork.
           </p>
-          <div className="text-sm text-gray-500">
-            60 min. session - observed for technical application and tactical
-            awareness
-          </div>
         </div>
 
         <div className="mb-8 relative">
@@ -45,10 +37,6 @@ export const SelectionPathRoadmap = () => {
             The final assessment evaluates players in full-sided games with
             official rules.
           </p>
-          <div className="text-sm text-gray-500">
-            Full 11v11 matches over 2 days - intensive focus on all attributes
-            as a complete player
-          </div>
         </div>
 
         <div className="relative">

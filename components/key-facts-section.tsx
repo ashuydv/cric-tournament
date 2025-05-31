@@ -78,9 +78,9 @@ const KeyFactsSection = () => {
       suffix: "+",
     },
     { icon: Building, value: 12, label: "(8 Male + 4 Female) Teams" },
-    { icon: Calendar, value: 45, label: "Day Gurukul-Style Training Camp" },
+    { icon: Calendar, value: 45, label: "Days Gurukul-Style Training Camp" },
     { icon: Tv, value: 36, label: "Mega Talent Reality Shows" },
-    { icon: Trophy, value: 12, label: "Team Ownership" },
+    { icon: Trophy, value: 12, label: "Team Ownerships" },
     { icon: Award, value: 32, label: "League Matches" },
     { icon: Star, value: 8, label: "Ex-International Players per Team" },
     {

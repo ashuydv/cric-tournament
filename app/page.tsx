@@ -405,7 +405,7 @@ export default function Home() {
                           <li>
                             Previous playing experience documentation (if any)
                           </li>
-                          <li>Registration fee of ₹1,500 + GST</li>
+                          <li>Registration fee of <strong>₹1,500 + GST</strong></li>
                         </ul>
                       </div>
 
@@ -773,13 +773,14 @@ export default function Home() {
                         </div>
                         <div>
                           <span className="font-medium block">
-                            Limited to 100 Players
+                            ₹1 Lakh Reward for Selected Players
                           </span>
                           <span className="text-gray-600 text-sm">
-                            Ensuring personalized attention and guidance
+                            Recognizing top talent with exciting rewards
                           </span>
                         </div>
                       </li>
+
                       <li className="flex items-start">
                         <div className="bg-orange-100 rounded-full p-1 mr-3 mt-0.5">
                           <TvIcon className="h-4 w-4 text-orange-600" />

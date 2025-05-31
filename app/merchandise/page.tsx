@@ -26,6 +26,7 @@ import {
 } from "react";
 import { Input } from "@/components/ui/input";
 import LeftHero from "@/components/common/left-hero";
+import WhatYouGet from "@/components/common/what-you-get";
 
 export default function MerchandisePage() {
   // Form state
@@ -379,7 +380,8 @@ export default function MerchandisePage() {
         </section>
 
         {/* Teaser Section */}
-        <section className="w-full py-16 bg-orange-50">
+        <WhatYouGet />
+        {/* <section className="w-full py-16 bg-orange-50">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold">What to Expect</h2>
@@ -444,7 +446,7 @@ export default function MerchandisePage() {
               </Card>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

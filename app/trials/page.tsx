@@ -39,11 +39,16 @@ import {
   Mail,
   FilterIcon,
   XIcon,
+  GiftIcon,
+  BookOpenIcon,
+  ShirtIcon,
+  StarIcon,
 } from "lucide-react";
 import Link from "next/link";
 import LeftHero from "@/components/common/left-hero";
 import SelectionPathRoadmap from "@/components/selection-path-roadmap";
 import Image from "next/image";
+import WhatYouGet from "@/components/common/what-you-get";
 
 // Define state-city mapping
 type StateCityMap = {
@@ -460,7 +465,7 @@ export default function RunBhumiTrialsPage() {
     <main className="flex-1">
       <LeftHero
         title="Trials"
-        description="Join India's Greatest Cricket Talent Hunt and showcase your skills on the national stage."
+        description="Join the World's Greatest Cricket Talent Hunt and showcase your skills on an international stage."
         backgroundType="image"
         backgroundSrc="https://images.unsplash.com/photo-1562077772-3bd90403f7f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNyaWNrZXR8ZW58MHx8MHx8fDA%3D"
         height="small"
@@ -537,6 +542,9 @@ export default function RunBhumiTrialsPage() {
           </div>
         </div>
       </section>
+
+      {/* What You Get Section - NEW */}
+      <WhatYouGet />
 
       {/* Cities and Schedule Section - Responsive */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 max-w-7xl">

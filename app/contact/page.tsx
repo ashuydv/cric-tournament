@@ -305,7 +305,7 @@ export default function RegistrationPage() {
       <main className="flex-1">
         <LeftHero
           title="Register for RunBhumi Cricket Talent Hunt"
-          description="Join India's Greatest Cricket Talent Hunt and showcase your skills on the national stage."
+          description="Join the World's Greatest Cricket Talent Hunt and showcase your skills on an international stage."
           backgroundType="image"
           backgroundSrc="https://images.unsplash.com/photo-1562077772-3bd90403f7f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNyaWNrZXR8ZW58MHx8MHx8fDA%3D"
           height="small"

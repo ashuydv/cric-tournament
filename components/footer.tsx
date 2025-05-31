@@ -375,7 +375,7 @@ export default function Footer() {
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} RunBhumi. All rights reserved.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mb-12 md:mb-0 lg:mb-0 xl:mb-0">
             {socialLinks.map((link, index) => (
               <Link
                 key={index}

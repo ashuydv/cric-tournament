@@ -9,7 +9,7 @@ const Trials = (props: Props) => {
     <div>
       <LeftHero
         title="Trials"
-        description="Join India's Greatest Cricket Talent Hunt and showcase your skills on the national stage."
+        description="Join the World's Greatest Cricket Talent Hunt and showcase your skills on an international stage."
         backgroundType="image"
         backgroundSrc="https://images.unsplash.com/photo-1562077772-3bd90403f7f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNyaWNrZXR8ZW58MHx8MHx8fDA%3D"
         height="small"
@@ -46,10 +46,18 @@ const Trials = (props: Props) => {
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Batter: ₹1,500 + GST</li>
-              <li>Bowler: ₹1,500 + GST</li>
-              <li>Wicket-keeper Batter: ₹1,500 + GST</li>
-              <li>Allrounder: ₹1,500 + GST</li>
+              <li>
+                Batter: <strong>₹1,500 + GST</strong>
+              </li>
+              <li>
+                Bowler: <strong>₹1,500 + GST</strong>
+              </li>
+              <li>
+                Wicket-keeper Batter: <strong>₹1,500 + GST</strong>
+              </li>
+              <li>
+                Allrounder: <strong>₹1,500 + GST</strong>
+              </li>
             </ul>
 
             <p className="mt-4">
@@ -67,9 +75,10 @@ const Trials = (props: Props) => {
                 Amateur cricketers can register through trials on the RunBhumi
                 website by paying a one-time registration fee
                 <br />
-                Trial Registration Fee: Batter - ₹1,500 + GST, Bowler - ₹1,500 +
-                GST, Wicketkeeper-Batter - ₹1,500 + GST, Allrounder - ₹1,500 +
-                GST
+                Trial Registration Fee: Batter - <strong>₹1,500 + GST</strong>,
+                Bowler - ₹1,500 + GST, Wicketkeeper-Batter -{" "}
+                <strong>₹1,500 + GST</strong>, Allrounder -{" "}
+                <strong>₹1,500 + GST</strong>
                 <br />
                 All registered amateur cricketers will be invited to take part
                 in a trial venue according to their chosen zone and they will be
