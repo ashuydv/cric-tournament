@@ -529,46 +529,6 @@ const Career = () => {
           </p>
         </div>
 
-        {/* Cricket Talent Hunt Program Section */}
-        <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg overflow-hidden mb-16">
-          <div className="p-8 text-white">
-            <div className="flex items-center justify-center mb-6">
-              <Trophy className="h-12 w-12 text-white mr-4" />
-              <h3 className="text-2xl md:text-3xl font-bold">
-                Cricket Talent Hunt Program
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                <Target className="h-8 w-8 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg mb-2">Talent Discovery</h4>
-                <p className="text-sm opacity-90">
-                  Identifying promising cricket talent from grassroots to
-                  professional levels across India
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                <Users className="h-8 w-8 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg mb-2">
-                  Player Development
-                </h4>
-                <p className="text-sm opacity-90">
-                  Comprehensive training programs and mentorship for emerging
-                  cricket stars
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                <Globe className="h-8 w-8 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg mb-2">National Network</h4>
-                <p className="text-sm opacity-90">
-                  Pan-India presence with regional scouts and development
-                  centers
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Why Join Us Section */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-16">
           <div className="p-4 bg-orange-600 text-white">

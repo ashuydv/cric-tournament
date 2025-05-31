@@ -15,6 +15,8 @@ import {
   User,
   Phone,
   MapPin,
+  ChevronDown,
+  Ruler,
 } from "lucide-react";
 import {
   ReactElement,
@@ -27,6 +29,7 @@ import {
 import { Input } from "@/components/ui/input";
 import LeftHero from "@/components/common/left-hero";
 import WhatYouGet from "@/components/common/what-you-get";
+import NotificationForm from "@/components/notification-form";
 
 export default function MerchandisePage() {
   // Form state
@@ -36,6 +39,8 @@ export default function MerchandisePage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [waistSize, setWaistSize] = useState("");
+  const [customWaistSize, setCustomWaistSize] = useState("");
 
   // Countdown state
   const [timeRemaining, setTimeRemaining] = useState({
@@ -46,7 +51,7 @@ export default function MerchandisePage() {
   });
 
   // Launch date - June 1, 2025
-  const launchDate = new Date("2025-05-31T00:00:00");
+  const launchDate = new Date("2025-06-05T00:00:00");
 
   // Dynamic countdown effect
   useEffect(() => {
@@ -288,93 +293,7 @@ export default function MerchandisePage() {
               </div>
 
               {/* Notification Form */}
-              <Card className="w-full max-w-md">
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-center mb-4">
-                    <Bell className="h-5 w-5 text-orange-500 mr-2" />
-                    <h3 className="text-lg font-semibold">
-                      Get Notified When We Launch
-                    </h3>
-                  </div>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                      <Input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Your full name"
-                        className="w-full h-14 pl-10 pr-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
-                        required
-                        disabled={isLoading}
-                      />
-                    </div>
-                    <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                      <Input
-                        type="tel"
-                        value={phoneNumber}
-                        onChange={(e) => {
-                          // Only allow digits
-                          const value = e.target.value.replace(/\D/g, "");
-                          // Limit to 10 digits
-                          setPhoneNumber(value.slice(0, 10));
-                        }}
-                        placeholder="Your mobile number"
-                        className="w-full h-14 pl-10 pr-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
-                        pattern="[0-9]{10}"
-                        required
-                        disabled={isLoading}
-                      />
-                    </div>
-                    <div className="relative">
-                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                      <Input
-                        type="text"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                        placeholder="Your address"
-                        className="w-full h-14 pl-10 pr-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
-                        required
-                        disabled={isLoading}
-                      />
-                    </div>
-
-                    {error && (
-                      <p className="text-red-600 text-sm text-center">
-                        {error}
-                      </p>
-                    )}
-
-                    <Button
-                      type="submit"
-                      className={`
-            w-full
-            bg-orange-500 hover:bg-orange-600 
-            text-white font-medium px-8 py-6 
-            transition-all duration-300 text-base
-            shadow-lg
-            flex items-center justify-center gap-2 rounded-xl
-            italic uppercase h-14
-            `}
-                      disabled={isLoading}
-                    >
-                      {isLoading ? "Submitting..." : "Notify Me"}
-                    </Button>
-
-                    {isSubmitted && (
-                      <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md text-sm text-center">
-                        Thank you, {name}! We'll notify you when we launch.
-                      </div>
-                    )}
-
-                    <p className="text-xs text-gray-500 text-center mt-2">
-                      By submitting, you agree to receive notifications about
-                      our merchandise launch.
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
+              <NotificationForm />
             </div>
           </div>
         </section>
