@@ -97,7 +97,7 @@ const ParallaxSplitHero = ({
             priority
           />
           {/* Responsive gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 sm:bg-gradient-to-t sm:from-black/80 sm:via-black/30 sm:to-black/10 lg:bg-gradient-to-t lg:from-black via-black/20 lg:to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/20 sm:bg-gradient-to-t sm:from-black/80 sm:via-black/30 sm:to-black/10 lg:bg-gradient-to-t lg:from-black via-black/20 lg:to-black/10" />
         </motion.div>
       ) : (
         <div className="absolute inset-0 z-0">

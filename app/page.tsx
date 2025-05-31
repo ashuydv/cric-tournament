@@ -90,7 +90,7 @@ export default function Home() {
             platforms.
           </>
         }
-        backgroundSrc="/cric_bg.png"
+        backgroundSrc="/cric_bg.jpg"
         primaryButtonText="Join Now (Ages: 16-30)"
         primaryButtonLink="/register"
         secondaryButtonText="Explore Trials"
@@ -405,7 +405,9 @@ export default function Home() {
                           <li>
                             Previous playing experience documentation (if any)
                           </li>
-                          <li>Registration fee of <strong>₹1,500 + GST</strong></li>
+                          <li>
+                            Registration fee of <strong>₹1,500 + GST</strong>
+                          </li>
                         </ul>
                       </div>
 
