@@ -60,6 +60,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ParallaxSplitHero from "@/components/hero/parallax-split-hero";
 import RegisterButton from "@/components/register-button";
 import DynamicButton from "@/components/dynamic-button";
+import SelectionPathRoadmap from "@/components/selection-path-roadmap";
 
 export default function Home() {
   return (
@@ -399,8 +400,8 @@ export default function Home() {
                             Card/Passport/Driving License)
                           </li>
                           <li>
-                            Medical fitness certificate from a registered
-                            medical practitioner
+                            Medical certificate, to be produced as required on
+                            requirement basis
                           </li>
                           <li>
                             Previous playing experience documentation (if any)
@@ -577,7 +578,8 @@ export default function Home() {
                         </p>
                       </div>
 
-                      <div className="bg-gradient-to-r from-orange-50 to-white p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+                      <SelectionPathRoadmap />
+                      {/* <div className="bg-gradient-to-r from-orange-50 to-white p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
                         <h3 className="text-2xl font-bold mb-6 text-orange-700 flex items-center">
                           <RouteIcon className="mr-3 h-6 w-6 text-orange-600" />
                           Your Path to Selection
@@ -694,7 +696,7 @@ export default function Home() {
                             Contact Us
                           </DynamicButton>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </CardContent>
                 </Card>
