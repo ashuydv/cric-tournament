@@ -429,8 +429,8 @@ export default function CommercialGuidelinesPage() {
                   hello@therunbhumi.com
                 </a>{" "}
                 <br />
-                <a href="tel:+919964391643" className="text-sm">
-                  +919964391643
+                <a href="tel:+919964392643" className="text-sm">
+                  +919964392643
                 </a>
               </div>
             </CardContent>

@@ -590,7 +590,7 @@ export default function TermsConditionsPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Main Phone</p>
-                                                        <a href="tel:+919964391643" className="text-orange-600 hover:underline">+91 99643 91643</a>
+                                                        <a href="tel:+919964392643" className="text-orange-600 hover:underline">+91 99643 91643</a>
                                                     </div>
                                                 </div>
 

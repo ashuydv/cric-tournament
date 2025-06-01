@@ -195,7 +195,7 @@ const RefundPolicy = () => {
                 </p>
                 <p>
                   <span className="font-medium">Phone:</span>{" "}
-                  <a href="tel:+919964391643">+91 9964391643</a>
+                  <a href="tel:+919964392643">+91 9964392643</a>
                 </p>
                 <address className="not-italic">
                   <span className="font-medium">Address: </span>
