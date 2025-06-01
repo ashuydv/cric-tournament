@@ -208,6 +208,29 @@ export default function RunBhumiTrialsPage() {
   const [filteredSchedule, setFilteredSchedule] = useState(trialSchedule);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
+  // Load Razorpay script
+  useEffect(() => {
+    const loadRazorpayScript = () => {
+      if (!document.getElementById("razorpay-embed-btn-js")) {
+        const script = document.createElement("script");
+        script.defer = true;
+        script.id = "razorpay-embed-btn-js";
+        script.src = "https://cdn.razorpay.com/static/embed_btn/bundle.js";
+        document.body.appendChild(script);
+      } else {
+        const rzp = (window as any)["_rzp_"];
+        if (rzp && rzp.init) rzp.init();
+      }
+    };
+
+    // Load script after component mounts
+    const timer = setTimeout(() => {
+      loadRazorpayScript();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -546,8 +569,48 @@ export default function RunBhumiTrialsPage() {
       {/* What You Get Section - NEW */}
       <WhatYouGet />
 
+      {/* Registration CTA Section with Razorpay */}
+      <section className="w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-500 to-orange-600">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto text-center">
+          <div className="text-white mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Ready to Begin Your Cricket Journey?
+            </h2>
+            <p className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-8">
+              Join thousands of aspiring cricketers in India's most exciting
+              talent hunt program
+            </p>
+
+            {/* Razorpay Payment Iframe */}
+            <div className="mb-6">
+              <iframe
+                src="https://rzp.io/rzp/runbhumi-trails"
+                width="100%"
+                height="1500px"
+                frameBorder="0"
+                style={{ border: "none", overflow: "hidden" }}
+              ></iframe>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm sm:text-base opacity-80">
+              <div className="flex items-center gap-2">
+                <Check className="h-5 w-5" />
+                <span>Secure Payment</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="h-5 w-5" />
+                <span>Instant Confirmation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="h-5 w-5" />
+                <span>Multiple Payment Options</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Cities and Schedule Section - Responsive */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 max-w-7xl">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Cities Section */}
         <div className="mb-8 sm:mb-12">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
@@ -910,6 +973,32 @@ export default function RunBhumiTrialsPage() {
         {/* Selection Path Roadmap - Responsive wrapper */}
         <div className="w-full">
           <SelectionPathRoadmap />
+        </div>
+
+        {/* Secondary Registration CTA */}
+        <div className="mt-12 text-center">
+          <Card className="bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200 p-6 sm:p-8">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-xl sm:text-2xl text-orange-800 mb-2">
+                Don't Miss Your Chance!
+              </CardTitle>
+              <p className="text-orange-700 text-sm sm:text-base">
+                Limited spots available for each trial date. Register now to
+                secure your place.
+              </p>
+            </CardHeader>
+            <CardContent className="pt-2">
+              <div className="mb-6">
+                <iframe
+                  src="https://rzp.io/rzp/runbhumi-trails"
+                  width="100%"
+                  height="1500px"
+                  frameBorder="0"
+                  style={{ border: "none", overflow: "hidden" }}
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </main>

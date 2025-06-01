@@ -61,6 +61,7 @@ import ParallaxSplitHero from "@/components/hero/parallax-split-hero";
 import RegisterButton from "@/components/register-button";
 import DynamicButton from "@/components/dynamic-button";
 import SelectionPathRoadmap from "@/components/selection-path-roadmap";
+import CricketCurriculum from "@/components/comprehensive-curriculum";
 
 export default function Home() {
   return (
@@ -538,10 +539,6 @@ export default function Home() {
                           <ul className="space-y-2">
                             <li className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
-                              <span>Yo-Yo endurance test</span>
-                            </li>
-                            <li className="flex items-start">
-                              <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
                               <span>Sprint tests</span>
                             </li>
                             <li className="flex items-start">
@@ -801,11 +798,12 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
+                  <CricketCurriculum />
+                  {/* <h4 className="text-xl font-bold text-orange-700 mt-8 mb-4 flex items-center">
                     <BrainIcon className="mr-2 h-5 w-5 text-orange-600" />
                     Comprehensive Curriculum
                   </h4>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4">
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                       <Camera className="h-6 w-6 text-orange-600 mb-2" />
                       <h5 className="font-semibold mb-1">Cricket Skills</h5>
@@ -846,7 +844,7 @@ export default function Home() {
                         <li>• Performance psychology</li>
                       </ul>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div>

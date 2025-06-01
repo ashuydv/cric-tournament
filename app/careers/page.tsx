@@ -720,11 +720,12 @@ const Career = () => {
                 you need, including cricket viewing areas.
               </p>
             </div>
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-orange-600"
+                  className="h-8 w-8 text-blue-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -733,23 +734,24 @@ const Career = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                   />
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Modern Office
+                Learning & Development
               </h3>
               <p className="text-gray-600">
-                Work in our state-of-the-art facilities with all the amenities
-                you need, including cricket viewing areas.
+                Access to online courses, workshops, and professional
+                certifications to advance your career and skills.
               </p>
             </div>
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-orange-600"
+                  className="h-8 w-8 text-green-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -758,16 +760,94 @@ const Career = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                   />
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Modern Office
+                Health & Wellness
               </h3>
               <p className="text-gray-600">
-                Work in our state-of-the-art facilities with all the amenities
-                you need, including cricket viewing areas.
+                Comprehensive health insurance, mental health support, and
+                on-site fitness facilities to keep you at your best.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-purple-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                Flexible Hours
+              </h3>
+              <p className="text-gray-600">
+                Work-life balance with flexible scheduling, remote work options,
+                and unlimited PTO policy.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-yellow-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                Competitive Salary
+              </h3>
+              <p className="text-gray-600">
+                Market-leading compensation packages with performance bonuses,
+                stock options, and annual salary reviews.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-red-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                Team Events
+              </h3>
+              <p className="text-gray-600">
+                Regular team building activities, company retreats, celebration
+                parties, and networking events with colleagues.
               </p>
             </div>
           </div>
@@ -938,7 +1018,7 @@ const Career = () => {
               contribute to India's cricket talent development ecosystem.
             </p>
             <Link
-              href="/career/apply"
+              href="/careers/apply"
               className="bg-white text-orange-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300"
             >
               Submit Resume

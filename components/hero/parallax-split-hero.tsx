@@ -111,7 +111,7 @@ const ParallaxSplitHero = ({
             priority
           />
           {/* Responsive gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 sm:bg-gradient-to-t sm:from-black/80 sm:via-black/30 sm:to-black/10 lg:bg-gradient-to-t lg:from-black via-black/20 lg:to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/20 sm:bg-gradient-to-t sm:from-black/80 sm:via-black/30 sm:to-black/10 lg:bg-gradient-to-t lg:from-black via-black/20 lg:to-black/10" />
         </div>
       )}
 
@@ -134,7 +134,7 @@ const ParallaxSplitHero = ({
               variants={itemVariants}
             >
               {/* Responsive title with better scaling */}
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight font-playfair">
+              <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight font-playfair">
                 {title}
               </h1>
 

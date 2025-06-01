@@ -760,7 +760,7 @@ export default function RegistrationPage() {
                       <div>
                         <h3 className="font-bold">Trials Start</h3>
                         <p className="text-muted-foreground mt-1">
-                          Thursday, May 15, 2025
+                          Saturday, July 5, 2025
                         </p>
                       </div>
                     </CardContent>
@@ -795,8 +795,7 @@ export default function RegistrationPage() {
                 Trial Schedule
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-lg">
-                Select your preferred trial location from our worldwide
-                schedule
+                Select your preferred trial location from our worldwide schedule
               </p>
             </div>
 

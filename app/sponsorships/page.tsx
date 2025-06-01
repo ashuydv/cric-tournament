@@ -99,7 +99,7 @@ const Sponsorships = () => {
 
           {/* Associate Sponsor */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-            <div className="bg-orange-500 p-4 text-white text-center">
+            <div className="bg-orange-600 p-4 text-white text-center">
               <h3 className="text-xl font-bold">Associate Sponsor</h3>
               <p className="text-sm mt-1 opacity-90">Featured Partnership</p>
             </div>
@@ -154,7 +154,7 @@ const Sponsorships = () => {
 
           {/* Official Partner */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-            <div className="bg-orange-400 p-4 text-white text-center">
+            <div className="bg-orange-600 p-4 text-white text-center">
               <h3 className="text-xl font-bold">Official Partner</h3>
               <p className="text-sm mt-1 opacity-90">Category Exclusive</p>
             </div>
