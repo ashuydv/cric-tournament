@@ -161,11 +161,11 @@ export default function Header() {
                   className="text-orange-400 group-hover:animate-pulse"
                 />
                 <Link
-                  href="tel:+919964392643"
+                  href="tel:+919964396643"
                   className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1 text-xs sm:text-sm"
-                  aria-label="Call us at 9964392643"
+                  aria-label="Call us at 9964396643"
                 >
-                  <span>9964392643</span>
+                  <span>+91 9964396643</span>
                 </Link>
               </div>
               <div className="flex items-center space-x-1 group">

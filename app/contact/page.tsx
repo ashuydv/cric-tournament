@@ -774,9 +774,11 @@ export default function RegistrationPage() {
                         <p className="text-muted-foreground mt-1">
                           MNT Dreams Pvt. Ltd.
                           <br />
-                          WhatsApp Enquiries: +91 99643 92643
+                          WhatsApp Enquiries: +91 9964391643
                           <br />
-                          IVR: +91 99643 96643
+                          IVR: +91 9964392643
+                          <br />
+                          Office/Admin: +91 9964396643
                         </p>
                       </div>
                     </CardContent>
