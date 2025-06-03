@@ -68,7 +68,7 @@ export default function Footer() {
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/919964392643", // Replace with your actual WhatsApp number
+      href: "https://wa.me/919964396643", // Replace with your actual WhatsApp number
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
