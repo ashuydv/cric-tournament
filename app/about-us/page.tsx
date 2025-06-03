@@ -180,7 +180,7 @@ export default function AboutUsPage() {
                     width={160}
                     height={160}
                     alt="Narendra Khanna"
-                    className="object-cover w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
+                    className="object-cover object-top w-60 h-60 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-60 lg:h-60"
                   />
                 </div>
                 <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-center">
@@ -205,7 +205,7 @@ export default function AboutUsPage() {
                     width={160}
                     height={160}
                     alt="Tarak Bajpai"
-                    className="object-cover w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
+                    className="object-cover w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-60 lg:h-60"
                   />
                 </div>
                 <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-center">
