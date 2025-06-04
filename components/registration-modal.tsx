@@ -99,13 +99,13 @@ export default function RegistrationModal() {
             <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 xs:mb-3 sm:mb-4 tracking-tight transform leading-tight">
               OPENS NOW!
             </h2>
-            <div className="relative">
+            {/* <div className="relative">
               <p className="text-xs xs:text-sm sm:text-base text-amber-50 mb-3 xs:mb-4 sm:mb-6 px-1 xs:px-2 sm:px-4 relative z-10 leading-relaxed max-w-prose mx-auto">
                 Please Note: Players who have their RunBhumi ID need to login
                 using their credentials and follow the registration process.
               </p>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-0.5 xs:h-1 bg-gradient-to-r from-transparent via-amber-200 to-transparent opacity-10"></div>
-            </div>
+            </div> */}
           </div>
 
           {/* Register Button - Enhanced responsive sizing and spacing */}
@@ -113,7 +113,7 @@ export default function RegistrationModal() {
             <Link href="/register" className="block w-full">
               <DynamicButton
                 onClick={() => setIsOpen(false)}
-                className="w-full text-sm xs:text-base sm:text-lg py-3 xs:py-4 sm:py-5 px-4 xs:px-6 sm:px-8 font-bold rounded-lg xs:rounded-xl sm:rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 touch-manipulation"
+                className="w-full text-sm xs:text-base sm:text-lg py-6 px-8 font-bold rounded-lg xs:rounded-xl sm:rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 touch-manipulation"
               >
                 Register for Trials (Ages: 16-30)
               </DynamicButton>
