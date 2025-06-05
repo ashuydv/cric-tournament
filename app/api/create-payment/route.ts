@@ -1,49 +1,91 @@
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
 
-// Initialize Razorpay with production keys
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID!,
-  key_secret: process.env.RAZORPAY_KEY_SECRET!,
-});
-
 export async function POST(req: Request) {
   try {
-    console.log("Creating payment order...");
-    // console.log("Environment:", process.env.NODE_ENV);
-    // console.log("Using key_id:", process.env.NODE_ENV === 'production' 
-    //   ? process.env.RAZORPAY_KEY_ID 
-    //   : process.env.RAZORPAY_TEST_KEY_ID);
-
-    const body = await req.json();
-    const { amount, currency = "INR" } = body;
-
-    if (!amount) {
-      throw new Error("Amount is required");
+    // Check if environment variables exist
+    if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+      throw new Error("Razorpay credentials not configured");
     }
 
-    // Create a Razorpay order
-    const order = await razorpay.orders.create({
-      amount: amount * 100, // amount in smallest currency unit (paise for INR)
-      currency,
-      receipt: `receipt_${Date.now()}`,
+    // Initialize Razorpay inside the function (runtime, not build time)
+    const razorpay = new Razorpay({
+      key_id: process.env.RAZORPAY_KEY_ID,
+      key_secret: process.env.RAZORPAY_KEY_SECRET,
     });
 
-    console.log("Order created successfully:", order);
+    // Parse request body
+    const body = await req.json();
+    const { amount, currency = "INR", receipt, notes } = body;
 
+    // Validate required fields
+    if (!amount || amount <= 0) {
+      return NextResponse.json(
+        { error: "Invalid amount" },
+        { status: 400 }
+      );
+    }
+
+    if (!receipt) {
+      return NextResponse.json(
+        { error: "Receipt ID is required" },
+        { status: 400 }
+      );
+    }
+
+    // Create payment order
+    const order = await razorpay.orders.create({
+      amount: Math.round(amount * 100), // Convert to paise
+      currency,
+      receipt,
+      notes: {
+        ...notes,
+        source: "cricket-tournament-registration",
+      },
+    });
+
+    // Return success response
     return NextResponse.json({
       success: true,
-      order,
-    });
-  } catch (error) {
-    console.error("Error creating payment:", error);
-    return NextResponse.json(
-      { 
-        success: false, 
-        error: error instanceof Error ? error.message : "Failed to create payment",
-        details: error
+      order: {
+        id: order.id,
+        amount: order.amount,
+        currency: order.currency,
+        receipt: order.receipt,
+        status: order.status,
+        key: process.env.RAZORPAY_KEY_ID,
       },
+    });
+
+  } catch (error: any) {
+    console.error("Payment creation error:", error);
+
+    // Handle specific error cases
+    if (error.error) {
+      // Razorpay specific errors
+      const razorpayError = error.error;
+      return NextResponse.json(
+        {
+          success: false,
+          error: razorpayError.description || "Payment creation failed",
+          code: razorpayError.code,
+        },
+        { status: 400 }
+      );
+    }
+
+    // Handle validation errors
+    if (error.message === "Razorpay credentials not configured") {
+      return NextResponse.json(
+        { success: false, error: "Payment service not configured" },
+        { status: 500 }
+      );
+    }
+
+    // Handle other errors
+    return NextResponse.json(
+      { success: false, error: "Internal server error" },
       { status: 500 }
     );
   }
-} 
+}
