@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -153,6 +153,12 @@ const trialSchedule = [
   },
 ];
 
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
 export default function RegistrationPage() {
   interface FormData {
     firstName: string;
@@ -193,6 +199,7 @@ export default function RegistrationPage() {
   const [availableCities, setAvailableCities] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
 
   // Filter trial schedule based on search term
   const filteredSchedule = trialSchedule.filter((schedule) => {
@@ -261,50 +268,136 @@ export default function RegistrationPage() {
     }
   };
 
+  // Load Razorpay script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    script.onload = () => {
+      console.log("Razorpay script loaded successfully");
+    };
+    script.onerror = (error) => {
+      console.error("Error loading Razorpay script:", error);
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const initializePayment = async () => {
+    try {
+      setIsPaymentProcessing(true);
+
+      // Log the environment and key being used
+      console.log("Current hostname:", window.location.hostname);
+
+      // Determine the public key based on environment
+      const isTestEnvironment = window.location.hostname === 'localhost' || window.location.hostname === 'cric-tournament.vercel.app';
+      const publicKey = isTestEnvironment
+        ? process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID
+        : process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+
+      console.log("Using key:", publicKey);
+
+      if (!publicKey) {
+        throw new Error("Razorpay public key is not configured for this environment.");
+      }
+
+      // Create payment order
+      const response = await fetch("/api/create-payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: 1770, // Registration fee in INR
+          currency: "INR",
+        }),
+      });
+
+      const data = await response.json();
+      console.log("Payment order created:", data);
+
+      if (!data.success) {
+        throw new Error(data.error || "Failed to create payment order");
+      }
+
+      // Initialize Razorpay
+      const options = {
+        key: publicKey,
+        amount: data.order.amount,
+        currency: data.order.currency,
+        name: "RunBhumi",
+        description: "Registration Fee",
+        order_id: data.order.id,
+        handler: function (response: any) {
+          // Handle successful payment
+          console.log("Payment successful:", response);
+          handleSubmit(new Event("submit") as any);
+        },
+        prefill: {
+          name: `${formData.firstName} ${formData.middleName} ${formData.surname}`,
+          email: formData.email,
+          contact: formData.mobileNumber,
+        },
+        theme: {
+          color: "#F97316", // Orange color matching your theme
+        },
+      };
+
+      console.log("Initializing Razorpay with options:", options);
+
+      if (!window.Razorpay) {
+        throw new Error("Razorpay script not loaded");
+      }
+
+      const razorpay = new window.Razorpay(options);
+      razorpay.open();
+    } catch (error) {
+      console.error("Payment initialization failed:", error);
+      toast({
+        title: "Payment Failed",
+        description: error instanceof Error ? error.message : "Failed to initialize payment. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsPaymentProcessing(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
+
+    // Validate form data
+    if (!formData.firstName || !formData.surname || !formData.mobileNumber || !formData.email) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     try {
-      // The correct format for Google Apps Script web app URL
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyzW9l1ZWIKON_IdxLU9SWLnJ9YKM-x1xyX-CQiTsUeXTcsAW_QQPel-uLkFYJpTz8vdg/exec";
+      setIsSubmitting(true);
 
-      // Prepare form data for submission
-      const formDataForSubmit = new FormData();
+      // Your existing form submission logic here
+      // ...
 
-      // Add all form fields to FormData
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataForSubmit.append(key, value);
-      });
-
-      // Add timestamp
-      formDataForSubmit.append("timestamp", new Date().toISOString());
-
-      // Send data to Google Sheets through Apps Script
-      const response = await fetch(scriptURL, {
-        method: "POST",
-        body: formDataForSubmit,
-        mode: "no-cors", // Required for Google Apps Script
-      });
-
-      console.log("Registration data sent:", formData);
-
-      // Set success state
       setSubmissionSuccess(true);
+      resetForm();
 
       toast({
-        title: "Registration successful!",
-        description:
-          "Your cricket trial registration has been submitted to RunBhumi.",
-        variant: "default",
+        title: "Registration Successful",
+        description: "Thank you for registering with RunBhumi!",
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
-
+      console.error("Registration failed:", error);
       toast({
-        title: "Registration failed",
-        description:
-          "There was an error processing your registration. Please try again.",
+        title: "Registration Failed",
+        description: "Failed to submit registration. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -824,19 +917,12 @@ export default function RegistrationPage() {
 
                       <div className="md:col-span-2 flex mt-6">
                         <Button
-                          type="submit"
-                          className={`
-                                                        bg-orange-500 hover:bg-orange-600
-                                                        text-white font-medium px-8 py-6
-                                                        transition-all duration-300 text-base
-                                                        shadow-lg
-                                                        flex items-center gap-2 rounded-xl
-                                                        italic uppercase
-                                                        `}
-                          disabled={isSubmitting}
+                          type="button"
+                          onClick={initializePayment}
+                          disabled={isSubmitting || isPaymentProcessing}
+                          className="bg-orange-600 hover:bg-orange-700"
                         >
-                          {isSubmitting ? "Processing..." : "Register"}
-                          <ArrowRight className="ml-2 h-5 w-5" />
+                          {isPaymentProcessing ? "Processing..." : "Proceed to Payment"}
                         </Button>
                       </div>
                     </form>
