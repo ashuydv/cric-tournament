@@ -825,7 +825,8 @@ export default function RegistrationPage() {
       // Determine the public key based on environment
       const isTestEnvironment =
         window.location.hostname === "localhost" ||
-        window.location.hostname === "cric-tournament.vercel.app";
+        window.location.hostname === "cric-tournament.vercel.app" ||
+        window.location.hostname.includes("vercel.app");
       const publicKey = isTestEnvironment
         ? process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID
         : process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
