@@ -300,6 +300,8 @@ export default function RegistrationPage() {
         throw new Error("Razorpay production public key is not configured.");
       }
 
+      console.log("Initializing payment with receipt ID:", receiptId);
+
       // Create payment order
       const response = await fetch("/api/create-payment", {
         method: "POST",
@@ -319,7 +321,16 @@ export default function RegistrationPage() {
         }),
       });
 
-      const data = await response.json();
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: "Failed to parse error response" }));
+        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json().catch((error) => {
+        console.error("Failed to parse response:", error);
+        throw new Error("Failed to parse payment response");
+      });
+
       console.log("Payment order created:", data);
 
       if (!data.success) {

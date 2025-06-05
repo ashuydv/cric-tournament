@@ -5,6 +5,7 @@ export async function POST(req: Request) {
   try {
     // Check if environment variables exist
     if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+      console.error("Razorpay credentials missing");
       throw new Error("Razorpay credentials not configured");
     }
 
@@ -15,23 +16,42 @@ export async function POST(req: Request) {
     });
 
     // Parse request body
-    const body = await req.json();
+    let body;
+    try {
+      body = await req.json();
+    } catch (parseError) {
+      console.error("Failed to parse request body:", parseError);
+      return NextResponse.json(
+        { success: false, error: "Invalid request body" },
+        { status: 400 }
+      );
+    }
+
     const { amount, currency = "INR", receipt, notes } = body;
 
     // Validate required fields
     if (!amount || amount <= 0) {
+      console.error("Invalid amount:", amount);
       return NextResponse.json(
-        { error: "Invalid amount" },
+        { success: false, error: "Invalid amount" },
         { status: 400 }
       );
     }
 
     if (!receipt) {
+      console.error("Missing receipt ID");
       return NextResponse.json(
-        { error: "Receipt ID is required" },
+        { success: false, error: "Receipt ID is required" },
         { status: 400 }
       );
     }
+
+    console.log("Creating Razorpay order with params:", {
+      amount: Math.round(amount * 100),
+      currency,
+      receipt,
+      notes: { ...notes, source: "cricket-tournament-registration" }
+    });
 
     // Create payment order
     const order = await razorpay.orders.create({
@@ -43,6 +63,8 @@ export async function POST(req: Request) {
         source: "cricket-tournament-registration",
       },
     });
+
+    console.log("Razorpay order created successfully:", order.id);
 
     // Return success response
     return NextResponse.json({
@@ -64,6 +86,7 @@ export async function POST(req: Request) {
     if (error.error) {
       // Razorpay specific errors
       const razorpayError = error.error;
+      console.error("Razorpay API error:", razorpayError);
       return NextResponse.json(
         {
           success: false,
@@ -76,6 +99,7 @@ export async function POST(req: Request) {
 
     // Handle validation errors
     if (error.message === "Razorpay credentials not configured") {
+      console.error("Razorpay credentials not configured");
       return NextResponse.json(
         { success: false, error: "Payment service not configured" },
         { status: 500 }
@@ -83,6 +107,7 @@ export async function POST(req: Request) {
     }
 
     // Handle other errors
+    console.error("Unexpected error:", error);
     return NextResponse.json(
       { success: false, error: "Internal server error" },
       { status: 500 }
