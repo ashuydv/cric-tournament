@@ -289,20 +289,17 @@ export default function RegistrationPage() {
   const initializePayment = async () => {
     try {
       setIsPaymentProcessing(true);
-
+      
       // Log the environment and key being used
-      console.log("Current hostname:", window.location.hostname);
+      // console.log("Current hostname:", window.location.hostname);
 
-      // Determine the public key based on environment
-      const isTestEnvironment = window.location.hostname === 'localhost' || window.location.hostname === 'cric-tournament.vercel.app';
-      const publicKey = isTestEnvironment
-        ? process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID
-        : process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+      // Use the production public key
+      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
 
-      console.log("Using key:", publicKey);
+      // console.log("Using key:", publicKey);
 
       if (!publicKey) {
-        throw new Error("Razorpay public key is not configured for this environment.");
+        throw new Error("Razorpay production public key is not configured.");
       }
 
       // Create payment order

@@ -1,23 +1,19 @@
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
 
-// Initialize Razorpay with environment-specific keys
+// Initialize Razorpay with production keys
 const razorpay = new Razorpay({
-  key_id: process.env.NODE_ENV === 'production' 
-    ? process.env.RAZORPAY_KEY_ID! 
-    : process.env.RAZORPAY_TEST_KEY_ID!,
-  key_secret: process.env.NODE_ENV === 'production'
-    ? process.env.RAZORPAY_KEY_SECRET!
-    : process.env.RAZORPAY_TEST_KEY_SECRET!,
+  key_id: process.env.RAZORPAY_KEY_ID!,
+  key_secret: process.env.RAZORPAY_KEY_SECRET!,
 });
 
 export async function POST(req: Request) {
   try {
     console.log("Creating payment order...");
-    console.log("Environment:", process.env.NODE_ENV);
-    console.log("Using key_id:", process.env.NODE_ENV === 'production' 
-      ? process.env.RAZORPAY_KEY_ID 
-      : process.env.RAZORPAY_TEST_KEY_ID);
+    // console.log("Environment:", process.env.NODE_ENV);
+    // console.log("Using key_id:", process.env.NODE_ENV === 'production' 
+    //   ? process.env.RAZORPAY_KEY_ID 
+    //   : process.env.RAZORPAY_TEST_KEY_ID);
 
     const body = await req.json();
     const { amount, currency = "INR" } = body;
