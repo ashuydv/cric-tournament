@@ -175,6 +175,7 @@ export default function RegistrationPage() {
     preferredBowlingStyle: string;
     preferredBattingOrder: string;
     tshirtSizes: string;
+    disclaimerAccepted: boolean;
   }
 
   const [formData, setFormData] = useState<FormData>({
@@ -192,6 +193,7 @@ export default function RegistrationPage() {
     preferredBowlingStyle: "",
     preferredBattingOrder: "",
     tshirtSizes: "",
+    disclaimerAccepted: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -288,19 +290,58 @@ export default function RegistrationPage() {
 
   const initializePayment = async () => {
     try {
+      if (!formData.disclaimerAccepted) {
+        toast({
+          title: "Disclaimer Required",
+          description:
+            "Please accept the disclaimer before proceeding with payment.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Validate date of birth
+      if (!formData.dateOfBirth) {
+        toast({
+          title: "Date of Birth Required",
+          description:
+            "Please select your date of birth before proceeding with payment.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       setIsPaymentProcessing(true);
 
       // Generate a unique receipt ID using timestamp and random string
-      const receiptId = `receipt_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
+      const receiptId = `receipt_${Date.now()}_${Math.random()
+        .toString(36)
+        .substring(2, 8)}`;
+
+      // First, save registration data to Supabase
+      const registrationResponse = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          receiptId,
+        }),
+      });
+
+      if (!registrationResponse.ok) {
+        const errorData = await registrationResponse.json();
+        throw new Error(errorData.error || "Failed to save registration data");
+      }
 
       // Use the production public key
+      // const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
       const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
 
       if (!publicKey) {
         throw new Error("Razorpay production public key is not configured.");
       }
-
-      console.log("Initializing payment with receipt ID:", receiptId);
 
       // Create payment order
       const response = await fetch("/api/create-payment", {
@@ -309,7 +350,7 @@ export default function RegistrationPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: 1770, // Registration fee in INR
+          amount: 1770,
           currency: "INR",
           receipt: receiptId,
           notes: {
@@ -322,16 +363,15 @@ export default function RegistrationPage() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: "Failed to parse error response" }));
-        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+        const errorData = await response
+          .json()
+          .catch(() => ({ error: "Failed to parse error response" }));
+        throw new Error(
+          errorData.error || `HTTP error! status: ${response.status}`
+        );
       }
 
-      const data = await response.json().catch((error) => {
-        console.error("Failed to parse response:", error);
-        throw new Error("Failed to parse payment response");
-      });
-
-      console.log("Payment order created:", data);
+      const data = await response.json();
 
       if (!data.success) {
         throw new Error(data.error || "Failed to create payment order");
@@ -345,10 +385,74 @@ export default function RegistrationPage() {
         name: "RunBhumi",
         description: "Registration Fee",
         order_id: data.order.id,
-        handler: function (response: any) {
-          // Handle successful payment
-          console.log("Payment successful:", response);
-          handleSubmit(new Event("submit") as any);
+        handler: async function (response: any) {
+          try {
+            // Update payment status in Supabase
+            const updateResponse = await fetch("/api/register", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                receiptId,
+                paymentStatus: "completed",
+                paymentId: response.razorpay_payment_id,
+              }),
+            });
+
+            if (!updateResponse.ok) {
+              throw new Error("Failed to update payment status");
+            }
+
+            // Handle successful payment
+            console.log("Payment successful:", response);
+            handleSubmit(new Event("submit") as any);
+          } catch (error) {
+            console.error("Error updating payment status:", error);
+            toast({
+              title: "Payment Status Update Failed",
+              description:
+                "Payment was successful but failed to update status. Please contact support.",
+              variant: "destructive",
+            });
+          }
+        },
+        modal: {
+          ondismiss: async function () {
+            try {
+              // Update payment status to failed when user dismisses the modal
+              const updateResponse = await fetch("/api/register", {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  receiptId,
+                  paymentStatus: "failed",
+                  paymentId: null,
+                }),
+              });
+
+              if (!updateResponse.ok) {
+                throw new Error("Failed to update payment status");
+              }
+
+              toast({
+                title: "Payment Cancelled",
+                description:
+                  "Your payment was cancelled. You can try again later.",
+                variant: "destructive",
+              });
+            } catch (error) {
+              console.error("Error updating payment status:", error);
+              toast({
+                title: "Error",
+                description:
+                  "Failed to update payment status. Please contact support.",
+                variant: "destructive",
+              });
+            }
+          },
         },
         prefill: {
           name: `${formData.firstName} ${formData.middleName} ${formData.surname}`,
@@ -356,23 +460,60 @@ export default function RegistrationPage() {
           contact: formData.mobileNumber,
         },
         theme: {
-          color: "#F97316", // Orange color matching your theme
+          color: "#F97316",
         },
       };
-
-      console.log("Initializing Razorpay with options:", options);
 
       if (!window.Razorpay) {
         throw new Error("Razorpay script not loaded");
       }
 
       const razorpay = new window.Razorpay(options);
+      razorpay.on("payment.failed", async function (response: any) {
+        try {
+          // Update payment status to failed
+          const updateResponse = await fetch("/api/register", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              receiptId,
+              paymentStatus: "failed",
+              paymentId: response.error.metadata.payment_id,
+              error_code: response.error.code,
+              error_description: response.error.description,
+            }),
+          });
+
+          if (!updateResponse.ok) {
+            throw new Error("Failed to update payment status");
+          }
+
+          toast({
+            title: "Payment Failed",
+            description: `Payment failed: ${response.error.description}. Please try again.`,
+            variant: "destructive",
+          });
+        } catch (error) {
+          console.error("Error updating failed payment status:", error);
+          toast({
+            title: "Error",
+            description:
+              "Failed to update payment status. Please contact support.",
+            variant: "destructive",
+          });
+        }
+      });
       razorpay.open();
     } catch (error) {
       console.error("Payment initialization failed:", error);
       toast({
         title: "Payment Failed",
-        description: error instanceof Error ? error.message : "Failed to initialize payment. Please try again.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to initialize payment. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -384,7 +525,12 @@ export default function RegistrationPage() {
     e.preventDefault();
 
     // Validate form data
-    if (!formData.firstName || !formData.surname || !formData.mobileNumber || !formData.email) {
+    if (
+      !formData.firstName ||
+      !formData.surname ||
+      !formData.mobileNumber ||
+      !formData.email
+    ) {
       toast({
         title: "Validation Error",
         description: "Please fill in all required fields.",
@@ -419,12 +565,15 @@ export default function RegistrationPage() {
   };
 
   const resetForm = () => {
+    const today = new Date();
+    const formattedDate = today.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+
     setFormData({
       firstName: "",
       middleName: "",
       surname: "",
       mobileNumber: "",
-      dateOfBirth: "",
+      dateOfBirth: formattedDate,
       email: "",
       state: "",
       trialCity: "",
@@ -434,6 +583,7 @@ export default function RegistrationPage() {
       preferredBowlingStyle: "",
       preferredBattingOrder: "",
       tshirtSizes: "",
+      disclaimerAccepted: false,
     });
     setAvailableCities([]);
     setSubmissionSuccess(false);
@@ -928,14 +1078,54 @@ export default function RegistrationPage() {
                         </Select>
                       </div>
 
+                      <div className="md:col-span-2 space-y-4">
+                        <div className="flex items-center space-x-2">
+                          <Checkbox
+                            id="disclaimer"
+                            checked={formData.disclaimerAccepted}
+                            onCheckedChange={(checked) => {
+                              setFormData((prev) => ({
+                                ...prev,
+                                disclaimerAccepted: checked as boolean,
+                              }));
+                            }}
+                            required
+                          />
+                          <div className="flex items-center gap-1.5 leading-none">
+                            <label
+                              htmlFor="disclaimer"
+                              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                              By proceeding, I confirm that I have read and
+                              agree to all points mentioned in the{" "}
+                              <a
+                                href="/disclaimer"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-orange-600 hover:text-orange-800 underline mb-0"
+                              >
+                                Disclaimer
+                              </a>
+                              .
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
                       <div className="md:col-span-2 flex mt-6">
                         <Button
                           type="button"
                           onClick={initializePayment}
-                          disabled={isSubmitting || isPaymentProcessing}
+                          disabled={
+                            isSubmitting ||
+                            isPaymentProcessing ||
+                            !formData.disclaimerAccepted
+                          }
                           className="bg-orange-600 hover:bg-orange-700"
                         >
-                          {isPaymentProcessing ? "Processing..." : "Proceed to Payment"}
+                          {isPaymentProcessing
+                            ? "Processing..."
+                            : "Proceed to Payment"}
                         </Button>
                       </div>
                     </form>
