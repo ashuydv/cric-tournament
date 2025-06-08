@@ -1158,13 +1158,11 @@ export default function RegistrationPage() {
                     <CardContent className="p-6 flex items-start space-x-4">
                       <MapPin className="h-6 w-6 text-orange-500 mt-1" />
                       <div>
-                        <h3 className="font-bold">Office Address</h3>
+                        <h3 className="font-bold">Contact Support</h3>
                         <p className="text-black mt-1">
-                          MNT Dreams Pvt. Ltd.
+                          WhatsApp Enquiries: +91 99643 91643
                           <br />
-                          WhatsApp Enquiries: +91 99643 92643
-                          <br />
-                          IVR: +91 99643 96643
+                          Office: +91 99643 92643
                         </p>
                       </div>
                     </CardContent>

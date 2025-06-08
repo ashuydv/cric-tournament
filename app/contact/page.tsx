@@ -132,8 +132,7 @@ export default function ContactPage() {
                     <h3 className="font-bold mb-2">Phone Support</h3>
                     <p className="text-sm text-black space-y-1">
                       <div>WhatsApp: +91 9964391643</div>
-                      <div>IVR: +91 9964392643</div>
-                      <div>Office: +91 9964396643</div>
+                      <div>Office: +91 9964392643</div>
                     </p>
                   </div>
                 </CardContent>
@@ -148,11 +147,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold mb-2">Email Support</h3>
                     <p className="text-sm text-black">
-                      hello@therunbhumi.com
-                      <br />
-                      <span className="text-xs block mt-1">
-                        We reply within 24 hours
-                      </span>
+                      support@therunbhumi.com
                     </p>
                   </div>
                 </CardContent>
@@ -171,7 +166,7 @@ export default function ContactPage() {
                       <br />
                       Spaze IT Park, Sector 49
                       <br />
-                      Gurugram, Haryana - 122002
+                      Gurugram, Haryana - 122018
                     </p>
                   </div>
                 </CardContent>

@@ -51,7 +51,7 @@ export default function MerchandisePage() {
   });
 
   // Launch date - June 1, 2025
-  const launchDate = new Date("2025-06-05T00:00:00");
+  const launchDate = new Date("2025-06-15T00:00:00");
 
   // Dynamic countdown effect
   useEffect(() => {
@@ -227,7 +227,7 @@ export default function MerchandisePage() {
       <main className="flex-1">
         <LeftHero
           title="Official Merchandise"
-          description="Show your support with authentic RunBhumi cricket merchandise"
+          description="Get exclusive branded merchandise and authentic RunBhumi cricket gear"
           backgroundType="image"
           backgroundSrc="https://images.pexels.com/photos/1827130/pexels-photo-1827130.jpeg"
           height="small"
@@ -299,7 +299,7 @@ export default function MerchandisePage() {
         </section>
 
         {/* Teaser Section */}
-        <WhatYouGet />
+        {/* <WhatYouGet /> */}
         {/* <section className="w-full py-16 bg-orange-50">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center mb-10">

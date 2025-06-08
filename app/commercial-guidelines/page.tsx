@@ -107,8 +107,8 @@ export default function CommercialGuidelinesPage() {
                         <ul className="list-disc list-inside space-y-1 pl-4 mt-2 text-slate-600">
                           <li>Alcohol Brands</li>
                           <li>Smoking Brands</li>
-                          <li>Betting/Gambling Brands</li>
-                          <li>Gutka/Pan Masala Brands</li>
+                          {/* <li>Betting/Gambling Brands</li>
+                          <li>Gutka/Pan Masala Brands</li> */}
                         </ul>
                       </div>
 
@@ -425,8 +425,8 @@ export default function CommercialGuidelinesPage() {
                   contact:
                 </p>
                 <p className="mt-2 font-medium">RunBhumi Commercial Team</p>
-                <a href="mailto:hello@therunbhumi.com" className="text-sm">
-                  hello@therunbhumi.com
+                <a href="mailto:support@therunbhumi.com" className="text-sm">
+                  support@therunbhumi.com
                 </a>{" "}
                 <br />
                 <a href="tel:+919964392643" className="text-sm">

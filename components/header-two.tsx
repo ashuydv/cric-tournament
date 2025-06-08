@@ -287,7 +287,7 @@ export default function Header() {
                     color: `rgba(255, 255, 255, ${1 - scrollProgress * 0.3})`,
                   }}
                 >
-                  9964392643
+                  +91 9964392643
                 </Link>
               </div>
               <div className="flex items-center space-x-1 group">
@@ -296,14 +296,14 @@ export default function Header() {
                   className="text-orange-400 group-hover:animate-pulse"
                 />
                 <Link
-                  href="mailto:hello@therunbhumi.com"
+                  href="mailto:support@therunbhumi.com"
                   className="transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1"
-                  aria-label="Email us at hello@therunbhumi.com"
+                  aria-label="Email us at support@therunbhumi.com"
                   style={{
                     color: `rgba(255, 255, 255, ${1 - scrollProgress * 0.3})`,
                   }}
                 >
-                  hello@therunbhumi.com
+                  support@therunbhumi.com
                 </Link>
               </div>
               <RegisterButton />
@@ -447,7 +447,7 @@ export default function Header() {
             </h3>
             <div className="flex flex-col space-y-3">
               <a
-                href="tel:9964392643"
+                href="tel:919964392643"
                 className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded group"
                 aria-label="Call us at 9964392643"
                 tabIndex={mobileMenuOpen ? 0 : -1}
@@ -460,12 +460,12 @@ export default function Header() {
                     aria-hidden="true"
                   />
                 </div>
-                <span>9964392643</span>
+                <span>+91 9964392643</span>
               </a>
               <a
-                href="mailto:hello@therunbhumi.com"
+                href="mailto:support@therunbhumi.com"
                 className="flex items-center space-x-2 text-white hover:text-orange-300 transition-colors duration-300 py-2 px-1 rounded group"
-                aria-label="Email us at hello@therunbhumi.com"
+                aria-label="Email us at support@therunbhumi.com"
                 tabIndex={mobileMenuOpen ? 0 : -1}
               >
                 <div className="relative">
@@ -476,7 +476,7 @@ export default function Header() {
                     aria-hidden="true"
                   />
                 </div>
-                <span>hello@therunbhumi.com</span>
+                <span>support@therunbhumi.com</span>
               </a>
             </div>
           </div>

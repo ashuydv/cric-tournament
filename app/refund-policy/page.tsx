@@ -140,33 +140,9 @@ const RefundPolicy = () => {
               <p>The following items are strictly non-refundable:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Transaction fees charged by payment processors</li>
-                <li>Late registration penalties</li>
                 <li>Add-on services already utilized</li>
                 <li>Registrations using promotional discounts or coupons</li>
               </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-orange-600 mb-4">
-                Requesting a Refund
-              </h2>
-              <p>To request a refund, participants must:</p>
-              <ol className="list-decimal pl-5 space-y-1">
-                <li>
-                  Email us at{" "}
-                  <a
-                    href="mailto:hello@therunbhumi.com"
-                    className="text-orange-500 hover:text-orange-600"
-                  >
-                    hello@therunbhumi.com
-                  </a>
-                </li>
-                <li>
-                  Include registration confirmation, participant details, and
-                  reason for refund
-                </li>
-                <li>Submit the request within the specified policy timeline</li>
-              </ol>
             </section>
 
             <section className="mb-8">
@@ -184,7 +160,7 @@ const RefundPolicy = () => {
                 Policy Modifications
               </h2>
               <p>
-                This Refund Policy may be updated periodically. Changes will be
+                This Refund Policy may get updated periodically. Changes will be
                 posted on this page. Continued participation implies acceptance
                 of the revised terms.
               </p>
@@ -201,10 +177,10 @@ const RefundPolicy = () => {
                 <p>
                   <strong>Email:</strong>{" "}
                   <a
-                    href="mailto:hello@therunbhumi.com"
+                    href="mailto:support@therunbhumi.com"
                     className="text-orange-500 hover:text-orange-600"
                   >
-                    hello@therunbhumi.com
+                    support@therunbhumi.com
                   </a>
                 </p>
                 <p>
@@ -212,12 +188,8 @@ const RefundPolicy = () => {
                   <a href="tel:+919964391643">+91 9964391643</a>
                 </p>
                 <p>
-                  <strong>IVR:</strong>{" "}
+                  <strong>Office:</strong>{" "}
                   <a href="tel:+919964392643">+91 9964392643</a>
-                </p>
-                <p>
-                  <strong>Office/Admin:</strong>{" "}
-                  <a href="tel:+919964396643">+91 9964396643</a>
                 </p>
                 <p>
                   <strong>Address:</strong>
@@ -226,7 +198,7 @@ const RefundPolicy = () => {
                   <br />
                   770, Tower B - 1, Spaze IT Park,
                   <br />
-                  Sector 49, Sohna Road, Gurugram, Haryana - 122002
+                  Sector 49, Sohna Road, Gurugram, Haryana - 122018
                 </p>
               </div>
             </section>

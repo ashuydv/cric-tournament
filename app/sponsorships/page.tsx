@@ -283,9 +283,20 @@ const Sponsorships = () => {
                 When does the current RunBhumi season take place?
               </h4>
               <p className="text-black">
-                The current RunBhumi season has already started and runs from
-                [START DATE] to [END DATE] 2025. Sponsorship opportunities are
-                still available for the remaining phases.
+                The current RunBhumi season has already started and runs from 01
+                June 2025 to 15 March 2026. Sponsorship opportunities are still
+                available for the remaining phases.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="font-semibold mb-2">
+                Who all can sponsor RunBhumi?
+              </h4>
+              <p className="text-black">
+                We are inviting national, state, and city-level businesses and
+                organizations to partner with RunBhumi as sponsors, offering
+                tailored packages for different scales of involvement.
               </p>
             </div>
 
@@ -310,14 +321,26 @@ const Sponsorships = () => {
               </p>
             </div>
 
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="font-semibold mb-2">
+                What are the phases of RunBhumi sponsorship?
+              </h4>
+              <p className="text-black">
+                RunBhumi sponsorship encompasses three distinct phases: Trials
+                (talent discovery phase), Reality Show (televised competition),
+                and Leagues (final tournament matches), each offering unique
+                brand exposure opportunities.
+              </p>
+            </div>
+
             <div>
               <h4 className="font-semibold mb-2">
                 How can we measure ROI on our sponsorship?
               </h4>
               <p className="text-black">
-                We provide comprehensive post-tournament reports including
-                metrics on brand visibility, audience engagement, media value,
-                and digital performance to help you measure ROI.
+                We provide customized ROI measurement models and comprehensive
+                post-tournament reports tailored to your specific objectives,
+                with detailed proposals available upon enquiry.
               </p>
             </div>
           </div>

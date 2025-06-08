@@ -559,7 +559,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Email</p>
-                                                        <a href="mailto:hello@therunbhumi.com" className="text-orange-600 hover:underline">hello@therunbhumi.com</a>
+                                                        <a href="mailto:support@therunbhumi.com" className="text-orange-600 hover:underline">support@therunbhumi.com</a>
                                                     </div>
                                                 </div>
 
@@ -583,7 +583,7 @@ export default function PrivacyPolicyPage() {
                                                             <br />
                                                             770 , Tower B - 1 <br />
                                                             Spaze IT park ,Sector 49 <br />
-                                                            Sohna Road, Gurugram, Haryana-122002</p>
+                                                            Sohna Road, Gurugram, Haryana-122018</p>
                                                     </div>
                                                 </div>
                                             </div>

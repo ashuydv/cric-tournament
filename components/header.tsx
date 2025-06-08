@@ -161,11 +161,11 @@ export default function Header() {
                   className="text-orange-400 group-hover:animate-pulse"
                 />
                 <Link
-                  href="tel:+919964396643"
+                  href="tel:+919964392643"
                   className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1 text-xs sm:text-sm"
-                  aria-label="Call us at 9964396643"
+                  aria-label="Call us at 9964392643"
                 >
-                  <span>+91 9964396643</span>
+                  <span>+91 9964392643</span>
                 </Link>
               </div>
               <div className="flex items-center space-x-1 group">
@@ -174,11 +174,11 @@ export default function Header() {
                   className="text-orange-400 group-hover:animate-pulse"
                 />
                 <Link
-                  href="mailto:hello@therunbhumi.com"
+                  href="mailto:support@therunbhumi.com"
                   className="text-gray-300 transition-all no-underline duration-300 group-hover:text-orange-300 group-hover:underline rounded px-1 text-xs sm:text-sm"
-                  aria-label="Email us at hello@therunbhumi.com"
+                  aria-label="Email us at support@therunbhumi.com"
                 >
-                  <span>hello@therunbhumi.com</span>
+                  <span>support@therunbhumi.com</span>
                 </Link>
               </div>
             </div>
