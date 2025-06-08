@@ -517,15 +517,13 @@ const Career = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Join Our Team
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            At RunBhumi, we're building the future of cricket in India through
-            our premier tournament and comprehensive talent hunt program. Join
-            our dynamic team of professionals who are passionate about
-            discovering, nurturing, and promoting cricket talent across the
-            nation.
+          <p className="text-black max-w-3xl mx-auto">
+            At <b>RunBhumi</b>, we welcome professionals from diverse
+            backgrounds who are passionate about building meaningful experiences
+            and contributing to something larger than themselves.
           </p>
         </div>
 
@@ -542,7 +540,7 @@ const Career = () => {
                   <Award className="h-6 w-6 text-orange-600 mr-3" />
                   <h4 className="font-semibold">Impactful Work</h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Be part of a team that's revolutionizing cricket in India,
                   discovering new talent, and creating opportunities for
                   emerging players to shine on national and international
@@ -555,7 +553,7 @@ const Career = () => {
                   <Users className="h-6 w-6 text-orange-600 mr-3" />
                   <h4 className="font-semibold">Great Culture</h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Work in a collaborative, inclusive environment with passionate
                   professionals who love cricket and are committed to nurturing
                   the next generation of cricket stars.
@@ -567,7 +565,7 @@ const Career = () => {
                   <Layers className="h-6 w-6 text-orange-600 mr-3" />
                   <h4 className="font-semibold">Growth Opportunities</h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Develop your skills and advance your career in a fast-growing
                   sports entertainment company with expanding talent development
                   programs across India.
@@ -579,7 +577,7 @@ const Career = () => {
 
         {/* Job Listings Section */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8">
+          <h2 className="text-2xl font-bold text-black mb-8">
             Current Openings
           </h2>
 
@@ -615,7 +613,7 @@ const Career = () => {
                 <option value="Media">Media</option>
                 <option value="Talent Hunt">Talent Hunt</option>
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black">
                 <ChevronRight className="h-4 w-4 transform rotate-90" />
               </div>
             </div>
@@ -638,10 +636,10 @@ const Career = () => {
                   )}
                   <div className="md:flex md:justify-between md:items-center">
                     <div className="mb-4 md:mb-0">
-                      <h3 className="text-xl font-bold text-gray-800 mb-1">
+                      <h3 className="text-xl font-bold text-black mb-1">
                         {job.title}
                       </h3>
-                      <div className="flex flex-wrap items-center text-sm text-gray-600 mb-2">
+                      <div className="flex flex-wrap items-center text-sm text-black mb-2">
                         <div className="flex items-center mr-4 mb-2 md:mb-0">
                           <Briefcase className="h-4 w-4 mr-1 text-orange-500" />
                           <span>{job.department}</span>
@@ -663,7 +661,7 @@ const Career = () => {
                           <span>{job.salary}</span>
                         </div>
                       </div>
-                      <p className="text-gray-600 text-sm">{job.description}</p>
+                      <p className="text-black text-sm">{job.description}</p>
                     </div>
                     <div className="flex items-center">
                       <button
@@ -679,7 +677,7 @@ const Career = () => {
               ))
             ) : (
               <div className="text-center py-10 bg-white rounded-lg shadow">
-                <p className="text-gray-600">
+                <p className="text-black">
                   No job openings match your criteria. Please try another
                   search.
                 </p>
@@ -689,8 +687,8 @@ const Career = () => {
         </div>
 
         {/* Benefits Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+        {/* <div className="mb-16">
+          <h2 className="text-2xl font-bold text-black mb-8 text-center">
             Employee Benefits
           </h2>
 
@@ -712,10 +710,10 @@ const Career = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 Modern Office
               </h3>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Work in our state-of-the-art facilities with all the amenities
                 you need, including cricket viewing areas.
               </p>
@@ -738,10 +736,10 @@ const Career = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 Learning & Development
               </h3>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Access to online courses, workshops, and professional
                 certifications to advance your career and skills.
               </p>
@@ -764,10 +762,10 @@ const Career = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 Health & Wellness
               </h3>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Comprehensive health insurance, mental health support, and
                 on-site fitness facilities to keep you at your best.
               </p>
@@ -790,10 +788,10 @@ const Career = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 Flexible Hours
               </h3>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Work-life balance with flexible scheduling, remote work options,
                 and unlimited PTO policy.
               </p>
@@ -816,10 +814,10 @@ const Career = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 Competitive Salary
               </h3>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Market-leading compensation packages with performance bonuses,
                 stock options, and annual salary reviews.
               </p>
@@ -842,20 +840,20 @@ const Career = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 Team Events
               </h3>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Regular team building activities, company retreats, celebration
                 parties, and networking events with colleagues.
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Life at RunBhumi Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+        {/* <div className="mb-16">
+          <h2 className="text-2xl font-bold text-black mb-8 text-center">
             Life at RunBhumi
           </h2>
 
@@ -874,7 +872,7 @@ const Career = () => {
                 <h3 className="font-semibold text-lg mb-2">
                   Collaborative Environment
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   We foster a culture of teamwork and collaboration, where every
                   voice is heard and valued in our mission to develop cricket
                   talent.
@@ -896,7 +894,7 @@ const Career = () => {
                 <h3 className="font-semibold text-lg mb-2">
                   Continuous Learning
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   We invest in our employees' growth with training programs,
                   cricket coaching certifications, and learning opportunities.
                 </p>
@@ -917,14 +915,14 @@ const Career = () => {
                 <h3 className="font-semibold text-lg mb-2">
                   Fun & Celebrations
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   We work hard and celebrate our successes with team events,
                   cricket matches, and tournament celebrations.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Application Process */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-16">
@@ -945,7 +943,7 @@ const Career = () => {
                   <h4 className="text-lg font-semibold mb-2">
                     Application Review
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Our recruitment team reviews all applications and shortlists
                     candidates based on qualifications and experience.
                   </p>
@@ -958,7 +956,7 @@ const Career = () => {
                   <h4 className="text-lg font-semibold mb-2">
                     Initial Interview
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Shortlisted candidates are invited for a phone or video
                     interview to discuss their experience and fit for the role.
                   </p>
@@ -971,7 +969,7 @@ const Career = () => {
                   <h4 className="text-lg font-semibold mb-2">
                     Technical Assessment
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Depending on the role, candidates may be asked to complete a
                     skills assessment or case study.
                   </p>
@@ -984,7 +982,7 @@ const Career = () => {
                   <h4 className="text-lg font-semibold mb-2">
                     Final Interview
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Meet with the team and department head to discuss the role
                     in detail and learn more about RunBhumi.
                   </p>
@@ -997,7 +995,7 @@ const Career = () => {
                   <h4 className="text-lg font-semibold mb-2">
                     Offer & Onboarding
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Successful candidates receive an offer letter and begin our
                     comprehensive onboarding program.
                   </p>
@@ -1025,76 +1023,6 @@ const Career = () => {
             </Link>
           </div>
         </div>
-
-        {/* FAQ Section */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-16">
-          <div className="p-4 bg-orange-600 text-white">
-            <h3 className="text-xl font-bold">Frequently Asked Questions</h3>
-          </div>
-
-          <div className="p-6 space-y-4">
-            <div className="border-b border-gray-200 pb-3">
-              <h4 className="font-semibold mb-2">
-                What is the interview process like?
-              </h4>
-              <p className="text-gray-600">
-                Our interview process typically includes an initial screening,
-                skills assessment, and team interviews. For talent hunt roles,
-                we may include cricket knowledge assessments. The entire process
-                usually takes 2-3 weeks from application to offer.
-              </p>
-            </div>
-
-            <div className="border-b border-gray-200 pb-3">
-              <h4 className="font-semibold mb-2">
-                Do I need to have experience in cricket or sports?
-              </h4>
-              <p className="text-gray-600">
-                While a passion for cricket is highly valued, specific
-                experience in sports is not required for all roles. For talent
-                hunt and scouting positions, cricket knowledge is essential. We
-                value diverse perspectives and skills from various industries.
-              </p>
-            </div>
-
-            <div className="border-b border-gray-200 pb-3">
-              <h4 className="font-semibold mb-2">
-                What opportunities are there in the talent hunt program?
-              </h4>
-              <p className="text-gray-600">
-                Our talent hunt program offers exciting opportunities to
-                discover and nurture cricket talent across India. Roles include
-                regional scouting, player development, performance analysis, and
-                program management with extensive travel and networking
-                opportunities.
-              </p>
-            </div>
-
-            <div className="border-b border-gray-200 pb-3">
-              <h4 className="font-semibold mb-2">
-                Do you provide training for cricket-related roles?
-              </h4>
-              <p className="text-gray-600">
-                Yes, we provide comprehensive training including cricket
-                coaching certifications, talent identification workshops, and
-                ongoing professional development. We also offer mentorship
-                programs with industry experts.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-2">
-                What is the company culture like?
-              </h4>
-              <p className="text-gray-600">
-                RunBhumi has a dynamic, collaborative culture that values
-                innovation, teamwork, and a deep passion for cricket. We work
-                hard to develop India's cricket talent but also celebrate our
-                successes and maintain a good work-life balance.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Job Details Modal */}
@@ -1105,7 +1033,7 @@ const Career = () => {
             <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-start">
               <div className="flex-1">
                 <div className="flex items-center mb-2">
-                  <h2 className="text-2xl font-bold text-gray-800 mr-3">
+                  <h2 className="text-2xl font-bold text-black mr-3">
                     {selectedJob.title}
                   </h2>
                   {selectedJob.featured && (
@@ -1114,7 +1042,7 @@ const Career = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex flex-wrap items-center text-sm text-gray-600 gap-4">
+                <div className="flex flex-wrap items-center text-sm text-black gap-4">
                   <div className="flex items-center">
                     <Briefcase className="h-4 w-4 mr-1 text-orange-500" />
                     <span>{selectedJob.department}</span>
@@ -1141,7 +1069,7 @@ const Career = () => {
                 onClick={closeJobModal}
                 className="ml-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
               >
-                <X className="h-6 w-6 text-gray-500" />
+                <X className="h-6 w-6 text-black" />
               </button>
             </div>
 
@@ -1149,24 +1077,24 @@ const Career = () => {
             <div className="p-6">
               {/* Job Description */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Job Description
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-black leading-relaxed">
                   {selectedJob.description}
                 </p>
               </div>
 
               {/* Key Responsibilities */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Key Responsibilities
                 </h3>
                 <ul className="space-y-2">
                   {selectedJob.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{responsibility}</span>
+                      <span className="text-black">{responsibility}</span>
                     </li>
                   ))}
                 </ul>
@@ -1174,14 +1102,14 @@ const Career = () => {
 
               {/* Requirements */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Requirements
                 </h3>
                 <ul className="space-y-2">
                   {selectedJob.requirements.map((requirement, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{requirement}</span>
+                      <span className="text-black">{requirement}</span>
                     </li>
                   ))}
                 </ul>
@@ -1189,14 +1117,14 @@ const Career = () => {
 
               {/* Benefits */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Benefits & Perks
                 </h3>
                 <ul className="space-y-2">
                   {selectedJob.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{benefit}</span>
+                      <span className="text-black">{benefit}</span>
                     </li>
                   ))}
                 </ul>
@@ -1205,10 +1133,10 @@ const Career = () => {
               {/* Apply Button */}
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  <h3 className="text-lg font-semibold text-black mb-2">
                     Ready to Join Our Team?
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-black mb-4">
                     Take the next step in your career and become part of India's
                     most exciting cricket organization.
                   </p>

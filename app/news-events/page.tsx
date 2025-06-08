@@ -68,12 +68,12 @@ export default function NewsEventsPage() {
                                                 </div>
                                             </div>
                                             <CardContent className="p-4">
-                                                <div className="flex items-center text-sm text-muted-foreground mb-2">
+                                                <div className="flex items-center text-sm text-black mb-2">
                                                     <CalendarDays className="h-3 w-3 mr-1" />
                                                     <span>{item.date}</span>
                                                 </div>
                                                 <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                                                <p className="text-muted-foreground text-sm">{item.excerpt}</p>
+                                                <p className="text-black text-sm">{item.excerpt}</p>
                                             </CardContent>
                                             <CardFooter className="p-4 pt-0">
                                                 <Link href={`/news/${item.id}`}>
@@ -105,17 +105,17 @@ export default function NewsEventsPage() {
                                                 </div>
                                                 <CardContent className="p-6">
                                                     <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                                                    <p className="text-muted-foreground text-sm mb-4">{event.description}</p>
+                                                    <p className="text-black text-sm mb-4">{event.description}</p>
                                                     <div className="space-y-2 text-sm">
-                                                        <div className="flex items-center text-muted-foreground">
+                                                        <div className="flex items-center text-black">
                                                             <CalendarDays className="h-4 w-4 mr-2" />
                                                             <span>{event.date}</span>
                                                         </div>
-                                                        <div className="flex items-center text-muted-foreground">
+                                                        <div className="flex items-center text-black">
                                                             <Clock className="h-4 w-4 mr-2" />
                                                             <span>{event.time}</span>
                                                         </div>
-                                                        <div className="flex items-center text-muted-foreground">
+                                                        <div className="flex items-center text-black">
                                                             <MapPin className="h-4 w-4 mr-2" />
                                                             <span>{event.location}</span>
                                                         </div>
@@ -142,14 +142,14 @@ export default function NewsEventsPage() {
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Stay Updated</h2>
-                                <p className="max-w-[700px] text-muted-foreground md:text-lg mx-auto">
+                                <p className="max-w-[700px] text-black md:text-lg mx-auto">
                                     Register with your details to receive the latest news and event updates directly on your phone
                                 </p>
                             </div>
                             <div className="w-full max-w-md">
                                 <form className="flex flex-col space-y-3">
                                     <input
-                                        className="flex h-10 w-full font-medium px-4 py-6 border border-input bg-background rounded-xl text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        className="flex h-10 w-full font-medium px-4 py-6 border border-input bg-background rounded-xl text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="Enter your full name"
                                         type="text"
                                         name="fullName"
@@ -157,7 +157,7 @@ export default function NewsEventsPage() {
                                     />
                                     <div className="flex space-x-2">
                                         <input
-                                            className="flex h-10 w-full font-medium px-4 py-6 border border-input bg-background rounded-xl text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full font-medium px-4 py-6 border border-input bg-background rounded-xl text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                             placeholder="Enter your mobile number"
                                             type="tel"
                                             name="mobileNumber"
@@ -166,7 +166,7 @@ export default function NewsEventsPage() {
                                         />
                                     </div>
                                     <RegisterButton />
-                                    <p className="text-xs text-muted-foreground mt-1">
+                                    <p className="text-xs text-black mt-1">
                                         By registering, you agree to our Terms of Service and Privacy Policy.
                                     </p>
                                 </form>

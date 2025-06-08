@@ -34,7 +34,7 @@ export default function HeroSection() {
                                 <Flame className="mr-1 h-3 w-3 sm:h-4 sm:w-4" /> View Schedule
                             </Button>
                         </div>
-                        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-4 text-xs sm:text-sm text-muted-foreground">
+                        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-4 text-xs sm:text-sm text-black">
                             <div className="flex items-center space-x-1">
                                 <MapPin className="h-3 w-3" />
                                 <span>Multiple Venues, Australia</span>

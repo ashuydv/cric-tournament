@@ -18,7 +18,7 @@ export const VisionMissionTabs = () => {
             ${
               activeTab === "vision"
                 ? "bg-orange-500 text-white shadow-xl"
-                : "bg-white text-gray-800 shadow-md hover:bg-orange-50"
+                : "bg-white text-black shadow-md"
             } 
             font-medium px-8 py-6 
             transition-all duration-300 text-base
@@ -28,7 +28,6 @@ export const VisionMissionTabs = () => {
           >
             <Target className="h-5 w-5" />
             <span className="font-semibold">Our Vision</span>
-            {activeTab === "vision" && <ChevronRight size={18} />}
           </button>
 
           <button
@@ -37,7 +36,7 @@ export const VisionMissionTabs = () => {
             ${
               activeTab === "mission"
                 ? "bg-orange-500 text-white shadow-xl"
-                : "bg-white text-gray-800 shadow-md hover:bg-orange-50"
+                : "bg-white text-black shadow-md"
             } 
             font-medium px-8 py-6 
             transition-all duration-300 text-base
@@ -47,7 +46,6 @@ export const VisionMissionTabs = () => {
           >
             <Flag className="h-5 w-5" />
             <span className="font-semibold">Our Mission</span>
-            {activeTab === "mission" && <ChevronRight size={18} />}
           </button>
         </div>
 
@@ -88,15 +86,14 @@ export const VisionMissionTabs = () => {
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-orange-500 font-playfair">
                   Our Mission
                 </h2>
-                <ul className="space-y-4 text-gray-800">
+                <ul className="space-y-4 text-black">
                   <li className="flex items-center gap-3">
                     <div className="h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center mt-0.5 text-white flex-shrink-0">
                       <Check className="h-4 w-4" />
                     </div>
                     <span>
                       To <strong>hunt, nurture, and launch</strong> the best
-                      untapped cricket talent from Bharat and overseas
-                      Bharatiyas
+                      untapped cricket talent from Bharat and overseas Bharatiya
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -115,7 +112,7 @@ export const VisionMissionTabs = () => {
                     <span>
                       To offer high-intensity training under{" "}
                       <strong>
-                        international legends and spiritual mentors
+                        international legends and cultural mentors
                       </strong>
                     </span>
                   </li>
@@ -124,8 +121,11 @@ export const VisionMissionTabs = () => {
                       <Check className="h-4 w-4" />
                     </div>
                     <span>
-                      To deliver a <strong>global broadcast experience</strong>,
-                      taking players' stories to millions worldwide
+                      To deliver a{" "}
+                      <strong>
+                        global broadcast experience via televised reality show
+                      </strong>
+                      , taking players' stories to millions worldwide
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -133,8 +133,7 @@ export const VisionMissionTabs = () => {
                       <Check className="h-4 w-4" />
                     </div>
                     <span>
-                      To create an{" "}
-                      <strong>annual revolution in global cricket</strong>,
+                      To <strong>nurture cricket excellence worldwide</strong>,
                       producing over{" "}
                       <strong>5000+ champions in 10 years</strong>
                     </span>

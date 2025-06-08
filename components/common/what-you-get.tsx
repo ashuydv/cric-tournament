@@ -13,12 +13,12 @@ type Props = {};
 const WhatYouGet = (props: Props) => {
   return (
     <section className="w-full py-8 sm:py-12 lg:py-16 bg-white">
-      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tighter">
             What You Get
           </h2>
-          <p className="max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-2">
+          <p className="max-w-2xl text-sm sm:text-base lg:text-lg text-black px-2">
             Every participant in RunBhumi Trials 2025 receives an exclusive
             package designed to enhance your cricket journey
           </p>
@@ -27,7 +27,7 @@ const WhatYouGet = (props: Props) => {
         {/* Single Comprehensive Card */}
         <Card className="border-2 border-gray-200 hover:border-orange-200 transition-colors duration-300 mx-auto">
           <CardHeader className="text-center py-12 bg-gradient-to-r from-orange-50 to-orange-100">
-            <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-gray-900 mb-2">
+            <CardTitle className="text-xl sm:text-2xl lg:text-3xl text-gray-900">
               Complete Cricket Experience Package
             </CardTitle>
           </CardHeader>
@@ -44,15 +44,15 @@ const WhatYouGet = (props: Props) => {
                   </h3>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Free Yearly App Subscription</span>
+                    <span>Free Yearly Runbhumi Education App Subscription</span>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                     <span>Premium Training Modules</span>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                     <span>Expert Guidance Access</span>
                   </div>
@@ -68,15 +68,15 @@ const WhatYouGet = (props: Props) => {
                   </h3>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Exclusive Kit Bag</span>
+                    <span>Waterproof Kit Bag</span>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Waterproof T-shirt</span>
+                    <span>Exclusive T-shirt</span>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                     <span>RunBhumi Cap</span>
                   </div>
@@ -92,15 +92,15 @@ const WhatYouGet = (props: Props) => {
                   </h3>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                     <span>RunBhumi Keychain</span>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                     <span>Sports Wristband</span>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-gray-700">
+                  <div className="flex items-center justify-center lg:justify-start text-xs sm:text-sm text-black">
                     <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                     <span>Sports Towel & Napkin</span>
                   </div>

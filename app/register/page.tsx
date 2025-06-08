@@ -603,68 +603,65 @@ export default function RegistrationPage() {
           parallaxSpeed={0.7}
         />
 
-        <section className="w-full py-12 bg-gray-50">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="flex flex-col items-center space-y-4 text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+        {/* Eligibility Criteria Section - Responsive */}
+        <section className="w-full py-8 sm:py-12 bg-gray-50">
+          <div className="container px-4 sm:px-6 mx-auto">
+            <div className="flex flex-col items-center space-y-4 text-center mb-8 sm:mb-10">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tighter">
                 Eligibility Criteria
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-lg">
+              <p className="max-w-[700px] text-black text-sm sm:text-base md:text-lg leading-relaxed">
                 To be eligible for participation in the RunBhumi Trials 2025,
-                participants must comply with the following conditions:
+                participants must strictly comply with the following conditions:
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-8 mb-10">
-              <ul className="space-y-6">
-                <li className="flex items-center">
-                  <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
-                    MUST NOT
-                  </div>
-                  <p className="text-gray-700">
-                    be below the age of 16 years at the time of registrations as
+            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10">
+              <ul className="space-y-4 sm:space-y-6">
+                <li>
+                  <p className="text-black text-sm sm:text-base leading-relaxed">
+                    <span className="text-red-700 font-bold">MUST NOT</span> be
+                    below the age of 16 years at the time of registrations as
                     per legal identification documents.
                   </p>
                 </li>
-                <li className="flex items-center">
-                  <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
-                    MUST NOT
-                  </div>
-                  <p className="text-gray-700">
-                    be currently registered with any state or district
-                    association of BCCI.
+                <li>
+                  <p className="text-black text-sm sm:text-base leading-relaxed">
+                    <span className="text-red-700 font-bold">MUST NOT</span> be
+                    currently registered with any state or district association
+                    of BCCI.
                   </p>
                 </li>
-                <li className="flex items-center">
-                  <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
-                    MUST NOT
-                  </div>
-                  <p className="text-gray-700">
+                <li>
+                  <p className="text-black text-sm sm:text-base leading-relaxed">
+                    <span className="text-red-700 font-bold">MUST NOT</span>{" "}
                     currently have any existing contract with any state or
                     district association of the BCCI.
                   </p>
                 </li>
-                <li className="flex items-center">
-                  <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md mr-3 shrink-0 mt-1">
-                    MUST NOT
-                  </div>
-                  <p className="text-gray-700">
-                    be participating or playing in any representative cricket
-                    for any State or District Association of BCCI.
+                <li>
+                  <p className="text-black text-sm sm:text-base leading-relaxed">
+                    <span className="text-red-700 font-bold">MUST NOT</span> be
+                    participating or playing in any representative cricket for
+                    any State or District Association of BCCI.
                   </p>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-orange-700 mb-4">
+            <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 sm:p-6">
+              <h3 className="text-lg sm:text-xl font-semibold text-orange-700 mb-3 sm:mb-4">
                 Important Note
               </h3>
-              <p className="text-gray-700">
+              <p className="text-black text-sm sm:text-base leading-relaxed">
                 All participants will be required to provide documentation
-                confirming they meet these eligibility criteria. Any false
-                information provided may result in disqualification without
-                refund of registration fees. If you're unsure about your
+                confirming they meet these eligibility criteria.
+                <strong>
+                  Both ID cards submitted during registration and at the time of
+                  trials must be the same.
+                </strong>
+                Any false information provided may result in disqualification
+                without refund of registration fees. If you're unsure about your
                 eligibility status, please contact our support team before
                 registering.
               </p>
@@ -687,7 +684,7 @@ export default function RegistrationPage() {
                       <h2 className="text-2xl font-bold mb-2">
                         Registration Complete!
                       </h2>
-                      <p className="text-gray-600 mb-4">
+                      <p className="text-black mb-4">
                         Thank you for registering for RunBhumi Cricket Talent
                         Hunt. A confirmation email has been sent to{" "}
                         {formData.email}.
@@ -706,7 +703,7 @@ export default function RegistrationPage() {
                       <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
                         Registration Form
                       </h2>
-                      <p className="text-muted-foreground">
+                      <p className="text-black">
                         Complete the form below to secure your spot in the
                         upcoming RunBhumi Cricket Talent Hunt.
                       </p>
@@ -1139,7 +1136,7 @@ export default function RegistrationPage() {
                   <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
                     Event Information
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-black">
                     Important details about the RunBhumi Cricket Talent Hunt.
                   </p>
                 </div>
@@ -1150,7 +1147,7 @@ export default function RegistrationPage() {
                       <Calendar className="h-6 w-6 text-orange-500 mt-1" />
                       <div>
                         <h3 className="font-bold">Trials Start</h3>
-                        <p className="text-muted-foreground mt-1">
+                        <p className="text-black mt-1">
                           Thursday, July 5, 2025
                         </p>
                       </div>
@@ -1162,7 +1159,7 @@ export default function RegistrationPage() {
                       <MapPin className="h-6 w-6 text-orange-500 mt-1" />
                       <div>
                         <h3 className="font-bold">Office Address</h3>
-                        <p className="text-muted-foreground mt-1">
+                        <p className="text-black mt-1">
                           MNT Dreams Pvt. Ltd.
                           <br />
                           WhatsApp Enquiries: +91 99643 92643
@@ -1185,7 +1182,7 @@ export default function RegistrationPage() {
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
                 Trial Schedule
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-lg">
+              <p className="max-w-[700px] text-black md:text-lg">
                 Select your preferred trial location from our worldwide schedule
               </p>
             </div>
@@ -1258,7 +1255,7 @@ export default function RegistrationPage() {
               </div>
             </Card>
 
-            <div className="mt-4 text-center text-sm text-gray-500">
+            <div className="mt-4 text-center text-sm text-black">
               <p>Click on any city to select it for your registration.</p>
             </div>
           </div>
@@ -1271,7 +1268,7 @@ export default function RegistrationPage() {
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
                 Trial Location
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-lg">
+              <p className="max-w-[700px] text-black md:text-lg">
                 Trial sessions will be held at cricket grounds across 36 cities
                 in India
               </p>
@@ -1299,7 +1296,7 @@ export default function RegistrationPage() {
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
                 Frequently Asked Questions
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-lg">
+              <p className="max-w-[700px] text-black md:text-lg">
                 Everything you need to know about the RunBhumi Cricket Talent
                 Hunt
               </p>

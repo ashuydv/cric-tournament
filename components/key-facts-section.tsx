@@ -98,7 +98,7 @@ const KeyFactsSection = () => {
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
             Key Facts
           </h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-lg">
+          <p className="max-w-[700px] text-black md:text-lg">
             RunBhumi has grown to become India's most prestigious cricket talent
             hunt
           </p>
@@ -121,9 +121,7 @@ const KeyFactsSection = () => {
                       <CounterAnimation end={fact.value} />
                       {fact.suffix && <span>{fact.suffix}</span>}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {fact.label}
-                    </p>
+                    <p className="text-black">{fact.label}</p>
                   </div>
                 </CardContent>
               </Card>

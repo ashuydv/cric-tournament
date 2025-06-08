@@ -86,7 +86,7 @@ const Apply = (props: Props) => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Application Submitted!
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-black mb-6">
                 Thank you for your interest in joining our team. We'll review
                 your application and get back to you within 5-7 business days.
               </p>
@@ -139,7 +139,7 @@ const Apply = (props: Props) => {
               <h1 className="text-3xl font-bold text-gray-900 mb-4">
                 Join Our Team
               </h1>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-black">
                 We're always looking for talented individuals to join our
                 growing company. Fill out the form below to apply for a position
                 with us.
@@ -152,7 +152,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="firstName"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     First Name *
                   </label>
@@ -170,7 +170,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="lastName"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Last Name *
                   </label>
@@ -192,7 +192,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Email Address *
                   </label>
@@ -210,7 +210,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Phone Number *
                   </label>
@@ -232,7 +232,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="position"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Position Applied For *
                   </label>
@@ -267,7 +267,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="experience"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Years of Experience *
                   </label>
@@ -293,7 +293,7 @@ const Apply = (props: Props) => {
               <div>
                 <label
                   htmlFor="resume"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-black mb-2"
                 >
                   Resume/CV *
                 </label>
@@ -310,7 +310,7 @@ const Apply = (props: Props) => {
                   <label htmlFor="resume" className="cursor-pointer">
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full mb-3">
                       <svg
-                        className="h-6 w-6 text-gray-600"
+                        className="h-6 w-6 text-black"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -323,12 +323,12 @@ const Apply = (props: Props) => {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-black">
                       {formData.resume
                         ? formData.resume.name
                         : "Click to upload your resume"}
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-black mt-1">
                       PDF, DOC, DOCX up to 10MB
                     </p>
                   </label>
@@ -340,7 +340,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="portfolio"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Portfolio Website (Optional)
                   </label>
@@ -357,7 +357,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="linkedin"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     LinkedIn Profile (Optional)
                   </label>
@@ -378,7 +378,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="availability"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Availability *
                   </label>
@@ -400,7 +400,7 @@ const Apply = (props: Props) => {
                 <div>
                   <label
                     htmlFor="remote"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Work Preference *
                   </label>
@@ -425,7 +425,7 @@ const Apply = (props: Props) => {
               <div>
                 <label
                   htmlFor="salary"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-black mb-2"
                 >
                   Expected Salary Range (Optional)
                 </label>
@@ -444,7 +444,7 @@ const Apply = (props: Props) => {
               <div>
                 <label
                   htmlFor="coverLetter"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-black mb-2"
                 >
                   Cover Letter *
                 </label>
@@ -500,7 +500,7 @@ const Apply = (props: Props) => {
 
             {/* Additional Info */}
             <div className="mt-8 p-4 bg-gray-50 rounded-md">
-              <p className="text-sm text-gray-600 text-center">
+              <p className="text-sm text-black text-center">
                 <strong>Note:</strong> All fields marked with an asterisk (*)
                 are required. We are an equal opportunity employer and welcome
                 applications from all qualified candidates.
@@ -510,7 +510,7 @@ const Apply = (props: Props) => {
 
           {/* Employee Benefits Section */}
           <div className="mt-16 mb-16">
-            <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+            <h2 className="text-2xl font-bold text-black mb-8 text-center">
               Employee Benefits
             </h2>
 
@@ -532,10 +532,10 @@ const Apply = (props: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-black mb-2">
                   Modern Office
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Work in our state-of-the-art facilities with all the amenities
                   you need, including cricket viewing areas.
                 </p>
@@ -558,10 +558,10 @@ const Apply = (props: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-black mb-2">
                   Learning & Development
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Access to online courses, workshops, and professional
                   certifications to advance your career and skills.
                 </p>
@@ -584,10 +584,10 @@ const Apply = (props: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-black mb-2">
                   Health & Wellness
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Comprehensive health insurance, mental health support, and
                   on-site fitness facilities to keep you at your best.
                 </p>
@@ -610,10 +610,10 @@ const Apply = (props: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-black mb-2">
                   Flexible Hours
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Work-life balance with flexible scheduling, remote work
                   options, and unlimited PTO policy.
                 </p>
@@ -636,10 +636,10 @@ const Apply = (props: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-black mb-2">
                   Competitive Salary
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Market-leading compensation packages with performance bonuses,
                   stock options, and annual salary reviews.
                 </p>
@@ -662,10 +662,10 @@ const Apply = (props: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-black mb-2">
                   Team Events
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Regular team building activities, company retreats,
                   celebration parties, and networking events with colleagues.
                 </p>

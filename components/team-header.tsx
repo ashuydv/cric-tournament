@@ -33,7 +33,7 @@ export default function TeamHeader({ name, logo, established, homeGround, champi
                                 Captain: <span className="font-bold text-orange-600">{captain}</span>
                             </p>
                         </div>
-                        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-4 text-xs sm:text-sm text-muted-foreground">
+                        <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2 xs:gap-4 text-xs sm:text-sm text-black">
                             <div className="flex items-center space-x-1">
                                 <MapPin className="h-3 w-3" />
                                 <span>{homeGround}</span>

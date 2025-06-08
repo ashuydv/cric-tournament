@@ -36,55 +36,55 @@ export default function PlayerCard({
             <CardHeader className="p-4 pb-2 flex flex-row justify-between items-start">
                 <div>
                     <h3 className="font-bold text-lg">{name}</h3>
-                    <p className="text-sm text-muted-foreground">{role}</p>
+                    <p className="text-sm text-black">{role}</p>
                 </div>
                 {isInternational && <Badge className="bg-orange-600">International</Badge>}
             </CardHeader>
             <CardContent className="p-4 pt-2 space-y-2">
                 <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
-                        <p className="text-muted-foreground">Batting</p>
+                        <p className="text-black">Batting</p>
                         <p className="font-medium">{battingStyle}</p>
                     </div>
                     {bowlingStyle && (
                         <div>
-                            <p className="text-muted-foreground">Bowling</p>
+                            <p className="text-black">Bowling</p>
                             <p className="font-medium">{bowlingStyle}</p>
                         </div>
                     )}
                 </div>
                 <div className="grid grid-cols-3 gap-1 text-xs pt-2">
                     <div>
-                        <p className="text-muted-foreground">Matches</p>
+                        <p className="text-black">Matches</p>
                         <p className="font-medium">{stats.matches}</p>
                     </div>
                     {stats.runs !== undefined && (
                         <div>
-                            <p className="text-muted-foreground">Runs</p>
+                            <p className="text-black">Runs</p>
                             <p className="font-medium">{stats.runs}</p>
                         </div>
                     )}
                     {stats.wickets !== undefined && (
                         <div>
-                            <p className="text-muted-foreground">Wickets</p>
+                            <p className="text-black">Wickets</p>
                             <p className="font-medium">{stats.wickets}</p>
                         </div>
                     )}
                     {stats.average !== undefined && (
                         <div>
-                            <p className="text-muted-foreground">Average</p>
+                            <p className="text-black">Average</p>
                             <p className="font-medium">{stats.average}</p>
                         </div>
                     )}
                     {stats.strikeRate !== undefined && (
                         <div>
-                            <p className="text-muted-foreground">S/R</p>
+                            <p className="text-black">S/R</p>
                             <p className="font-medium">{stats.strikeRate}</p>
                         </div>
                     )}
                     {stats.economyRate !== undefined && (
                         <div>
-                            <p className="text-muted-foreground">Economy</p>
+                            <p className="text-black">Economy</p>
                             <p className="font-medium">{stats.economyRate}</p>
                         </div>
                     )}

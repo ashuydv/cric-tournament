@@ -60,7 +60,7 @@ export const DynamicButton = ({
     `,
     ghost: `
       bg-transparent hover:bg-gray-100 
-      text-gray-800 shadow-none
+      text-black shadow-none
     `,
   };
 

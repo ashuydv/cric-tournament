@@ -228,7 +228,7 @@ export default function NotificationForm({
           )}
 
           {/* Disclaimer */}
-          <p className="text-xs text-gray-500 text-center mt-2">
+          <p className="text-xs text-black text-center mt-2">
             By submitting, you agree to receive notifications about our
             merchandise launch.
           </p>

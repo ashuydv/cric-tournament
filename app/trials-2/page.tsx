@@ -21,10 +21,10 @@ const Trials = (props: Props) => {
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white shadow-md rounded-lg p-6 mb-8">
           <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-3xl font-bold text-black mb-2">
               Trials Registration - Season 1
             </h1>
-            <p className="text-gray-600">
+            <p className="text-black">
               Fulfil your dream of playing with the stars, register for Season 1
               Trials
             </p>
@@ -68,7 +68,7 @@ const Trials = (props: Props) => {
             </p>
 
             <div className="mt-8">
-              <h2 className="text-xl font-bold text-gray-800 border-l-4 border-orange-500 pl-3">
+              <h2 className="text-xl font-bold text-black border-l-4 border-orange-500 pl-3">
                 PHASE 1 - TRIALS
               </h2>
               <p className="mt-2">
@@ -92,7 +92,7 @@ const Trials = (props: Props) => {
             </div>
 
             <div className="mt-8">
-              <h2 className="text-xl font-bold text-gray-800 border-l-4 border-orange-500 pl-3">
+              <h2 className="text-xl font-bold text-black border-l-4 border-orange-500 pl-3">
                 PHASE 2 - SELECTION CAMPS
               </h2>
               <p className="mt-2">
@@ -110,7 +110,7 @@ const Trials = (props: Props) => {
             </div>
 
             <div className="mt-8">
-              <h2 className="text-xl font-bold text-gray-800 border-l-4 border-orange-500 pl-3">
+              <h2 className="text-xl font-bold text-black border-l-4 border-orange-500 pl-3">
                 PHASE 3 - SUPER CAMP
               </h2>
               <p className="mt-2">

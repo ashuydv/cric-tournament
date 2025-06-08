@@ -498,54 +498,46 @@ export default function RunBhumiTrialsPage() {
       />
 
       {/* Eligibility Criteria Section - Responsive */}
-      <section className="w-full py-8 sm:py-12 lg:py-16 bg-gray-50">
-        <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
-          <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center mb-8 sm:mb-10">
+      <section className="w-full py-8 sm:py-12 bg-gray-50">
+        <div className="container px-4 sm:px-6 mx-auto">
+          <div className="flex flex-col items-center space-y-4 text-center mb-8 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tighter">
               Eligibility Criteria
             </h2>
-            <p className="max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-2">
+            <p className="max-w-[700px] text-black text-sm sm:text-base md:text-lg leading-relaxed">
               To be eligible for participation in the RunBhumi Trials 2025,
-              participants must comply with the following conditions:
+              participants must strictly comply with the following conditions:
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10">
             <ul className="space-y-4 sm:space-y-6">
-              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
-                  MUST NOT
-                </div>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  be below the age of 16 years at the time of registrations as
-                  per legal identification documents.
+              <li>
+                <p className="text-black text-sm sm:text-base leading-relaxed">
+                  <span className="text-red-700 font-bold">MUST NOT</span> be
+                  below the age of 16 years at the time of registrations as per
+                  legal identification documents.
                 </p>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
-                  MUST NOT
-                </div>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  be currently registered with any state or district association
-                  of BCCI.
+              <li>
+                <p className="text-black text-sm sm:text-base leading-relaxed">
+                  <span className="text-red-700 font-bold">MUST NOT</span> be
+                  currently registered with any state or district association of
+                  BCCI.
                 </p>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
-                  MUST NOT
-                </div>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+              <li>
+                <p className="text-black text-sm sm:text-base leading-relaxed">
+                  <span className="text-red-700 font-bold">MUST NOT</span>{" "}
                   currently have any existing contract with any state or
                   district association of the BCCI.
                 </p>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-start gap-3">
-                <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-md shrink-0 text-center sm:text-left text-sm sm:text-base">
-                  MUST NOT
-                </div>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  be participating or playing in any representative cricket for
-                  any State or District Association of BCCI.
+              <li>
+                <p className="text-black text-sm sm:text-base leading-relaxed">
+                  <span className="text-red-700 font-bold">MUST NOT</span> be
+                  participating or playing in any representative cricket for any
+                  State or District Association of BCCI.
                 </p>
               </li>
             </ul>
@@ -555,12 +547,17 @@ export default function RunBhumiTrialsPage() {
             <h3 className="text-lg sm:text-xl font-semibold text-orange-700 mb-3 sm:mb-4">
               Important Note
             </h3>
-            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+            <p className="text-black text-sm sm:text-base leading-relaxed">
               All participants will be required to provide documentation
-              confirming they meet these eligibility criteria. Any false
-              information provided may result in disqualification without refund
-              of registration fees. If you're unsure about your eligibility
-              status, please contact our support team before registering.
+              confirming they meet these eligibility criteria.{" "}
+              <strong>
+                Both ID cards submitted during registration and at the time of
+                trials must be the same.
+              </strong>{" "}
+              Any false information provided may result in disqualification
+              without refund of registration fees. If you're unsure about your
+              eligibility status, please contact our support team before
+              registering.
             </p>
           </div>
         </div>
@@ -569,46 +566,6 @@ export default function RunBhumiTrialsPage() {
       {/* What You Get Section - NEW */}
       <WhatYouGet />
 
-      {/* Registration CTA Section with Razorpay */}
-      <section className="w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-500 to-orange-600">
-        <div className="container px-4 sm:px-6 lg:px-8 mx-auto text-center">
-          <div className="text-white mb-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Ready to Begin Your Cricket Journey?
-            </h2>
-            <p className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-8">
-              Join thousands of aspiring cricketers in India's most exciting
-              talent hunt program
-            </p>
-
-            {/* Razorpay Payment Iframe */}
-            <div className="mb-6">
-              <iframe
-                src="https://rzp.io/rzp/runbhumi-trails"
-                width="100%"
-                height="1500px"
-                frameBorder="0"
-                style={{ border: "none", overflow: "hidden" }}
-              ></iframe>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm sm:text-base opacity-80">
-              <div className="flex items-center gap-2">
-                <Check className="h-5 w-5" />
-                <span>Secure Payment</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="h-5 w-5" />
-                <span>Instant Confirmation</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="h-5 w-5" />
-                <span>Multiple Payment Options</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Cities and Schedule Section - Responsive */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Cities Section */}
@@ -650,9 +607,7 @@ export default function RunBhumiTrialsPage() {
                   </div>
                   <span
                     className={`text-xs sm:text-sm font-medium ${
-                      selectedCity === city
-                        ? "text-orange-600"
-                        : "text-gray-700"
+                      selectedCity === city ? "text-orange-600" : "text-black"
                     }`}
                   >
                     {city}
@@ -809,7 +764,7 @@ export default function RunBhumiTrialsPage() {
                 variant="ghost"
                 size="sm"
                 onClick={clearFilters}
-                className="text-gray-500 hover:text-gray-700 text-xs sm:text-sm"
+                className="text-black hover:text-black text-xs sm:text-sm"
               >
                 Clear All
               </Button>
@@ -864,7 +819,7 @@ export default function RunBhumiTrialsPage() {
                   ))}
                 </div>
               ) : (
-                <div className="p-6 text-center text-gray-500 text-sm">
+                <div className="p-6 text-center text-black text-sm">
                   No trial dates match your current filters. Please try
                   different search criteria.
                 </div>
@@ -934,7 +889,7 @@ export default function RunBhumiTrialsPage() {
                     <TableRow>
                       <TableCell
                         colSpan={5}
-                        className="text-center py-8 text-gray-500 text-sm"
+                        className="text-center py-8 text-black text-sm"
                       >
                         No trial dates match your current filters. Please try
                         different search criteria.
@@ -949,7 +904,7 @@ export default function RunBhumiTrialsPage() {
             {filteredSchedule.length > 0 && (
               <div className="p-3 sm:p-4 bg-gray-50 border-t border-gray-200">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                  <div className="text-xs sm:text-sm text-gray-500">
+                  <div className="text-xs sm:text-sm text-black">
                     {filteredSchedule.length === trialSchedule.length
                       ? `Showing all ${trialSchedule.length} trial dates`
                       : `Showing ${filteredSchedule.length} of ${trialSchedule.length} trial dates`}
@@ -973,32 +928,6 @@ export default function RunBhumiTrialsPage() {
         {/* Selection Path Roadmap - Responsive wrapper */}
         <div className="w-full">
           <SelectionPathRoadmap />
-        </div>
-
-        {/* Secondary Registration CTA */}
-        <div className="mt-12 text-center">
-          <Card className="bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200 p-6 sm:p-8">
-            <CardHeader className="pb-4">
-              <CardTitle className="text-xl sm:text-2xl text-orange-800 mb-2">
-                Don't Miss Your Chance!
-              </CardTitle>
-              <p className="text-orange-700 text-sm sm:text-base">
-                Limited spots available for each trial date. Register now to
-                secure your place.
-              </p>
-            </CardHeader>
-            <CardContent className="pt-2">
-              <div className="mb-6">
-                <iframe
-                  src="https://rzp.io/rzp/runbhumi-trails"
-                  width="100%"
-                  height="1500px"
-                  frameBorder="0"
-                  style={{ border: "none", overflow: "hidden" }}
-                ></iframe>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
     </main>

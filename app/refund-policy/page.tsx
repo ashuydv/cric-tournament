@@ -18,7 +18,7 @@ const RefundPolicy = () => {
       />
       <main className="container mx-auto py-12">
         <div className="bg-white rounded-lg overflow-hidden">
-          <div className="p-6 text-gray-700">
+          <div className="p-6 text-black">
             <p className="mb-6">
               This Refund Policy outlines the terms and conditions regarding
               refunds for registrations and services provided by{" "}

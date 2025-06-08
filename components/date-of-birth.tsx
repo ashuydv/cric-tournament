@@ -89,7 +89,7 @@ const DateOfBirthField = ({ formData, handleChange }: any) => {
         <div className="space-y-2">
             <Label htmlFor="dateOfBirth" className="text-sm font-medium flex items-center">
                 Date of Birth <span className="text-red-500 ml-1">*</span>
-                <span className="ml-2 text-xs text-gray-500">(Age: 10-60 years)</span>
+                <span className="ml-2 text-xs text-black">(Age: 10-60 years)</span>
             </Label>
 
             <div className="relative">
@@ -99,7 +99,7 @@ const DateOfBirthField = ({ formData, handleChange }: any) => {
                             variant="outline"
                             className={cn(
                                 "w-full justify-start text-left font-normal bg-white text-black border-gray-300 hover:bg-gray-50 hover:text-black",
-                                !date && "text-gray-500"
+                                !date && "text-black"
                             )}
                         >
                             <CalendarIcon className="mr-2 h-4 w-4" />
@@ -173,7 +173,7 @@ const DateOfBirthField = ({ formData, handleChange }: any) => {
             </div>
 
             {/* Optional helper text */}
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-black mt-1">
                 This helps us determine your eligibility for age-specific categories.
             </p>
         </div>

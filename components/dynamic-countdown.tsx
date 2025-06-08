@@ -54,28 +54,28 @@ export default function DynamicCountdown({ targetDate }: any) {
                 <div className="text-3xl md:text-4xl font-bold text-orange-600">
                     {String(timeRemaining.days).padStart(2, '0')}
                 </div>
-                <div className="text-sm text-gray-500">Days</div>
+                <div className="text-sm text-black">Days</div>
             </div>
 
             <div className="bg-orange-50 p-4 md:p-6 rounded-lg text-center min-w-[140px]">
                 <div className="text-3xl md:text-4xl font-bold text-orange-600">
                     {String(timeRemaining.hours).padStart(2, '0')}
                 </div>
-                <div className="text-sm text-gray-500">Hours</div>
+                <div className="text-sm text-black">Hours</div>
             </div>
 
             <div className="bg-orange-50 p-4 md:p-6 rounded-lg text-center min-w-[140px]">
                 <div className="text-3xl md:text-4xl font-bold text-orange-600">
                     {String(timeRemaining.minutes).padStart(2, '0')}
                 </div>
-                <div className="text-sm text-gray-500">Minutes</div>
+                <div className="text-sm text-black">Minutes</div>
             </div>
 
             <div className="bg-orange-50 p-4 md:p-6 rounded-lg text-center min-w-[140px]">
                 <div className="text-3xl md:text-4xl font-bold text-orange-600">
                     {String(timeRemaining.seconds).padStart(2, '0')}
                 </div>
-                <div className="text-sm text-gray-500">Seconds</div>
+                <div className="text-sm text-black">Seconds</div>
             </div>
         </div>
     );

@@ -216,7 +216,7 @@ export default function MerchandisePage() {
             }`}
           />
         ))}
-        <span className="ml-1 text-sm text-muted-foreground">{rating}</span>
+        <span className="ml-1 text-sm text-black">{rating}</span>
       </div>
     );
   };
@@ -252,7 +252,7 @@ export default function MerchandisePage() {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Coming Soon!
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-black mb-8">
                 We're working hard to bring you the best cricket merchandise.
                 Our store will be launching soon!
               </p>
@@ -264,7 +264,7 @@ export default function MerchandisePage() {
                   <div className="text-3xl md:text-4xl font-bold text-orange-600 relative">
                     {String(timeRemaining.days).padStart(2, "0")}
                   </div>
-                  <div className="text-sm text-gray-500 relative">Days</div>
+                  <div className="text-sm text-black relative">Days</div>
                 </div>
 
                 <div className="bg-orange-50 p-4 md:p-6 rounded-lg text-center min-w-[120px] relative overflow-hidden group">
@@ -272,7 +272,7 @@ export default function MerchandisePage() {
                   <div className="text-3xl md:text-4xl font-bold text-orange-600 relative">
                     {String(timeRemaining.hours).padStart(2, "0")}
                   </div>
-                  <div className="text-sm text-gray-500 relative">Hours</div>
+                  <div className="text-sm text-black relative">Hours</div>
                 </div>
 
                 <div className="bg-orange-50 p-4 md:p-6 rounded-lg text-center min-w-[120px] relative overflow-hidden group">
@@ -280,7 +280,7 @@ export default function MerchandisePage() {
                   <div className="text-3xl md:text-4xl font-bold text-orange-600 relative">
                     {String(timeRemaining.minutes).padStart(2, "0")}
                   </div>
-                  <div className="text-sm text-gray-500 relative">Minutes</div>
+                  <div className="text-sm text-black relative">Minutes</div>
                 </div>
 
                 <div className="bg-orange-50 p-4 md:p-6 rounded-lg text-center min-w-[120px] relative overflow-hidden group">
@@ -288,7 +288,7 @@ export default function MerchandisePage() {
                   <div className="text-3xl md:text-4xl font-bold text-orange-600 relative animate-pulse">
                     {String(timeRemaining.seconds).padStart(2, "0")}
                   </div>
-                  <div className="text-sm text-gray-500 relative">Seconds</div>
+                  <div className="text-sm text-black relative">Seconds</div>
                 </div>
               </div>
 
@@ -304,7 +304,7 @@ export default function MerchandisePage() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold">What to Expect</h2>
-              <p className="text-gray-600 mt-2">
+              <p className="text-black mt-2">
                 Preview of our upcoming merchandise categories
               </p>
             </div>
@@ -321,7 +321,7 @@ export default function MerchandisePage() {
                 </div>
                 <CardContent className="p-5">
                   <h3 className="text-xl font-semibold mb-2">Team Jerseys</h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Official team jerseys from all RunBhumi franchises. Show
                     your team spirit with authentic player gear.
                   </p>
@@ -339,7 +339,7 @@ export default function MerchandisePage() {
                 </div>
                 <CardContent className="p-5">
                   <h3 className="text-xl font-semibold mb-2">Accessories</h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Complete your fan experience with caps, wristbands,
                     backpacks and other essential match day gear.
                   </p>
@@ -357,7 +357,7 @@ export default function MerchandisePage() {
                 </div>
                 <CardContent className="p-5">
                   <h3 className="text-xl font-semibold mb-2">Memorabilia</h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Limited edition collectibles including signed cricket bats,
                     trophy replicas and team photographs.
                   </p>

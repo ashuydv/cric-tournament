@@ -83,7 +83,7 @@ export default function UpcomingMatches() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 flex items-center justify-between text-sm text-muted-foreground">
+                <div className="mt-4 flex items-center justify-between text-sm text-black">
                   <div className="flex items-center gap-1">
                     <CalendarDays className="h-3 w-3" />
                     <span>{match.date}</span>
@@ -93,7 +93,7 @@ export default function UpcomingMatches() {
                     <span>{match.time}</span>
                   </div>
                 </div>
-                <div className="mt-1 text-xs text-muted-foreground">{match.venue}</div>
+                <div className="mt-1 text-xs text-black">{match.venue}</div>
               </div>
             </CardContent>
           </Card>

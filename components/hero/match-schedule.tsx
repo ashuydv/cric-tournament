@@ -21,7 +21,7 @@ export function MatchScheduleHero() {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                             RunBhumi <span className="text-orange-500">Exhibition Matches</span>
                         </h1>
-                        <p className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+                        <p className="text-xl text-black mt-4 max-w-2xl mx-auto">
                             Watch our talent in action with special exhibition matches featuring selected RunBhumi players.
                         </p>
                     </div>
@@ -40,11 +40,11 @@ export function MatchScheduleHero() {
                                             </div>
                                             <div>
                                                 <p className="font-bold text-gray-900 text-lg">{match.teams}</p>
-                                                <p className="text-gray-600">{match.venue}</p>
+                                                <p className="text-black">{match.venue}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-4">
-                                            <p className="font-medium text-gray-700">{match.time}</p>
+                                            <p className="font-medium text-black">{match.time}</p>
                                             <Link
                                                 href={`/matches/${index}`}
                                                 className="px-4 py-2 rounded bg-orange-500 hover:bg-orange-600 text-white text-sm transition-colors"

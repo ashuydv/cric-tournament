@@ -52,7 +52,7 @@ const TransparentHeader = () => {
                         <Link
                             href="/teams"
                             className={`flex items-center text-sm font-medium ${isScrolled
-                                ? 'text-gray-600 hover:text-orange-500'
+                                ? 'text-black hover:text-orange-500'
                                 : 'text-white/80 hover:text-white'
                                 } transition-colors`}
                         >
@@ -61,7 +61,7 @@ const TransparentHeader = () => {
                         <Link
                             href="/schedule"
                             className={`flex items-center text-sm font-medium ${isScrolled
-                                ? 'text-gray-600 hover:text-orange-500'
+                                ? 'text-black hover:text-orange-500'
                                 : 'text-white/80 hover:text-white'
                                 } transition-colors`}
                         >
@@ -70,7 +70,7 @@ const TransparentHeader = () => {
                         <Link
                             href="/results"
                             className={`flex items-center text-sm font-medium ${isScrolled
-                                ? 'text-gray-600 hover:text-orange-500'
+                                ? 'text-black hover:text-orange-500'
                                 : 'text-white/80 hover:text-white'
                                 } transition-colors`}
                         >
@@ -79,7 +79,7 @@ const TransparentHeader = () => {
                         <Link
                             href="/stats"
                             className={`flex items-center text-sm font-medium ${isScrolled
-                                ? 'text-gray-600 hover:text-orange-500'
+                                ? 'text-black hover:text-orange-500'
                                 : 'text-white/80 hover:text-white'
                                 } transition-colors`}
                         >

@@ -11,7 +11,7 @@ export const SelectionPathRoadmap = () => {
             1
           </div>
           <h3 className="text-xl font-semibold mb-2">Initial Screening</h3>
-          <p className="text-gray-600 mb-2">
+          <p className="text-black mb-2">
             The first assessment focuses on basic technical abilities and
             general performance in skill assessments.
           </p>
@@ -22,7 +22,7 @@ export const SelectionPathRoadmap = () => {
             2
           </div>
           <h3 className="text-xl font-semibold mb-2">Small Matches</h3>
-          <p className="text-gray-600 mb-2">
+          <p className="text-black mb-2">
             Players are evaluated on how they apply their skills in small-sided
             games, focusing on decision-making and teamwork.
           </p>
@@ -33,18 +33,29 @@ export const SelectionPathRoadmap = () => {
             3
           </div>
           <h3 className="text-xl font-semibold mb-2">Final Selection Camp</h3>
-          <p className="text-gray-600 mb-2">
+          <p className="text-black mb-2">
             The final assessment evaluates players in full-sided games with
             official rules.
           </p>
         </div>
 
-        <div className="relative">
+        <div className="mb-8 relative">
           <div className="absolute -left-8 top-0 bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold z-10">
             4
           </div>
+          <h3 className="text-xl font-semibold mb-2">Televised Screening</h3>
+          <p className="text-black mb-2">
+            All 128 shortlisted players will participate, but only 40 will be
+            selected through auditions and televised screenings.
+          </p>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -left-8 top-0 bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold z-10">
+            5
+          </div>
           <h3 className="text-xl font-semibold mb-2">Team Draft</h3>
-          <p className="text-gray-600 mb-2">
+          <p className="text-black mb-2">
             Selected players are invited to join teams based on their
             performance throughout the trial process.
           </p>

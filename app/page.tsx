@@ -84,12 +84,13 @@ export default function Home() {
           //   the limelight of national television.
           // </>
           <>
-            The World's Biggest Individual Cricket Talent Hunt <br />
-            RunBhumi isn't just an event. It's a revolution. <br />A global hunt
-            to uncover raw, unstoppable cricket talent from streets, small
-            towns, and overlooked corners — not just in India, but across the
-            world — and bring them into the spotlight on international
-            platforms.
+            RunBhumi is India’s first televised cricket-based reality show,
+            followed by an international league, that discovers raw talent from
+            India’s heartlands, offering equal opportunities to all, regardless
+            of caste, class, or background. <br /> More than a game, RunBhumi
+            blends cricket with culture, nurturing talent through yoga,
+            meditation, and Indian values — uniting Bharat through its roots and
+            proving that we are our own destiny-makers!
           </>
         }
         backgroundSrc="/cric_bg.jpg"
@@ -109,7 +110,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-orange-600">
                 Why Choose RunBhumi?
               </h2>
-              <p className="max-w-3xl text-muted-foreground text-base md:text-xl mx-auto">
+              <p className="max-w-3xl text-black text-base md:text-xl mx-auto">
                 RunBhumi offers a revolutionary cricket platform where talent
                 meets opportunity, tradition meets innovation, and every player
                 gets a fair chance to shine.
@@ -125,7 +126,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-3">
                 International Exposure
               </h3>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Our worldwide trials and training sessions ensure every
                 participant—regardless of background—gains visibility on the
                 international stage.
@@ -139,7 +140,7 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-3">
                 India & renowned International cricket legends
               </h3>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Receive direct coaching and guidance from global cricketing
                 legends, gaining invaluable insights from those who’ve excelled
                 at the highest level of the game.
@@ -151,7 +152,7 @@ export default function Home() {
                 <BarChart className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Merit-Based Selection</h3>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Our patented software enables transparent selection process
                 which is purely performance, potential and skill based real time
                 evaluation.
@@ -165,7 +166,7 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-3">
                 Franchise Opportunities
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-black leading-relaxed">
                 Own your own T20 franchise in a one‑of‑its‑kind league alongside
                 cricket’s most esteemed gurus. You’ll start seeing returns from
                 day one, and it’s the perfect way to put your brand on the
@@ -177,8 +178,10 @@ export default function Home() {
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Landmark className="w-8 h-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Gurukul Training</h3>
-              <p className="text-gray-700">
+              <h3 className="text-xl font-bold mb-3">
+                Gurukul(Televised Reality Show) Training
+              </h3>
+              <p className="text-black">
                 Experience a holistic development approach that nurtures not
                 only cricketing skills but also character, discipline, and
                 mental strength.
@@ -192,7 +195,7 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-3">
                 Global Network & Community
               </h3>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Join a vibrant community of aspiring cricketers from around the
                 world. Build lasting connections, share experiences, and grow
                 together in your cricket journey.
@@ -206,7 +209,7 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-3">
                 Live Scoring & Analytics
               </h3>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Follow matches in real-time with our comprehensive scoring
                 system and receive detailed performance analytics to improve
                 your game.
@@ -227,7 +230,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">
                 Trials Overview
               </h2>
-              <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
+              <p className="max-w-[900px] text-black text-base md:text-lg">
                 Follow all the action from the RunBhumi 2025
               </p>
             </div>
@@ -423,8 +426,10 @@ export default function Home() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
-                            Are currently contracted with any zone, state,
-                            national cricket association related to BCCI
+                            <b>
+                              Are currently contracted with any zone, state,
+                              national cricket association related to BCCI
+                            </b>
                           </li>
                         </ul>
                       </div>
@@ -567,7 +572,7 @@ export default function Home() {
                           <BarChart3Icon className="mr-3 h-6 w-6 text-orange-600" />
                           Evaluation Methodology
                         </h3>
-                        <p className="mb-6 text-gray-700 text-lg">
+                        <p className="mb-6 text-black text-lg">
                           RunBhumi uses a transparent evaluation process
                           designed to identify complete cricketers with the
                           perfect balance of technical skills, tactical
@@ -576,124 +581,6 @@ export default function Home() {
                       </div>
 
                       <SelectionPathRoadmap />
-                      {/* <div className="bg-gradient-to-r from-orange-50 to-white p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-                        <h3 className="text-2xl font-bold mb-6 text-orange-700 flex items-center">
-                          <RouteIcon className="mr-3 h-6 w-6 text-orange-600" />
-                          Your Path to Selection
-                        </h3>
-
-                        <div className="relative">
-                          <div className="absolute h-full w-1.5 bg-gradient-to-b from-orange-300 via-orange-400 to-orange-600 left-6 top-0 rounded-full"></div>
-                          <ol className="space-y-8 relative">
-                            <li className="ml-16 relative group">
-                              <div className="absolute -left-16 mt-1 h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center border-4 border-white shadow-md transition-all duration-300 group-hover:bg-orange-200">
-                                <span className="text-orange-600 font-bold text-xl">
-                                  1
-                                </span>
-                              </div>
-                              <div className="p-4 rounded-lg bg-white border border-orange-100 shadow-sm transition-all duration-300 group-hover:shadow-md transform group-hover:-translate-y-1">
-                                <div className="flex items-center mb-1">
-                                  <FilterIcon className="h-5 w-5 mr-2 text-orange-500" />
-                                  <h4 className="text-lg font-semibold">
-                                    Initial Screening
-                                  </h4>
-                                </div>
-                                <p className="text-gray-700">
-                                  Top 30% of participants from each zone advance
-                                  based on their performance in skill
-                                  assessments.
-                                </p>
-                                <div className="mt-2 text-sm bg-orange-50 text-orange-800 inline-block px-2 py-1 rounded">
-                                  <UsersIcon className="h-4 w-4 inline mr-1" />{" "}
-                                  2,500+ participants → 750 advance
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="ml-16 relative group">
-                              <div className="absolute -left-16 mt-1 h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center border-4 border-white shadow-md transition-all duration-300 group-hover:bg-orange-200">
-                                <span className="text-orange-600 font-bold text-xl">
-                                  2
-                                </span>
-                              </div>
-                              <div className="p-4 rounded-lg bg-white border border-orange-100 shadow-sm transition-all duration-300 group-hover:shadow-md transform group-hover:-translate-y-1">
-                                <div className="flex items-center mb-1">
-                                  <TrophyIcon className="h-5 w-5 mr-2 text-orange-500" />
-                                  <h4 className="text-lg font-semibold">
-                                    Zonal Matches
-                                  </h4>
-                                </div>
-                                <p className="text-gray-700">
-                                  Selected players compete in zonal matches with
-                                  live streaming to evaluate performance under
-                                  pressure.
-                                </p>
-                                <div className="mt-2 text-sm bg-orange-50 text-orange-800 inline-block px-2 py-1 rounded">
-                                  <PlayIcon className="h-4 w-4 inline mr-1" /> 3
-                                  matches per player • Nationally broadcast
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="ml-16 relative group">
-                              <div className="absolute -left-16 mt-1 h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center border-4 border-white shadow-md transition-all duration-300 group-hover:bg-orange-200">
-                                <span className="text-orange-600 font-bold text-xl">
-                                  3
-                                </span>
-                              </div>
-                              <div className="p-4 rounded-lg bg-white border border-orange-100 shadow-sm transition-all duration-300 group-hover:shadow-md transform group-hover:-translate-y-1">
-                                <div className="flex items-center mb-1">
-                                  <GraduationCapIcon className="h-5 w-5 mr-2 text-orange-500" />
-                                  <h4 className="text-lg font-semibold">
-                                    Final Selection Camp
-                                  </h4>
-                                </div>
-                                <p className="text-gray-700">
-                                  Top 100 players worldwide join our 7-day
-                                  intensive Gurukul-style camp with cricket
-                                  legends as mentors.
-                                </p>
-                                <div className="mt-2 text-sm bg-orange-50 text-orange-800 inline-block px-2 py-1 rounded">
-                                  <CalendarIcon className="h-4 w-4 inline mr-1" />{" "}
-                                  7-day residential program • All expenses
-                                  covered
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="ml-16 relative group">
-                              <div className="absolute -left-16 mt-1 h-12 w-12 rounded-full bg-orange-600 flex items-center justify-center border-4 border-white shadow-md">
-                                <span className="text-white font-bold text-xl">
-                                  4
-                                </span>
-                              </div>
-                              <div className="p-4 rounded-lg bg-gradient-to-r from-orange-100 to-white border border-orange-200 shadow">
-                                <div className="flex items-center mb-1">
-                                  <StarIcon className="h-5 w-5 mr-2 text-orange-500" />
-                                  <h4 className="text-lg font-semibold">
-                                    Team Draft
-                                  </h4>
-                                </div>
-                                <p className="text-gray-700">
-                                  Final 60 players enter the nationally
-                                  televised draft to form 6 franchise teams of
-                                  10 players each.
-                                </p>
-                                <div className="mt-2 text-sm bg-orange-500 text-white inline-block px-2 py-1 rounded">
-                                  <SparklesIcon className="h-4 w-4 inline mr-1" />{" "}
-                                  Professional contracts & national recognition
-                                </div>
-                              </div>
-                            </li>
-                          </ol>
-                        </div>
-
-                        <div className="mt-8 text-center">
-                          <DynamicButton href="/register" variant="primary">
-                            Contact Us
-                          </DynamicButton>
-                        </div>
-                      </div> */}
                     </div>
                   </CardContent>
                 </Card>
@@ -704,21 +591,21 @@ export default function Home() {
       </section>
 
       {/* Separate Gurukul Experience Section */}
-      <section className="w-full py-12 bg-gradient-to-r from-orange-50 to-white">
+      <section className="w-full py-12 bg-orange-50">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter text-orange-700">
                 The Gurukul Experience
               </h2>
-              <p className="max-w-[900px] text-muted-foreground text-base md:text-lg">
-                An immersive 45-day cricket talent hunt, blending legacy wisdom
-                with modern techniques
+              <p className="max-w-[900px] text-black text-base md:text-lg">
+                An immersive 45-day cricket talent hunt, blending cricket legacy
+                wisdom with modern techniques
               </p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-orange-50 to-white rounded-xl overflow-hidden shadow-md">
+          <div className="bg-orange-100 rounded-xl overflow-hidden shadow-md">
             <div className="relative h-64 bg-orange-100">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-orange-800/80 flex items-center justify-center">
                 <div className="text-center px-4">
@@ -750,7 +637,7 @@ export default function Home() {
                           <span className="font-medium block">
                             45-Day Residential Program
                           </span>
-                          <span className="text-gray-600 text-sm">
+                          <span className="text-black text-sm">
                             Full immersion in a cricket-focused environment
                           </span>
                         </div>
@@ -763,7 +650,7 @@ export default function Home() {
                           <span className="font-medium block">
                             State-of-the-Art Facility
                           </span>
-                          <span className="text-gray-600 text-sm">
+                          <span className="text-black text-sm">
                             Located in a serene setting with amazing facilities
                           </span>
                         </div>
@@ -776,7 +663,7 @@ export default function Home() {
                           <span className="font-medium block">
                             ₹1 Lakh Reward for Selected Players
                           </span>
-                          <span className="text-gray-600 text-sm">
+                          <span className="text-black text-sm">
                             Recognizing top talent with exciting rewards
                           </span>
                         </div>
@@ -790,7 +677,7 @@ export default function Home() {
                           <span className="font-medium block">
                             Nationally Televised
                           </span>
-                          <span className="text-gray-600 text-sm">
+                          <span className="text-black text-sm">
                             Weekly episodes showcasing player journeys
                           </span>
                         </div>
@@ -807,7 +694,7 @@ export default function Home() {
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                       <Camera className="h-6 w-6 text-orange-600 mb-2" />
                       <h5 className="font-semibold mb-1">Cricket Skills</h5>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <ul className="text-sm text-black space-y-1">
                         <li>• Advanced batting techniques</li>
                         <li>• Professional bowling skills</li>
                         <li>• Strategic fielding positions</li>
@@ -817,7 +704,7 @@ export default function Home() {
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                       <ActivityIcon className="h-6 w-6 text-orange-600 mb-2" />
                       <h5 className="font-semibold mb-1">Physical Fitness</h5>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <ul className="text-sm text-black space-y-1">
                         <li>• Sport-specific conditioning</li>
                         <li>• Strength & power training</li>
                         <li>• Speed & agility drills</li>
@@ -827,7 +714,7 @@ export default function Home() {
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                       <SwordsIcon className="h-6 w-6 text-orange-600 mb-2" />
                       <h5 className="font-semibold mb-1">Discipline</h5>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <ul className="text-sm text-black space-y-1">
                         <li>• Structured daily routines</li>
                         <li>• Team-oriented challenges</li>
                         <li>• Punctuality & dedication</li>
@@ -837,7 +724,7 @@ export default function Home() {
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                       <BrainCircuitIcon className="h-6 w-6 text-orange-600 mb-2" />
                       <h5 className="font-semibold mb-1">Mental Strength</h5>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <ul className="text-sm text-black space-y-1">
                         <li>• Pressure handling</li>
                         <li>• Visualization techniques</li>
                         <li>• Focus & concentration</li>
@@ -866,7 +753,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Suresh Raina</h5>
-                        <p className="text-gray-600">Middle Order Guide</p>
+                        <p className="text-black">Middle Order Guide</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             Mr. IPL
@@ -885,7 +772,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Herschelle Gibbs</h5>
-                        <p className="text-gray-600">Batting Maestro</p>
+                        <p className="text-black">Batting Maestro</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             South African Legend
@@ -905,7 +792,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Sanath Jayasuriya</h5>
-                        <p className="text-gray-600">Explosive All-Rounder</p>
+                        <p className="text-black">Explosive All-Rounder</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             Sri Lankan Icon
@@ -927,7 +814,7 @@ export default function Home() {
                         <h5 className="font-bold text-lg">
                           Manpreet Singh Gony
                         </h5>
-                        <p className="text-gray-600">Pace Attack Mentor</p>
+                        <p className="text-black">Pace Attack Mentor</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             IPL & India Fast Bowler
@@ -948,7 +835,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Anjum Chopra</h5>
-                        <p className="text-gray-600">
+                        <p className="text-black">
                           Women’s Cricket Ambassador
                         </p>
                         <div className="mt-1 flex">
@@ -975,7 +862,7 @@ export default function Home() {
                           </span>
                         </div>
                         <span className="text-sm text-orange-600">
-                          Sunday 8 PM
+                          Saturday, Sunday
                         </span>
                       </div>
 
@@ -988,7 +875,7 @@ export default function Home() {
                             <span className="font-medium block">
                               Training Highlights
                             </span>
-                            <span className="text-gray-600 text-sm">
+                            <span className="text-black text-sm">
                               Behind-the-scenes look at daily practice sessions
                             </span>
                           </div>
@@ -1002,7 +889,7 @@ export default function Home() {
                             <span className="font-medium block">
                               Weekly Challenges
                             </span>
-                            <span className="text-gray-600 text-sm">
+                            <span className="text-black text-sm">
                               Competitive tasks testing various cricketing
                               skills
                             </span>
@@ -1017,7 +904,7 @@ export default function Home() {
                             <span className="font-medium block">
                               Player Journeys
                             </span>
-                            <span className="text-gray-600 text-sm">
+                            <span className="text-black text-sm">
                               Personal stories and transformation of
                               participants
                             </span>
@@ -1032,7 +919,7 @@ export default function Home() {
                             <span className="font-medium block">
                               Mentor Insights
                             </span>
-                            <span className="text-gray-600 text-sm">
+                            <span className="text-black text-sm">
                               Expert commentary and guidance from cricket
                               legends
                             </span>
@@ -1045,10 +932,10 @@ export default function Home() {
               </div>
 
               <div className="mt-8 text-center">
-                <p className="text-gray-600 mb-4">
+                <div className="text-black text-2xl font-medium mb-4">
                   Experience a cricket training program unlike any other in the
                   world
-                </p>
+                </div>
               </div>
             </div>
           </div>

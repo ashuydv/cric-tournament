@@ -123,7 +123,7 @@ export default function TeamPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Team</h1>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Meet the talented individuals who are driving innovation and excellence at our company
               </p>
             </div>
@@ -161,28 +161,28 @@ export default function TeamPage() {
                       <CardContent className="p-4">
                         <div className="grid gap-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Role:</span>
+                            <span className="text-black">Role:</span>
                             <span className="font-medium">{member.role}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Experience:</span>
+                            <span className="text-black">Experience:</span>
                             <span className="font-medium">{member.experience}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Trophy className="h-3 w-3" />
                               Expertise:
                             </span>
                             <span className="font-medium">{member.expertise}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm mt-2">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Mail className="h-3 w-3" />
                             </span>
                             <span className="font-medium text-blue-600">{member.email}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Linkedin className="h-3 w-3" />
                             </span>
                             <span className="font-medium text-blue-600">linkedin.com/in/{member.linkedin}</span>
@@ -216,28 +216,28 @@ export default function TeamPage() {
                       <CardContent className="p-4">
                         <div className="grid gap-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Role:</span>
+                            <span className="text-black">Role:</span>
                             <span className="font-medium">{member.role}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Experience:</span>
+                            <span className="text-black">Experience:</span>
                             <span className="font-medium">{member.experience}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Trophy className="h-3 w-3" />
                               Expertise:
                             </span>
                             <span className="font-medium">{member.expertise}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm mt-2">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Mail className="h-3 w-3" />
                             </span>
                             <span className="font-medium text-blue-600">{member.email}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Github className="h-3 w-3" />
                             </span>
                             <span className="font-medium text-blue-600">github.com/{member.github}</span>
@@ -271,28 +271,28 @@ export default function TeamPage() {
                       <CardContent className="p-4">
                         <div className="grid gap-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Role:</span>
+                            <span className="text-black">Role:</span>
                             <span className="font-medium">{member.role}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">Experience:</span>
+                            <span className="text-black">Experience:</span>
                             <span className="font-medium">{member.experience}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Trophy className="h-3 w-3" />
                               Expertise:
                             </span>
                             <span className="font-medium">{member.expertise}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm mt-2">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Mail className="h-3 w-3" />
                             </span>
                             <span className="font-medium text-blue-600">{member.email}</span>
                           </div>
                           <div className="flex justify-between items-center text-sm">
-                            <span className="flex items-center gap-1 text-muted-foreground">
+                            <span className="flex items-center gap-1 text-black">
                               <Linkedin className="h-3 w-3" />
                             </span>
                             <span className="font-medium text-blue-600">linkedin.com/in/{member.linkedin}</span>

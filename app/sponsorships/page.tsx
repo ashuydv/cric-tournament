@@ -30,10 +30,10 @@ const Sponsorships = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Sponsorship Opportunities
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-black max-w-3xl mx-auto">
             Join RunBhumi as a sponsor and connect your brand with millions of
             passionate cricket fans across India. We offer a range of
             sponsorship packages designed to meet your marketing objectives.
@@ -43,7 +43,7 @@ const Sponsorships = () => {
         {/* Sponsorship Tiers */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {/* Title Sponsor */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300">
             <div className="bg-orange-600 p-4 text-white text-center">
               <h3 className="text-xl font-bold">Title Sponsor</h3>
               <p className="text-sm mt-1 opacity-90">Premier Partnership</p>
@@ -57,48 +57,46 @@ const Sponsorships = () => {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
-                    Exclusive tournament naming rights
+                  <span className="text-black">Exclusive naming rights</span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-black">
+                    Logo on all team sleeves/back
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
-                    Logo on all team jerseys
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Premium branding at all venues
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Integrated digital marketing campaigns
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
-                    Exclusive content with players
+                  <span className="text-black">
+                    Exclusive opportunities for content with players
                   </span>
                 </li>
               </ul>
               <div className="text-center">
                 <Link
-                  href="/contact-us?package=title"
+                  href="/contact?package=title"
                   className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-full transition duration-300"
                 >
-                  Inquire Now
+                  Enquire Now
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Associate Sponsor */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300">
             <div className="bg-orange-600 p-4 text-white text-center">
               <h3 className="text-xl font-bold">Associate Sponsor</h3>
               <p className="text-sm mt-1 opacity-90">Featured Partnership</p>
@@ -112,48 +110,46 @@ const Sponsorships = () => {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Co-branded tournament presence
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
-                    Logo on team sleeve/back
-                  </span>
+                  <span className="text-black">Logo on team sleeves/back</span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Branding at all match venues
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Social media campaign integration
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Player appearances for brand events
                   </span>
                 </li>
               </ul>
               <div className="text-center">
                 <Link
-                  href="/contact-us?package=associate"
-                  className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-300"
+                  href="/contact?package=associate"
+                  className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-full transition duration-300"
                 >
-                  Inquire Now
+                  Enquire Now
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Official Partner */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300">
             <div className="bg-orange-600 p-4 text-white text-center">
               <h3 className="text-xl font-bold">Official Partner</h3>
               <p className="text-sm mt-1 opacity-90">Category Exclusive</p>
@@ -167,41 +163,41 @@ const Sponsorships = () => {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Category exclusivity (e.g., Official Beverage)
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     In-venue branding opportunities
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Digital & social media integration
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Branded content opportunities
                   </span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">
+                  <span className="text-black">
                     Hospitality packages for key matches
                   </span>
                 </li>
               </ul>
               <div className="text-center">
                 <Link
-                  href="/contact-us?package=partner"
-                  className="inline-block bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-full transition duration-300"
+                  href="/contact?package=partner"
+                  className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-full transition duration-300"
                 >
-                  Inquire Now
+                  Enquire Now
                 </Link>
               </div>
             </div>
@@ -221,7 +217,7 @@ const Sponsorships = () => {
                   <Users className="h-6 w-6 text-orange-600 mr-2" />
                   <h4 className="font-semibold">Massive Audience</h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Connect with over 10 million cricket fans across India through
                   stadium attendance, broadcast viewers, and digital platforms.
                 </p>
@@ -232,9 +228,10 @@ const Sponsorships = () => {
                   <TrendingUp className="h-6 w-6 text-orange-600 mr-2" />
                   <h4 className="font-semibold">Brand Growth</h4>
                 </div>
-                <p className="text-gray-600">
-                  Associate with India's fastest growing cricket tournament and
-                  elevate your brand perception among passionate cricket fans.
+                <p className="text-black">
+                  Associate with India's first televised cricket reality show
+                  and league, and elevate your brand perception among passionate
+                  cricket fans.
                 </p>
               </div>
 
@@ -243,10 +240,9 @@ const Sponsorships = () => {
                   <Layers className="h-6 w-6 text-orange-600 mr-2" />
                   <h4 className="font-semibold">Multi-Platform Exposure</h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-black">
                   Gain exposure across television broadcasts, digital streaming,
-                  social media, and in-stadium advertising throughout the
-                  tournament.
+                  and social media advertising throughout all phases.
                 </p>
               </div>
             </div>
@@ -266,7 +262,7 @@ const Sponsorships = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="tel:+919810724283"
+                href="/contact"
                 className="bg-white text-orange-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300"
               >
                 Contact Us
@@ -284,12 +280,12 @@ const Sponsorships = () => {
           <div className="p-6 space-y-4">
             <div className="border-b border-gray-200 pb-3">
               <h4 className="font-semibold mb-2">
-                When does the next RunBhumi tournament take place?
+                When does the current RunBhumi season take place?
               </h4>
-              <p className="text-gray-600">
-                The next RunBhumi tournament is scheduled to take place from
-                July to September 2025. Sponsorship discussions should ideally
-                begin 4-6 months prior.
+              <p className="text-black">
+                The current RunBhumi season has already started and runs from
+                [START DATE] to [END DATE] 2025. Sponsorship opportunities are
+                still available for the remaining phases.
               </p>
             </div>
 
@@ -297,7 +293,7 @@ const Sponsorships = () => {
               <h4 className="font-semibold mb-2">
                 Can sponsorship packages be customized?
               </h4>
-              <p className="text-gray-600">
+              <p className="text-black">
                 Yes, we offer flexible sponsorship options that can be tailored
                 to meet your specific marketing objectives, target audience, and
                 budget requirements.
@@ -308,10 +304,9 @@ const Sponsorships = () => {
               <h4 className="font-semibold mb-2">
                 What is the viewership of RunBhumi?
               </h4>
-              <p className="text-gray-600">
+              <p className="text-black">
                 RunBhumi reaches over 10 million viewers through television
-                broadcasts, digital streaming platforms, and in-stadium
-                attendance across all tournament matches.
+                broadcasts and digital streaming platforms across all phases.
               </p>
             </div>
 
@@ -319,7 +314,7 @@ const Sponsorships = () => {
               <h4 className="font-semibold mb-2">
                 How can we measure ROI on our sponsorship?
               </h4>
-              <p className="text-gray-600">
+              <p className="text-black">
                 We provide comprehensive post-tournament reports including
                 metrics on brand visibility, audience engagement, media value,
                 and digital performance to help you measure ROI.
@@ -339,7 +334,7 @@ const Sponsorships = () => {
 
           {/* CTA Button */}
           <Link
-            href="/contact-us"
+            href="/contact"
             className="block w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 text-center rounded-lg transition-colors duration-300 uppercase relative overflow-hidden group"
           >
             <span className="flex items-center justify-center">

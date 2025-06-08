@@ -79,14 +79,14 @@ export default function RecentResults() {
                     </div>
                     <div className="flex flex-col">
                       <span className="font-medium">{match.team1}</span>
-                      <span className="text-sm text-muted-foreground">{match.team1Score}</span>
+                      <span className="text-sm text-black">{match.team1Score}</span>
                     </div>
                   </div>
                   <span className="text-sm font-bold">VS</span>
                   <div className="flex items-center gap-2">
                     <div className="flex flex-col items-end">
                       <span className="font-medium">{match.team2}</span>
-                      <span className="text-sm text-muted-foreground">{match.team2Score}</span>
+                      <span className="text-sm text-black">{match.team2Score}</span>
                     </div>
                     <div className="h-10 w-10 overflow-hidden rounded-full">
                       <Image
@@ -100,11 +100,11 @@ export default function RecentResults() {
                   </div>
                 </div>
                 <div className="mt-3 text-sm font-medium text-orange-600 dark:text-orange-500">{match.result}</div>
-                <div className="mt-2 flex items-center text-sm text-muted-foreground">
+                <div className="mt-2 flex items-center text-sm text-black">
                   <CalendarDays className="mr-1 h-3 w-3" />
                   <span>{match.date}</span>
                 </div>
-                <div className="mt-1 text-xs text-muted-foreground">{match.venue}</div>
+                <div className="mt-1 text-xs text-black">{match.venue}</div>
               </div>
             </CardContent>
           </Card>

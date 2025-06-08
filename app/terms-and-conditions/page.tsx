@@ -99,7 +99,7 @@
 //                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-gray-900 font-playfair">
 //                   Important Information
 //                 </h2>
-//                 <p className="text-gray-700 text-center mb-6">
+//                 <p className="text-black text-center mb-6">
 //                   Please read these Terms and Conditions carefully before using
 //                   the RunBhumi website or participating in any RunBhumi events.
 //                   By accessing our services, you agree to be bound by these
@@ -128,7 +128,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       By accessing our website, registering for an account,
 //                       purchasing tickets, or participating in our events, you
 //                       agree to be bound by these Terms. If you do not agree to
@@ -147,7 +147,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       "RunBhumi" refers to India's first-ever televised
 //                       individual cricket talent hunt platform, its website, and
 //                       related services.
@@ -183,7 +183,7 @@
 //                         36 Cities
 //                       </span>
 //                     </div>
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       By registering, you agree to:
 //                     </p>
 //                     <ul className="space-y-2 my-4">
@@ -219,7 +219,7 @@
 //                         </span>
 //                       </li>
 //                     </ul>
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       RunBhumi reserves the right to modify trial locations,
 //                       dates, or procedures as necessary, with notice provided to
 //                       registered participants.
@@ -238,7 +238,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       To access certain features of our Services, you may need
 //                       to register for an account. You agree to provide accurate,
 //                       current, and complete information during the registration
@@ -295,7 +295,7 @@
 //                         </li>
 //                       </ul>
 //                     </div>
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       Tickets may not be resold or transferred without prior
 //                       written consent from RunBhumi. Any tickets found to be
 //                       sold or transferred without authorization may be canceled
@@ -314,7 +314,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       By participating in RunBhumi events, trials, or the 45-day
 //                       cricket Gurukul training program, you agree to comply with
 //                       all venue rules and regulations, as well as any
@@ -344,7 +344,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       All participants must adhere to the RunBhumi Code of
 //                       Conduct, which includes but is not limited to:
 //                     </p>
@@ -353,7 +353,7 @@
 //                         <div className="font-medium text-gray-900 mb-2">
 //                           Team Dugouts
 //                         </div>
-//                         <p className="text-sm text-gray-700">
+//                         <p className="text-sm text-black">
 //                           Guidelines for behavior and conduct in team areas
 //                         </p>
 //                       </div>
@@ -361,7 +361,7 @@
 //                         <div className="font-medium text-gray-900 mb-2">
 //                           Cricket Rulebook
 //                         </div>
-//                         <p className="text-sm text-gray-700">
+//                         <p className="text-sm text-black">
 //                           Standard cricket regulations and play guidelines
 //                         </p>
 //                       </div>
@@ -369,7 +369,7 @@
 //                         <div className="font-medium text-gray-900 mb-2">
 //                           PMOA Guidelines
 //                         </div>
-//                         <p className="text-sm text-gray-700">
+//                         <p className="text-sm text-black">
 //                           Player and Match Official Area protocols
 //                         </p>
 //                       </div>
@@ -377,7 +377,7 @@
 //                         <div className="font-medium text-gray-900 mb-2">
 //                           Commercial Guidelines
 //                         </div>
-//                         <p className="text-sm text-gray-700">
+//                         <p className="text-sm text-black">
 //                           Rules regarding sponsors and commercial activities
 //                         </p>
 //                       </div>
@@ -405,12 +405,12 @@
 //                   <div className="pl-14">
 //                     <div className="bg-gray-100 p-5 rounded-lg my-4 border border-gray-200">
 //                       <div className="flex items-center gap-3 mb-3">
-//                         <Camera className="h-6 w-6 text-gray-700" />
+//                         <Camera className="h-6 w-6 text-black" />
 //                         <h3 className="text-lg font-semibold text-gray-900 m-0">
 //                           Media Rights Summary
 //                         </h3>
 //                       </div>
-//                       <p className="text-gray-700 mb-3">
+//                       <p className="text-black mb-3">
 //                         By participating in RunBhumi events or programs, you
 //                         grant RunBhumi the right to:
 //                       </p>
@@ -444,7 +444,7 @@
 //                         </li>
 //                       </ul>
 //                     </div>
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       You acknowledge that RunBhumi's goal is to transform
 //                       talented players into national sensations through media
 //                       exposure, and your participation may include public
@@ -470,13 +470,13 @@
 //                         </h3>
 //                       </div>
 //                       <div className="p-4">
-//                         <p className="text-gray-700 mb-2">
+//                         <p className="text-black mb-2">
 //                           All content on the RunBhumi website, including text,
 //                           graphics, logos, images, and software, is the property
 //                           of RunBhumi or its content suppliers and is protected
 //                           by copyright and other intellectual property laws.
 //                         </p>
-//                         <p className="text-gray-700">
+//                         <p className="text-black">
 //                           You may not reproduce, distribute, modify, create
 //                           derivative works of, publicly display, publicly
 //                           perform, republish, download, store, or transmit any
@@ -521,7 +521,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       You agree to defend, indemnify, and hold harmless
 //                       RunBhumi, its affiliates, licensors, and service
 //                       providers, and its and their respective officers,
@@ -568,7 +568,7 @@
 //                     </h2>
 //                   </div>
 //                   <div className="pl-14">
-//                     <p className="text-gray-700">
+//                     <p className="text-black">
 //                       RunBhumi reserves the right to modify or replace these
 //                       Terms at any time. If a revision is material, we will
 //                       provide at least 30 days' notice prior to any new terms
@@ -591,7 +591,7 @@
 //                       <h3 className="text-lg font-semibold text-gray-900 mb-4">
 //                         Get in Touch
 //                       </h3>
-//                       <p className="text-gray-700 mb-4">
+//                       <p className="text-black mb-4">
 //                         If you have any questions about these Terms, please
 //                         contact us at:
 //                       </p>
@@ -737,7 +737,7 @@
 //                             <p className="font-medium text-gray-900 mb-1">
 //                               Office Address
 //                             </p>
-//                             <p className="text-gray-700">
+//                             <p className="text-black">
 //                               MNT Dreams Pvt. Ltd. 770, Tower B - 1 Spaze IT
 //                               park, Sector 49 Sohna Road, Gurugram,
 //                               Haryana-122002
@@ -780,7 +780,7 @@ const TermsAndConditions = () => {
       <main className="container mx-auto py-12">
         <div className="bg-white rounded-lg overflow-hidden">
           <div className="p-6">
-            <p className="text-gray-700 mb-6">
+            <p className="text-black mb-6">
               These Terms and Conditions govern your participation in Run Bhumi
               Cricket Tournament and the use of our services. Please read these
               terms carefully before registering for any tournament.
@@ -790,7 +790,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Agreement to Terms
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 By using our website or participating in the tournament, you
                 agree to these Terms and Conditions. If you do not accept them,
                 please refrain from participation.
@@ -801,7 +801,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Eligibility
               </h2>
-              <ul className="list-disc pl-5 text-gray-700 space-y-2">
+              <ul className="list-disc pl-5 text-black space-y-2">
                 <li>
                   Must be at least 16 years old at the time of registration.
                 </li>
@@ -819,7 +819,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Registration
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Participants must provide accurate details during registration
                 and are responsible for maintaining their account security.
               </p>
@@ -829,7 +829,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Code of Conduct
               </h2>
-              <p className="text-gray-700 mb-2">
+              <p className="text-black mb-2">
                 Respectful and sportsmanlike behavior is expected at all times.
                 Any misconduct may lead to disqualification.
               </p>
@@ -839,7 +839,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Tournament Compliance
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 All participants must follow the tournament rules provided
                 before the event.
               </p>
@@ -849,7 +849,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Liability
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Run Bhumi is not responsible for any injuries or damages
                 sustained during participation.
               </p>
@@ -859,7 +859,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Privacy Protection
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 Our Privacy Policy outlines how we handle your data. Please
                 review it for details.
               </p>
@@ -869,7 +869,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Changes to Terms
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 We may update these terms at any time. Continued participation
                 after changes implies acceptance.
               </p>
@@ -879,7 +879,7 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Legal Jurisdiction
               </h2>
-              <p className="text-gray-700">
+              <p className="text-black">
                 These terms are governed by the laws of New Delhi, and disputes
                 will be settled in its courts.
               </p>
@@ -889,11 +889,11 @@ const TermsAndConditions = () => {
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
                 Contact Information
               </h2>
-              <p className="text-gray-700 mb-1">
+              <p className="text-black mb-1">
                 If you have any questions or concerns about these Terms and
                 Conditions, please contact us at:
               </p>
-              <div className="mt-3 text-gray-700">
+              <div className="mt-3 text-black">
                 <p>
                   <span className="font-medium">Email:</span>{" "}
                   <a

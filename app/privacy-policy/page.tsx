@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
                                     <Shield className="h-8 w-8 text-orange-600" />
                                 </div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-gray-900 font-playfair">Your Privacy Matters</h2>
-                                <p className="text-gray-700 text-center mb-6">
+                                <p className="text-black text-center mb-6">
                                     This Privacy Policy describes how RunBhumi collects, uses, and discloses your
                                     personal information when you visit our website, use our services, or interact with us.
                                     We are committed to protecting your data and ensuring transparency in our practices.
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage() {
                                         <h2 className="text-2xl font-bold mt-0 font-playfair">Information We Collect</h2>
                                     </div>
                                     <div className="pl-14">
-                                        <p className="text-gray-700">
+                                        <p className="text-black">
                                             We collect information that you provide directly to us, information we collect automatically when you
                                             use our services, and information from third-party sources.
                                         </p>
@@ -208,7 +208,7 @@ export default function PrivacyPolicyPage() {
                                         <h2 className="text-2xl font-bold mt-0 font-playfair">How We Use Your Information</h2>
                                     </div>
                                     <div className="pl-14">
-                                        <p className="text-gray-700">
+                                        <p className="text-black">
                                             We use the information we collect for various purposes, including:
                                         </p>
 
@@ -282,7 +282,7 @@ export default function PrivacyPolicyPage() {
                                         <h2 className="text-2xl font-bold mt-0 font-playfair">Sharing of Information</h2>
                                     </div>
                                     <div className="pl-14">
-                                        <p className="text-gray-700">
+                                        <p className="text-black">
                                             We may share your information with:
                                         </p>
 
@@ -299,7 +299,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <h3 className="font-semibold text-gray-900">Service Providers</h3>
                                                 </div>
-                                                <p className="text-gray-700 text-sm ml-11">
+                                                <p className="text-black text-sm ml-11">
                                                     Third parties who perform services on our behalf, such as payment processing, data analysis, email delivery, hosting, and customer service.
                                                 </p>
                                             </div>
@@ -314,7 +314,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <h3 className="font-semibold text-gray-900">Business Partners</h3>
                                                 </div>
-                                                <p className="text-gray-700 text-sm ml-11">
+                                                <p className="text-black text-sm ml-11">
                                                     Trusted third parties with whom we collaborate for joint marketing efforts, promotions, or services.
                                                 </p>
                                             </div>
@@ -329,7 +329,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <h3 className="font-semibold text-gray-900">Legal Authorities</h3>
                                                 </div>
-                                                <p className="text-gray-700 text-sm ml-11">
+                                                <p className="text-black text-sm ml-11">
                                                     When required by law, such as to comply with a subpoena, legal proceedings, or similar legal process.
                                                 </p>
                                             </div>
@@ -344,7 +344,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <h3 className="font-semibold text-gray-900">Business Transfers</h3>
                                                 </div>
-                                                <p className="text-gray-700 text-sm ml-11">
+                                                <p className="text-black text-sm ml-11">
                                                     In connection with a merger, acquisition, or sale of assets, where your information may be transferred as a business asset.
                                                 </p>
                                             </div>
@@ -361,7 +361,7 @@ export default function PrivacyPolicyPage() {
                                         <h2 className="text-2xl font-bold mt-0 font-playfair">Your Rights and Choices</h2>
                                     </div>
                                     <div className="pl-14">
-                                        <p className="text-gray-700">
+                                        <p className="text-black">
                                             Depending on your location, you may have certain rights regarding your personal information, including:
                                         </p>
 
@@ -445,7 +445,7 @@ export default function PrivacyPolicyPage() {
                                             <div className="flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6 mx-auto">
                                                 <Shield className="h-8 w-8 text-orange-600" />
                                             </div>
-                                            <p className="text-gray-700 text-center">
+                                            <p className="text-black text-center">
                                                 We implement appropriate technical and organizational measures to protect your personal information
                                                 against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission
                                                 over the Internet or electronic storage is 100% secure, so we cannot guarantee absolute security.
@@ -454,17 +454,17 @@ export default function PrivacyPolicyPage() {
                                                 <div className="bg-gray-50 p-4 rounded-lg text-center">
                                                     <Lock className="h-8 w-8 text-orange-600 mx-auto mb-2" />
                                                     <p className="text-sm font-medium text-gray-900">Encryption</p>
-                                                    <p className="text-xs text-gray-600 mt-1">Data encrypted in transit and at rest</p>
+                                                    <p className="text-xs text-black mt-1">Data encrypted in transit and at rest</p>
                                                 </div>
                                                 <div className="bg-gray-50 p-4 rounded-lg text-center">
                                                     <Shield className="h-8 w-8 text-orange-600 mx-auto mb-2" />
                                                     <p className="text-sm font-medium text-gray-900">Access Controls</p>
-                                                    <p className="text-xs text-gray-600 mt-1">Strict staff access permissions</p>
+                                                    <p className="text-xs text-black mt-1">Strict staff access permissions</p>
                                                 </div>
                                                 <div className="bg-gray-50 p-4 rounded-lg text-center">
                                                     <RefreshCw className="h-8 w-8 text-orange-600 mx-auto mb-2" />
                                                     <p className="text-sm font-medium text-gray-900">Regular Audits</p>
-                                                    <p className="text-xs text-gray-600 mt-1">Continuous security monitoring</p>
+                                                    <p className="text-xs text-black mt-1">Continuous security monitoring</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -526,11 +526,11 @@ export default function PrivacyPolicyPage() {
                                                 <h3 className="text-lg font-semibold text-gray-900 m-0">Policy Updates</h3>
                                             </div>
                                             <div className="p-4">
-                                                <p className="text-gray-700">
+                                                <p className="text-black">
                                                     We may update this Privacy Policy from time to time. We will notify you of any changes by posting the
                                                     new Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.
                                                 </p>
-                                                <p className="text-gray-700 mt-2">
+                                                <p className="text-black mt-2">
                                                     You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy
                                                     are effective when they are posted on this page.
                                                 </p>
@@ -550,7 +550,7 @@ export default function PrivacyPolicyPage() {
                                     <div className="pl-14">
                                         <div className="bg-white shadow-md rounded-xl p-6 border border-gray-100">
                                             <h3 className="text-lg font-semibold text-gray-900 mb-4">Questions About Privacy?</h3>
-                                            <p className="text-gray-700 mb-4">If you have any questions about this Privacy Policy, please contact our privacy team at:</p>
+                                            <p className="text-black mb-4">If you have any questions about this Privacy Policy, please contact our privacy team at:</p>
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <div className="flex items-start gap-3">
@@ -579,7 +579,7 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Address</p>
-                                                        <p className="text-gray-700"> MNT Dreams Pvt. Ltd.
+                                                        <p className="text-black"> MNT Dreams Pvt. Ltd.
                                                             <br />
                                                             770 , Tower B - 1 <br />
                                                             Spaze IT park ,Sector 49 <br />
@@ -589,7 +589,7 @@ export default function PrivacyPolicyPage() {
                                             </div>
 
                                             <div className="bg-gray-50 p-4 rounded-lg mt-6 text-center">
-                                                <p className="text-sm text-gray-600">
+                                                <p className="text-sm text-black">
                                                     For data subject access requests, please use our
                                                     <a href="/data-request" className="text-orange-600 hover:underline mx-1">data request form</a>
                                                     for faster processing.

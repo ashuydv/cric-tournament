@@ -22,7 +22,7 @@ export function StatsHero() {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                             India's Most Successful<br /><span className="text-orange-500">Cricket Talent Program</span>
                         </h1>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-xl text-black max-w-2xl mx-auto">
                             Since 2020, RunBhumi has been discovering and nurturing cricket talent from across India.
                         </p>
                     </div>
@@ -32,7 +32,7 @@ export function StatsHero() {
                             <div key={index} className="p-8 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition-all">
                                 {stat.icon}
                                 <h3 className="text-4xl font-bold text-gray-900">{stat.value}</h3>
-                                <p className="text-gray-600">{stat.label}</p>
+                                <p className="text-black">{stat.label}</p>
                             </div>
                         ))}
                     </div>

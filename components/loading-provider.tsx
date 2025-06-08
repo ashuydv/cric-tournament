@@ -66,7 +66,7 @@ export default function LoadingProvider({
                         </div>
 
                         {/* Loading text with cricket theme */}
-                        <div className="text-gray-800 font-medium">
+                        <div className="text-black font-medium">
                             {progress < 30 && "Setting up the pitch..."}
                             {progress >= 30 && progress < 60 && "Getting the players ready..."}
                             {progress >= 60 && progress < 90 && "Warming up..."}

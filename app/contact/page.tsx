@@ -115,7 +115,7 @@ export default function ContactPage() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center space-y-4 mb-10">
               <h2 className="text-3xl font-bold md:text-4xl">Get In Touch</h2>
-              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-lg">
+              <p className="max-w-[700px] mx-auto text-black md:text-lg">
                 We're here to help you with your cricket journey. Reach out to
                 us through any of these channels.
               </p>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold mb-2">Phone Support</h3>
-                    <p className="text-sm text-muted-foreground space-y-1">
+                    <p className="text-sm text-black space-y-1">
                       <div>WhatsApp: +91 9964391643</div>
                       <div>IVR: +91 9964392643</div>
                       <div>Office: +91 9964396643</div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold mb-2">Email Support</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-black">
                       hello@therunbhumi.com
                       <br />
                       <span className="text-xs block mt-1">
@@ -166,7 +166,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold mb-2">Office</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-black">
                       770, Tower B - 1
                       <br />
                       Spaze IT Park, Sector 49
@@ -190,7 +190,7 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-bold md:text-4xl">
                     Send us a Message
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-black">
                     Fill out the form below and we'll get back to you as soon as
                     possible.
                   </p>
@@ -352,7 +352,7 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-bold md:text-4xl">
                     Our Location
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-black">
                     Visit our office or connect with us virtually.
                   </p>
                 </div>

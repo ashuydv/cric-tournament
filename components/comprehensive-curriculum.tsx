@@ -62,7 +62,7 @@ export default function CricketCurriculum() {
                 <div className="bg-orange-100 p-2 sm:p-2.5 lg:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
                   <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-orange-600" />
                 </div>
-                <h5 className="text-base font-bold text-gray-800 leading-tight">
+                <h5 className="text-base font-bold text-black leading-tight">
                   {item.title}
                 </h5>
               </div>
@@ -71,7 +71,7 @@ export default function CricketCurriculum() {
                 {item.items.map((skill, skillIndex) => (
                   <li
                     key={skillIndex}
-                    className="flex items-start text-gray-700"
+                    className="flex items-start text-black"
                   >
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full mr-2 sm:mr-3 flex-shrink-0 mt-1.5 sm:mt-2"></div>
                     <span className="text-xs sm:text-sm lg:text-base xl:text-sm leading-relaxed">

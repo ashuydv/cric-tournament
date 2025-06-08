@@ -44,7 +44,7 @@ export default function FeaturedTeams() {
                     <div className="flex flex-col justify-center space-y-4 mt-6 lg:mt-0">
                         <div className="space-y-2">
                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tighter">World-Class Cricket Nations</h3>
-                            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
+                            <p className="text-sm sm:text-base md:text-lg text-black">
                                 The tournament features the top cricket nations from around the world, including defending champions
                                 Australia, cricket powerhouses India and England, and rising stars like Afghanistan.
                             </p>

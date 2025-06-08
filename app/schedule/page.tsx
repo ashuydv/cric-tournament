@@ -121,7 +121,7 @@ export default function SchedulePage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Schedule</h1>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Complete match schedule for the RunBhumi 2025
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function SchedulePage() {
                               </div>
                             </div>
                           </div>
-                          <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
+                          <div className="mt-4 flex items-center gap-4 text-sm text-black">
                             <div className="flex items-center gap-1">
                               <CalendarDays className="h-3 w-3" />
                               <span>{match.date}</span>
@@ -183,7 +183,7 @@ export default function SchedulePage() {
                               <span>{match.time}</span>
                             </div>
                           </div>
-                          <div className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+                          <div className="mt-1 flex items-center gap-1 text-xs text-black">
                             <MapPin className="h-3 w-3" />
                             <span>{match.venue}</span>
                           </div>
@@ -234,7 +234,7 @@ export default function SchedulePage() {
                               </div>
                             </div>
                           </div>
-                          <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
+                          <div className="mt-4 flex items-center gap-4 text-sm text-black">
                             <div className="flex items-center gap-1">
                               <CalendarDays className="h-3 w-3" />
                               <span>{match.date}</span>
@@ -244,7 +244,7 @@ export default function SchedulePage() {
                               <span>{match.time}</span>
                             </div>
                           </div>
-                          <div className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+                          <div className="mt-1 flex items-center gap-1 text-xs text-black">
                             <MapPin className="h-3 w-3" />
                             <span>{match.venue}</span>
                           </div>

@@ -26,16 +26,16 @@ export default function Home() {
                             <Link href="/" className="flex items-center text-sm font-medium text-orange-500">
                                 Home
                             </Link>
-                            <Link href="/teams" className="flex items-center text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors">
+                            <Link href="/teams" className="flex items-center text-sm font-medium text-black hover:text-orange-500 transition-colors">
                                 Teams
                             </Link>
-                            <Link href="/schedule" className="flex items-center text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors">
+                            <Link href="/schedule" className="flex items-center text-sm font-medium text-black hover:text-orange-500 transition-colors">
                                 Schedule
                             </Link>
-                            <Link href="/results" className="flex items-center text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors">
+                            <Link href="/results" className="flex items-center text-sm font-medium text-black hover:text-orange-500 transition-colors">
                                 Results
                             </Link>
-                            <Link href="/stats" className="flex items-center text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors">
+                            <Link href="/stats" className="flex items-center text-sm font-medium text-black hover:text-orange-500 transition-colors">
                                 Statistics
                             </Link>
                         </nav>
@@ -122,7 +122,7 @@ export default function Home() {
                                     </Button>
                                 </div>
 
-                                <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                <div className="flex items-center space-x-4 text-sm text-black">
                                     <div className="flex items-center space-x-1">
                                         <MapPin className="h-3 w-3" />
                                         <span>Multiple Venues, Australia</span>
@@ -195,7 +195,7 @@ export default function Home() {
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Overview</h2>
-                            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                            <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                 Follow all the action from the RunBhumi 2025
                             </p>
                         </div>
@@ -226,7 +226,7 @@ export default function Home() {
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Featured Teams</h2>
-                            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                            <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                 10 international teams competing for cricket glory
                             </p>
                         </div>
@@ -255,7 +255,7 @@ export default function Home() {
                         <div className="flex flex-col justify-center space-y-4">
                             <div className="space-y-2">
                                 <h3 className="text-2xl font-bold tracking-tighter md:text-3xl">World-Class Cricket Nations</h3>
-                                <p className="text-muted-foreground md:text-lg/relaxed">
+                                <p className="text-black md:text-lg/relaxed">
                                     The tournament features the top cricket nations from around the world, including defending champions
                                     Australia, cricket powerhouses India and England, and rising stars like Afghanistan.
                                 </p>
@@ -288,7 +288,7 @@ export default function Home() {
                                     </div>
                                     <div className="space-y-1">
                                         <h3 className="font-medium">Opening Ceremony</h3>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-sm text-black">
                                             A spectacular display featuring cultural performances and cricket legends.
                                         </p>
                                     </div>
@@ -299,7 +299,7 @@ export default function Home() {
                                     </div>
                                     <div className="space-y-1">
                                         <h3 className="font-medium">Rivalry Matches</h3>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-sm text-black">
                                             Intense showdowns between historic cricket rivals that will keep you on the edge of your seat.
                                         </p>
                                     </div>
@@ -310,7 +310,7 @@ export default function Home() {
                                     </div>
                                     <div className="space-y-1">
                                         <h3 className="font-medium">Finals Weekend</h3>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-sm text-black">
                                             The culmination of the tournament with semi-finals and the grand finale at the iconic Melbourne
                                             Cricket Ground.
                                         </p>
@@ -323,7 +323,7 @@ export default function Home() {
                                 Fan Experience
                             </div>
                             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">More Than Just Cricket</h2>
-                            <p className="text-muted-foreground md:text-lg/relaxed">
+                            <p className="text-black md:text-lg/relaxed">
                                 The RunBhumi offers a complete entertainment package for fans of all ages. Enjoy fan
                                 zones, meet-and-greets with cricket legends, interactive games, and delicious food from around the
                                 world.
@@ -336,7 +336,7 @@ export default function Home() {
                                                 <Trophy className="h-6 w-6 text-orange-700 dark:text-orange-400" />
                                             </div>
                                             <h3 className="font-medium">Fan Zones</h3>
-                                            <p className="text-xs text-muted-foreground">Interactive areas with games and activities</p>
+                                            <p className="text-xs text-black">Interactive areas with games and activities</p>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -347,7 +347,7 @@ export default function Home() {
                                                 <Users className="h-6 w-6 text-orange-700 dark:text-orange-400" />
                                             </div>
                                             <h3 className="font-medium">Meet Players</h3>
-                                            <p className="text-xs text-muted-foreground">Opportunities to meet cricket stars</p>
+                                            <p className="text-xs text-black">Opportunities to meet cricket stars</p>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -363,14 +363,14 @@ export default function Home() {
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Stay Updated</h2>
-                            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                            <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                 Subscribe to receive the latest news, match updates, and exclusive content
                             </p>
                         </div>
                         <div className="mx-auto w-full max-w-sm space-y-2">
                             <form className="flex space-x-2">
                                 <input
-                                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                     placeholder="Enter your email"
                                     type="email"
                                 />
@@ -378,7 +378,7 @@ export default function Home() {
                                     Subscribe
                                 </Button>
                             </form>
-                            <p className="text-xs text-muted-foreground">
+                            <p className="text-xs text-black">
                                 By subscribing, you agree to our Terms of Service and Privacy Policy.
                             </p>
                         </div>

@@ -66,7 +66,7 @@ export default function ResultsPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Match Results</h1>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Latest results from the RunBhumi 2025
               </p>
             </div>
@@ -106,14 +106,14 @@ export default function ResultsPage() {
                               </div>
                               <div className="flex flex-col">
                                 <span className="font-medium">{match.team1}</span>
-                                <span className="text-sm text-muted-foreground">{match.team1Score}</span>
+                                <span className="text-sm text-black">{match.team1Score}</span>
                               </div>
                             </div>
                             <span className="text-sm font-bold">VS</span>
                             <div className="flex items-center gap-2">
                               <div className="flex flex-col items-end">
                                 <span className="font-medium">{match.team2}</span>
-                                <span className="text-sm text-muted-foreground">{match.team2Score}</span>
+                                <span className="text-sm text-black">{match.team2Score}</span>
                               </div>
                               <div className="h-10 w-10 overflow-hidden rounded-full">
                                 <Image
@@ -129,11 +129,11 @@ export default function ResultsPage() {
                           <div className="mt-3 text-sm font-medium text-orange-600 dark:text-orange-500">
                             {match.result}
                           </div>
-                          <div className="mt-2 flex items-center text-sm text-muted-foreground">
+                          <div className="mt-2 flex items-center text-sm text-black">
                             <CalendarDays className="mr-1 h-3 w-3" />
                             <span>{match.date}</span>
                           </div>
-                          <div className="mt-1 text-xs text-muted-foreground">{match.venue}</div>
+                          <div className="mt-1 text-xs text-black">{match.venue}</div>
                         </div>
                       </CardContent>
                     </Card>
@@ -166,14 +166,14 @@ export default function ResultsPage() {
                               </div>
                               <div className="flex flex-col">
                                 <span className="font-medium">{match.team1}</span>
-                                <span className="text-sm text-muted-foreground">{match.team1Score}</span>
+                                <span className="text-sm text-black">{match.team1Score}</span>
                               </div>
                             </div>
                             <span className="text-sm font-bold">VS</span>
                             <div className="flex items-center gap-2">
                               <div className="flex flex-col items-end">
                                 <span className="font-medium">{match.team2}</span>
-                                <span className="text-sm text-muted-foreground">{match.team2Score}</span>
+                                <span className="text-sm text-black">{match.team2Score}</span>
                               </div>
                               <div className="h-10 w-10 overflow-hidden rounded-full">
                                 <Image
@@ -189,11 +189,11 @@ export default function ResultsPage() {
                           <div className="mt-3 text-sm font-medium text-orange-600 dark:text-orange-500">
                             {match.result}
                           </div>
-                          <div className="mt-2 flex items-center text-sm text-muted-foreground">
+                          <div className="mt-2 flex items-center text-sm text-black">
                             <CalendarDays className="mr-1 h-3 w-3" />
                             <span>{match.date}</span>
                           </div>
-                          <div className="mt-1 text-xs text-muted-foreground">{match.venue}</div>
+                          <div className="mt-1 text-xs text-black">{match.venue}</div>
                         </div>
                       </CardContent>
                     </Card>

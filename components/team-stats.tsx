@@ -29,7 +29,7 @@ export default function TeamStats({
         </CardHeader>
         <CardContent>
           <p className="text-2xl font-bold">{winPercentage}%</p>
-          <p className="text-xs text-muted-foreground">From {totalMatches} matches</p>
+          <p className="text-xs text-black">From {totalMatches} matches</p>
         </CardContent>
       </Card>
 
@@ -42,7 +42,7 @@ export default function TeamStats({
         </CardHeader>
         <CardContent>
           <p className="text-2xl font-bold">{championships}</p>
-          <p className="text-xs text-muted-foreground">Tournament titles</p>
+          <p className="text-xs text-black">Tournament titles</p>
         </CardContent>
       </Card>
 
@@ -55,7 +55,7 @@ export default function TeamStats({
         </CardHeader>
         <CardContent>
           <p className="text-2xl font-bold">{highestScore}</p>
-          <p className="text-xs text-muted-foreground">Team total</p>
+          <p className="text-xs text-black">Team total</p>
         </CardContent>
       </Card>
 
@@ -68,7 +68,7 @@ export default function TeamStats({
         </CardHeader>
         <CardContent>
           <p className="text-2xl font-bold">{bestBowling}</p>
-          <p className="text-xs text-muted-foreground">Best bowling figures</p>
+          <p className="text-xs text-black">Best bowling figures</p>
         </CardContent>
       </Card>
 
@@ -81,7 +81,7 @@ export default function TeamStats({
         </CardHeader>
         <CardContent>
           <p className="text-2xl font-bold">{rivalTeam}</p>
-          <p className="text-xs text-muted-foreground">Biggest competitor</p>
+          <p className="text-xs text-black">Biggest competitor</p>
         </CardContent>
       </Card>
 
@@ -94,7 +94,7 @@ export default function TeamStats({
         </CardHeader>
         <CardContent>
           <p className="text-2xl font-bold">18</p>
-          <p className="text-xs text-muted-foreground">Active players</p>
+          <p className="text-xs text-black">Active players</p>
         </CardContent>
       </Card>
     </div>
