@@ -569,11 +569,11 @@ export default function PrivacyPolicyPage() {
                                                     </div>
                                                     <div>
                                                         <p className="font-medium text-gray-900 mb-1">Phone</p>
-                                                        <a href="tel:+912212345678" className="text-orange-600 hover:underline">+91 22 9876 5432</a>
+                                                        <a href="tel:+919964392643" className="text-orange-600 hover:underline">+91 9964392643</a>
                                                     </div>
                                                 </div>
 
-                                                <div className="flex items-start gap-3 md:col-span-2">
+                                                {/* <div className="flex items-start gap-3 md:col-span-2">
                                                     <div className="bg-orange-100 p-2 rounded-full">
                                                         <MapPin className="h-5 w-5 text-orange-600" />
                                                     </div>
@@ -585,16 +585,16 @@ export default function PrivacyPolicyPage() {
                                                             Spaze IT park ,Sector 49 <br />
                                                             Sohna Road, Gurugram, Haryana-122018</p>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
 
-                                            <div className="bg-gray-50 p-4 rounded-lg mt-6 text-center">
+                                            {/* <div className="bg-gray-50 p-4 rounded-lg mt-6 text-center">
                                                 <p className="text-sm text-black">
                                                     For data subject access requests, please use our
                                                     <a href="/data-request" className="text-orange-600 hover:underline mx-1">data request form</a>
                                                     for faster processing.
                                                 </p>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>

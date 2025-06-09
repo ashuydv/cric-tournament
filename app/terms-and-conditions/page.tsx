@@ -150,11 +150,11 @@ const TermsAndConditions = () => {
                   <span className="font-medium">Office:</span>{" "}
                   <a href="tel:+919964392643">+91 9964392643</a>
                 </p>
-                <address className="not-italic">
+                {/* <address className="not-italic">
                   <span className="font-medium">Address: </span>
                   MNT Dreams Pvt. Ltd. 770, Tower B - 1 Spaze IT Park, Sector
                   49, Sohna Road, Gurugram, Haryana - 122018
-                </address>
+                </address> */}
               </div>
             </section>
           </div>
