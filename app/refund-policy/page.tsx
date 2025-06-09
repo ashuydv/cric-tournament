@@ -191,7 +191,7 @@ const RefundPolicy = () => {
                   <strong>Office:</strong>{" "}
                   <a href="tel:+919964392643">+91 9964392643</a>
                 </p>
-                <p>
+                {/* <p>
                   <strong>Address:</strong>
                   <br />
                   MNT Dreams Pvt. Ltd.
@@ -199,7 +199,7 @@ const RefundPolicy = () => {
                   770, Tower B - 1, Spaze IT Park,
                   <br />
                   Sector 49, Sohna Road, Gurugram, Haryana - 122018
-                </p>
+                </p> */}
               </div>
             </section>
           </div>

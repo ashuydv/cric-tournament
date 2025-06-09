@@ -1260,7 +1260,7 @@ export default function RegistrationPage() {
         </section>
 
         {/* Map Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        {/* <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center space-y-4 text-center mb-10">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
@@ -1285,10 +1285,10 @@ export default function RegistrationPage() {
               ></iframe>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* FAQ Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-50 dark:bg-orange-950/20">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-orange-950/20">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center space-y-4 text-center mb-10">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
