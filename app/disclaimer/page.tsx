@@ -116,7 +116,7 @@ const Disclaimer = (props: Props) => {
           <h2 className="text-xl font-semibold mb-2">Contact Us</h2>
           <p className="text-black">
             If you have any questions about this disclaimer, please contact us
-            at legal@runbhumi.com.
+            at support@therunbhumi.com
           </p>
         </div>
       </Card>
