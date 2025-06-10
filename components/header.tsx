@@ -380,7 +380,7 @@ export default function Header() {
                   setMobileMenuOpen(false);
                   document.body.style.overflow = "";
                 }}
-              >
+              > 
                 {link.label}
                 <span
                   className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600/80 via-orange-500 to-orange-600/80 transition-all duration-500 ease-out
