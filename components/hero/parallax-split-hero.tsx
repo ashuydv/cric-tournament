@@ -92,7 +92,7 @@ const ParallaxSplitHero = ({
             alt="Background image"
             width={1920}
             height={1080}
-            className="object-cover object-center sm:object-top bg-no-repeat h-full w-full"
+            className="object-cover object-[65%] sm:object-center bg-no-repeat h-full w-full"
             style={{ opacity: 1 - overlayOpacity }}
             priority
           />
@@ -106,7 +106,7 @@ const ParallaxSplitHero = ({
             alt="Background image"
             width={1920}
             height={1080}
-            className="object-cover object-center sm:object-top bg-no-repeat h-full w-full"
+            className="object-cover object-center sm:object-center bg-no-repeat h-full w-full"
             style={{ opacity: 1 - overlayOpacity }}
             priority
           />
