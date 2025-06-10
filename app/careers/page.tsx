@@ -1158,9 +1158,6 @@ const Career = () => {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white p-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-50">
         <div className="relative">
           {/* Season tag above button */}
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-black/90 to-black/90 backdrop-blur-sm text-center text-white text-xs font-bold py-1.5 px-4 rounded-t-xl border-t border-x border-orange-500/40 transition-all duration-300">
-            <span className="text-orange-400">JOIN OUR TEAM</span>
-          </div>
 
           {/* CTA Button */}
           <Link
