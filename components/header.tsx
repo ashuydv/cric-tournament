@@ -370,7 +370,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium py-3 px-4 uppercase rounded-lg transition-all duration-300 relative group overflow-hidden text-center md:text-left
+                className={`font-medium py-3 px-4  uppercase rounded-lg transition-all duration-300 relative group overflow-hidden text-center md:text-left
                   ${
                     isActive(link.href)
                       ? "text-orange-400 bg-gradient-to-r from-orange-950/40 via-orange-900/30 to-orange-950/40 backdrop-blur-sm"
