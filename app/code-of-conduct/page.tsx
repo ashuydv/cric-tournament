@@ -78,11 +78,11 @@ export default function DugoutCodePage() {
                     </p>
                     <p className="text-slate-600">
                       In the interest of maintaining operational discipline and
-                      ensuring fair play throughout the tournament, we request
-                      your strict adherence to the following{" "}
-                      <b>Dugout Protocols</b>, which form part of the official
-                      Players and Match Officials Area and are subject to
-                      regulated access controls:
+                      ensuring fair play throughout the event, we request your
+                      strict adherence to the following <b>Dugout Protocols</b>,
+                      which form part of the official Players and Match
+                      Officials Area and are subject to regulated access
+                      controls:
                     </p>
                   </div>
 

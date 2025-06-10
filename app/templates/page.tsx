@@ -19,7 +19,7 @@ import LeftHero from "@/components/common/left-hero";
 // Example custom components
 const StatsCounter = () => (
   <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg">
-    <h3 className="text-xl font-bold text-white mb-4">Tournament Impact</h3>
+    <h3 className="text-xl font-bold text-white mb-4">Impact</h3>
     <div className="grid grid-cols-3 gap-4">
       {[
         { value: "50K+", label: "Participants" },

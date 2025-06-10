@@ -58,12 +58,12 @@ const Career = () => {
       featured: true,
       salary: "₹8-12 LPA",
       description:
-        "Lead our sales team to drive revenue growth and expand our market presence in the cricket tournament and talent hunt programs.",
+        "Lead our sales team to drive revenue growth and expand our market presence in the cricket talent hunt programs.",
       responsibilities: [
         "Develop and implement strategic sales plans to achieve revenue targets",
         "Manage and mentor a team of sales representatives",
         "Build and maintain relationships with key clients and stakeholders",
-        "Identify new business opportunities in cricket tournaments and talent development",
+        "Identify new business opportunities in cricket talent development",
         "Collaborate with marketing team on promotional campaigns",
         "Prepare sales reports and forecasts for senior management",
       ],
@@ -93,9 +93,9 @@ const Career = () => {
       featured: true,
       salary: "₹10-15 LPA",
       description:
-        "Drive brand awareness and marketing strategies for RunBhumi's cricket tournaments and talent hunt programs across India.",
+        "Drive brand awareness and marketing strategies for RunBhumi across India.",
       responsibilities: [
-        "Develop comprehensive marketing strategies for cricket tournaments",
+        "Develop comprehensive marketing strategies",
         "Manage digital marketing campaigns across multiple platforms",
         "Oversee brand partnerships and sponsorship opportunities",
         "Lead creative campaigns for talent hunt program promotion",
@@ -168,9 +168,9 @@ const Career = () => {
       featured: false,
       salary: "₹5-8 LPA",
       description:
-        "Plan and execute cricket tournaments and talent hunt events ensuring seamless operations and exceptional participant experience.",
+        "Plan and execute talent hunt events ensuring seamless operations and exceptional participant experience.",
       responsibilities: [
-        "Plan and coordinate cricket tournaments from conception to completion",
+        "Plan and coordinate proagrams from conception to completion",
         "Manage venue selection, logistics, and vendor relationships",
         "Oversee talent hunt event organization across regions",
         "Coordinate with teams, officials, and broadcast partners",
@@ -180,7 +180,7 @@ const Career = () => {
       requirements: [
         "Bachelor's degree in Event Management, Sports Management, or related field",
         "3-5 years of event management experience",
-        "Knowledge of cricket tournament operations",
+        "Knowledge of event operations",
         "Strong project management and organizational skills",
         "Ability to work under pressure and tight deadlines",
         "Excellent vendor and stakeholder management",
@@ -203,7 +203,7 @@ const Career = () => {
       featured: false,
       salary: "₹4-7 LPA",
       description:
-        "Drive digital engagement and online presence for RunBhumi's cricket tournaments and talent development programs.",
+        "Drive digital engagement and online presence for RunBhumi programs.",
       responsibilities: [
         "Manage social media channels and content strategy",
         "Execute digital advertising campaigns",
@@ -273,7 +273,7 @@ const Career = () => {
       featured: false,
       salary: "₹4-6 LPA",
       description:
-        "Identify and evaluate cricket talent across India for our talent hunt program and tournament participation.",
+        "Identify and evaluate cricket talent across India for our talent hunt program and league participation.",
       responsibilities: [
         "Scout cricket talent at grassroots and academy levels",
         "Evaluate player skills and potential",
@@ -312,7 +312,7 @@ const Career = () => {
       responsibilities: [
         "Write compelling content for website and social media",
         "Create player profiles and success stories",
-        "Develop tournament match reports and analyses",
+        "Develop match reports and analyses",
         "Craft email newsletters and marketing copy",
         "Collaborate with marketing team on content strategy",
         "Maintain brand voice and content guidelines",
@@ -343,9 +343,9 @@ const Career = () => {
       featured: false,
       salary: "₹4-7 LPA",
       description:
-        "Create compelling video content for cricket tournaments, talent hunt programs, and digital marketing campaigns.",
+        "Create compelling video content for reality show, and digital marketing campaigns.",
       responsibilities: [
-        "Edit tournament highlights and match footage",
+        "Edit highlights and match footage",
         "Create promotional videos for talent hunt events",
         "Develop social media video content",
         "Collaborate with marketing team on video campaigns",
@@ -455,7 +455,7 @@ const Career = () => {
         "Oversee coaching staff and training programs",
         "Coordinate with local cricket boards and associations",
         "Monitor player development progress",
-        "Organize regional tournaments and showcases",
+        "Organize regional leagues and showcases",
         "Maintain facility operations and standards",
       ],
       requirements: [
@@ -505,7 +505,7 @@ const Career = () => {
       {/* Hero Section */}
       <LeftHero
         title="Careers at RunBhumi"
-        description="Join our team and be part of India's most exciting cricket tournament & talent hunt program"
+        description="Join our team and be part of India's most exciting cricket talent hunt program"
         backgroundType="image"
         backgroundSrc="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop"
         height="small"

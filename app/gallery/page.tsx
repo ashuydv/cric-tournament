@@ -33,7 +33,7 @@ export default function GalleryPage() {
 
                 <LeftHero
                     title="Gallery"
-                    description="Explore the best moments from RunBhumi cricket tournaments"
+                    description="Explore the best moments from RunBhumi"
                     backgroundType="image"
                     backgroundSrc="images/3.png"
                     height="small"

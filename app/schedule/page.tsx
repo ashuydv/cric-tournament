@@ -1,10 +1,10 @@
-import { CalendarDays, Clock, MapPin } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { CalendarDays, Clock, MapPin } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function SchedulePage() {
   // Sample schedule data
@@ -112,7 +112,7 @@ export default function SchedulePage() {
         stage: "Final",
       },
     ],
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -120,7 +120,9 @@ export default function SchedulePage() {
         <div className="container px-4 md:px-6  mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Schedule</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Schedule
+              </h1>
               <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Complete match schedule for the RunBhumi 2025
               </p>
@@ -150,7 +152,9 @@ export default function SchedulePage() {
                             <div className="flex items-center gap-2">
                               <div className="h-10 w-10 overflow-hidden rounded-full">
                                 <Image
-                                  src={`/placeholder.svg?height=40&width=40&text=${match.team1.charAt(0)}`}
+                                  src={`/placeholder.svg?height=40&width=40&text=${match.team1.charAt(
+                                    0
+                                  )}`}
                                   width={40}
                                   height={40}
                                   alt={match.team1}
@@ -164,7 +168,9 @@ export default function SchedulePage() {
                               <span className="font-medium">{match.team2}</span>
                               <div className="h-10 w-10 overflow-hidden rounded-full">
                                 <Image
-                                  src={`/placeholder.svg?height=40&width=40&text=${match.team2.charAt(0)}`}
+                                  src={`/placeholder.svg?height=40&width=40&text=${match.team2.charAt(
+                                    0
+                                  )}`}
                                   width={40}
                                   height={40}
                                   alt={match.team2}
@@ -259,5 +265,5 @@ export default function SchedulePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

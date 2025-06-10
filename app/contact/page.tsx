@@ -17,7 +17,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { MapPin, Mail, Phone, Send, MessageCircle, User, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Send,
+  MessageCircle,
+  User,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function ContactPage() {
@@ -57,7 +66,10 @@ export default function ContactPage() {
       newErrors.message = "Message should be at least 10 characters long";
     }
 
-    if (formData.phone && !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s/g, ''))) {
+    if (
+      formData.phone &&
+      !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s/g, ""))
+    ) {
       newErrors.phone = "Please enter a valid phone number";
     }
 
@@ -75,9 +87,9 @@ export default function ContactPage() {
 
     // Clear specific field error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ""
+        [name]: "",
       }));
     }
   };
@@ -160,7 +172,9 @@ export default function ContactPage() {
         <section className="w-full py-8 md:py-12 bg-gray-50">
           <div className="container px-4 md:px-6 mx-auto max-w-6xl">
             <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-10">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Get In Touch</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                Get In Touch
+              </h2>
               <p className="max-w-[700px] mx-auto text-gray-600 text-sm md:text-base lg:text-lg px-4">
                 We're here to help you with your cricket journey. Reach out to
                 us through any of these channels.
@@ -175,17 +189,25 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2 text-sm md:text-base">Phone Support</h3>
+                    <h3 className="font-bold mb-2 text-sm md:text-base">
+                      Phone Support
+                    </h3>
                     <div className="text-xs md:text-sm text-gray-600 space-y-1">
                       <div className="flex items-center justify-center gap-2">
                         <span className="font-medium">WhatsApp:</span>
-                        <a href="tel:+919964391643" className="text-orange-600 hover:text-orange-700 transition-colors">
+                        <a
+                          href="tel:+919964391643"
+                          className="text-orange-600 hover:text-orange-700 transition-colors"
+                        >
                           +91 9964391643
                         </a>
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <span className="font-medium">Office:</span>
-                        <a href="tel:+919964392643" className="text-orange-600 hover:text-orange-700 transition-colors">
+                        <a
+                          href="tel:+919964392643"
+                          className="text-orange-600 hover:text-orange-700 transition-colors"
+                        >
                           +91 9964392643
                         </a>
                       </div>
@@ -201,7 +223,9 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2 text-sm md:text-base">Email Support</h3>
+                    <h3 className="font-bold mb-2 text-sm md:text-base">
+                      Email Support
+                    </h3>
                     <a
                       href="mailto:support@therunbhumi.com"
                       className="text-xs md:text-sm text-orange-600 hover:text-orange-700 transition-colors"
@@ -231,7 +255,10 @@ export default function ContactPage() {
 
               <Card className="shadow-lg">
                 <CardContent className="p-4 md:p-6 lg:p-8">
-                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-4 md:space-y-6"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       {/* Name */}
                       <div className="space-y-2">
@@ -247,8 +274,11 @@ export default function ContactPage() {
                             value={formData.name}
                             onChange={handleInputChange}
                             placeholder="Your full name"
-                            className={`pl-10 h-11 md:h-12 transition-colors ${errors.name ? 'border-red-500 focus:border-red-500' : 'focus:border-orange-500'
-                              }`}
+                            className={`pl-10 h-11 md:h-12 transition-colors ${
+                              errors.name
+                                ? "border-red-500 focus:border-red-500"
+                                : "focus:border-orange-500"
+                            }`}
                           />
                         </div>
                         {errors.name && (
@@ -273,8 +303,11 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={handleInputChange}
                             placeholder="your@email.com"
-                            className={`pl-10 h-11 md:h-12 transition-colors ${errors.email ? 'border-red-500 focus:border-red-500' : 'focus:border-orange-500'
-                              }`}
+                            className={`pl-10 h-11 md:h-12 transition-colors ${
+                              errors.email
+                                ? "border-red-500 focus:border-red-500"
+                                : "focus:border-orange-500"
+                            }`}
                           />
                         </div>
                         {errors.email && (
@@ -289,7 +322,9 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       {/* Phone */}
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
+                        <Label htmlFor="phone" className="text-sm font-medium">
+                          Phone Number
+                        </Label>
                         <div className="relative">
                           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                           <Input
@@ -299,8 +334,11 @@ export default function ContactPage() {
                             value={formData.phone}
                             onChange={handleInputChange}
                             placeholder="+91 XXXXXXXXXX"
-                            className={`pl-10 h-11 md:h-12 transition-colors ${errors.phone ? 'border-red-500 focus:border-red-500' : 'focus:border-orange-500'
-                              }`}
+                            className={`pl-10 h-11 md:h-12 transition-colors ${
+                              errors.phone
+                                ? "border-red-500 focus:border-red-500"
+                                : "focus:border-orange-500"
+                            }`}
                           />
                         </div>
                         {errors.phone && (
@@ -313,7 +351,12 @@ export default function ContactPage() {
 
                       {/* Inquiry Type */}
                       <div className="space-y-2">
-                        <Label htmlFor="inquiryType" className="text-sm font-medium">Inquiry Type</Label>
+                        <Label
+                          htmlFor="inquiryType"
+                          className="text-sm font-medium"
+                        >
+                          Inquiry Type
+                        </Label>
                         <Select
                           onValueChange={handleSelectChange}
                           value={formData.inquiryType}
@@ -323,7 +366,7 @@ export default function ContactPage() {
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="registration">
-                              Tournament Registration
+                              Registration
                             </SelectItem>
                             <SelectItem value="trials">
                               Trial Information
@@ -355,8 +398,11 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleInputChange}
                         placeholder="Brief subject of your message"
-                        className={`h-11 md:h-12 transition-colors ${errors.subject ? 'border-red-500 focus:border-red-500' : 'focus:border-orange-500'
-                          }`}
+                        className={`h-11 md:h-12 transition-colors ${
+                          errors.subject
+                            ? "border-red-500 focus:border-red-500"
+                            : "focus:border-orange-500"
+                        }`}
                       />
                       {errors.subject && (
                         <p className="text-red-500 text-xs flex items-center gap-1">
@@ -380,8 +426,11 @@ export default function ContactPage() {
                           onChange={handleInputChange}
                           placeholder="Tell us more about your inquiry..."
                           rows={5}
-                          className={`pl-10 resize-none min-h-[120px] transition-colors ${errors.message ? 'border-red-500 focus:border-red-500' : 'focus:border-orange-500'
-                            }`}
+                          className={`pl-10 resize-none min-h-[120px] transition-colors ${
+                            errors.message
+                              ? "border-red-500 focus:border-red-500"
+                              : "focus:border-orange-500"
+                          }`}
                         />
                       </div>
                       {errors.message && (

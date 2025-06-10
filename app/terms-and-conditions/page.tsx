@@ -21,8 +21,8 @@ const TermsAndConditions = () => {
           <div className="p-6">
             <p className="text-black mb-6">
               These Terms and Conditions govern your participation in Run Bhumi
-              Cricket Tournament and the use of our services. Please read these
-              terms carefully before registering for any tournament.
+              initiatives and the use of our services. Please read these terms
+              carefully before registerations.
             </p>
 
             <section className="mb-8">
@@ -30,9 +30,9 @@ const TermsAndConditions = () => {
                 Agreement to Terms
               </h2>
               <p className="text-black">
-                By using our website or participating in the tournament, you
-                agree to these Terms and Conditions. If you do not accept them,
-                please refrain from participation.
+                By using our website or participating in the talent hunt event,
+                you agree to these Terms and Conditions. If you do not accept
+                them, please refrain from participation.
               </p>
             </section>
 
@@ -76,11 +76,11 @@ const TermsAndConditions = () => {
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-orange-600 mb-4">
-                Tournament Compliance
+                Compliance
               </h2>
               <p className="text-black">
-                All participants must follow the tournament rules provided
-                before the event.
+                All participants must follow the rules provided before the
+                event.
               </p>
             </section>
 

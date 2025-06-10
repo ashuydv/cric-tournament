@@ -179,7 +179,7 @@ export default function Home() {
                 <Landmark className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">
-                Gurukul(Televised Reality Show) Training
+                Gurukul Training (Televised Reality Show)
               </h3>
               <p className="text-black">
                 Experience a holistic development approach that nurtures not
@@ -835,9 +835,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Anjum Chopra</h5>
-                        <p className="text-black">
-                          Women’s Cricket Ambassador
-                        </p>
+                        <p className="text-black">Women’s Cricket Ambassador</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             Former India Captain

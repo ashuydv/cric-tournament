@@ -1,10 +1,17 @@
-import { Trophy } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { Trophy } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function StatsPage() {
   // Sample stats data
@@ -170,7 +177,7 @@ export default function StatsPage() {
         bowlingAvg: 29.4,
       },
     ],
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -178,7 +185,9 @@ export default function StatsPage() {
         <div className="container px-4 md:px-6  mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tournament Statistics</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Statistics
+              </h1>
               <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Player performance statistics for the RunBhumi 2025
               </p>
@@ -219,15 +228,29 @@ export default function StatsPage() {
                       <TableBody>
                         {stats.batting.map((player) => (
                           <TableRow key={player.rank}>
-                            <TableCell className="font-medium">{player.rank}</TableCell>
+                            <TableCell className="font-medium">
+                              {player.rank}
+                            </TableCell>
                             <TableCell>{player.player}</TableCell>
                             <TableCell>{player.team}</TableCell>
-                            <TableCell className="text-right">{player.matches}</TableCell>
-                            <TableCell className="text-right font-semibold">{player.runs}</TableCell>
-                            <TableCell className="text-right">{player.average.toFixed(2)}</TableCell>
-                            <TableCell className="text-right">{player.strikeRate.toFixed(2)}</TableCell>
-                            <TableCell className="text-right">{player.fifties}</TableCell>
-                            <TableCell className="text-right">{player.hundreds}</TableCell>
+                            <TableCell className="text-right">
+                              {player.matches}
+                            </TableCell>
+                            <TableCell className="text-right font-semibold">
+                              {player.runs}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.average.toFixed(2)}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.strikeRate.toFixed(2)}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.fifties}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.hundreds}
+                            </TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
@@ -259,14 +282,26 @@ export default function StatsPage() {
                       <TableBody>
                         {stats.bowling.map((player) => (
                           <TableRow key={player.rank}>
-                            <TableCell className="font-medium">{player.rank}</TableCell>
+                            <TableCell className="font-medium">
+                              {player.rank}
+                            </TableCell>
                             <TableCell>{player.player}</TableCell>
                             <TableCell>{player.team}</TableCell>
-                            <TableCell className="text-right">{player.matches}</TableCell>
-                            <TableCell className="text-right font-semibold">{player.wickets}</TableCell>
-                            <TableCell className="text-right">{player.economy.toFixed(2)}</TableCell>
-                            <TableCell className="text-right">{player.average.toFixed(2)}</TableCell>
-                            <TableCell className="text-right">{player.bestFigures}</TableCell>
+                            <TableCell className="text-right">
+                              {player.matches}
+                            </TableCell>
+                            <TableCell className="text-right font-semibold">
+                              {player.wickets}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.economy.toFixed(2)}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.average.toFixed(2)}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.bestFigures}
+                            </TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
@@ -298,14 +333,26 @@ export default function StatsPage() {
                       <TableBody>
                         {stats.allRounders.map((player) => (
                           <TableRow key={player.rank}>
-                            <TableCell className="font-medium">{player.rank}</TableCell>
+                            <TableCell className="font-medium">
+                              {player.rank}
+                            </TableCell>
                             <TableCell>{player.player}</TableCell>
                             <TableCell>{player.team}</TableCell>
-                            <TableCell className="text-right">{player.matches}</TableCell>
-                            <TableCell className="text-right">{player.runs}</TableCell>
-                            <TableCell className="text-right">{player.wickets}</TableCell>
-                            <TableCell className="text-right">{player.battingAvg.toFixed(2)}</TableCell>
-                            <TableCell className="text-right">{player.bowlingAvg.toFixed(2)}</TableCell>
+                            <TableCell className="text-right">
+                              {player.matches}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.runs}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.wickets}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.battingAvg.toFixed(2)}
+                            </TableCell>
+                            <TableCell className="text-right">
+                              {player.bowlingAvg.toFixed(2)}
+                            </TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
@@ -322,7 +369,9 @@ export default function StatsPage() {
         <div className="container px-4 md:px-6  mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Tournament Records</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Records
+              </h2>
               <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Notable achievements and records from the RunBhumi 2025
               </p>
@@ -331,7 +380,9 @@ export default function StatsPage() {
           <div className="mx-auto grid max-w-5xl gap-8 pt-12 md:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg">Highest Individual Score</CardTitle>
+                <CardTitle className="text-lg">
+                  Highest Individual Score
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-4">
@@ -346,8 +397,12 @@ export default function StatsPage() {
                   </div>
                   <div>
                     <div className="font-semibold">Joe Root (England)</div>
-                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">145</div>
-                    <div className="text-xs text-black">vs Pakistan, June 5, 2025</div>
+                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                      145
+                    </div>
+                    <div className="text-xs text-black">
+                      vs Pakistan, June 5, 2025
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -369,8 +424,12 @@ export default function StatsPage() {
                   </div>
                   <div>
                     <div className="font-semibold">Jasprit Bumrah (India)</div>
-                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">5/28</div>
-                    <div className="text-xs text-black">vs New Zealand, June 7, 2025</div>
+                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                      5/28
+                    </div>
+                    <div className="text-xs text-black">
+                      vs New Zealand, June 7, 2025
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -392,8 +451,12 @@ export default function StatsPage() {
                   </div>
                   <div>
                     <div className="font-semibold">England</div>
-                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">315/8</div>
-                    <div className="text-xs text-black">vs West Indies, June 6, 2025</div>
+                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                      315/8
+                    </div>
+                    <div className="text-xs text-black">
+                      vs West Indies, June 6, 2025
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -415,7 +478,9 @@ export default function StatsPage() {
                   </div>
                   <div>
                     <div className="font-semibold">Jos Buttler (England)</div>
-                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">12</div>
+                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                      12
+                    </div>
                     <div className="text-xs text-black">3 matches</div>
                   </div>
                 </div>
@@ -438,8 +503,12 @@ export default function StatsPage() {
                   </div>
                   <div>
                     <div className="font-semibold">Virat Kohli (India)</div>
-                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">67 balls</div>
-                    <div className="text-xs text-black">vs New Zealand, June 7, 2025</div>
+                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                      67 balls
+                    </div>
+                    <div className="text-xs text-black">
+                      vs New Zealand, June 7, 2025
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -460,9 +529,15 @@ export default function StatsPage() {
                     />
                   </div>
                   <div>
-                    <div className="font-semibold">Smith & Marsh (Australia)</div>
-                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">175 runs</div>
-                    <div className="text-xs text-black">vs Pakistan, June 5, 2025</div>
+                    <div className="font-semibold">
+                      Smith & Marsh (Australia)
+                    </div>
+                    <div className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                      175 runs
+                    </div>
+                    <div className="text-xs text-black">
+                      vs Pakistan, June 5, 2025
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -471,5 +546,5 @@ export default function StatsPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

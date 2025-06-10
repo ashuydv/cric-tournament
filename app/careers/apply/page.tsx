@@ -56,7 +56,7 @@ const Apply = (props: Props) => {
       <div className="min-h-screen bg-gray-50">
         <LeftHero
           title="Careers at RunBhumi"
-          description="Join our team and be part of India's most exciting cricket tournament & talent hunt program"
+          description="Join our team and be part of India's most exciting program"
           backgroundType="image"
           backgroundSrc="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop"
           height="small"
@@ -124,7 +124,7 @@ const Apply = (props: Props) => {
     <div className="flex flex-col min-h-screen bg-gray-50">
       <LeftHero
         title="Careers at RunBhumi"
-        description="Join our team and be part of India's most exciting cricket tournament & talent hunt program"
+        description="Join our team and be part of India's most exciting program"
         backgroundType="image"
         backgroundSrc="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop"
         height="small"

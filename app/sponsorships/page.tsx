@@ -18,7 +18,7 @@ const Sponsorships = () => {
       {/* Hero Section */}
       <LeftHero
         title="Sponsorships"
-        description="Connect your brand with RunBhumi - India's premier cricket tournament"
+        description="Connect your brand with RunBhumi - India's premier televised cricket reality show"
         backgroundType="image"
         backgroundSrc="https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1000&auto=format&fit=crop"
         height="small"
@@ -110,9 +110,7 @@ const Sponsorships = () => {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-black">
-                    Co-branded tournament presence
-                  </span>
+                  <span className="text-black">Co-branded presence</span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -328,8 +326,8 @@ const Sponsorships = () => {
               <p className="text-black">
                 RunBhumi sponsorship encompasses three distinct phases: Trials
                 (talent discovery phase), Reality Show (televised competition),
-                and Leagues (final tournament matches), each offering unique
-                brand exposure opportunities.
+                and Leagues (final matches), each offering unique brand exposure
+                opportunities.
               </p>
             </div>
 
@@ -339,8 +337,8 @@ const Sponsorships = () => {
               </h4>
               <p className="text-black">
                 We provide customized ROI measurement models and comprehensive
-                post-tournament reports tailored to your specific objectives,
-                with detailed proposals available upon enquiry.
+                post-event reports tailored to your specific objectives, with
+                detailed proposals available upon enquiry.
               </p>
             </div>
           </div>
