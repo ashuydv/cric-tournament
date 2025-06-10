@@ -376,7 +376,10 @@ export default function Header() {
                       ? "text-orange-400 bg-gradient-to-r from-orange-950/40 via-orange-900/30 to-orange-950/40 backdrop-blur-sm"
                       : "text-white hover:text-orange-300 hover:bg-gradient-to-r hover:from-orange-950/20 hover:via-orange-900/10 hover:to-orange-950/20 hover:backdrop-blur-sm"
                   }`}
-                onClick={toggleMobileMenu}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  document.body.style.overflow = "";
+                }}
               >
                 {link.label}
                 <span
@@ -394,7 +397,10 @@ export default function Header() {
             <Link
               href="/register"
               className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 block text-center uppercase"
-              onClick={toggleMobileMenu}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                document.body.style.overflow = "";
+              }}
             >
               Register for Trials
             </Link>
@@ -408,7 +414,10 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     className="text-gray-300 hover:text-orange-300 transition-colors duration-300 flex items-center justify-center sm:justify-start space-x-2 py-2 px-3 rounded-md hover:bg-orange-950/20"
-                    onClick={toggleMobileMenu}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
                   >
                     <Icon size={16} className="text-orange-400" />
                     <span className="text-sm">{link.label}</span>
