@@ -1149,7 +1149,7 @@ export default function RegistrationPage() {
                       <div>
                         <h3 className="font-bold">Trials Start</h3>
                         <p className="text-black mt-1">
-                          Thursday, July 5, 2025
+                          Saturday, June 21, 2025
                         </p>
                       </div>
                     </CardContent>
