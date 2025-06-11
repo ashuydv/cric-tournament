@@ -97,69 +97,75 @@ const stateCityMap: StateCityMap = {
 // Define trial schedule data
 const trialSchedule = [
   {
-    date: "17-May-25",
+    date: "28-Jun-25",
     locations: ["Indore", "Gwalior", "Vadodara", "Coming Soon"],
   },
   {
-    date: "18-May-25",
-    locations: ["Surat", "Ahmedabad", "Rajkot", "Coming Soon"],
-  },
-  { date: "24-May-25", locations: ["Varanasi", "Delhi", "Coming Soon", "Goa"] },
-  {
-    date: "25-May-25",
-    locations: ["Kolkata", "Patna", "Lucknow", "Coming Soon"],
-  },
-  {
-    date: "31-May-25",
-    locations: ["Bhopal", "Jabalpur", "Gwalior", "Coming Soon"],
-  },
-  { date: "01-Jun-25", locations: ["Thane", "Pune", "Panvel", "Coming Soon"] },
-  {
-    date: "07-Jun-25",
-    locations: ["Mumbai", "Nashik", "Bangalore", "Coming Soon"],
-  },
-  {
-    date: "08-Jun-25",
-    locations: ["Hyderabad", "Vijayawada", "Mysore", "Coming Soon"],
-  },
-  {
-    date: "14-Jun-25",
-    locations: ["Raipur", "Bhubaneshwar", "Dehradun", "Coming Soon"],
-  },
-  {
-    date: "15-Jun-25",
-    locations: ["Aurangabad", "Nagpur", "Solapur", "Kolhapur"],
-  },
-  {
-    date: "21-Jun-25",
-    locations: ["Noida", "Agra", "Amritsar", "Coming Soon"],
-  },
-  {
-    date: "22-Jun-25",
-    locations: ["Rajkot", "Udaipur", "Chennai", "Coming Soon"],
-  },
-  {
-    date: "28-Jun-25",
-    locations: ["Jhansi", "Jamshedpur", "Coming Soon", "Coming Soon"],
-  },
-  {
     date: "29-Jun-25",
-    locations: ["Guwahati", "Ranchi", "Coming Soon", "Coming Soon"],
+    locations: ["Surat", "Ahmedabad", "Rajkot", "Coming Soon"],
   },
   {
     date: "05-Jul-25",
-    locations: ["Jammu", "Chandigarh", "Coming Soon", "Coming Soon"],
+    locations: ["Varanasi", "Delhi", "Coming Soon", "Goa"],
   },
   {
     date: "06-Jul-25",
-    locations: ["Jaipur", "Jodhpur", "Coming Soon", "Coming Soon"],
+    locations: ["Kolkata", "Patna", "Lucknow", "Coming Soon"],
   },
   {
     date: "12-Jul-25",
-    locations: ["Meerut", "Hisar", "Coming Soon", "Coming Soon"],
+    locations: ["Bhopal", "Jabalpur", "Gwalior", "Coming Soon"],
   },
   {
     date: "13-Jul-25",
+    locations: ["Thane", "Pune", "Panvel", "Coming Soon"],
+  },
+  {
+    date: "19-Jul-25",
+    locations: ["Mumbai", "Nashik", "Bangalore", "Coming Soon"],
+  },
+  {
+    date: "20-Jul-25",
+    locations: ["Hyderabad", "Vijayawada", "Mysore", "Coming Soon"],
+  },
+  {
+    date: "26-Jul-25",
+    locations: ["Raipur", "Bhubaneshwar", "Dehradun", "Coming Soon"],
+  },
+  {
+    date: "27-Jul-25",
+    locations: ["Aurangabad", "Nagpur", "Solapur", "Kolhapur"],
+  },
+  {
+    date: "02-Aug-25",
+    locations: ["Noida", "Agra", "Amritsar", "Coming Soon"],
+  },
+  {
+    date: "03-Aug-25",
+    locations: ["Rajkot", "Udaipur", "Chennai", "Coming Soon"],
+  },
+  {
+    date: "09-Aug-25",
+    locations: ["Jhansi", "Jamshedpur", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "10-Aug-25",
+    locations: ["Guwahati", "Ranchi", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "16-Aug-25",
+    locations: ["Jammu", "Chandigarh", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "17-Aug-25",
+    locations: ["Jaipur", "Jodhpur", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "23-Aug-25",
+    locations: ["Meerut", "Hisar", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "24-Aug-25",
     locations: ["Amritsar", "Rohtak", "Coming Soon", "Coming Soon"],
   },
 ];

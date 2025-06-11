@@ -138,11 +138,11 @@ export default function Home() {
                 <UserCircle className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">
-                India & renowned International cricket legends
+                India & renowned International cricket legends
               </h3>
               <p className="text-black">
                 Receive direct coaching and guidance from global cricketing
-                legends, gaining invaluable insights from those who’ve excelled
+                legends, gaining invaluable insights from those who've excelled
                 at the highest level of the game.
               </p>
             </Card>
@@ -159,62 +159,89 @@ export default function Home() {
               </p>
             </Card>
 
-            <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
+            <Card className="md:col-span-2 lg:col-span-3 p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Trophy className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">
                 Franchise Opportunities
               </h3>
-              <p className="text-black leading-relaxed">
-                Own your own T20 franchise in a one‑of‑its‑kind league alongside
-                cricket’s most esteemed gurus. You’ll start seeing returns from
-                day one, and it’s the perfect way to put your brand on the
-                map—reaching fans both in India and around the world.
-              </p>
+              <div className="text-black leading-relaxed space-y-4">
+                <p className="font-medium text-gray-800">
+                  India's first cultural cricket talent hunt, reality televised
+                  show and international cricket league invites visionary
+                  partners to join our mission.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="bg-orange-50 p-3 rounded-lg">
+                    <h4 className="font-semibold text-orange-700 mb-1">
+                      Phase 1: Regional Expansion
+                    </h4>
+                    <p className="text-sm">
+                      Zonal, state and city franchise trials in 60+ cities
+                      across 5 zones and 20+ states throughout India.
+                    </p>
+                  </div>
+
+                  <div className="bg-orange-50 p-3 rounded-lg">
+                    <h4 className="font-semibold text-orange-700 mb-1">
+                      Phase 2: Reality Show
+                    </h4>
+                    <p className="text-sm">
+                      India's first televised cricket reality show featuring
+                      selected talent.
+                    </p>
+                  </div>
+
+                  <div className="bg-orange-50 p-3 rounded-lg">
+                    <h4 className="font-semibold text-orange-700 mb-1">
+                      Phase 3: Professional League
+                    </h4>
+                    <p className="text-sm">
+                      Co-ownership opportunities for 8 teams featuring
+                      international legends and RunBhumi players.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 p-3 bg-gradient-to-r from-orange-100 to-orange-200 rounded-lg">
+                  <p className="text-sm font-medium text-orange-800">
+                    📅 Phase 1 Franchise Registration: June 10 - July 15, 2025
+                  </p>
+                </div>
+              </div>
             </Card>
 
-            <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Landmark className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                Gurukul Training (Televised Reality Show)
-              </h3>
-              <p className="text-black">
-                Experience a holistic development approach that nurtures not
-                only cricketing skills but also character, discipline, and
-                mental strength.
-              </p>
-            </Card>
+            <div className="md:col-span-2 lg:col-span-3 grid md:grid-cols-2 gap-8">
+              <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
+                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <Landmark className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">
+                  Gurukul Training (Televised Reality Show)
+                </h3>
+                <p className="text-black">
+                  Experience a holistic development approach that nurtures not
+                  only cricketing skills but also character, discipline, and
+                  mental strength.
+                </p>
+              </Card>
 
-            <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Users className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                Global Network & Community
-              </h3>
-              <p className="text-black">
-                Join a vibrant community of aspiring cricketers from around the
-                world. Build lasting connections, share experiences, and grow
-                together in your cricket journey.
-              </p>
-            </Card>
-
-            {/* <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <LineChart className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                Live Scoring & Analytics
-              </h3>
-              <p className="text-black">
-                Follow matches in real-time with our comprehensive scoring
-                system and receive detailed performance analytics to improve
-                your game.
-              </p>
-            </Card> */}
+              <Card className="p-6 bg-white border-none hover:shadow-xl transition-all rounded-3xl hover:translate-y-[-5px]">
+                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <Users className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">
+                  Global Network & Community
+                </h3>
+                <p className="text-black">
+                  Join a vibrant community of aspiring cricketers from around
+                  the world. Build lasting connections, share experiences, and
+                  grow together in your cricket journey.
+                </p>
+              </Card>
+            </div>
           </div>
 
           <div className="mt-12 text-center">
