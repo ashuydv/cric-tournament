@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -46,6 +48,16 @@ import {
   Camera,
   ClipboardCheckIcon,
 } from "lucide-react";
+import { useState, useEffect } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -62,8 +74,137 @@ import RegisterButton from "@/components/register-button";
 import DynamicButton from "@/components/dynamic-button";
 import SelectionPathRoadmap from "@/components/selection-path-roadmap";
 import CricketCurriculum from "@/components/comprehensive-curriculum";
+import { Input } from "@/components/ui/input";
+
+// Define trial schedule data
+const trialSchedule = [
+  {
+    date: "28-Jun-25",
+    locations: ["Indore", "Gwalior", "Vadodara", "Coming Soon"],
+  },
+  {
+    date: "29-Jun-25",
+    locations: ["Surat", "Ahmedabad", "Rajkot", "Coming Soon"],
+  },
+  {
+    date: "05-Jul-25",
+    locations: ["Varanasi", "Delhi", "Coming Soon", "Goa"],
+  },
+  {
+    date: "06-Jul-25",
+    locations: ["Kolkata", "Patna", "Lucknow", "Coming Soon"],
+  },
+  {
+    date: "12-Jul-25",
+    locations: ["Bhopal", "Jabalpur", "Gwalior", "Coming Soon"],
+  },
+  {
+    date: "13-Jul-25",
+    locations: ["Thane", "Pune", "Panvel", "Coming Soon"],
+  },
+  {
+    date: "19-Jul-25",
+    locations: ["Mumbai", "Nashik", "Bangalore", "Coming Soon"],
+  },
+  {
+    date: "20-Jul-25",
+    locations: ["Hyderabad", "Vijayawada", "Mysore", "Coming Soon"],
+  },
+  {
+    date: "26-Jul-25",
+    locations: ["Raipur", "Bhubaneshwar", "Dehradun", "Coming Soon"],
+  },
+  {
+    date: "27-Jul-25",
+    locations: ["Aurangabad", "Nagpur", "Solapur", "Kolhapur"],
+  },
+  {
+    date: "02-Aug-25",
+    locations: ["Noida", "Agra", "Amritsar", "Coming Soon"],
+  },
+  {
+    date: "03-Aug-25",
+    locations: ["Rajkot", "Udaipur", "Chennai", "Coming Soon"],
+  },
+  {
+    date: "09-Aug-25",
+    locations: ["Jhansi", "Jamshedpur", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "10-Aug-25",
+    locations: ["Guwahati", "Ranchi", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "16-Aug-25",
+    locations: ["Jammu", "Chandigarh", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "17-Aug-25",
+    locations: ["Jaipur", "Jodhpur", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "23-Aug-25",
+    locations: ["Meerut", "Hisar", "Coming Soon", "Coming Soon"],
+  },
+  {
+    date: "24-Aug-25",
+    locations: ["Amritsar", "Rohtak", "Coming Soon", "Coming Soon"],
+  },
+];
 
 export default function Home() {
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [filteredSchedule, setFilteredSchedule] = useState(trialSchedule);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [appliedState, setAppliedState] = useState<string>("");
+  const [appliedCity, setAppliedCity] = useState<string | null>(null);
+
+  // Handle city selection from the trial schedule
+  const handleCitySelect = (city: string) => {
+    if (!city || city === "") return;
+    setSelectedCity(city);
+    setAppliedCity(city);
+  };
+
+  // Clear filters function
+  const clearFilters = () => {
+    setSelectedCity(null);
+    setAppliedState("");
+    setAppliedCity(null);
+    setSearchTerm("");
+    setFilteredSchedule(trialSchedule);
+  };
+
+  // Filter trial schedule based on search term and applied filters
+  useEffect(() => {
+    let filtered = trialSchedule;
+
+    // Apply search term filter
+    if (searchTerm) {
+      filtered = filtered.filter((schedule) => {
+        // Check if date contains search term
+        if (schedule.date.toLowerCase().includes(searchTerm.toLowerCase()))
+          return true;
+
+        // Check if any location contains search term
+        return schedule.locations.some((location) =>
+          location.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
+    }
+
+    // Apply city filter
+    if (appliedCity) {
+      filtered = filtered.filter((schedule) =>
+        schedule.locations.some(
+          (location) => location.toLowerCase() === appliedCity.toLowerCase()
+        )
+      );
+    }
+
+    setFilteredSchedule(filtered);
+  }, [searchTerm, appliedState, appliedCity]);
+
   return (
     <div className="flex flex-col bg-white">
       <ParallaxSplitHero
@@ -84,9 +225,9 @@ export default function Home() {
           //   the limelight of national television.
           // </>
           <>
-            RunBhumi is India’s first televised cricket-based reality show,
+            RunBhumi is India's first televised cricket-based reality show,
             followed by an international league, that discovers raw talent from
-            India’s heartlands, offering equal opportunities to all, regardless
+            India's heartlands, offering equal opportunities to all, regardless
             of caste, class, or background. <br /> More than a game, RunBhumi
             blends cricket with culture, nurturing talent through yoga,
             meditation, and Indian values — uniting Bharat through its roots and
@@ -323,85 +464,170 @@ export default function Home() {
               </TabsList>
 
               <TabsContent value="city-wise" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  <Card className="overflow-hidden">
-                    <CardHeader className="bg-orange-50 p-4">
-                      <CardTitle className="text-xl">Mumbai</CardTitle>
-                      <CardDescription>Western Zone Trials</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4">
-                      <div className="space-y-2">
-                        <div className="flex items-center">
-                          <CalendarIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>May 15-18, 2025</span>
-                        </div>
-                        <div className="flex items-center">
-                          <MapPinIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>DY Patil Stadium, Navi Mumbai</span>
-                        </div>
-                        <div className="flex items-center">
-                          <UsersIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>300 slots available</span>
-                        </div>
+                <Card className="overflow-hidden border border-gray-200 mb-8 sm:mb-10">
+                  {/* Search and Filter Section */}
+                  <div className="p-4 bg-gray-50 border-b border-gray-200">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <div className="relative flex-1">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                        <Input
+                          placeholder="Search city or date..."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          className="pl-10 bg-white text-sm"
+                        />
                       </div>
-                    </CardContent>
-                    <CardFooter className="p-4 bg-gray-50">
-                      <RegisterButton />
-                    </CardFooter>
-                  </Card>
+                      {(appliedState || appliedCity || searchTerm) && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={clearFilters}
+                          className="text-xs sm:text-sm w-full sm:w-auto"
+                        >
+                          Reset Filters
+                        </Button>
+                      )}
+                    </div>
+                  </div>
 
-                  <Card className="overflow-hidden">
-                    <CardHeader className="bg-orange-50 p-4">
-                      <CardTitle className="text-xl">Delhi</CardTitle>
-                      <CardDescription>Northern Zone Trials</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4">
-                      <div className="space-y-2">
-                        <div className="flex items-center">
-                          <CalendarIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>June 5-8, 2025</span>
-                        </div>
-                        <div className="flex items-center">
-                          <MapPinIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>Arun Jaitley Stadium, Delhi</span>
-                        </div>
-                        <div className="flex items-center">
-                          <UsersIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>250 slots available</span>
-                        </div>
+                  {/* Mobile Card View */}
+                  <div className="block sm:hidden">
+                    {filteredSchedule.length > 0 ? (
+                      <div className="divide-y divide-gray-200">
+                        {filteredSchedule.map((schedule, index) => (
+                          <div key={index} className="p-4 bg-white">
+                            <div className="font-semibold text-orange-600 mb-3 text-sm">
+                              {schedule.date}
+                            </div>
+                            <div className="grid grid-cols-2 gap-2">
+                              {schedule.locations.map((location, locIndex) => (
+                                <div key={locIndex} className="text-center">
+                                  {location && location !== "Coming Soon" ? (
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      className={`w-full text-xs ${
+                                        selectedCity === location
+                                          ? "bg-orange-100 text-orange-800"
+                                          : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                      }`}
+                                      onClick={() => handleCitySelect(location)}
+                                    >
+                                      {location}
+                                      {selectedCity === location && (
+                                        <Check className="ml-1 h-3 w-3" />
+                                      )}
+                                    </Button>
+                                  ) : (
+                                    <div className="text-gray-400 text-xs py-2">
+                                      {location || "—"}
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    </CardContent>
-                    <CardFooter className="p-4 bg-gray-50">
-                      <RegisterButton />
-                    </CardFooter>
-                  </Card>
+                    ) : (
+                      <div className="p-6 text-center text-black text-sm">
+                        No trial dates match your current filters. Please try
+                        different search criteria.
+                      </div>
+                    )}
+                  </div>
 
-                  <Card className="overflow-hidden">
-                    <CardHeader className="bg-orange-50 p-4">
-                      <CardTitle className="text-xl">Chennai</CardTitle>
-                      <CardDescription>Southern Zone Trials</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4">
-                      <div className="space-y-2">
-                        <div className="flex items-center">
-                          <CalendarIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>June 20-23, 2025</span>
-                        </div>
-                        <div className="flex items-center">
-                          <MapPinIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>MA Chidambaram Stadium, Chennai</span>
-                        </div>
-                        <div className="flex items-center">
-                          <UsersIcon className="mr-2 h-4 w-4 text-orange-500" />
-                          <span>275 slots available</span>
+                  {/* Tablet and Desktop Table View */}
+                  <div className="hidden sm:block overflow-x-auto">
+                    <Table>
+                      <TableHeader className="bg-orange-100">
+                        <TableRow>
+                          <TableHead className="w-1/5 font-bold text-xs sm:text-sm">
+                            Date
+                          </TableHead>
+                          <TableHead className="text-center font-bold text-xs sm:text-sm">
+                            Location 1
+                          </TableHead>
+                          <TableHead className="text-center font-bold text-xs sm:text-sm">
+                            Location 2
+                          </TableHead>
+                          <TableHead className="text-center font-bold text-xs sm:text-sm">
+                            Location 3
+                          </TableHead>
+                          <TableHead className="text-center font-bold text-xs sm:text-sm">
+                            Location 4
+                          </TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {filteredSchedule.length > 0 ? (
+                          filteredSchedule.map((schedule, index) => (
+                            <TableRow
+                              key={index}
+                              className={
+                                index % 2 === 0 ? "bg-white" : "bg-gray-50"
+                              }
+                            >
+                              <TableCell className="font-medium text-xs sm:text-sm">
+                                {schedule.date}
+                              </TableCell>
+                              {schedule.locations.map((location, locIndex) => (
+                                <TableCell
+                                  key={locIndex}
+                                  className="text-center"
+                                >
+                                  {location && location !== "Coming Soon" ? (
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      className={`text-xs sm:text-sm ${
+                                        selectedCity === location
+                                          ? "bg-orange-100 text-orange-800"
+                                          : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                      }`}
+                                    >
+                                      {location}
+                                      {selectedCity === location && (
+                                        <Check className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
+                                      )}
+                                    </Button>
+                                  ) : (
+                                    <span className="text-gray-400 text-xs sm:text-sm">
+                                      {location || "—"}
+                                    </span>
+                                  )}
+                                </TableCell>
+                              ))}
+                            </TableRow>
+                          ))
+                        ) : (
+                          <TableRow>
+                            <TableCell
+                              colSpan={5}
+                              className="text-center py-8 text-black text-sm"
+                            >
+                              No trial dates match your current filters. Please
+                              try different search criteria.
+                            </TableCell>
+                          </TableRow>
+                        )}
+                      </TableBody>
+                    </Table>
+                  </div>
+
+                  {/* Table Footer - Responsive */}
+                  {filteredSchedule.length > 0 && (
+                    <div className="p-3 sm:p-4 bg-gray-50 border-t border-gray-200">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <div className="text-xs sm:text-sm text-black">
+                          {filteredSchedule.length === trialSchedule.length
+                            ? `Showing all ${trialSchedule.length} trial dates`
+                            : `Showing ${filteredSchedule.length} of ${trialSchedule.length} trial dates`}
                         </div>
                       </div>
-                    </CardContent>
-                    <CardFooter className="p-4 bg-gray-50">
-                      <RegisterButton />
-                    </CardFooter>
-                  </Card>
-                </div>
+                    </div>
+                  )}
+                </Card>
               </TabsContent>
 
               <TabsContent value="eligibility" className="pt-6">
@@ -862,7 +1088,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h5 className="font-bold text-lg">Anjum Chopra</h5>
-                        <p className="text-black">Women’s Cricket Ambassador</p>
+                        <p className="text-black">Women's Cricket Ambassador</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             Former India Captain
