@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "therunbhumi-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -54,6 +54,7 @@
     "embla-carousel-react": "8.5.1",
     "firebase": "^11.6.0",
     "framer-motion": "^12.7.4",
+    "googleapis": "^150.0.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "motion": "^12.9.2",

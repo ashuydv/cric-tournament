@@ -27,7 +27,6 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import { supabase } from "@/lib/supabaseClient";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -112,18 +111,19 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.from("contact_messages").insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-          inquiry_type: formData.inquiryType,
+      // Send data to our new API route
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      ]);
+        body: JSON.stringify(formData),
+      });
 
-      if (error) throw error;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to send message");
+      }
 
       toast({
         title: "Message Sent Successfully!",
@@ -144,6 +144,7 @@ export default function ContactPage() {
       });
       setErrors({});
     } catch (error: any) {
+      console.error("Contact form submission error:", error); // Log the error
       toast({
         title: "Error",
         description:
