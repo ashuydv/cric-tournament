@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -91,4 +92,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  scroll-behavior: smooth;
 }

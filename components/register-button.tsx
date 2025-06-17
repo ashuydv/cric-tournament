@@ -25,7 +25,7 @@ export const RegisterButton = () => {
                 SEASON 1
             </div> */}
 
-      <Link href="/register">
+      <Link href="/register#form">
         <Button
           className={`
                     bg-orange-500 hover:bg-orange-600 

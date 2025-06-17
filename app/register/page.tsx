@@ -676,7 +676,7 @@ export default function RegistrationPage() {
         </section>
 
         {/* Registration Form Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32" id="form">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
               {/* Registration Form */}
@@ -1149,7 +1149,8 @@ export default function RegistrationPage() {
                       <div>
                         <h3 className="font-bold">Trials Start</h3>
                         <p className="text-black mt-1">
-                          Saturday, June 21, 2025
+                          Delhi, Saturday, June 28, 2025<br />
+                          Chandigarh, Sunday, June 29, 2025<br />
                         </p>
                       </div>
                     </CardContent>
@@ -1238,11 +1239,10 @@ export default function RegistrationPage() {
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className={`text-xs sm:text-sm ${
-                                  selectedCity === location
-                                    ? "bg-orange-100 text-orange-800"
-                                    : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
-                                }`}
+                                className={`text-xs sm:text-sm ${selectedCity === location
+                                  ? "bg-orange-100 text-orange-800"
+                                  : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                  }`}
                                 onClick={() => handleCitySelect(location)}
                               >
                                 {location}
