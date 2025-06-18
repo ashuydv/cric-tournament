@@ -83,6 +83,38 @@ const stateCityMap: StateCityMap = {
   jammunkashmir: ["Jammu"],
 };
 
+// Define state-zone mapping
+type StateZoneMap = {
+  [key: string]: string;
+};
+
+const stateZoneMap: StateZoneMap = {
+  delhi: "North",
+  haryana: "North",
+  punjab: "North",
+  chandigarh: "North",
+  jammuandkashmir: "North",
+  jammunkashmir: "North",
+  uttarakhand: "North",
+  uttarpradesh: "North",
+  rajasthan: "North",
+  bihar: "East",
+  jharkhand: "East",
+  westbengal: "East",
+  odisha: "East",
+  assam: "East",
+  maharashtra: "West",
+  gujarat: "West",
+  goa: "West",
+  madhyapradesh: "Central",
+  chattisgarh: "Central",
+  karnataka: "South",
+  tamilnadu: "South",
+  kerala: "South",
+  andhrapradesh: "South",
+  telangana: "South",
+};
+
 // Define trial schedule data
 const trialSchedule = [
   {
@@ -170,20 +202,20 @@ export const useFormAutoScroll = () => {
   useEffect(() => {
     const scrollToForm = () => {
       // Check if URL has #form hash
-      if (window.location.hash === '#form') {
-        const formElement = document.getElementById('form');
+      if (window.location.hash === "#form") {
+        const formElement = document.getElementById("form");
         if (formElement) {
           // Add a small delay to ensure page is fully loaded
           setTimeout(() => {
             formElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-              inline: 'nearest'
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
             });
 
             // Focus on first input field after scroll (firstName in your case)
             setTimeout(() => {
-              const firstInput = formElement.querySelector('#firstName');
+              const firstInput = formElement.querySelector("#firstName");
               if (firstInput && firstInput instanceof HTMLElement) {
                 firstInput.focus();
               }
@@ -198,17 +230,17 @@ export const useFormAutoScroll = () => {
 
     // Also run when hash changes (if user navigates)
     const handleHashChange = () => scrollToForm();
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
 
     // Add a check for initial page load with hash
-    if (window.location.hash === '#form') {
+    if (window.location.hash === "#form") {
       // Run after a slightly longer delay on initial page load
       setTimeout(scrollToForm, 1000);
     }
 
     // Cleanup
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 };
@@ -312,6 +344,7 @@ export default function RegistrationPage() {
         ...prev,
         [id]: value,
         trialCity: "", // Reset city when state changes
+        trialZone: stateZoneMap[value] || "", // Set trial zone based on selected state
       }));
 
       // Update available cities based on selected state
@@ -1198,8 +1231,10 @@ export default function RegistrationPage() {
                       <div>
                         <h3 className="font-bold">Trials Start</h3>
                         <p className="text-black mt-1">
-                          Delhi, Saturday, June 28, 2025<br />
-                          Chandigarh, Sunday, June 29, 2025<br />
+                          Delhi, Saturday, June 28, 2025
+                          <br />
+                          Chandigarh, Sunday, June 29, 2025
+                          <br />
                         </p>
                       </div>
                     </CardContent>
@@ -1288,10 +1323,11 @@ export default function RegistrationPage() {
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className={`text-xs sm:text-sm ${selectedCity === location
-                                  ? "bg-orange-100 text-orange-800"
-                                  : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
-                                  }`}
+                                className={`text-xs sm:text-sm ${
+                                  selectedCity === location
+                                    ? "bg-orange-100 text-orange-800"
+                                    : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                }`}
                                 onClick={() => handleCitySelect(location)}
                               >
                                 {location}
