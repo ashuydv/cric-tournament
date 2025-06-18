@@ -4,7 +4,10 @@ import Razorpay from "razorpay";
 export async function POST(req: Request) {
   try {
     // Check if environment variables exist
-    if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+    if (
+      !process.env.RAZORPAY_KEY_ID ||
+      !process.env.RAZORPAY_KEY_SECRET
+    ) {
       console.error("Razorpay credentials missing");
       throw new Error("Razorpay credentials not configured");
     }
@@ -52,15 +55,15 @@ export async function POST(req: Request) {
     }
 
     console.log("Creating Razorpay order with params:", {
-      amount: Math.round(amount * 100),
+      amount: Math.round(amount),
       currency,
       receipt,
-      notes: { ...notes, source: "cricket-tournament-registration" }
+      notes: { ...notes, source: "cricket-tournament-registration" },
     });
 
     // Create payment order
     const order = await razorpay.orders.create({
-      amount: Math.round(amount * 100), // Convert to paise
+      amount: Math.round(amount), // Already in paise
       currency,
       receipt,
       notes: {
@@ -83,7 +86,6 @@ export async function POST(req: Request) {
         key: process.env.RAZORPAY_KEY_ID,
       },
     });
-
   } catch (error: any) {
     console.error("Payment creation error:", error);
 

@@ -423,6 +423,15 @@ export default function RegistrationPage() {
         throw new Error(errorData.error || "Failed to save registration data");
       }
 
+      // Calculate amount based on playing role
+      const GST_RATE = 0.18;
+      let baseAmount = 1500;
+      if (formData.playingRoles === "allrounder") {
+        baseAmount = 2000;
+      }
+      // Razorpay expects amount in paise
+      const totalAmount = Math.round(baseAmount * (1 + GST_RATE) * 100); // INR to paise
+
       // Use the production public key
       // const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
       const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
@@ -438,7 +447,7 @@ export default function RegistrationPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: 1770,
+          amount: totalAmount,
           currency: "INR",
           receipt: receiptId,
           notes: {
