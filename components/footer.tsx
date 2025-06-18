@@ -26,7 +26,7 @@ export default function Footer() {
     // },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/_.runbhumi._/",
+      href: "https://www.instagram.com/therunbhumi/",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
