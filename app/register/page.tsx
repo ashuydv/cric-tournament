@@ -165,7 +165,56 @@ declare global {
   }
 }
 
+// Custom hook for handling form auto-scroll
+export const useFormAutoScroll = () => {
+  useEffect(() => {
+    const scrollToForm = () => {
+      // Check if URL has #form hash
+      if (window.location.hash === '#form') {
+        const formElement = document.getElementById('form');
+        if (formElement) {
+          // Add a small delay to ensure page is fully loaded
+          setTimeout(() => {
+            formElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'nearest'
+            });
+
+            // Focus on first input field after scroll (firstName in your case)
+            setTimeout(() => {
+              const firstInput = formElement.querySelector('#firstName');
+              if (firstInput && firstInput instanceof HTMLElement) {
+                firstInput.focus();
+              }
+            }, 800);
+          }, 300);
+        }
+      }
+    };
+
+    // Run on mount and when hash changes
+    scrollToForm();
+
+    // Also run when hash changes (if user navigates)
+    const handleHashChange = () => scrollToForm();
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Add a check for initial page load with hash
+    if (window.location.hash === '#form') {
+      // Run after a slightly longer delay on initial page load
+      setTimeout(scrollToForm, 1000);
+    }
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+};
+
 export default function RegistrationPage() {
+  useFormAutoScroll();
   interface FormData {
     firstName: string;
     middleName: string;
