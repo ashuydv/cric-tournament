@@ -263,6 +263,8 @@ export default function RegistrationPage() {
     preferredBattingOrder: string;
     tshirtSizes: string;
     disclaimerAccepted: boolean;
+    address: string;
+    referralCode: string;
   }
 
   const [formData, setFormData] = useState<FormData>({
@@ -281,6 +283,8 @@ export default function RegistrationPage() {
     preferredBattingOrder: "",
     tshirtSizes: "",
     disclaimerAccepted: false,
+    address: "",
+    referralCode: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -672,6 +676,8 @@ export default function RegistrationPage() {
       mobileNumber: "",
       dateOfBirth: formattedDate,
       email: "",
+      address: "",
+      referralCode: "",
       state: "",
       trialCity: "",
       trialZone: "",
@@ -1165,6 +1171,45 @@ export default function RegistrationPage() {
                             <SelectItem value="XXL">XXL</SelectItem>
                           </SelectContent>
                         </Select>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="address"
+                          className="block text-sm font-medium"
+                        >
+                          Address <span className="text-red-400">*</span>
+                        </label>
+                        <textarea
+                          id="address"
+                          placeholder="Enter your address"
+                          value={formData.address}
+                          onChange={(
+                            e: React.ChangeEvent<HTMLTextAreaElement>
+                          ) =>
+                            handleChange(
+                              e as unknown as React.ChangeEvent<HTMLInputElement>
+                            )
+                          }
+                          required
+                          className="bg-white text-black rounded-md border border-gray-300 p-2 min-h-[80px] w-full"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="referralCode"
+                          className="block text-sm font-medium"
+                        >
+                          Referral Code (optional)
+                        </label>
+                        <Input
+                          id="referralCode"
+                          placeholder="Referral Code (if any)"
+                          value={formData.referralCode}
+                          onChange={handleChange}
+                          className="bg-white text-black"
+                        />
                       </div>
 
                       <div className="md:col-span-2 space-y-4">
