@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   try {
     // Check if environment variables exist
     if (
-      !process.env.RAZORPAY_TEST_KEY_ID ||
+      !process.env.RAZORPAY_KEY_ID ||
       !process.env.RAZORPAY_KEY_SECRET
     ) {
       console.error("Razorpay credentials missing");
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     let razorpay: Razorpay;
     try {
       razorpay = new Razorpay({
-        key_id: process.env.RAZORPAY_TEST_KEY_ID,
+        key_id: process.env.RAZORPAY_KEY_ID,
         key_secret: process.env.RAZORPAY_KEY_SECRET,
       });
     } catch (initError) {
@@ -214,7 +214,7 @@ export async function POST(req: Request) {
         created_at: orderCreatedAt || Date.now(),
       },
       // Include key for frontend (optional, since it's also in env)
-      razorpayKey: process.env.RAZORPAY_TEST_KEY_ID,
+      razorpayKey: process.env.RAZORPAY_KEY_ID,
     });
   } catch (error: any) {
     console.error("Unexpected payment creation error:", error);
