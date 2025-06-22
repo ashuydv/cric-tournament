@@ -118,7 +118,7 @@ const DateOfBirthField = ({ formData, handleChange }: any) => {
         className="text-sm font-medium flex items-center"
       >
         Date of Birth <span className="text-red-500 ml-1">*</span>
-        <span className="ml-2 text-xs text-black">(Age: 10-60 years)</span>
+        <span className="ml-2 text-xs text-black"></span>
       </Label>
 
       <div className="relative">
