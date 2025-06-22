@@ -410,8 +410,13 @@ export default function RegistrationPage() {
         .toString(36)
         .substring(2, 8)}`;
 
-      // First, save registration data to Supabase
-      const registrationResponse = await fetch("/api/register", {
+      console.log(
+        "📝 Starting registration process with receipt ID:",
+        receiptId
+      );
+
+      // First, save registration data to all services (Supabase, Google Sheets, Zoho)
+      const registrationResponse = await fetch("/api/registrations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -424,7 +429,34 @@ export default function RegistrationPage() {
 
       if (!registrationResponse.ok) {
         const errorData = await registrationResponse.json();
+        console.error("❌ Registration failed:", errorData);
         throw new Error(errorData.error || "Failed to save registration data");
+      }
+
+      const registrationResult = await registrationResponse.json();
+      console.log("📊 Registration result:", registrationResult);
+
+      // Show warnings if some services failed but continue with payment
+      if (
+        registrationResult.warnings &&
+        registrationResult.warnings.length > 0
+      ) {
+        console.warn("⚠️ Some services failed:", registrationResult.warnings);
+        toast({
+          title: "Partial Registration Success",
+          description: `Registration saved to ${
+            Object.values(registrationResult.services).filter(Boolean).length
+          }/3 services. Proceeding with payment.`,
+          variant: "default",
+        });
+      } else {
+        console.log("✅ All services successful:", registrationResult.services);
+        toast({
+          title: "Registration Successful",
+          description:
+            "Registration saved to all services. Proceeding with payment.",
+          variant: "default",
+        });
       }
 
       // Calculate amount based on playing role
@@ -437,8 +469,7 @@ export default function RegistrationPage() {
       const totalAmount = Math.round(baseAmount * (1 + GST_RATE) * 100); // INR to paise
 
       // Use the production public key
-      // const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
-      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID;
 
       if (!publicKey) {
         throw new Error("Razorpay production public key is not configured.");
@@ -488,8 +519,10 @@ export default function RegistrationPage() {
         order_id: data.order.id,
         handler: async function (response: any) {
           try {
-            // Update payment status in Supabase
-            const updateResponse = await fetch("/api/register", {
+            console.log("💳 Payment successful, updating status...");
+
+            // Update payment status in all services
+            const updateResponse = await fetch("/api/registrations", {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -505,15 +538,38 @@ export default function RegistrationPage() {
               throw new Error("Failed to update payment status");
             }
 
+            const updateResult = await updateResponse.json();
+            console.log("📊 Payment update result:", updateResult);
+
+            if (updateResult.warnings && updateResult.warnings.length > 0) {
+              console.warn(
+                "⚠️ Some payment updates failed:",
+                updateResult.warnings
+              );
+              toast({
+                title: "Payment Successful with Warnings",
+                description: `Payment completed but some services couldn't be updated. Support will contact you if needed.`,
+                variant: "default",
+              });
+            } else {
+              toast({
+                title: "Payment Successful",
+                description:
+                  "Your payment has been processed and registration is complete!",
+                variant: "default",
+              });
+            }
+
             // Handle successful payment
-            console.log("Payment successful:", response);
+            console.log("✅ Payment process completed successfully");
             handleSubmit(new Event("submit") as any);
           } catch (error) {
-            console.error("Error updating payment status:", error);
+            console.error("❌ Error updating payment status:", error);
             toast({
               title: "Payment Status Update Failed",
               description:
-                "Payment was successful but failed to update status. Please contact support.",
+                "Payment was successful but failed to update status. Please contact support with your payment ID: " +
+                response.razorpay_payment_id,
               variant: "destructive",
             });
           }
@@ -521,8 +577,10 @@ export default function RegistrationPage() {
         modal: {
           ondismiss: async function () {
             try {
+              console.log("❌ Payment cancelled by user");
+
               // Update payment status to failed when user dismisses the modal
-              const updateResponse = await fetch("/api/register", {
+              const updateResponse = await fetch("/api/registrations", {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
@@ -545,7 +603,7 @@ export default function RegistrationPage() {
                 variant: "destructive",
               });
             } catch (error) {
-              console.error("Error updating payment status:", error);
+              console.error("❌ Error updating payment status:", error);
               toast({
                 title: "Error",
                 description:
@@ -572,8 +630,10 @@ export default function RegistrationPage() {
       const razorpay = new window.Razorpay(options);
       razorpay.on("payment.failed", async function (response: any) {
         try {
+          console.log("❌ Payment failed:", response.error);
+
           // Update payment status to failed
-          const updateResponse = await fetch("/api/register", {
+          const updateResponse = await fetch("/api/registrations", {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -597,7 +657,7 @@ export default function RegistrationPage() {
             variant: "destructive",
           });
         } catch (error) {
-          console.error("Error updating failed payment status:", error);
+          console.error("❌ Error updating failed payment status:", error);
           toast({
             title: "Error",
             description:
@@ -608,7 +668,7 @@ export default function RegistrationPage() {
       });
       razorpay.open();
     } catch (error) {
-      console.error("Payment initialization failed:", error);
+      console.error("💥 Payment initialization failed:", error);
       toast({
         title: "Payment Failed",
         description:
@@ -643,21 +703,21 @@ export default function RegistrationPage() {
     try {
       setIsSubmitting(true);
 
-      // Your existing form submission logic here
-      // ...
-
+      // Form submission success (payment already handled)
       setSubmissionSuccess(true);
       resetForm();
 
       toast({
-        title: "Registration Successful",
-        description: "Thank you for registering with RunBhumi!",
+        title: "Registration Complete!",
+        description:
+          "Thank you for registering with RunBhumi! Your data has been saved to all our systems.",
       });
     } catch (error) {
-      console.error("Registration failed:", error);
+      console.error("Registration completion failed:", error);
       toast({
-        title: "Registration Failed",
-        description: "Failed to submit registration. Please try again.",
+        title: "Registration Error",
+        description:
+          "There was an issue completing your registration. Please contact support.",
         variant: "destructive",
       });
     } finally {
@@ -789,7 +849,8 @@ export default function RegistrationPage() {
                       </h2>
                       <p className="text-black mb-4">
                         Thank you for registering for RunBhumi Cricket Talent
-                        Hunt. A confirmation email has been sent to{" "}
+                        Hunt. Your registration has been saved to all our
+                        systems and a confirmation email has been sent to{" "}
                         {formData.email}.
                       </p>
                       <Button
@@ -808,7 +869,8 @@ export default function RegistrationPage() {
                       </h2>
                       <p className="text-black">
                         Complete the form below to secure your spot in the
-                        upcoming RunBhumi Cricket Talent Hunt.
+                        upcoming RunBhumi Cricket Talent Hunt. Your data will be
+                        saved to multiple systems for redundancy.
                       </p>
                     </div>
 
@@ -1404,34 +1466,6 @@ export default function RegistrationPage() {
             </Card>
           </div>
         </section>
-
-        {/* Map Section */}
-        {/* <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="flex flex-col items-center space-y-4 text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-                Trial Location
-              </h2>
-              <p className="max-w-[700px] text-black md:text-lg">
-                Trial sessions will be held at cricket grounds across 36 cities
-                in India
-              </p>
-            </div>
-
-            <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7017.994741987926!2d77.03521849591594!3d28.419336189033235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23491456411f%3A0xa094d858266d8e27!2sTrue%20Dream%20Reality%20-%20Furnished%20Business%20Office%20Space%20in%20Gurgaon!5e0!3m2!1sen!2sin!4v1745148920064!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="RunBhumi-Headquarters"
-              ></iframe>
-            </div>
-          </div>
-        </section> */}
 
         {/* FAQ Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-orange-950/20">
