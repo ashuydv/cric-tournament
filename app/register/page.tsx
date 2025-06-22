@@ -469,7 +469,7 @@ export default function RegistrationPage() {
       const totalAmount = Math.round(baseAmount * (1 + GST_RATE) * 100); // INR to paise
 
       // Use the production public key
-      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID;
+      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
 
       if (!publicKey) {
         throw new Error("Razorpay production public key is not configured.");
