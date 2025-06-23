@@ -22,8 +22,8 @@ export async function GET() {
       ZOHO_CREATOR_OWNER: process.env.ZOHO_CREATOR_OWNER || "NOT_SET",
       
       // Razorpay
-      RAZORPAY_KEY_ID: !!process.env.RAZORPAY_KEY_ID,
-      RAZORPAY_KEY_SECRET: !!process.env.RAZORPAY_KEY_SECRET,
+      RAZORPAY_TEST_KEY_ID: !!process.env.RAZORPAY_TEST_KEY_ID,
+      RAZORPAY_TEST_KEY_SECRET: !!process.env.RAZORPAY_TEST_KEY_SECRET,
     };
 
     const missingVars = Object.entries(envCheck)

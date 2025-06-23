@@ -274,6 +274,7 @@ export async function PUT(request: Request) {
     const results = {
       supabase: false,
       googleSheets: false,
+      zoho: false,
     };
 
     // 1. Update Supabase
@@ -351,6 +352,7 @@ export async function PUT(request: Request) {
 
     // Determine response
     const successCount = Object.values(results).filter(Boolean).length;
+    const totalServices = 3;
 
     if (successCount === 0) {
       console.error("💥 All update services failed!");
@@ -364,18 +366,19 @@ export async function PUT(request: Request) {
         { status: 500 }
       );
     } else if (errors.length > 0) {
-      console.warn(`⚠️ ${errors.length}/2 update services failed:`, errors);
-
+      console.warn(
+        `⚠️ ${errors.length}/${totalServices} update services failed:`,
+        errors
+      );
       return NextResponse.json({
         success: true,
-        message: `Payment status updated in ${successCount}/2 services`,
+        message: `Payment status updated in ${successCount}/${totalServices} services`,
         warnings: errors,
         services: results,
         timestamp: new Date().toISOString(),
       });
     } else {
       console.log("🎉 All update services completed successfully!");
-
       return NextResponse.json({
         success: true,
         message: "Payment status updated successfully in all services",
@@ -391,6 +394,134 @@ export async function PUT(request: Request) {
         message: "Critical error during payment status update",
         error: error instanceof Error ? error.message : "Update failed",
         timestamp: new Date().toISOString(),
+      },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PATCH(request: Request) {
+  try {
+    const body = await request.json();
+    console.log("🔄 Processing PATCH request with body:", body);
+
+    const { ID, Payment_Status } = body;
+
+    // Validate required fields
+    if (!ID || !Payment_Status) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Missing required fields: ID and Payment_Status are required.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // Validate Payment_Status values
+    const validStatuses = ["Paid", "Pending", "Cancelled", "Failed"];
+    if (!validStatuses.includes(Payment_Status)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: `Invalid Payment_Status. Must be one of: ${validStatuses.join(
+            ", "
+          )}`,
+        },
+        { status: 400 }
+      );
+    }
+
+    console.log(
+      `🔧 Updating payment status for Zoho record ID: ${ID} to ${Payment_Status}`
+    );
+
+    // Use the zohoService for better abstraction and error handling
+    const result = await zohoService.updatePaymentStatusByRecordId(
+      ID,
+      Payment_Status
+    );
+
+    if (!result.success) {
+      // Handle different types of errors appropriately
+      const statusCode = result.error?.includes("not found")
+        ? 404
+        : result.error?.includes("unauthorized")
+        ? 401
+        : result.error?.includes("forbidden")
+        ? 403
+        : result.error?.includes("INVALID_SCOPE")
+        ? 403
+        : 500;
+
+      return NextResponse.json(
+        {
+          success: false,
+          error: result.error,
+          timestamp: new Date().toISOString(),
+        },
+        { status: statusCode }
+      );
+    }
+
+    console.log("✅ Zoho payment status update successful");
+
+    return NextResponse.json({
+      success: true,
+      data: result.data,
+      message: `Payment status successfully updated to ${Payment_Status} for record ${ID}`,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (error) {
+    console.error("💥 PATCH request error:", error);
+
+    // Don't expose internal error details in production
+    const isDevelopment = process.env.NODE_ENV === "development";
+    const errorMessage =
+      isDevelopment && error instanceof Error
+        ? error.message
+        : "Internal server error";
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: errorMessage,
+        timestamp: new Date().toISOString(),
+      },
+      { status: 500 }
+    );
+  }
+}
+
+export async function GET(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const zohoRecordId = searchParams.get("zohoRecordId");
+    if (zohoRecordId) {
+      const result = await zohoService.getRecordById(zohoRecordId);
+      if (!result.success) {
+        return NextResponse.json(
+          { success: false, error: result.error },
+          { status: 500 }
+        );
+      }
+      return NextResponse.json({ success: true, data: result.data });
+    } else {
+      // No zohoRecordId, return all records
+      const result = await zohoService.getAllRecords();
+      if (!result.success) {
+        return NextResponse.json(
+          { success: false, error: result.error },
+          { status: 500 }
+        );
+      }
+      return NextResponse.json({ success: true, data: result.data });
+    }
+  } catch (error) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 }
     );

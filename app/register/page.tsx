@@ -294,6 +294,9 @@ export default function RegistrationPage() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
 
+  // Store Zoho record ID for payment updates
+  const [zohoRecordId, setZohoRecordId] = useState<string | null>(null);
+
   // Filter trial schedule based on search term
   const filteredSchedule = trialSchedule.filter((schedule) => {
     // If no search term, show all schedules
@@ -380,6 +383,67 @@ export default function RegistrationPage() {
     };
   }, []);
 
+  // Helper function to update payment status using the appropriate method
+  const updatePaymentStatus = async (
+    receiptId: string,
+    paymentStatus: string,
+    paymentId?: string,
+    errorCode?: string,
+    errorDescription?: string
+  ) => {
+    try {
+      let updateResponse;
+
+      // If we have a Zoho record ID, use PATCH for direct update
+      if (zohoRecordId) {
+        console.log(`🔧 Using PATCH with Zoho ID: ${zohoRecordId}`);
+        updateResponse = await fetch("/api/registrations", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ID: zohoRecordId,
+            Payment_Status:
+              paymentStatus === "completed"
+                ? "Paid"
+                : paymentStatus === "failed"
+                ? "Failed"
+                : "Cancelled",
+          }),
+        });
+      } else {
+        // Fallback to PUT with receipt ID
+        console.log(`🔄 Using PUT with receipt ID: ${receiptId}`);
+        updateResponse = await fetch("/api/registrations", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            receiptId,
+            paymentStatus,
+            paymentId,
+            error_code: errorCode,
+            error_description: errorDescription,
+          }),
+        });
+      }
+
+      if (!updateResponse.ok) {
+        throw new Error("Failed to update payment status");
+      }
+
+      const updateResult = await updateResponse.json();
+      console.log("📊 Payment update result:", updateResult);
+
+      return updateResult;
+    } catch (error) {
+      console.error("❌ Error updating payment status:", error);
+      throw error;
+    }
+  };
+
   const initializePayment = async () => {
     try {
       if (!formData.disclaimerAccepted) {
@@ -436,6 +500,15 @@ export default function RegistrationPage() {
       const registrationResult = await registrationResponse.json();
       console.log("📊 Registration result:", registrationResult);
 
+      // Extract Zoho record ID if available for future updates
+      if (registrationResult.data?.zoho?.data?.ID) {
+        setZohoRecordId(registrationResult.data.zoho.data.ID);
+        console.log(
+          "🆔 Stored Zoho record ID:",
+          registrationResult.data.zoho.data.ID
+        );
+      }
+
       // Show warnings if some services failed but continue with payment
       if (
         registrationResult.warnings &&
@@ -469,10 +542,22 @@ export default function RegistrationPage() {
       const totalAmount = Math.round(baseAmount * (1 + GST_RATE) * 100); // INR to paise
 
       // Use the production public key
-      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_TEST_KEY_ID;
 
       if (!publicKey) {
         throw new Error("Razorpay production public key is not configured.");
+      }
+
+      // Update payment status to "Processing" before creating payment order
+      if (zohoRecordId) {
+        try {
+          console.log("🔄 Setting payment status to Processing...");
+          await updatePaymentStatus(receiptId, "pending");
+          console.log("✅ Payment status set to Processing");
+        } catch (error) {
+          console.warn("⚠️ Failed to update initial payment status:", error);
+          // Continue with payment creation even if status update fails
+        }
       }
 
       // Create payment order
@@ -521,25 +606,12 @@ export default function RegistrationPage() {
           try {
             console.log("💳 Payment successful, updating status...");
 
-            // Update payment status in all services
-            const updateResponse = await fetch("/api/registrations", {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                receiptId,
-                paymentStatus: "completed",
-                paymentId: response.razorpay_payment_id,
-              }),
-            });
-
-            if (!updateResponse.ok) {
-              throw new Error("Failed to update payment status");
-            }
-
-            const updateResult = await updateResponse.json();
-            console.log("📊 Payment update result:", updateResult);
+            // Update payment status using the helper function
+            const updateResult = await updatePaymentStatus(
+              receiptId,
+              "completed",
+              response.razorpay_payment_id
+            );
 
             if (updateResult.warnings && updateResult.warnings.length > 0) {
               console.warn(
@@ -548,14 +620,13 @@ export default function RegistrationPage() {
               );
               toast({
                 title: "Payment Successful with Warnings",
-                description: `Payment completed but some services couldn't be updated. Support will contact you if needed.`,
+                description: `Payment completed but some services couldn't be updated. Support will contact you if needed. Payment ID: ${response.razorpay_payment_id}`,
                 variant: "default",
               });
             } else {
               toast({
                 title: "Payment Successful",
-                description:
-                  "Your payment has been processed and registration is complete!",
+                description: `Your payment has been processed and registration is complete! Payment ID: ${response.razorpay_payment_id}`,
                 variant: "default",
               });
             }
@@ -579,22 +650,8 @@ export default function RegistrationPage() {
             try {
               console.log("❌ Payment cancelled by user");
 
-              // Update payment status to failed when user dismisses the modal
-              const updateResponse = await fetch("/api/registrations", {
-                method: "PUT",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  receiptId,
-                  paymentStatus: "failed",
-                  paymentId: null,
-                }),
-              });
-
-              if (!updateResponse.ok) {
-                throw new Error("Failed to update payment status");
-              }
+              // Update payment status to cancelled when user dismisses the modal
+              await updatePaymentStatus(receiptId, "cancelled");
 
               toast({
                 title: "Payment Cancelled",
@@ -633,23 +690,13 @@ export default function RegistrationPage() {
           console.log("❌ Payment failed:", response.error);
 
           // Update payment status to failed
-          const updateResponse = await fetch("/api/registrations", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              receiptId,
-              paymentStatus: "failed",
-              paymentId: response.error.metadata.payment_id,
-              error_code: response.error.code,
-              error_description: response.error.description,
-            }),
-          });
-
-          if (!updateResponse.ok) {
-            throw new Error("Failed to update payment status");
-          }
+          await updatePaymentStatus(
+            receiptId,
+            "failed",
+            response.error.metadata.payment_id,
+            response.error.code,
+            response.error.description
+          );
 
           toast({
             title: "Payment Failed",
@@ -750,6 +797,7 @@ export default function RegistrationPage() {
     });
     setAvailableCities([]);
     setSubmissionSuccess(false);
+    setZohoRecordId(null); // Reset Zoho record ID
   };
 
   return (

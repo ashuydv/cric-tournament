@@ -489,15 +489,12 @@ class ZohoService {
 
   // Update payment status in Zoho Creator
   async updatePaymentStatus(
-    receiptId: string,
-    paymentStatus: string,
-    paymentId?: string,
-    errorCode?: string,
-    errorDescription?: string
+    Id: string,
+    paymentStatus: string
   ): Promise<{ success: boolean; data?: any; error?: string }> {
     try {
       console.log("🔄 Updating payment status in Zoho Creator...");
-      console.log("📨 Receipt ID:", receiptId, "Status:", paymentStatus);
+      console.log("📨 Receipt ID:", Id, "Status:", paymentStatus);
 
       const owner = process.env.ZOHO_CREATOR_OWNER;
       const appName = process.env.ZOHO_CREATOR_APP_NAME || "your-app-name";
@@ -505,7 +502,7 @@ class ZohoService {
         process.env.ZOHO_CREATOR_REPORT_NAME || "All_Registrations";
 
       // First, find the record by receipt ID using the correct API format
-      const searchUrl = `${this.baseUrl}/api/v2.1/${owner}/${appName}/report/${reportName}?criteria=(Receipt_ID=="${receiptId}")`;
+      const searchUrl = `${this.baseUrl}/api/v2.1/${owner}/${appName}/report/${reportName}/${Id}`;
 
       console.log("🔍 Searching for record at URL:", searchUrl);
 
@@ -544,7 +541,7 @@ class ZohoService {
       const searchResult = await searchResponse.json();
 
       if (!searchResult.data || searchResult.data.length === 0) {
-        console.log("ℹ️ No record found with receipt ID:", receiptId);
+        console.log("ℹ️ No record found with receipt ID:", Id);
         console.log(
           "ℹ️ This is normal for new registrations that haven't been synced to Zoho yet"
         );
@@ -563,9 +560,6 @@ class ZohoService {
       // Update the record using the correct API format
       const updateData = {
         Payment_Status: paymentStatus,
-        Payment_ID: paymentId || "",
-        Error_Code: errorCode || "",
-        Error_Description: errorDescription || "",
         Updated_At: new Date().toISOString(),
       };
 
@@ -575,7 +569,7 @@ class ZohoService {
 
       const updateResponse = await this.makeAuthenticatedRequest(updateUrl, {
         method: "PATCH",
-        body: JSON.stringify(updateData),
+        body: JSON.stringify({ data: updateData }),
       });
 
       if (!updateResponse.ok) {
@@ -643,6 +637,314 @@ class ZohoService {
     } catch (error) {
       console.error("❌ Zoho connection validation failed:", error);
       return false;
+    }
+  }
+
+  // Get record by ID (for GET requests)
+  async getRecordById(
+    recordId: string
+  ): Promise<{ success: boolean; data?: any; error?: string }> {
+    try {
+      console.log("📄 Getting record by ID from Zoho Creator...");
+      console.log("📋 Record ID:", recordId);
+
+      // Format: https://creator.zoho.in/api/v2.1/{owner_name}/{app_name}/record/{record_id}
+      const getUrl = `https://creator.zoho.in/api/v2.1/lakshgyapathtradingprivateli/runbhumi-api/record/${recordId}`;
+
+      console.log("🔗 Get URL:", getUrl);
+
+      const response = await this.makeAuthenticatedRequest(getUrl, {
+        method: "GET",
+      });
+
+      console.log("📡 Response status:", response.status);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("❌ Zoho Creator GET error:", response.status, errorText);
+
+        try {
+          const errorData = JSON.parse(errorText);
+          console.error(
+            "❌ Parsed error data:",
+            JSON.stringify(errorData, null, 2)
+          );
+
+          if (errorData.code === 2620) {
+            throw new Error(
+              `RECORD_NOT_FOUND: Record with ID ${recordId} not found`
+            );
+          } else if (errorData.code === 7001) {
+            throw new Error(`AUTHENTICATION_FAILURE: ${errorData.description}`);
+          } else {
+            throw new Error(
+              `Zoho Error ${errorData.code}: ${
+                errorData.description || errorData.message
+              }`
+            );
+          }
+        } catch (parseError) {
+          console.error("❌ Could not parse error response:", parseError);
+        }
+
+        throw new Error(
+          `Zoho Creator GET error: ${response.status} - ${errorText}`
+        );
+      }
+
+      const result = await response.json();
+      console.log("✅ Record retrieved successfully from Zoho Creator");
+      console.log("📄 Record data:", JSON.stringify(result, null, 2));
+
+      return {
+        success: true,
+        data: result,
+      };
+    } catch (error) {
+      console.error("❌ Failed to get record from Zoho Creator:", error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      };
+    }
+  }
+
+  // Get all records (for GET requests without specific ID)
+  async getAllRecords(
+    limit?: string | null,
+    offset?: string | null,
+    paymentStatus?: string | null
+  ): Promise<{ success: boolean; data?: any; error?: string }> {
+    try {
+      console.log("📄 Getting all records from Zoho Creator...");
+
+      // Build query parameters
+      const queryParams = new URLSearchParams();
+
+      // Add pagination if provided
+      if (limit) {
+        queryParams.append("limit", limit);
+      }
+
+      if (offset) {
+        queryParams.append("offset", offset);
+      }
+
+      // Add criteria for filtering by payment status if provided
+      let criteriaParam = "";
+      if (paymentStatus) {
+        criteriaParam = `?criteria=(Payment_Status=="${paymentStatus}")`;
+      }
+
+      // Format: https://creator.zoho.in/api/v2.1/{owner_name}/{app_name}/report/{report_name}
+      const baseUrl = `https://creator.zoho.in/api/v2.1/lakshgyapathtradingprivateli/runbhumi-api/report/All_Registrations`;
+      const queryString = queryParams.toString();
+      const getAllUrl = `${baseUrl}${criteriaParam}${
+        queryString ? (criteriaParam ? "&" : "?") + queryString : ""
+      }`;
+
+      console.log("🔗 Get All URL:", getAllUrl);
+
+      const response = await this.makeAuthenticatedRequest(getAllUrl, {
+        method: "GET",
+      });
+
+      console.log("📡 Response status:", response.status);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(
+          "❌ Zoho Creator GET ALL error:",
+          response.status,
+          errorText
+        );
+
+        try {
+          const errorData = JSON.parse(errorText);
+          console.error(
+            "❌ Parsed error data:",
+            JSON.stringify(errorData, null, 2)
+          );
+
+          if (errorData.code === 9280) {
+            // No records found - this is normal, return empty array
+            console.log("ℹ️ No records found in Zoho Creator");
+            return {
+              success: true,
+              data: {
+                data: [],
+                info: {
+                  count: 0,
+                  more_records: false,
+                },
+              },
+            };
+          } else if (errorData.code === 7001) {
+            throw new Error(`AUTHENTICATION_FAILURE: ${errorData.description}`);
+          } else {
+            throw new Error(
+              `Zoho Error ${errorData.code}: ${
+                errorData.description || errorData.message
+              }`
+            );
+          }
+        } catch (parseError) {
+          console.error("❌ Could not parse error response:", parseError);
+        }
+
+        throw new Error(
+          `Zoho Creator GET ALL error: ${response.status} - ${errorText}`
+        );
+      }
+
+      const result = await response.json();
+      console.log("✅ Records retrieved successfully from Zoho Creator");
+      console.log("📄 Records count:", result.data?.length || 0);
+
+      // Add some metadata to the response
+      const enhancedResult = {
+        ...result,
+        info: {
+          count: result.data?.length || 0,
+          more_records: result.info?.more_records || false,
+          ...(result.info || {}),
+        },
+      };
+
+      return {
+        success: true,
+        data: enhancedResult,
+      };
+    } catch (error) {
+      console.error("❌ Failed to get records from Zoho Creator:", error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      };
+    }
+  }
+
+  // Update payment status by record ID (for PATCH requests)
+  async updatePaymentStatusByRecordId(
+    recordId: string,
+    paymentStatus: string
+  ): Promise<{ success: boolean; data?: any; error?: string }> {
+    try {
+      console.log("🔄 Updating payment status by record ID in Zoho Creator...");
+      console.log("📋 Record ID:", recordId);
+      console.log("💳 Payment Status:", paymentStatus);
+
+      // For direct record updates, use the specific endpoint format
+      // Format: https://creator.zoho.in/api/v2.1/{owner_name}/{app_name}/record/{record_id}
+      const updateUrl = `https://creator.zoho.in/api/v2.1/lakshgyapathtradingprivateli/runbhumi-api/report/All_Registrations/${recordId}`;
+
+      console.log("🔗 Update URL:", updateUrl);
+
+      // Format datetime for Zoho (DD-MMM-YYYY HH:mm:ss format)
+      const formatDateTimeForZoho = (dateString: string) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, "0");
+        const month = date.toLocaleDateString("en-US", { month: "short" });
+        const year = date.getFullYear();
+        const hours = date.getHours().toString().padStart(2, "0");
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const seconds = date.getSeconds().toString().padStart(2, "0");
+        return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+      };
+
+      // Prepare the update data - only include fields that need to be updated
+      const updateData: Record<string, any> = {
+        ID: recordId,
+        Payment_Status: paymentStatus,
+        Updated_At: formatDateTimeForZoho(new Date().toISOString()),
+      };
+
+      console.log("📄 Update payload:", JSON.stringify(updateData, null, 2));
+
+      // Make the PATCH request
+      const response = await this.makeAuthenticatedRequest(updateUrl, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: updateData }),
+      });
+
+      console.log("📡 Response status:", response.status);
+      console.log(
+        "📡 Response headers:",
+        Object.fromEntries(response.headers.entries())
+      );
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(
+          "❌ Zoho Creator PATCH error:",
+          response.status,
+          errorText
+        );
+
+        // Try to parse the error response for more details
+        try {
+          const errorData = JSON.parse(errorText);
+          console.error(
+            "❌ Parsed error data:",
+            JSON.stringify(errorData, null, 2)
+          );
+
+          // Handle specific Zoho error codes
+          if (errorData.code === 2600) {
+            throw new Error(
+              `INVALID_DATA: ${errorData.description || errorData.message}`
+            );
+          } else if (errorData.code === 2620) {
+            throw new Error(
+              `RECORD_NOT_FOUND: Record with ID ${recordId} not found`
+            );
+          } else if (errorData.code === 2890) {
+            throw new Error(
+              `MANDATORY_FIELD_MISSING: ${errorData.description}`
+            );
+          } else if (errorData.code === 2945) {
+            throw new Error(
+              `EXTRA_KEY_FOUND_IN_JSON: Invalid field names in request. ${errorData.description}`
+            );
+          } else if (errorData.code === 7001) {
+            throw new Error(`AUTHENTICATION_FAILURE: ${errorData.description}`);
+          } else {
+            throw new Error(
+              `Zoho Error ${errorData.code}: ${
+                errorData.description || errorData.message
+              }`
+            );
+          }
+        } catch (parseError) {
+          // If we can't parse the error, use the raw text
+          console.error("❌ Could not parse error response:", parseError);
+        }
+
+        throw new Error(
+          `Zoho Creator PATCH error: ${response.status} - ${errorText}`
+        );
+      }
+
+      const result = await response.json();
+      console.log("✅ Payment status updated successfully in Zoho Creator");
+      console.log("📄 Update response:", JSON.stringify(result, null, 2));
+
+      return {
+        success: true,
+        data: result,
+      };
+    } catch (error) {
+      console.error(
+        "❌ Failed to update payment status in Zoho Creator:",
+        error
+      );
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      };
     }
   }
 
