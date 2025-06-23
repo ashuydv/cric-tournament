@@ -60,9 +60,8 @@ export async function POST(request: Request) {
       results.supabase = supabaseData;
       console.log("✅ Supabase save successful");
     } catch (error) {
-      const errorMsg = `Supabase failed: ${
-        error instanceof Error ? error.message : error
-      }`;
+      const errorMsg = `Supabase failed: ${error instanceof Error ? error.message : error
+        }`;
       console.error("❌", errorMsg);
       errors.push(errorMsg);
     }
@@ -114,9 +113,8 @@ export async function POST(request: Request) {
       results.googleSheets = { success: true };
       console.log("✅ Google Sheets save successful");
     } catch (error) {
-      const errorMsg = `Google Sheets failed: ${
-        error instanceof Error ? error.message : error
-      }`;
+      const errorMsg = `Google Sheets failed: ${error instanceof Error ? error.message : error
+        }`;
       console.error("❌", errorMsg);
       errors.push(errorMsg);
     }
@@ -188,11 +186,10 @@ export async function POST(request: Request) {
       }
 
       results.zoho = zohoResult.data;
-      console.log("✅ Zoho Creator save successful");
+      console.log("✅ Zoho Creator save successful", results.zoho);
     } catch (error) {
-      const errorMsg = `Zoho Creator failed: ${
-        error instanceof Error ? error.message : error
-      }`;
+      const errorMsg = `Zoho Creator failed: ${error instanceof Error ? error.message : error
+        }`;
       console.error("❌", errorMsg);
       errors.push(errorMsg);
     }
@@ -236,7 +233,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         success: true,
-        data: results.supabase,
+        data: results,
         services: {
           supabase: true,
           googleSheets: true,
@@ -298,9 +295,8 @@ export async function PUT(request: Request) {
       results.supabase = true;
       console.log("✅ Supabase update successful");
     } catch (error) {
-      const errorMsg = `Supabase update failed: ${
-        error instanceof Error ? error.message : error
-      }`;
+      const errorMsg = `Supabase update failed: ${error instanceof Error ? error.message : error
+        }`;
       console.error("❌", errorMsg);
       errors.push(errorMsg);
     }
@@ -343,9 +339,8 @@ export async function PUT(request: Request) {
         throw new Error(`Receipt ID ${receiptId} not found in Google Sheets`);
       }
     } catch (error) {
-      const errorMsg = `Google Sheets update failed: ${
-        error instanceof Error ? error.message : error
-      }`;
+      const errorMsg = `Google Sheets update failed: ${error instanceof Error ? error.message : error
+        }`;
       console.error("❌", errorMsg);
       errors.push(errorMsg);
     }
@@ -418,20 +413,6 @@ export async function PATCH(request: Request) {
       );
     }
 
-    // Validate Payment_Status values
-    const validStatuses = ["Paid", "Pending", "Cancelled", "Failed"];
-    if (!validStatuses.includes(Payment_Status)) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: `Invalid Payment_Status. Must be one of: ${validStatuses.join(
-            ", "
-          )}`,
-        },
-        { status: 400 }
-      );
-    }
-
     console.log(
       `🔧 Updating payment status for Zoho record ID: ${ID} to ${Payment_Status}`
     );
@@ -447,12 +428,12 @@ export async function PATCH(request: Request) {
       const statusCode = result.error?.includes("not found")
         ? 404
         : result.error?.includes("unauthorized")
-        ? 401
-        : result.error?.includes("forbidden")
-        ? 403
-        : result.error?.includes("INVALID_SCOPE")
-        ? 403
-        : 500;
+          ? 401
+          : result.error?.includes("forbidden")
+            ? 403
+            : result.error?.includes("INVALID_SCOPE")
+              ? 403
+              : 500;
 
       return NextResponse.json(
         {

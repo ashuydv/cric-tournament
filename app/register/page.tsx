@@ -383,55 +383,85 @@ export default function RegistrationPage() {
     };
   }, []);
 
-  // Helper function to update payment status using the appropriate method
-  const updatePaymentStatus = async (
+  // Enhanced helper function to update payment status with better error handling
+  const updatePaymentStatusDirect = async (
     receiptId: string,
     paymentStatus: string,
     paymentId?: string,
+    zohoId?: string | null,
     errorCode?: string,
     errorDescription?: string
   ) => {
     try {
+      console.log("🔧 Payment update details:", {
+        receiptId,
+        paymentStatus,
+        paymentId,
+        zohoId,
+        hasZohoId: !!zohoId,
+        errorCode,
+        errorDescription
+      });
+
       let updateResponse;
 
       // If we have a Zoho record ID, use PATCH for direct update
-      if (zohoRecordId) {
-        console.log(`🔧 Using PATCH with Zoho ID: ${zohoRecordId}`);
+      if (zohoId) {
+        console.log(`🔧 Using PATCH with Zoho ID: ${zohoId}`);
+
+        const patchData: any = {
+          ID: zohoId,
+          Payment_Status: paymentStatus === "completed" ? "Paid"
+            : paymentStatus === "failed" ? "Failed"
+              : paymentStatus === "pending" ? "Processing"
+                : "Cancelled",
+        };
+
+        // Add payment ID if available
+        if (paymentId) {
+          patchData.Payment_ID = paymentId;
+        }
+
+        // Add error details if failed
+        if (paymentStatus === "failed") {
+          if (errorCode) patchData.Error_Code = errorCode;
+          if (errorDescription) patchData.Error_Description = errorDescription;
+        }
+
+        console.log("📤 PATCH data:", patchData);
+
         updateResponse = await fetch("/api/registrations", {
           method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ID: zohoRecordId,
-            Payment_Status:
-              paymentStatus === "completed"
-                ? "Paid"
-                : paymentStatus === "failed"
-                ? "Failed"
-                : "Cancelled",
-          }),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(patchData),
         });
       } else {
         // Fallback to PUT with receipt ID
         console.log(`🔄 Using PUT with receipt ID: ${receiptId}`);
+
+        const putData = {
+          receiptId,
+          paymentStatus,
+          paymentId,
+          error_code: errorCode,
+          error_description: errorDescription,
+        };
+
+        console.log("📤 PUT data:", putData);
+
         updateResponse = await fetch("/api/registrations", {
           method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            receiptId,
-            paymentStatus,
-            paymentId,
-            error_code: errorCode,
-            error_description: errorDescription,
-          }),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(putData),
         });
       }
 
+      console.log("📡 Update response status:", updateResponse.status);
+
       if (!updateResponse.ok) {
-        throw new Error("Failed to update payment status");
+        const errorText = await updateResponse.text();
+        console.error("❌ Update response error:", errorText);
+        throw new Error(`Failed to update payment status: ${updateResponse.status} - ${errorText}`);
       }
 
       const updateResult = await updateResponse.json();
@@ -439,7 +469,7 @@ export default function RegistrationPage() {
 
       return updateResult;
     } catch (error) {
-      console.error("❌ Error updating payment status:", error);
+      console.error("❌ Error in updatePaymentStatusDirect:", error);
       throw error;
     }
   };
@@ -500,13 +530,12 @@ export default function RegistrationPage() {
       const registrationResult = await registrationResponse.json();
       console.log("📊 Registration result:", registrationResult);
 
-      // Extract Zoho record ID if available for future updates
+      // Store Zoho record ID in local variable for immediate use
+      let localZohoRecordId: string | null = null;
       if (registrationResult.data?.zoho?.data?.ID) {
-        setZohoRecordId(registrationResult.data.zoho.data.ID);
-        console.log(
-          "🆔 Stored Zoho record ID:",
-          registrationResult.data.zoho.data.ID
-        );
+        localZohoRecordId = registrationResult.data.zoho.data.ID;
+        setZohoRecordId(localZohoRecordId); // Still set state for other uses
+        console.log("🆔 Stored Zoho record ID:", localZohoRecordId);
       }
 
       // Show warnings if some services failed but continue with payment
@@ -517,9 +546,8 @@ export default function RegistrationPage() {
         console.warn("⚠️ Some services failed:", registrationResult.warnings);
         toast({
           title: "Partial Registration Success",
-          description: `Registration saved to ${
-            Object.values(registrationResult.services).filter(Boolean).length
-          }/3 services. Proceeding with payment.`,
+          description: `Registration saved to ${Object.values(registrationResult.services).filter(Boolean).length
+            }/3 services. Proceeding with payment.`,
           variant: "default",
         });
       } else {
@@ -549,10 +577,10 @@ export default function RegistrationPage() {
       }
 
       // Update payment status to "Processing" before creating payment order
-      if (zohoRecordId) {
+      if (localZohoRecordId) {
         try {
           console.log("🔄 Setting payment status to Processing...");
-          await updatePaymentStatus(receiptId, "pending");
+          await updatePaymentStatusDirect(receiptId, "pending", undefined, localZohoRecordId);
           console.log("✅ Payment status set to Processing");
         } catch (error) {
           console.warn("⚠️ Failed to update initial payment status:", error);
@@ -605,12 +633,14 @@ export default function RegistrationPage() {
         handler: async function (response: any) {
           try {
             console.log("💳 Payment successful, updating status...");
+            console.log("🆔 Using Zoho ID for payment update:", localZohoRecordId);
 
-            // Update payment status using the helper function
-            const updateResult = await updatePaymentStatus(
+            // Update payment status using the local variable
+            const updateResult = await updatePaymentStatusDirect(
               receiptId,
               "completed",
-              response.razorpay_payment_id
+              response.razorpay_payment_id,
+              localZohoRecordId
             );
 
             if (updateResult.warnings && updateResult.warnings.length > 0) {
@@ -649,9 +679,10 @@ export default function RegistrationPage() {
           ondismiss: async function () {
             try {
               console.log("❌ Payment cancelled by user");
+              console.log("🆔 Using Zoho ID for cancellation:", localZohoRecordId);
 
               // Update payment status to cancelled when user dismisses the modal
-              await updatePaymentStatus(receiptId, "cancelled");
+              await updatePaymentStatusDirect(receiptId, "cancelled", undefined, localZohoRecordId);
 
               toast({
                 title: "Payment Cancelled",
@@ -688,12 +719,14 @@ export default function RegistrationPage() {
       razorpay.on("payment.failed", async function (response: any) {
         try {
           console.log("❌ Payment failed:", response.error);
+          console.log("🆔 Using Zoho ID for failure update:", localZohoRecordId);
 
           // Update payment status to failed
-          await updatePaymentStatus(
+          await updatePaymentStatusDirect(
             receiptId,
             "failed",
-            response.error.metadata.payment_id,
+            response.error.metadata?.payment_id,
+            localZohoRecordId,
             response.error.code,
             response.error.description
           );
@@ -1487,11 +1520,10 @@ export default function RegistrationPage() {
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className={`text-xs sm:text-sm ${
-                                  selectedCity === location
-                                    ? "bg-orange-100 text-orange-800"
-                                    : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
-                                }`}
+                                className={`text-xs sm:text-sm ${selectedCity === location
+                                  ? "bg-orange-100 text-orange-800"
+                                  : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                  }`}
                                 onClick={() => handleCitySelect(location)}
                               >
                                 {location}
