@@ -506,11 +506,10 @@ export default function Home() {
                                     <Button
                                       variant="ghost"
                                       size="sm"
-                                      className={`w-full text-xs ${
-                                        selectedCity === location
-                                          ? "bg-orange-100 text-orange-800"
-                                          : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
-                                      }`}
+                                      className={`w-full text-xs ${selectedCity === location
+                                        ? "bg-orange-100 text-orange-800"
+                                        : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                        }`}
                                       onClick={() => handleCitySelect(location)}
                                     >
                                       {location}
@@ -580,11 +579,10 @@ export default function Home() {
                                     <Button
                                       variant="ghost"
                                       size="sm"
-                                      className={`text-xs sm:text-sm ${
-                                        selectedCity === location
-                                          ? "bg-orange-100 text-orange-800"
-                                          : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
-                                      }`}
+                                      className={`text-xs sm:text-sm ${selectedCity === location
+                                        ? "bg-orange-100 text-orange-800"
+                                        : "text-orange-600 hover:text-orange-800 hover:bg-orange-100"
+                                        }`}
                                     >
                                       {location}
                                       {selectedCity === location && (
@@ -1000,16 +998,16 @@ export default function Home() {
                           width={200}
                           height={200}
                           alt=""
-                          src="/suresh-raina.webp"
-                          className=" object-cover object-top"
+                          src="/chetan-sharma.jpeg"
+                          className=" object-cover object-center"
                         />
                       </div>
                       <div>
-                        <h5 className="font-bold text-lg">Suresh Raina</h5>
-                        <p className="text-black">Middle Order Guide</p>
+                        <h5 className="font-bold text-lg">Chetan Sharma</h5>
+                        <p className="text-black">Bowling Coach & Mentor</p>
                         <div className="mt-1 flex">
                           <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
-                            Mr. IPL
+                            Former India Pacer
                           </span>
                         </div>
                       </div>
